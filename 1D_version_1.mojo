@@ -9,6 +9,7 @@
     <src>alu.luc</src>
     <src>seven_seg.luc</src>
     <src>cmp.luc</src>
+    <src>register.luc</src>
     <src>multi_dec_ctr.luc</src>
     <src>decimal_counter.luc</src>
     <src>bol.luc</src>
