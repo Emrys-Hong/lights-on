@@ -2,15 +2,14 @@ module beta (
     input clk,  // clock
     input rst,  // reset
     
-    input button_press[3],
+    input button_press[7],
     input board_sel[1],
     input board_en[1],
     input level_en[1],
     input asel[1],
     input bsel[2],
     input alufn[6],
-    output allon[1],
-    output out[16]
+    output allon[1]
   ) {
   
   buttons_mux buttons_mux;
@@ -58,8 +57,6 @@ module beta (
     else
       board.data = levels_mux.out;
     
-    // Outputs
-    out = alu.out;
     allon = alu.out[0];
   }
 }

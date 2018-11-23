@@ -11,45 +11,170 @@ module mojo_top (
     input avr_tx,           // AVR TX (FPGA RX)
     output avr_rx,          // AVR RX (FPGA TX)
     input avr_rx_busy,      // AVR RX buffer full
+    
+    
+    
+    
+    
+    
+    input button0[1],
+    input button1[1],
+    input button2[1],
+    input button3[1],
+    input button4[1],
+    input button5[1],
+    input button6[1],
+    input button_reset[1],
+    
+    
+    
+    
+    
+    
     output io_led [3][8],   // LEDs on IO Shield
     output io_seg [8],      // 7-segment LEDs on IO Shield
     output io_sel [4],      // Digit select on IO Shield
     input io_button [5],    // 5 buttons on IO Shield
-    input io_dip [3][8]     // DIP switches on IO Shield
+    input io_dip [3][8]    // DIP switches on IO Shield
   ) {
   
-  sig rst;                  // reset signal
   
+  
+  
+  
+  
+  sig allon[1];
+  sig board_sel[1];
+  sig board_en[1];
+  sig level_en[1];
+  sig asel[1];
+  sig bsel[2];
+  sig alufn[6];
+  
+  
+  
+  
+  
+  
+  
+  
+  sig rst;                  // reset signal
   .clk(clk) {
-    // The reset conditioner is used to synchronize the reset signal to the FPGA
-    // clock. This ensures the entire FPGA comes out of reset at the same time.
     reset_conditioner reset_cond;
-    
     edge_detector edge_detector (#RISE(1), #FALL(0));
-    
     .rst(rst) {
       multi_seven_seg seg;
       multi_dec_ctr dec_ctr;
       counter ctr (#SIZE(1), #DIV(24));
+      fsm game_state = {BEGIN, XOR, CMPEQC, ADDC};
+      beta beta_game;
     }
   }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   always {
     reset_cond.in = ~rst_n;   // input raw inverted reset signal
     rst = reset_cond.out;     // conditioned reset
-    
     led = c{3b0, io_button};  // connect buttons to LEDs
     spi_miso = bz;            // not using SPI
     spi_channel = bzzzz;      // not using flags
     avr_rx = bz;              // not using serial port
-    
     edge_detector.in = ctr.value;
     dec_ctr.inc = edge_detector.out;
     seg.values = dec_ctr.digits;
-    
     io_seg = ~seg.seg; // connect segments to the driver
     io_sel = ~seg.sel; // connect digit select to the driver
-    
     io_led = io_dip;   // connect the DIP switches to the LEDs
-  }    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // initialize all the variables to default value zero
+    board_sel = 0; board_en = 0; level_en = 0; asel = 0; bsel = 0; alufn = 0;
+    
+    
+    
+    
+    
+    
+    
+    
+    // connecting beta
+    beta_game.board_en = board_en;
+    beta_game.board_sel = board_sel;
+    beta_game.level_en = level_en;
+    beta_game.asel = asel;
+    beta_game.bsel = bsel;
+    beta_game.alufn = alufn;
+    beta_game.button_press = c{button0, button1, button2, button3, button4, button5, button6};
+    allon = beta_game.allon;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    case(game_state.q) {
+      game_state.BEGIN:
+        board_sel = 1;
+        board_en = 1;
+        level_en = 0;
+        game_state.d = game_state.XOR;
+      
+      game_state.XOR:
+        board_sel = 0;
+        board_en = 1;
+        level_en = 0;
+        alufn = b011010;
+        asel = 0;
+        bsel = 0;
+        game_state.d = game_state.CMPEQC;
+      
+      game_state.CMPEQC:
+        board_en = 0;
+        level_en = 0;
+        alufn = 110011;
+        asel = 0;
+        bsel = 1;
+        if (allon == 1)
+          game_state.d = game_state.ADDC;
+        else
+          game_state.d = game_state.XOR;
+      
+      game_state.ADDC:
+        board_en = 0;
+        level_en = 1;
+        alufn = 000000;
+        bsel = 2;
+        asel = 1;
+        game_state.d = game_state.BEGIN;
+    }
+  }
 }
