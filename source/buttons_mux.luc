@@ -1,0 +1,20 @@
+module buttons_mux (
+    input buttons_sel[3],  // mux selector for buttons
+    output out[16]    // the output of the mux is connected to Bsel's mux.
+  ) {
+
+  always {
+  
+    out = 16b0000000000000000;  // initialise the value of out.
+    
+    case (buttons_sel) {
+      0: out = 16b0000111111000000;
+      1: out = 16b0000000001100001;
+      2: out = 16b0000000010000011;
+      3: out = 16b0000000100000110;
+      4: out = 16b0000001000001100;
+      5: out = 16b0000010000011000;
+      6: out = 16b0000100000110000;
+      }
+  }
+}

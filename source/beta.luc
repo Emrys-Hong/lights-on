@@ -1,0 +1,65 @@
+module beta (
+    input clk,  // clock
+    input rst,  // reset
+    
+    input button_press[3],
+    input board_sel[1],
+    input board_en[1],
+    input level_en[1],
+    input asel[1],
+    input bsel[2],
+    input alufn[6],
+    output allon[1],
+    output out[16]
+  ) {
+  
+  buttons_mux buttons_mux;
+  levels_mux levels_mux;
+  
+  .clk(clk) {
+    // The reset conditioner is used to synchronize the reset signal to the FPGA
+    // clock. This ensures the entire FPGA comes out of reset at the same time.
+    .rst(rst) {
+      alu alu;
+      register board(#WIDTH(16));
+      register level(#WIDTH(16));
+    }
+  }
+  
+  always {
+
+    alu.io_dip = alufn;
+    
+    board.en = board_en;
+    level.en = level_en;
+    level.data = alu.out;
+    
+    buttons_mux.buttons_sel = button_press;
+    
+    levels_mux.levels_sel = level.out[1:0];  // only 2 bits wide because we have levels 0 to 3.
+    
+    // Mux for ASEL
+    if (asel == 0)
+      alu.a = board.out;
+    else
+      alu.a = level.out;
+      
+    // Mux for BSEL
+    if (bsel == 0)
+      alu.b = buttons_mux.out;
+    else if (bsel == 1)
+      alu.b = 16b0000111111111111;
+    else
+      alu.b = 16b0000000000000001;
+        
+    // Mux for BoardSel
+    if (board_sel == 0)
+      board.data = alu.out;
+    else
+      board.data = levels_mux.out;
+    
+    // Outputs
+    out = alu.out;
+    allon = alu.out[0];
+  }
+}
