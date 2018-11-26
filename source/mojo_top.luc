@@ -38,14 +38,7 @@ module mojo_top (
     input button4[1],
     input button5[1],
     input button6[1],
-    input button_reset[1],
-    
-    
-    
-    
-    
-    
-    output led_strip
+    input button_reset[1]
     
   ) {
   
@@ -54,14 +47,7 @@ module mojo_top (
   
   
   
-  sig allon[1];
-  sig board_sel[1];
-  sig board_en[1];
-  sig level_en[1];
-  sig asel[1];
-  sig bsel[2];
-  sig alufn[6];
-  
+  sig anyButtonPressed[1];
   
   
   
@@ -89,7 +75,6 @@ module mojo_top (
   sig rst;                  // reset signal
   .clk(clk) {
     reset_conditioner reset_cond;
-    edge_detector edge_detector (#RISE(1), #FALL(0));
     
     
     
@@ -102,19 +87,29 @@ module mojo_top (
     
     
     // TO DELETE
-    edge_detector edge_detector0;
-    edge_detector edge_detector1;
-    edge_detector edge_detector2;
-    edge_detector edge_detector3;
-    edge_detector edge_detector4;
-    edge_detector edge_detector5;
-    edge_detector edge_detector6;
+    edge_detector edge_detector0(#RISE(1), #FALL(0));
+    edge_detector edge_detector1(#RISE(1), #FALL(0));
+    edge_detector edge_detector2(#RISE(1), #FALL(0));
+    edge_detector edge_detector3(#RISE(1), #FALL(0));
+    edge_detector edge_detector4(#RISE(1), #FALL(0));
+    edge_detector edge_detector5(#RISE(1), #FALL(0));
+    edge_detector edge_detector6(#RISE(1), #FALL(0));
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     .rst(rst) {
       multi_seven_seg seg;
-      multi_dec_ctr dec_ctr;
-      counter ctr (#SIZE(1), #DIV(24));
       fsm game_state = {BEGIN, XOR, CMPEQC, ADDC};
-      ws2812_man ws2812_man;
       beta beta_game;
     }
   }
@@ -139,12 +134,10 @@ module mojo_top (
     spi_miso = bz;            // not using SPI
     spi_channel = bzzzz;      // not using flags
     avr_rx = bz;              // not using serial port
-    edge_detector.in = ctr.value;
-    dec_ctr.inc = edge_detector.out;
-    seg.values = dec_ctr.digits;
+    seg.values = {4h0, 4h0, 4h0, 4h0};
     io_seg = ~seg.seg; // connect segments to the driver
-    io_sel = ~seg.sel; // connect digit select to the driver
-    io_led = io_dip;   // connect the DIP switches to the LEDs
+    io_sel = ~seg.sel; // connect digit select to the
+    io_led = io_dip;   // connect the DIP switches to the LEDs    driver
     
     
     
@@ -153,28 +146,6 @@ module mojo_top (
     
     
     
-    
-    
-    
-    
-    
-    ws2812_man.data[0] = LED_GREEN;
-    ws2812_man.data[1] = LED_RED;
-    ws2812_man.data[2] = LED_RED;
-    ws2812_man.data[3] = LED_GREEN;
-    led_strip = ws2812_man.out;
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // initialize all the variables to default value zero
-    board_sel = 0; board_en = 0; level_en = 0; asel = 0; bsel = 0; alufn = 0;
     
     
     
@@ -192,12 +163,12 @@ module mojo_top (
     edge_detector4.in = io_dip[0][4];
     edge_detector5.in = io_dip[0][5];
     edge_detector6.in = io_dip[0][6];
-    io_led[0][1] = beta_game.boardout[0];
-    io_led[0][2] = beta_game.boardout[1];
-    io_led[0][3] = beta_game.boardout[2];
-    io_led[0][4] = beta_game.boardout[3];
-    io_led[0][5] = beta_game.boardout[4];
-    io_led[0][6] = beta_game.boardout[5];
+    io_led[0][0] = beta_game.boardout[0];
+    io_led[0][1] = beta_game.boardout[1];
+    io_led[0][2] = beta_game.boardout[2];
+    io_led[0][3] = beta_game.boardout[3];
+    io_led[0][4] = beta_game.boardout[4];
+    io_led[0][5] = beta_game.boardout[5];
     io_led[1][0] = beta_game.boardout[6];
     io_led[1][1] = beta_game.boardout[7];
     io_led[1][2] = beta_game.boardout[8];
@@ -219,17 +190,15 @@ module mojo_top (
     
     
     // connecting beta
-    beta_game.board_en = board_en;
-    beta_game.board_sel = board_sel;
-    beta_game.level_en = level_en;
-    beta_game.asel = asel;
-    beta_game.bsel = bsel;
-    beta_game.alufn = alufn;
+    beta_game.board_en = 0;
+    beta_game.board_sel = 0;
+    beta_game.level_en = 0;
+    beta_game.asel = 0;
+    beta_game.bsel = 0;
+    beta_game.alufn = 0;
     beta_game.button_press = c{button0, button1, button2, button3, button4, button5, button6};
     // TO DELETE
     beta_game.button_press = c{edge_detector0.out, edge_detector1.out, edge_detector2.out, edge_detector3.out, edge_detector4.out, edge_detector5.out, edge_detector6.out};
-    allon = beta_game.allon;
-    
     
     
     
@@ -244,37 +213,43 @@ module mojo_top (
     
     case(game_state.q) {
       game_state.BEGIN:
-        board_sel = 1;
-        board_en = 1;
-        level_en = 0;
+        beta_game.board_sel = 1;
+        beta_game.board_en = 1;
+        beta_game.level_en = 0;
+        io_led[2][0] = 1;
+        
         game_state.d = game_state.XOR;
       
       game_state.XOR:
-        board_sel = 0;
-        board_en = 1;
-        level_en = 0;
-        alufn = b011010;
-        asel = 0;
-        bsel = 0;
-        game_state.d = game_state.CMPEQC;
-      
+        beta_game.board_sel = 0;
+        beta_game.board_en = 1;
+        beta_game.level_en = 0;
+        beta_game.alufn = b011010;
+        beta_game.asel = 0;
+        beta_game.bsel = 0;
+        io_led[2][1] = 1;
+        beta_game.button_press = c{edge_detector0.out, edge_detector1.out, edge_detector2.out, edge_detector3.out, edge_detector4.out, edge_detector5.out, edge_detector6.out};
+        if ( edge_detector0.out|edge_detector1.out|edge_detector2.out|edge_detector3.out|edge_detector4.out|edge_detector5.out|edge_detector6.out){
+          game_state.d = game_state.CMPEQC;
+        }
       game_state.CMPEQC:
-        board_en = 0;
-        level_en = 0;
-        alufn = 110011;
-        asel = 0;
-        bsel = 1;
-        if (allon == 1)
+        beta_game.board_en = 0;
+        beta_game.level_en = 0;
+        beta_game.alufn = 110011;
+        beta_game.asel = 0;
+        beta_game.bsel = 1;
+        io_led[2][2] = 1;
+        if (beta_game.allon == 1)
           game_state.d = game_state.ADDC;
         else
           game_state.d = game_state.XOR;
       
       game_state.ADDC:
-        board_en = 0;
-        level_en = 1;
-        alufn = 000000;
-        bsel = 2;
-        asel = 1;
+        beta_game.board_en = 0;
+        beta_game.level_en = 1;
+        beta_game.alufn = 000000;
+        beta_game.bsel = 2;
+        beta_game.asel = 1;
         game_state.d = game_state.BEGIN;
     }
   }

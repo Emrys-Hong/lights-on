@@ -17,8 +17,6 @@
 
 
 
-NET "led_strip" LOC = P40;
-NET "led_strip" IOSTANDARD = LVTTL;
 
 ####################################################################################
 # Constraints from file : 'mojo.ucf'
