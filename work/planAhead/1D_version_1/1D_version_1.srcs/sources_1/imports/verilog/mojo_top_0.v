@@ -73,10 +73,59 @@ module mojo_top_0 (
     .in(M_edge_detector_in),
     .out(M_edge_detector_out)
   );
+  wire [1-1:0] M_edge_detector0_out;
+  reg [1-1:0] M_edge_detector0_in;
+  edge_detector_3 edge_detector0 (
+    .clk(clk),
+    .in(M_edge_detector0_in),
+    .out(M_edge_detector0_out)
+  );
+  wire [1-1:0] M_edge_detector1_out;
+  reg [1-1:0] M_edge_detector1_in;
+  edge_detector_3 edge_detector1 (
+    .clk(clk),
+    .in(M_edge_detector1_in),
+    .out(M_edge_detector1_out)
+  );
+  wire [1-1:0] M_edge_detector2_out;
+  reg [1-1:0] M_edge_detector2_in;
+  edge_detector_3 edge_detector2 (
+    .clk(clk),
+    .in(M_edge_detector2_in),
+    .out(M_edge_detector2_out)
+  );
+  wire [1-1:0] M_edge_detector3_out;
+  reg [1-1:0] M_edge_detector3_in;
+  edge_detector_3 edge_detector3 (
+    .clk(clk),
+    .in(M_edge_detector3_in),
+    .out(M_edge_detector3_out)
+  );
+  wire [1-1:0] M_edge_detector4_out;
+  reg [1-1:0] M_edge_detector4_in;
+  edge_detector_3 edge_detector4 (
+    .clk(clk),
+    .in(M_edge_detector4_in),
+    .out(M_edge_detector4_out)
+  );
+  wire [1-1:0] M_edge_detector5_out;
+  reg [1-1:0] M_edge_detector5_in;
+  edge_detector_3 edge_detector5 (
+    .clk(clk),
+    .in(M_edge_detector5_in),
+    .out(M_edge_detector5_out)
+  );
+  wire [1-1:0] M_edge_detector6_out;
+  reg [1-1:0] M_edge_detector6_in;
+  edge_detector_3 edge_detector6 (
+    .clk(clk),
+    .in(M_edge_detector6_in),
+    .out(M_edge_detector6_out)
+  );
   wire [7-1:0] M_seg_seg;
   wire [4-1:0] M_seg_sel;
   reg [16-1:0] M_seg_values;
-  multi_seven_seg_3 seg (
+  multi_seven_seg_10 seg (
     .clk(clk),
     .rst(rst),
     .values(M_seg_values),
@@ -85,14 +134,14 @@ module mojo_top_0 (
   );
   wire [16-1:0] M_dec_ctr_digits;
   reg [1-1:0] M_dec_ctr_inc;
-  multi_dec_ctr_4 dec_ctr (
+  multi_dec_ctr_11 dec_ctr (
     .clk(clk),
     .rst(rst),
     .inc(M_dec_ctr_inc),
     .digits(M_dec_ctr_digits)
   );
   wire [1-1:0] M_ctr_value;
-  counter_5 ctr (
+  counter_12 ctr (
     .clk(clk),
     .rst(rst),
     .value(M_ctr_value)
@@ -105,13 +154,14 @@ module mojo_top_0 (
   reg [1:0] M_game_state_d, M_game_state_q = BEGIN_game_state;
   wire [1-1:0] M_ws2812_man_out;
   reg [40-1:0] M_ws2812_man_data;
-  ws2812_man_6 ws2812_man (
+  ws2812_man_13 ws2812_man (
     .clk(clk),
     .rst(rst),
     .data(M_ws2812_man_data),
     .out(M_ws2812_man_out)
   );
   wire [1-1:0] M_beta_game_allon;
+  wire [16-1:0] M_beta_game_boardout;
   reg [7-1:0] M_beta_game_button_press;
   reg [1-1:0] M_beta_game_board_sel;
   reg [1-1:0] M_beta_game_board_en;
@@ -119,7 +169,7 @@ module mojo_top_0 (
   reg [1-1:0] M_beta_game_asel;
   reg [2-1:0] M_beta_game_bsel;
   reg [6-1:0] M_beta_game_alufn;
-  beta_7 beta_game (
+  beta_14 beta_game (
     .clk(clk),
     .rst(rst),
     .button_press(M_beta_game_button_press),
@@ -129,7 +179,8 @@ module mojo_top_0 (
     .asel(M_beta_game_asel),
     .bsel(M_beta_game_bsel),
     .alufn(M_beta_game_alufn),
-    .allon(M_beta_game_allon)
+    .allon(M_beta_game_allon),
+    .boardout(M_beta_game_boardout)
   );
   
   always @* begin
@@ -147,8 +198,8 @@ module mojo_top_0 (
     io_seg = ~M_seg_seg;
     io_sel = ~M_seg_sel;
     io_led = io_dip;
-    M_ws2812_man_data[0+1-:2] = io_button[0+0-:1];
-    M_ws2812_man_data[2+1-:2] = io_button[0+0-:1];
+    M_ws2812_man_data[0+1-:2] = 2'h2;
+    M_ws2812_man_data[2+1-:2] = 2'h1;
     M_ws2812_man_data[4+1-:2] = 2'h1;
     M_ws2812_man_data[6+1-:2] = 2'h2;
     led_strip = M_ws2812_man_out;
@@ -158,6 +209,25 @@ module mojo_top_0 (
     asel = 1'h0;
     bsel = 1'h0;
     alufn = 1'h0;
+    M_edge_detector0_in = io_dip[0+0+0-:1];
+    M_edge_detector1_in = io_dip[0+1+0-:1];
+    M_edge_detector2_in = io_dip[0+2+0-:1];
+    M_edge_detector3_in = io_dip[0+3+0-:1];
+    M_edge_detector4_in = io_dip[0+4+0-:1];
+    M_edge_detector5_in = io_dip[0+5+0-:1];
+    M_edge_detector6_in = io_dip[0+6+0-:1];
+    io_led[0+1+0-:1] = M_beta_game_boardout[0+0-:1];
+    io_led[0+2+0-:1] = M_beta_game_boardout[1+0-:1];
+    io_led[0+3+0-:1] = M_beta_game_boardout[2+0-:1];
+    io_led[0+4+0-:1] = M_beta_game_boardout[3+0-:1];
+    io_led[0+5+0-:1] = M_beta_game_boardout[4+0-:1];
+    io_led[0+6+0-:1] = M_beta_game_boardout[5+0-:1];
+    io_led[8+0+0-:1] = M_beta_game_boardout[6+0-:1];
+    io_led[8+1+0-:1] = M_beta_game_boardout[7+0-:1];
+    io_led[8+2+0-:1] = M_beta_game_boardout[8+0-:1];
+    io_led[8+3+0-:1] = M_beta_game_boardout[9+0-:1];
+    io_led[8+4+0-:1] = M_beta_game_boardout[10+0-:1];
+    io_led[8+5+0-:1] = M_beta_game_boardout[11+0-:1];
     M_beta_game_board_en = board_en;
     M_beta_game_board_sel = board_sel;
     M_beta_game_level_en = level_en;
@@ -165,6 +235,7 @@ module mojo_top_0 (
     M_beta_game_bsel = bsel;
     M_beta_game_alufn = alufn;
     M_beta_game_button_press = {button0, button1, button2, button3, button4, button5, button6};
+    M_beta_game_button_press = {M_edge_detector0_out, M_edge_detector1_out, M_edge_detector2_out, M_edge_detector3_out, M_edge_detector4_out, M_edge_detector5_out, M_edge_detector6_out};
     allon = M_beta_game_allon;
     
     case (M_game_state_q)

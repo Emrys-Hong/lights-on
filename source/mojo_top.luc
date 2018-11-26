@@ -90,6 +90,25 @@ module mojo_top (
   .clk(clk) {
     reset_conditioner reset_cond;
     edge_detector edge_detector (#RISE(1), #FALL(0));
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // TO DELETE
+    edge_detector edge_detector0;
+    edge_detector edge_detector1;
+    edge_detector edge_detector2;
+    edge_detector edge_detector3;
+    edge_detector edge_detector4;
+    edge_detector edge_detector5;
+    edge_detector edge_detector6;
     .rst(rst) {
       multi_seven_seg seg;
       multi_dec_ctr dec_ctr;
@@ -139,8 +158,8 @@ module mojo_top (
     
     
     
-    ws2812_man.data[0] = io_button[0];
-    ws2812_man.data[1] = io_button[0];
+    ws2812_man.data[0] = LED_GREEN;
+    ws2812_man.data[1] = LED_RED;
     ws2812_man.data[2] = LED_RED;
     ws2812_man.data[3] = LED_GREEN;
     led_strip = ws2812_man.out;
@@ -164,6 +183,41 @@ module mojo_top (
     
     
     
+    
+    // TO DELETE
+    edge_detector0.in = io_dip[0][0];
+    edge_detector1.in = io_dip[0][1];
+    edge_detector2.in = io_dip[0][2];
+    edge_detector3.in = io_dip[0][3];
+    edge_detector4.in = io_dip[0][4];
+    edge_detector5.in = io_dip[0][5];
+    edge_detector6.in = io_dip[0][6];
+    io_led[0][1] = beta_game.boardout[0];
+    io_led[0][2] = beta_game.boardout[1];
+    io_led[0][3] = beta_game.boardout[2];
+    io_led[0][4] = beta_game.boardout[3];
+    io_led[0][5] = beta_game.boardout[4];
+    io_led[0][6] = beta_game.boardout[5];
+    io_led[1][0] = beta_game.boardout[6];
+    io_led[1][1] = beta_game.boardout[7];
+    io_led[1][2] = beta_game.boardout[8];
+    io_led[1][3] = beta_game.boardout[9];
+    io_led[1][4] = beta_game.boardout[10];
+    io_led[1][5] = beta_game.boardout[11];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // connecting beta
     beta_game.board_en = board_en;
     beta_game.board_sel = board_sel;
@@ -172,6 +226,8 @@ module mojo_top (
     beta_game.bsel = bsel;
     beta_game.alufn = alufn;
     beta_game.button_press = c{button0, button1, button2, button3, button4, button5, button6};
+    // TO DELETE
+    beta_game.button_press = c{edge_detector0.out, edge_detector1.out, edge_detector2.out, edge_detector3.out, edge_detector4.out, edge_detector5.out, edge_detector6.out};
     allon = beta_game.allon;
     
     
