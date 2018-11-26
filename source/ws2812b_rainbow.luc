@@ -1,0 +1,60 @@
+module ws2812b_rainbow #(ROW=1)(
+    input clk,  // clock
+    input rst,  // reset
+    output out[ROW]
+  ) {
+  
+  fsm state(.clk(clk), .rst(rst), #INIT(YELLOW)) = {GREEN, YELLOW, RED, PURPLE, BLUE, CYAN};
+  dff counter[21](.clk(clk), .rst(rst));
+  dff green[8](.clk(clk), .rst(rst), #INIT(255));
+  dff red[8](.clk(clk), .rst(rst));
+  dff blue[8](.clk(clk), .rst(rst));
+  sig foo[11];
+  sig grb[24];
+  
+  var r;
+
+  always {
+    counter.d = counter.q + 1;
+    out = 0;
+    
+    if (counter.q == 21h1fffff) {
+      case (state.q) {
+        state.GREEN: // decreasing blue
+          if (blue.q == 0) state.d = state.YELLOW;
+          else blue.d = blue.q - 15;        
+        state.YELLOW: // increasing red
+          if (red.q == 255) state.d = state.RED;
+          else red.d = red.q + 15;
+        state.RED: // decreasing green
+          if (green.q == 0) state.d = state.PURPLE;
+          else green.d = green.q - 15;
+        state.PURPLE: // increasing blue
+          if (blue.q == 255) state.d = state.BLUE;
+          else blue.d = blue.q + 15;
+        state.BLUE: // decreasing red
+          if (red.q == 0) state.d = state.CYAN;
+          else red.d = red.q - 15;
+        state.CYAN: // increasing green
+          if (green.q == 255) state.d = state.GREEN;
+          else green.d = green.q + 15;
+      }
+    }
+    
+    grb = c{green.q, red.q, blue.q};
+    
+    for (r=0; r<ROW; r++) {
+      if (counter.q < 64*24*20) {
+        if (counter.q > 64*24*10) {
+        foo = counter.q - ((counter.q/(64*24))*(64*24));
+        if (grb[23-(foo>>6)] == 0) {
+          if (foo[5:0] < 20) out[r] = 1;
+        }
+        else {
+          if (foo[5:0] < 40) out[r] = 1;
+        }
+        }
+      }
+    }
+  }
+}

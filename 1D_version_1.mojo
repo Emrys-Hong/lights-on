@@ -5,8 +5,10 @@
     <src>levels_mux.luc</src>
     <src top="true">mojo_top.luc</src>
     <src>mul.luc</src>
+    <src>ws2812b_rainbow.luc</src>
     <src>register.luc</src>
     <src>multi_dec_ctr.luc</src>
+    <src>ws2812_man.luc</src>
     <src>beta.luc</src>
     <src>add.luc</src>
     <src>multi_seven_seg.luc</src>

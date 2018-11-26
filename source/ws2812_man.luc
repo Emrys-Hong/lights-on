@@ -1,0 +1,60 @@
+module ws2812_man(
+    input clk,  // clock
+    input rst,  // reset
+    input data[20][2],
+    output out
+  ) {
+  
+  const NUM_LED = 10;
+  
+  // enum for different led_states
+  const LED_OFF = 2d0;
+  const LED_RED = 2d1;
+  const LED_GREEN = 2d2;
+  const LED_BLUE = 2d3;
+  
+  // preset colours (in GRB)
+  const COLOR_BLACK = 24h0;
+  const COLOR_RED = c{8h00, 8h80, 8h00};
+  const COLOR_GREEN = c{8h80, 8h00, 8h00};
+  const COLOR_BLUE = c{8h00, 8h00, 8h80};
+  
+  dff board[20][2](.clk(clk), .rst(rst)); // stores the current board state like a register
+  dff counter[14](.clk(clk), .rst(rst)); // 1 complete cycle of counter corresponds to 1 row
+  sig foo[11]; // temp variable to store (n % 1536), which yields the column to be rendered
+  sig led_state[2]; // temp variable to store state of chosen individual LED
+  sig grb[24]; // temp variable to store the GRB values for LED given its led_state
+  
+  var c; // for-loop counters
+
+  always {
+    out = 8b0;
+    // update board
+    for (c=0; c<NUM_LED; c++)  board.d[c] = data[c]; // refer to bit pattern for led_states
+    // render display
+    // (64clocks/bit * 8bits/colour * 3colours)
+      if (counter.q < 64*24*NUM_LED) { // if not within the "rest" block - there is data to be sent
+        c = counter.q/(64*24); // counter.q/(64*8*3) == column number - obtains led_state
+        led_state = board.q[c];
+        case (led_state) {
+          LED_OFF: grb = COLOR_BLACK;
+          LED_RED: grb = COLOR_RED;
+          LED_GREEN: grb = COLOR_GREEN;
+          LED_BLUE: grb = COLOR_BLUE;
+          default: grb = COLOR_BLACK;
+        }
+        
+        foo = counter.q - ((counter.q/(64*24))*(64*24)); // gets the current block of 1536 clock
+        // this is equivalent to `foo = counter.q % (64*24);`
+        // logic 0 - 20 clocks HIGH + 44 clocks LOW
+        // logic 1 - 40 clocks HIGH + 24 clocks LOW
+        if (grb[23-(foo>>6)] == 0) { // grab the corresponding bit out of 24 (bits are retrieved left to right)
+          if (foo[5:0] < 20) out = 1; // send a logic 0 by checking current clock in the cycle of the last 64 bits
+        }
+        else {
+          if (foo[5:0] < 40) out = 1; // send a logic 1
+        }
+      counter.d = counter.q + 1;
+    }
+  }
+}

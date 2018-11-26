@@ -17,6 +17,20 @@ module mojo_top (
     
     
     
+    
+    
+    output io_led [3][8],   // LEDs on IO Shield
+    output io_seg [8],      // 7-segment LEDs on IO Shield
+    output io_sel [4],      // Digit select on IO Shield
+    input io_button [5],    // 5 buttons on IO Shield
+    input io_dip [3][8],   // DIP switches on IO Shield
+    
+    
+    
+    
+    
+    
+    
     input button0[1],
     input button1[1],
     input button2[1],
@@ -31,11 +45,8 @@ module mojo_top (
     
     
     
-    output io_led [3][8],   // LEDs on IO Shield
-    output io_seg [8],      // 7-segment LEDs on IO Shield
-    output io_sel [4],      // Digit select on IO Shield
-    input io_button [5],    // 5 buttons on IO Shield
-    input io_dip [3][8]    // DIP switches on IO Shield
+    output led_strip
+    
   ) {
   
   
@@ -58,6 +69,23 @@ module mojo_top (
   
   
   
+  const LED_OFF = 2d0;
+  const LED_RED = 2d1;
+  const LED_GREEN = 2d2;
+  const LED_BLUE = 2d3;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   sig rst;                  // reset signal
   .clk(clk) {
     reset_conditioner reset_cond;
@@ -67,6 +95,7 @@ module mojo_top (
       multi_dec_ctr dec_ctr;
       counter ctr (#SIZE(1), #DIV(24));
       fsm game_state = {BEGIN, XOR, CMPEQC, ADDC};
+      ws2812_man ws2812_man;
       beta beta_game;
     }
   }
@@ -101,6 +130,20 @@ module mojo_top (
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    ws2812_man.data[0] = LED_BLUE;
+    ws2812_man.data[1] = LED_BLUE;
+    ws2812_man.data[2] = LED_RED;
+    ws2812_man.data[3] = LED_GREEN;
+    led_strip = ws2812_man.out;
     
     
     
