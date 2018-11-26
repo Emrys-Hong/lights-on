@@ -563,43 +563,34 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1293 - FF/Latch <M_board_q_23> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_24> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_25> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_26> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_27> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_28> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_29> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_30> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_31> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_32> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_33> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_34> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_35> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_36> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_37> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M_board_q_39> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_38> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_39> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_5> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_6> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_8> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_9> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_10> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_11> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_12> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_13> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_14> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_15> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_16> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_17> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_18> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_19> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_20> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_21> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_37> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_36> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_35> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_34> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_33> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_32> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_31> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_30> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_29> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_28> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_27> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_26> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_25> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_24> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_23> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_22> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <M_board_q_0> in Unit <ws2812_man_6> is equivalent to the following 5 FFs/Latches, which will be removed : <M_board_q_1> <M_board_q_2> <M_board_q_3> <M_board_q_4> <M_board_q_7> 
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_21> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_20> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <M_board_q_1> in Unit <ws2812_man_6> is equivalent to the following 15 FFs/Latches, which will be removed : <M_board_q_3> <M_board_q_5> <M_board_q_6> <M_board_q_8> <M_board_q_9> <M_board_q_10> <M_board_q_11> <M_board_q_12> <M_board_q_13> <M_board_q_14> <M_board_q_15> <M_board_q_16> <M_board_q_17> <M_board_q_18> <M_board_q_19> 
+INFO:Xst:2261 - The FF/Latch <M_board_q_4> in Unit <ws2812_man_6> is equivalent to the following FF/Latch, which will be removed : <M_board_q_7> 
+INFO:Xst:2261 - The FF/Latch <M_board_q_0> in Unit <ws2812_man_6> is equivalent to the following FF/Latch, which will be removed : <M_board_q_2> 
+WARNING:Xst:1293 - FF/Latch <M_board_q_1> has a constant value of 0 in block <ws2812_man_6>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <mojo_top_0> ...
+
+Optimizing unit <ws2812_man_6> ...
 
 Optimizing unit <div_14u_11u> ...
 INFO:Xst:2261 - The FF/Latch <ctr/M_ctr_q_16> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <seg/ctr/M_ctr_q_16> 
@@ -635,8 +626,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 61
- Flip-Flops                                            : 61
+# Registers                                            : 62
+ Flip-Flops                                            : 62
 
 =========================================================================
 
@@ -660,7 +651,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 62    |
+clk                                | BUFGP                  | 63    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -673,7 +664,7 @@ Speed Grade: -2
 
    Minimum period: 4.617ns (Maximum Frequency: 216.591MHz)
    Minimum input arrival time before clock: 3.526ns
-   Maximum output required time after clock: 14.990ns
-   Maximum combinational path delay: 4.921ns
+   Maximum output required time after clock: 14.739ns
+   Maximum combinational path delay: 4.965ns
 
 =========================================================================

@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Map" timeStamp="Mon Nov 26 21:43:36 2018">
+  <application stringID="Map" timeStamp="Mon Nov 26 21:57:50 2018">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -89,7 +89,7 @@
         <column stringID="speed"/>
         <row stringID="row" value="0">
           <item stringID="arch" value="Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz"/>
-          <item stringID="speed" value="4112.423 MHz"/>
+          <item stringID="speed" value="4103.761 MHz"/>
         </row>
       </table>
     </section>
@@ -133,7 +133,7 @@
       </item>
       <item AVAILABLE="102" dataType="int" stringID="MAP_AGG_BONDED_IO" value="82"/>
       <item AVAILABLE="98" dataType="int" stringID="MAP_AGG_UNBONDED_IO" value="0"/>
-      <item AVAILABLE="0" dataType="int" label="IOB Flip Flops" stringID="MAP_NUM_IOB_FF" value="0"/>
+      <item AVAILABLE="0" dataType="int" label="IOB Flip Flops" stringID="MAP_NUM_IOB_FF" value="1"/>
       <item AVAILABLE="0" dataType="int" stringID="MAP_NUM_IOB_LATCH" value="0"/>
       <item AVAILABLE="49" dataType="int" stringID="MAP_NUM_IOBM" value="0"/>
       <item AVAILABLE="51" dataType="int" stringID="MAP_NUM_BONDED_IOBM" value="0"/>
@@ -154,7 +154,7 @@
         <item dataType="int" stringID="MAP_NUM_ERRORS" value="0"/>
         <item dataType="int" stringID="MAP_FILTERED_WARNINGS" value="0"/>
         <item dataType="int" stringID="MAP_NUM_WARNINGS" value="6"/>
-        <item UNITS="KB" dataType="int" stringID="MAP_PEAK_MEMORY" value="833612"/>
+        <item UNITS="KB" dataType="int" stringID="MAP_PEAK_MEMORY" value="768176"/>
         <item stringID="MAP_TOTAL_REAL_TIME" value="4 secs "/>
         <item stringID="MAP_TOTAL_CPU_TIME" value="4 secs "/>
       </section>
@@ -188,21 +188,21 @@
           <item dataType="int" stringID="MAP_NUM_LUT_RT_DRIVES_CARRY4" value="3"/>
           <item dataType="int" stringID="MAP_NUM_LUT_RT_DRIVES_OTHERS" value="0"/>
         </item>
-        <item AVAILABLE="1430" dataType="int" label="Number of occupied Slices" stringID="MAP_OCCUPIED_SLICES" value="40">
+        <item AVAILABLE="1430" dataType="int" label="Number of occupied Slices" stringID="MAP_OCCUPIED_SLICES" value="41">
           <item AVAILABLE="355" dataType="int" stringID="MAP_NUM_SLICEL" value="16"/>
           <item AVAILABLE="360" dataType="int" stringID="MAP_NUM_SLICEM" value="0"/>
-          <item AVAILABLE="715" dataType="int" stringID="MAP_NUM_SLICEX" value="24"/>
+          <item AVAILABLE="715" dataType="int" stringID="MAP_NUM_SLICEX" value="25"/>
         </item>
-        <item dataType="int" label="Number of LUT Flip Flop pairs used" stringID="MAP_OCCUPIED_LUT_AND_FF" value="126">
-          <item dataType="int" stringID="MAP_OCCUPIED_LUT_ONLY" value="66"/>
-          <item dataType="int" label="Number with an unused LUT" stringID="MAP_OCCUPIED_FF_ONLY" value="4"/>
-          <item dataType="int" label="Number of fully used LUT-FF pairs" stringID="MAP_OCCUPIED_FF_AND_LUT" value="56"/>
+        <item dataType="int" label="Number of LUT Flip Flop pairs used" stringID="MAP_OCCUPIED_LUT_AND_FF" value="127">
+          <item dataType="int" stringID="MAP_OCCUPIED_LUT_ONLY" value="67"/>
+          <item dataType="int" label="Number with an unused LUT" stringID="MAP_OCCUPIED_FF_ONLY" value="5"/>
+          <item dataType="int" label="Number of fully used LUT-FF pairs" stringID="MAP_OCCUPIED_FF_AND_LUT" value="55"/>
         </item>
       </section>
       <section stringID="MAP_IOB_REPORTING">
         <item AVAILABLE="102" dataType="int" stringID="MAP_AGG_BONDED_IO" value="82"/>
         <item AVAILABLE="98" dataType="int" stringID="MAP_AGG_UNBONDED_IO" value="0"/>
-        <item AVAILABLE="0" dataType="int" label="IOB Flip Flops" stringID="MAP_NUM_IOB_FF" value="0"/>
+        <item AVAILABLE="0" dataType="int" label="IOB Flip Flops" stringID="MAP_NUM_IOB_FF" value="1"/>
         <item AVAILABLE="0" dataType="int" stringID="MAP_NUM_IOB_LATCH" value="0"/>
         <item AVAILABLE="49" dataType="int" stringID="MAP_NUM_IOBM" value="0"/>
         <item AVAILABLE="51" dataType="int" stringID="MAP_NUM_BONDED_IOBM" value="0"/>
@@ -284,6 +284,7 @@
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="INPUT"/>
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVTTL"/>
+            <item label="Reg&#xA;(s)" stringID="REGS" value="IFF"/>
             <item stringID="Resistor" value="PULLDOWN"/>
           </row>
           <row stringID="row" value="6">

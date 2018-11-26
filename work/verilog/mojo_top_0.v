@@ -147,8 +147,8 @@ module mojo_top_0 (
     io_seg = ~M_seg_seg;
     io_sel = ~M_seg_sel;
     io_led = io_dip;
-    M_ws2812_man_data[0+1-:2] = 2'h3;
-    M_ws2812_man_data[2+1-:2] = 2'h3;
+    M_ws2812_man_data[0+1-:2] = io_button[0+0-:1];
+    M_ws2812_man_data[2+1-:2] = io_button[0+0-:1];
     M_ws2812_man_data[4+1-:2] = 2'h1;
     M_ws2812_man_data[6+1-:2] = 2'h2;
     led_strip = M_ws2812_man_out;

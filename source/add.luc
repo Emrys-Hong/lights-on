@@ -1,6 +1,4 @@
 module add (
-    input clk,  // clock
-    input rst,  // reset
     
     // inputs
     input io_dip[8],

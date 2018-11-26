@@ -1,7 +1,4 @@
 module sft (
-    input clk,  // clock
-    input rst,  // reset
-    
     // inputs
     input io_dip[8],
     input a[16],

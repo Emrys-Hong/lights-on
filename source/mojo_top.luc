@@ -139,8 +139,8 @@ module mojo_top (
     
     
     
-    ws2812_man.data[0] = LED_BLUE;
-    ws2812_man.data[1] = LED_BLUE;
+    ws2812_man.data[0] = io_button[0];
+    ws2812_man.data[1] = io_button[0];
     ws2812_man.data[2] = LED_RED;
     ws2812_man.data[3] = LED_GREEN;
     led_strip = ws2812_man.out;
@@ -173,6 +173,8 @@ module mojo_top (
     beta_game.alufn = alufn;
     beta_game.button_press = c{button0, button1, button2, button3, button4, button5, button6};
     allon = beta_game.allon;
+    
+    
     
     
     

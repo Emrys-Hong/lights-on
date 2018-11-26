@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Mon Nov 26 21:43:39 2018">
+  <application stringID="par" timeStamp="Mon Nov 26 21:57:52 2018">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -89,7 +89,7 @@
         <column stringID="speed"/>
         <row stringID="row" value="0">
           <item stringID="arch" value="Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz"/>
-          <item stringID="speed" value="4133.850 MHz"/>
+          <item stringID="speed" value="4185.793 MHz"/>
         </row>
       </table>
     </section>
@@ -126,9 +126,9 @@
             <item label="Routed" stringID="ROUTED" value="ROUTED"/>
             <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X2Y11"/>
             <item label="Locked" stringID="LOCKED" value="No"/>
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="22.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.104000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.496000"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="23.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.690000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="2.086000"/>
           </row>
         </table>
       </section>
@@ -1528,7 +1528,7 @@
             <item label="Termination" stringID="Termination" value="PULLDOWN"/>
             <item label="IOB&#xA;Delay" stringID="IOB_Delay" value="NONE"/>
             <item label="Constraint" stringID="Constraint" value="LOCATED"/>
-            <item label="IO&#xA;Register" stringID="IO_Register" value="NO"/>
+            <item label="IO&#xA;Register" stringID="IO_Register" value="YES"/>
             <item label="Signal&#xA;Integrity" stringID="Signal_Integrity" value="NONE"/>
           </row>
           <row stringID="row" value="138">
@@ -1644,7 +1644,7 @@
     </task>
   </application>
 
-  <application stringID="Par" timeStamp="Mon Nov 26 21:43:39 2018">
+  <application stringID="Par" timeStamp="Mon Nov 26 21:57:53 2018">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -1728,7 +1728,7 @@
         <column stringID="speed"/>
         <row stringID="row" value="0">
           <item stringID="arch" value="Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz"/>
-          <item stringID="speed" value="4498.832 MHz"/>
+          <item stringID="speed" value="4493.960 MHz"/>
         </row>
       </table>
     </section>
@@ -1763,21 +1763,21 @@
           <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_CARRY4" value="3"/>
           <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_OTHERS" value="0"/>
         </item>
-        <item AVAILABLE="1430" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="40">
+        <item AVAILABLE="1430" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="41">
           <item AVAILABLE="355" dataType="int" stringID="PAR_NUM_SLICEL" value="16"/>
           <item AVAILABLE="360" dataType="int" stringID="PAR_NUM_SLICEM" value="0"/>
-          <item AVAILABLE="715" dataType="int" stringID="PAR_NUM_SLICEX" value="24"/>
+          <item AVAILABLE="715" dataType="int" stringID="PAR_NUM_SLICEX" value="25"/>
         </item>
-        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="126">
-          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="66"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="4"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="56"/>
+        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="127">
+          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="67"/>
+          <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="5"/>
+          <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="55"/>
         </item>
       </section>
       <section stringID="PAR_IOB_REPORTING">
         <item AVAILABLE="102" dataType="int" stringID="PAR_AGG_BONDED_IO" value="82"/>
         <item AVAILABLE="98" dataType="int" stringID="PAR_AGG_UNBONDED_IO" value="0"/>
-        <item AVAILABLE="0" dataType="int" stringID="PAR_NUM_IOB_FF" value="0"/>
+        <item AVAILABLE="0" dataType="int" stringID="PAR_NUM_IOB_FF" value="1"/>
         <item AVAILABLE="0" dataType="int" stringID="PAR_NUM_IOB_LATCH" value="0"/>
         <item AVAILABLE="49" dataType="int" stringID="PAR_NUM_IOBM" value="0"/>
         <item AVAILABLE="51" dataType="int" stringID="PAR_NUM_BONDED_IOBM" value="0"/>
