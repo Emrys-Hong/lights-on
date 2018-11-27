@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Tue Nov 27 11:39:46 2018
+Wed Nov 28 00:17:43 2018
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -34,18 +34,18 @@ Pinout by Pin Number:
 |P12       |io_sel[3]   |IOB      |IO_L49P_3                 |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |P13       |            |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |P14       |io_led[15]  |IOB      |IO_L44N_GCLK20_3          |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
-|P15       |io_led[16]  |IOB      |IO_L44P_GCLK21_3          |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |         |LOCATED   |YES        |NONE            |
+|P15       |io_led[16]  |IOB      |IO_L44P_GCLK21_3          |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |P16       |io_led[17]  |IOB      |IO_L43N_GCLK22_IRDY2_3    |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |P17       |io_led[18]  |IOB      |IO_L43P_GCLK23_3          |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |P18       |            |         |VCCO_3                    |         |           |3             |          |         |           |         |3.30     |          |           |                |
 |P19       |            |         |VCCINT                    |         |           |              |          |         |           |         |1.2      |          |           |                |
 |P20       |            |         |VCCAUX                    |         |           |              |          |         |           |         |3.3      |          |           |                |
-|P21       |io_led[19]  |IOB      |IO_L42N_GCLK24_3          |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
-|P22       |io_led[20]  |IOB      |IO_L42P_GCLK25_TRDY2_3    |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
-|P23       |io_led[21]  |IOB      |IO_L41N_GCLK26_3          |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
-|P24       |io_led[22]  |IOB      |IO_L41P_GCLK27_3          |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
+|P21       |io_led(19)  |IOB      |IO_L42N_GCLK24_3          |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
+|P22       |io_led(20)  |IOB      |IO_L42P_GCLK25_TRDY2_3    |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
+|P23       |io_led(21)  |IOB      |IO_L41N_GCLK26_3          |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
+|P24       |io_led(22)  |IOB      |IO_L41P_GCLK27_3          |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |P25       |            |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
-|P26       |io_led[23]  |IOB      |IO_L37N_3                 |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
+|P26       |io_led(23)  |IOB      |IO_L37N_3                 |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |P27       |            |IOBM     |IO_L37P_3                 |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
 |P28       |            |         |VCCINT                    |         |           |              |          |         |           |         |1.2      |          |           |                |
 |P29       |            |IOBS     |IO_L36N_3                 |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
@@ -118,8 +118,8 @@ Pinout by Pin Number:
 |P96       |            |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |P97       |io_led[0]   |IOB      |IO_L34N_1                 |OUTPUT   |LVTTL      |1             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |P98       |io_led[1]   |IOB      |IO_L34P_1                 |OUTPUT   |LVTTL      |1             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
-|P99       |io_dip[15]  |IOB      |IO_L33N_1                 |INPUT    |LVTTL      |1             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
-|P100      |io_dip[14]  |IOB      |IO_L33P_1                 |INPUT    |LVTTL      |1             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
+|P99       |io_dip(15)  |IOB      |IO_L33N_1                 |INPUT    |LVTTL      |1             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
+|P100      |io_dip(14)  |IOB      |IO_L33P_1                 |INPUT    |LVTTL      |1             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
 |P101      |io_dip(13)  |IOB      |IO_L32N_1                 |INPUT    |LVTTL      |1             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
 |P102      |io_dip(12)  |IOB      |IO_L32P_1                 |INPUT    |LVTTL      |1             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
 |P103      |            |         |VCCO_1                    |         |           |1             |          |         |           |         |3.30     |          |           |                |
@@ -134,7 +134,7 @@ Pinout by Pin Number:
 |P112      |io_dip(8)   |IOB      |IO_L66P_SCP1_0            |INPUT    |LVTTL      |0             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
 |P113      |            |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |P114      |io_dip[6]   |IOB      |IO_L65N_SCP2_0            |INPUT    |LVTTL      |0             |          |         |PULLDOWN   |NONE     |         |LOCATED   |YES        |NONE            |
-|P115      |io_dip[7]   |IOB      |IO_L65P_SCP3_0            |INPUT    |LVTTL      |0             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
+|P115      |io_dip(7)   |IOB      |IO_L65P_SCP3_0            |INPUT    |LVTTL      |0             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
 |P116      |io_dip[4]   |IOB      |IO_L64N_SCP4_0            |INPUT    |LVTTL      |0             |          |         |PULLDOWN   |NONE     |         |LOCATED   |YES        |NONE            |
 |P117      |io_dip[5]   |IOB      |IO_L64P_SCP5_0            |INPUT    |LVTTL      |0             |          |         |PULLDOWN   |NONE     |         |LOCATED   |YES        |NONE            |
 |P118      |io_dip[2]   |IOB      |IO_L63N_SCP6_0            |INPUT    |LVTTL      |0             |          |         |PULLDOWN   |NONE     |         |LOCATED   |YES        |NONE            |

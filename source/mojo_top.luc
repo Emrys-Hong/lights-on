@@ -8,9 +8,9 @@ module mojo_top (
     input spi_mosi,         // AVR SPI MOSI
     input spi_sck,          // AVR SPI Clock
     output spi_channel [4], // AVR general purpose pins (used by default to select ADC channel)
-    input avr_tx,           // AVR TX (FPGA RX)
-    output avr_rx,          // AVR RX (FPGA TX)
-    input avr_rx_busy,      // AVR RX buffer full
+    input avr_tx,           // AVR TX (FPGA RX)    
+    output avr_rx,          // AVR RX (FPGA
+    input avr_rx_busy,      // AVR RX buffer full     TX)
     
     
     
@@ -75,14 +75,17 @@ module mojo_top (
   sig rst;                  // reset signal
   .clk(clk) {
     reset_conditioner reset_cond;
-    
-    
-    
-    
-    
-    
-    
-    
+    .rst(rst) {
+      multi_seven_seg seg;
+      counter slowclk(#SIZE(1),#DIV(4));
+      beta beta_game;
+      
+    }
+  }
+  
+  
+  
+  .clk(slowclk.value) {
     
     
     
@@ -108,13 +111,9 @@ module mojo_top (
     
     
     .rst(rst) {
-      multi_seven_seg seg;
-      fsm game_state = {BEGIN, XOR1, XOR2, CMPEQC, ADDC};
-      beta beta_game;
+      fsm game_state = {BEGIN, XOR, CMPEQC, ADDC};
     }
   }
-  
-  
   
   
   
@@ -137,11 +136,10 @@ module mojo_top (
     seg.values = {4h0, 4h0, 4h0, 4h0};
     io_seg = ~seg.seg; // connect segments to the driver
     io_sel = ~seg.sel; // connect digit select to the
-    io_led = io_dip;   // connect the DIP switches to the LEDs    driver
+    //io_led = io_dip;   // connect the DIP switches to the LEDs    driver
     
     
-    
-    
+
     
     
     
@@ -176,10 +174,16 @@ module mojo_top (
     io_led[1][4] = beta_game.boardout[10];
     io_led[1][5] = beta_game.boardout[11];
     
+    io_led[0][6] = 0;
+    io_led[0][7] = 0;
+    io_led[1][6] = 0;
+    io_led[1][7] = 0;
     
     
     
     
+    
+
     
     
     
@@ -196,11 +200,11 @@ module mojo_top (
     beta_game.asel = 0;
     beta_game.bsel = 0;
     beta_game.alufn = 0;
-    beta_game.button_press = c{button0, button1, button2, button3, button4, button5, button6};
+    //beta_game.button_press = c{button0, button1, button2, button3, button4, button5, button6};
     // TO DELETE
-    beta_game.button_press = c{edge_detector0.out, edge_detector1.out, edge_detector2.out, edge_detector3.out, edge_detector4.out, edge_detector5.out, edge_detector6.out};
+    beta_game.button_press = c{edge_detector6.out, edge_detector5.out, edge_detector4.out, edge_detector3.out, edge_detector2.out, edge_detector1.out, edge_detector0.out};
     
-    
+
     
     
     
@@ -216,47 +220,41 @@ module mojo_top (
         beta_game.board_sel = 1;
         beta_game.board_en = 1;
         beta_game.level_en = 0;
-        io_led[2] = beta_game.debug[7:0];
+        io_led[2][0] = 1;
         
-        game_state.d = game_state.XOR1;
+        game_state.d = game_state.XOR;
       
-      game_state.XOR1:
-        beta_game.board_sel = 0;
-        beta_game.board_en = 0;
-        beta_game.level_en = 0;
-        beta_game.alufn = b011010;
-        beta_game.asel = 0;
-        beta_game.bsel = 0;
-        io_led[2] = beta_game.debug[7:0];
-        beta_game.button_press = c{edge_detector0.out, edge_detector1.out, edge_detector2.out, edge_detector3.out, edge_detector4.out, edge_detector5.out, edge_detector6.out};
-        if ( edge_detector0.out|edge_detector1.out|edge_detector2.out|edge_detector3.out|edge_detector4.out|edge_detector5.out|edge_detector6.out){
-          game_state.d = game_state.XOR2;
-        }
-      game_state.XOR2:
+      game_state.XOR:
         beta_game.board_sel = 0;
         beta_game.board_en = 1;
         beta_game.level_en = 0;
-        beta_game.alufn = b011010;
+        beta_game.alufn = b010110;
         beta_game.asel = 0;
         beta_game.bsel = 0;
-        io_led[2] = beta_game.debug[7:0];
-        //game_state.d = game_state.CMPEQC;
+        io_led[2][1] = 1;
+        beta_game.button_press = c{edge_detector6.out, edge_detector5.out, edge_detector4.out, edge_detector3.out, edge_detector2.out, edge_detector1.out, edge_detector0.out};
+        if ( edge_detector0.out|edge_detector1.out|edge_detector2.out|edge_detector3.out|edge_detector4.out|edge_detector5.out|edge_detector6.out){
+          game_state.d = game_state.CMPEQC;
+        }
+      
       game_state.CMPEQC:
         beta_game.board_en = 0;
         beta_game.level_en = 0;
-        beta_game.alufn = 110011;
+        beta_game.alufn = b110011;
         beta_game.asel = 0;
         beta_game.bsel = 1;
         io_led[2][2] = 1;
-        if (beta_game.allon == 1)
+        if (beta_game.allon == 1) {
           game_state.d = game_state.ADDC;
-        else
-          game_state.d = game_state.XOR1;
+        }
+        else {
+          game_state.d = game_state.XOR;
+        }
       
       game_state.ADDC:
         beta_game.board_en = 0;
         beta_game.level_en = 1;
-        beta_game.alufn = 000000;
+        beta_game.alufn = b000000;
         beta_game.bsel = 2;
         beta_game.asel = 1;
         game_state.d = game_state.BEGIN;

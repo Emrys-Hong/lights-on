@@ -4,30 +4,28 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module bol_22 (
-    input [5:0] io_dip,
-    input [15:0] a,
-    input [15:0] b,
+module levels_mux_15 (
+    input [1:0] levels_sel,
     output reg [15:0] out
   );
   
   
   
   always @* begin
-    out = 1'h0;
+    out = 16'h0000;
     
-    case (io_dip[0+3-:4])
-      4'h8: begin
-        out = a & b;
+    case (levels_sel)
+      1'h0: begin
+        out = 16'h0002;
       end
-      4'he: begin
-        out = a | b;
+      1'h1: begin
+        out = 16'h074c;
       end
-      3'h6: begin
-        out = a ^ b;
+      2'h2: begin
+        out = 16'h0c94;
       end
-      4'ha: begin
-        out = a;
+      2'h3: begin
+        out = 16'h090e;
       end
     endcase
   end

@@ -5,7 +5,7 @@
 */
 
 module bol_22 (
-    input [7:0] io_dip,
+    input [5:0] io_dip,
     input [15:0] a,
     input [15:0] b,
     output reg [15:0] out

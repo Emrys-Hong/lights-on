@@ -53,72 +53,22 @@ module mojo_top_0 (
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
   );
-  wire [1-1:0] M_edge_detector0_out;
-  reg [1-1:0] M_edge_detector0_in;
-  edge_detector_2 edge_detector0 (
-    .clk(clk),
-    .in(M_edge_detector0_in),
-    .out(M_edge_detector0_out)
-  );
-  wire [1-1:0] M_edge_detector1_out;
-  reg [1-1:0] M_edge_detector1_in;
-  edge_detector_2 edge_detector1 (
-    .clk(clk),
-    .in(M_edge_detector1_in),
-    .out(M_edge_detector1_out)
-  );
-  wire [1-1:0] M_edge_detector2_out;
-  reg [1-1:0] M_edge_detector2_in;
-  edge_detector_2 edge_detector2 (
-    .clk(clk),
-    .in(M_edge_detector2_in),
-    .out(M_edge_detector2_out)
-  );
-  wire [1-1:0] M_edge_detector3_out;
-  reg [1-1:0] M_edge_detector3_in;
-  edge_detector_2 edge_detector3 (
-    .clk(clk),
-    .in(M_edge_detector3_in),
-    .out(M_edge_detector3_out)
-  );
-  wire [1-1:0] M_edge_detector4_out;
-  reg [1-1:0] M_edge_detector4_in;
-  edge_detector_2 edge_detector4 (
-    .clk(clk),
-    .in(M_edge_detector4_in),
-    .out(M_edge_detector4_out)
-  );
-  wire [1-1:0] M_edge_detector5_out;
-  reg [1-1:0] M_edge_detector5_in;
-  edge_detector_2 edge_detector5 (
-    .clk(clk),
-    .in(M_edge_detector5_in),
-    .out(M_edge_detector5_out)
-  );
-  wire [1-1:0] M_edge_detector6_out;
-  reg [1-1:0] M_edge_detector6_in;
-  edge_detector_2 edge_detector6 (
-    .clk(clk),
-    .in(M_edge_detector6_in),
-    .out(M_edge_detector6_out)
-  );
   wire [7-1:0] M_seg_seg;
   wire [4-1:0] M_seg_sel;
   reg [16-1:0] M_seg_values;
-  multi_seven_seg_9 seg (
+  multi_seven_seg_2 seg (
     .clk(clk),
     .rst(rst),
     .values(M_seg_values),
     .seg(M_seg_seg),
     .sel(M_seg_sel)
   );
-  localparam BEGIN_game_state = 3'd0;
-  localparam XOR1_game_state = 3'd1;
-  localparam XOR2_game_state = 3'd2;
-  localparam CMPEQC_game_state = 3'd3;
-  localparam ADDC_game_state = 3'd4;
-  
-  reg [2:0] M_game_state_d, M_game_state_q = BEGIN_game_state;
+  wire [1-1:0] M_slowclk_value;
+  counter_3 slowclk (
+    .clk(clk),
+    .rst(rst),
+    .value(M_slowclk_value)
+  );
   wire [1-1:0] M_beta_game_allon;
   wire [16-1:0] M_beta_game_boardout;
   wire [16-1:0] M_beta_game_debug;
@@ -129,7 +79,7 @@ module mojo_top_0 (
   reg [1-1:0] M_beta_game_asel;
   reg [2-1:0] M_beta_game_bsel;
   reg [6-1:0] M_beta_game_alufn;
-  beta_10 beta_game (
+  beta_4 beta_game (
     .clk(clk),
     .rst(rst),
     .button_press(M_beta_game_button_press),
@@ -144,6 +94,62 @@ module mojo_top_0 (
     .debug(M_beta_game_debug)
   );
   
+  wire [1-1:0] M_edge_detector0_out;
+  reg [1-1:0] M_edge_detector0_in;
+  edge_detector_5 edge_detector0 (
+    .clk(M_slowclk_value),
+    .in(M_edge_detector0_in),
+    .out(M_edge_detector0_out)
+  );
+  wire [1-1:0] M_edge_detector1_out;
+  reg [1-1:0] M_edge_detector1_in;
+  edge_detector_5 edge_detector1 (
+    .clk(M_slowclk_value),
+    .in(M_edge_detector1_in),
+    .out(M_edge_detector1_out)
+  );
+  wire [1-1:0] M_edge_detector2_out;
+  reg [1-1:0] M_edge_detector2_in;
+  edge_detector_5 edge_detector2 (
+    .clk(M_slowclk_value),
+    .in(M_edge_detector2_in),
+    .out(M_edge_detector2_out)
+  );
+  wire [1-1:0] M_edge_detector3_out;
+  reg [1-1:0] M_edge_detector3_in;
+  edge_detector_5 edge_detector3 (
+    .clk(M_slowclk_value),
+    .in(M_edge_detector3_in),
+    .out(M_edge_detector3_out)
+  );
+  wire [1-1:0] M_edge_detector4_out;
+  reg [1-1:0] M_edge_detector4_in;
+  edge_detector_5 edge_detector4 (
+    .clk(M_slowclk_value),
+    .in(M_edge_detector4_in),
+    .out(M_edge_detector4_out)
+  );
+  wire [1-1:0] M_edge_detector5_out;
+  reg [1-1:0] M_edge_detector5_in;
+  edge_detector_5 edge_detector5 (
+    .clk(M_slowclk_value),
+    .in(M_edge_detector5_in),
+    .out(M_edge_detector5_out)
+  );
+  wire [1-1:0] M_edge_detector6_out;
+  reg [1-1:0] M_edge_detector6_in;
+  edge_detector_5 edge_detector6 (
+    .clk(M_slowclk_value),
+    .in(M_edge_detector6_in),
+    .out(M_edge_detector6_out)
+  );
+  localparam BEGIN_game_state = 2'd0;
+  localparam XOR_game_state = 2'd1;
+  localparam CMPEQC_game_state = 2'd2;
+  localparam ADDC_game_state = 2'd3;
+  
+  reg [1:0] M_game_state_d, M_game_state_q = BEGIN_game_state;
+  
   always @* begin
     M_game_state_d = M_game_state_q;
     
@@ -156,7 +162,6 @@ module mojo_top_0 (
     M_seg_values = 16'h0000;
     io_seg = ~M_seg_seg;
     io_sel = ~M_seg_sel;
-    io_led = io_dip;
     M_edge_detector0_in = io_dip[0+0+0-:1];
     M_edge_detector1_in = io_dip[0+1+0-:1];
     M_edge_detector2_in = io_dip[0+2+0-:1];
@@ -176,62 +181,56 @@ module mojo_top_0 (
     io_led[8+3+0-:1] = M_beta_game_boardout[9+0-:1];
     io_led[8+4+0-:1] = M_beta_game_boardout[10+0-:1];
     io_led[8+5+0-:1] = M_beta_game_boardout[11+0-:1];
+    io_led[0+6+0-:1] = 1'h0;
+    io_led[0+7+0-:1] = 1'h0;
+    io_led[8+6+0-:1] = 1'h0;
+    io_led[8+7+0-:1] = 1'h0;
     M_beta_game_board_en = 1'h0;
     M_beta_game_board_sel = 1'h0;
     M_beta_game_level_en = 1'h0;
     M_beta_game_asel = 1'h0;
     M_beta_game_bsel = 1'h0;
     M_beta_game_alufn = 1'h0;
-    M_beta_game_button_press = {button0, button1, button2, button3, button4, button5, button6};
-    M_beta_game_button_press = {M_edge_detector0_out, M_edge_detector1_out, M_edge_detector2_out, M_edge_detector3_out, M_edge_detector4_out, M_edge_detector5_out, M_edge_detector6_out};
+    M_beta_game_button_press = {M_edge_detector6_out, M_edge_detector5_out, M_edge_detector4_out, M_edge_detector3_out, M_edge_detector2_out, M_edge_detector1_out, M_edge_detector0_out};
     
     case (M_game_state_q)
       BEGIN_game_state: begin
         M_beta_game_board_sel = 1'h1;
         M_beta_game_board_en = 1'h1;
         M_beta_game_level_en = 1'h0;
-        io_led[16+7-:8] = M_beta_game_debug[0+7-:8];
-        M_game_state_d = XOR1_game_state;
+        io_led[16+0+0-:1] = 1'h1;
+        M_game_state_d = XOR_game_state;
       end
-      XOR1_game_state: begin
-        M_beta_game_board_sel = 1'h0;
-        M_beta_game_board_en = 1'h0;
-        M_beta_game_level_en = 1'h0;
-        M_beta_game_alufn = 6'h1a;
-        M_beta_game_asel = 1'h0;
-        M_beta_game_bsel = 1'h0;
-        io_led[16+7-:8] = M_beta_game_debug[0+7-:8];
-        M_beta_game_button_press = {M_edge_detector0_out, M_edge_detector1_out, M_edge_detector2_out, M_edge_detector3_out, M_edge_detector4_out, M_edge_detector5_out, M_edge_detector6_out};
-        if (M_edge_detector0_out | M_edge_detector1_out | M_edge_detector2_out | M_edge_detector3_out | M_edge_detector4_out | M_edge_detector5_out | M_edge_detector6_out) begin
-          M_game_state_d = XOR2_game_state;
-        end
-      end
-      XOR2_game_state: begin
+      XOR_game_state: begin
         M_beta_game_board_sel = 1'h0;
         M_beta_game_board_en = 1'h1;
         M_beta_game_level_en = 1'h0;
-        M_beta_game_alufn = 6'h1a;
+        M_beta_game_alufn = 6'h16;
         M_beta_game_asel = 1'h0;
         M_beta_game_bsel = 1'h0;
-        io_led[16+7-:8] = M_beta_game_debug[0+7-:8];
+        io_led[16+1+0-:1] = 1'h1;
+        M_beta_game_button_press = {M_edge_detector6_out, M_edge_detector5_out, M_edge_detector4_out, M_edge_detector3_out, M_edge_detector2_out, M_edge_detector1_out, M_edge_detector0_out};
+        if (M_edge_detector0_out | M_edge_detector1_out | M_edge_detector2_out | M_edge_detector3_out | M_edge_detector4_out | M_edge_detector5_out | M_edge_detector6_out) begin
+          M_game_state_d = CMPEQC_game_state;
+        end
       end
       CMPEQC_game_state: begin
         M_beta_game_board_en = 1'h0;
         M_beta_game_level_en = 1'h0;
-        M_beta_game_alufn = 17'h1adbb;
+        M_beta_game_alufn = 6'h33;
         M_beta_game_asel = 1'h0;
         M_beta_game_bsel = 1'h1;
         io_led[16+2+0-:1] = 1'h1;
         if (M_beta_game_allon == 1'h1) begin
           M_game_state_d = ADDC_game_state;
         end else begin
-          M_game_state_d = XOR1_game_state;
+          M_game_state_d = XOR_game_state;
         end
       end
       ADDC_game_state: begin
         M_beta_game_board_en = 1'h0;
         M_beta_game_level_en = 1'h1;
-        M_beta_game_alufn = 1'h0;
+        M_beta_game_alufn = 6'h00;
         M_beta_game_bsel = 2'h2;
         M_beta_game_asel = 1'h1;
         M_game_state_d = BEGIN_game_state;
@@ -239,7 +238,7 @@ module mojo_top_0 (
     endcase
   end
   
-  always @(posedge clk) begin
+  always @(posedge M_slowclk_value) begin
     if (rst == 1'b1) begin
       M_game_state_q <= 1'h0;
     end else begin

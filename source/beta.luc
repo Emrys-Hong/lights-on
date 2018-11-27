@@ -38,8 +38,6 @@ module beta (
     .rst(rst) {
       register board(#WIDTH(16));
       register level(#WIDTH(16));
-      register holder(#WIDTH(16));
-      register button(#WIDTH(16));
     }
   }
   
@@ -60,21 +58,17 @@ module beta (
     alu.io_dip = alufn;
     board.en = board_en;
     level.en = level_en;
-    level.data = holder.out;
+    level.data = alu.out;
     buttons_mux.buttons_sel = button_press;
     levels_mux.levels_sel = level.out[1:0];  // only 2 bits wide because we have levels 0 to 3.
     boardout = board.out;
     allon = alu.out[0];
-    holder.data = alu.out;
-    holder.en = 1;
+   
     
     
     
-    debug = buttons_mux.out;
+    debug = alu.out;
     
-    
-    button.en = 1;
-    button.data = button_press;
     
     
     
@@ -101,7 +95,7 @@ module beta (
       alu.b = 16b0000000000000001;
     // Mux for BoardSel
     if (board_sel == 0)
-      board.data = holder.out;
+      board.data = alu.out;
     else
       board.data = levels_mux.out;
   }

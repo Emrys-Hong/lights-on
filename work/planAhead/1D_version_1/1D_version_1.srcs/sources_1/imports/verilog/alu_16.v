@@ -4,8 +4,8 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module alu_15 (
-    input [7:0] io_dip,
+module alu_16 (
+    input [5:0] io_dip,
     input [15:0] a,
     input [15:0] b,
     output reg [15:0] out,
@@ -45,7 +45,7 @@ module alu_15 (
   );
   
   wire [16-1:0] M_bol_out;
-  reg [8-1:0] M_bol_io_dip;
+  reg [6-1:0] M_bol_io_dip;
   reg [16-1:0] M_bol_a;
   reg [16-1:0] M_bol_b;
   bol_22 bol (

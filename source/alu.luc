@@ -2,7 +2,7 @@ module alu (
     
     
     // inputs
-    input io_dip[8],
+    input io_dip[6],
     input a[16],
     input b[16],
     //outputs

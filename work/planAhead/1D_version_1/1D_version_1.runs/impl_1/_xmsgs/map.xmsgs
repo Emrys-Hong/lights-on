@@ -11,7 +11,7 @@
 <msg type="info" file="LIT" num="243" delta="new" >Logical network <arg fmt="%s" index="1">button4[0]</arg> has no load.
 </msg>
 
-<msg type="info" file="LIT" num="395" delta="new" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">27</arg> more times for the following (max. 5 shown):
+<msg type="info" file="LIT" num="395" delta="new" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">30</arg> more times for the following (max. 5 shown):
 <arg fmt="%s" index="3">button1[0],
 button_reset[0],
 button0[0],
@@ -54,6 +54,21 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 </msg>
 
 <msg type="info" file="Pack" num="1650" delta="new" >Map created a placed design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">io_led(20)_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">io_led(21)_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">io_led(22)_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">io_led(23)_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">io_led(19)_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
 </msg>
 
 </messages>

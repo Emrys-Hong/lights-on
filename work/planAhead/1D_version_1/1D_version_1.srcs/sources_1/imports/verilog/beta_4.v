@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module beta_10 (
+module beta_4 (
     input clk,
     input rst,
     input [6:0] button_press,
@@ -23,7 +23,7 @@ module beta_10 (
   
   wire [16-1:0] M_levels_mux_out;
   reg [2-1:0] M_levels_mux_levels_sel;
-  levels_mux_14 levels_mux (
+  levels_mux_15 levels_mux (
     .levels_sel(M_levels_mux_levels_sel),
     .out(M_levels_mux_out)
   );
@@ -32,10 +32,10 @@ module beta_10 (
   wire [1-1:0] M_alu_z;
   wire [1-1:0] M_alu_v;
   wire [1-1:0] M_alu_n;
-  reg [8-1:0] M_alu_io_dip;
+  reg [6-1:0] M_alu_io_dip;
   reg [16-1:0] M_alu_a;
   reg [16-1:0] M_alu_b;
-  alu_15 alu (
+  alu_16 alu (
     .io_dip(M_alu_io_dip),
     .a(M_alu_a),
     .b(M_alu_b),
@@ -47,16 +47,15 @@ module beta_10 (
   
   wire [16-1:0] M_buttons_mux_out;
   reg [7-1:0] M_buttons_mux_buttons_sel;
-  buttons_mux_16 buttons_mux (
-    .clk(clk),
-    .rst(rst),
+  buttons_mux_17 buttons_mux (
     .buttons_sel(M_buttons_mux_buttons_sel),
     .out(M_buttons_mux_out)
   );
+  
   wire [16-1:0] M_board_out;
   reg [1-1:0] M_board_en;
   reg [16-1:0] M_board_data;
-  register_17 board (
+  register_18 board (
     .clk(clk),
     .rst(rst),
     .en(M_board_en),
@@ -66,36 +65,24 @@ module beta_10 (
   wire [16-1:0] M_level_out;
   reg [1-1:0] M_level_en;
   reg [16-1:0] M_level_data;
-  register_17 level (
+  register_18 level (
     .clk(clk),
     .rst(rst),
     .en(M_level_en),
     .data(M_level_data),
     .out(M_level_out)
   );
-  wire [16-1:0] M_holder_out;
-  reg [1-1:0] M_holder_en;
-  reg [16-1:0] M_holder_data;
-  register_17 holder (
-    .clk(clk),
-    .rst(rst),
-    .en(M_holder_en),
-    .data(M_holder_data),
-    .out(M_holder_out)
-  );
   
   always @* begin
     M_alu_io_dip = alufn;
     M_board_en = board_en;
     M_level_en = level_en;
-    M_level_data = M_holder_out;
+    M_level_data = M_alu_out;
     M_buttons_mux_buttons_sel = button_press;
     M_levels_mux_levels_sel = M_level_out[0+1-:2];
     boardout = M_board_out;
     allon = M_alu_out[0+0-:1];
-    M_holder_data = M_alu_out;
-    M_holder_en = 1'h1;
-    debug = M_buttons_mux_out;
+    debug = M_alu_out;
     if (asel == 1'h0) begin
       M_alu_a = M_board_out;
     end else begin
@@ -111,7 +98,7 @@ module beta_10 (
       end
     end
     if (board_sel == 1'h0) begin
-      M_board_data = M_holder_out;
+      M_board_data = M_alu_out;
     end else begin
       M_board_data = M_levels_mux_out;
     end
