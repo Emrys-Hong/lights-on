@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module alu_16 (
+module alu_15 (
     input [7:0] io_dip,
     input [15:0] a,
     input [15:0] b,

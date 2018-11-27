@@ -16,8 +16,12 @@ module beta (
     input bsel[2],
     input alufn[6],
     output allon[1],
-    output boardout[16]
+    output boardout[16],
+    
+    
+    output debug[16]
   ) {
+ 
   
   
   
@@ -25,9 +29,9 @@ module beta (
   
   
   
-  buttons_mux buttons_mux;
   levels_mux levels_mux;
   alu alu;
+  buttons_mux buttons_mux;
   .clk(clk) {
     // The reset conditioner is used to synchronize the reset signal to the FPGA
     // clock. This ensures the entire FPGA comes out of reset at the same time.
@@ -35,6 +39,7 @@ module beta (
       register board(#WIDTH(16));
       register level(#WIDTH(16));
       register holder(#WIDTH(16));
+      register button(#WIDTH(16));
     }
   }
   
@@ -65,6 +70,11 @@ module beta (
     
     
     
+    debug = buttons_mux.out;
+    
+    
+    button.en = 1;
+    button.data = button_press;
     
     
     

@@ -121,6 +121,7 @@ module mojo_top_0 (
   reg [2:0] M_game_state_d, M_game_state_q = BEGIN_game_state;
   wire [1-1:0] M_beta_game_allon;
   wire [16-1:0] M_beta_game_boardout;
+  wire [16-1:0] M_beta_game_debug;
   reg [7-1:0] M_beta_game_button_press;
   reg [1-1:0] M_beta_game_board_sel;
   reg [1-1:0] M_beta_game_board_en;
@@ -139,7 +140,8 @@ module mojo_top_0 (
     .bsel(M_beta_game_bsel),
     .alufn(M_beta_game_alufn),
     .allon(M_beta_game_allon),
-    .boardout(M_beta_game_boardout)
+    .boardout(M_beta_game_boardout),
+    .debug(M_beta_game_debug)
   );
   
   always @* begin
@@ -188,7 +190,7 @@ module mojo_top_0 (
         M_beta_game_board_sel = 1'h1;
         M_beta_game_board_en = 1'h1;
         M_beta_game_level_en = 1'h0;
-        io_led[16+0+0-:1] = 1'h1;
+        io_led[16+7-:8] = M_beta_game_debug[0+7-:8];
         M_game_state_d = XOR1_game_state;
       end
       XOR1_game_state: begin
@@ -198,7 +200,7 @@ module mojo_top_0 (
         M_beta_game_alufn = 6'h1a;
         M_beta_game_asel = 1'h0;
         M_beta_game_bsel = 1'h0;
-        io_led[16+1+0-:1] = 1'h1;
+        io_led[16+7-:8] = M_beta_game_debug[0+7-:8];
         M_beta_game_button_press = {M_edge_detector0_out, M_edge_detector1_out, M_edge_detector2_out, M_edge_detector3_out, M_edge_detector4_out, M_edge_detector5_out, M_edge_detector6_out};
         if (M_edge_detector0_out | M_edge_detector1_out | M_edge_detector2_out | M_edge_detector3_out | M_edge_detector4_out | M_edge_detector5_out | M_edge_detector6_out) begin
           M_game_state_d = XOR2_game_state;
@@ -211,7 +213,7 @@ module mojo_top_0 (
         M_beta_game_alufn = 6'h1a;
         M_beta_game_asel = 1'h0;
         M_beta_game_bsel = 1'h0;
-        io_led[16+2+0-:1] = 1'h1;
+        io_led[16+7-:8] = M_beta_game_debug[0+7-:8];
       end
       CMPEQC_game_state: begin
         M_beta_game_board_en = 1'h0;

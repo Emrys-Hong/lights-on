@@ -216,7 +216,7 @@ module mojo_top (
         beta_game.board_sel = 1;
         beta_game.board_en = 1;
         beta_game.level_en = 0;
-        io_led[2][0] = 1;
+        io_led[2] = beta_game.debug[7:0];
         
         game_state.d = game_state.XOR1;
       
@@ -227,7 +227,7 @@ module mojo_top (
         beta_game.alufn = b011010;
         beta_game.asel = 0;
         beta_game.bsel = 0;
-        io_led[2][1] = 1;
+        io_led[2] = beta_game.debug[7:0];
         beta_game.button_press = c{edge_detector0.out, edge_detector1.out, edge_detector2.out, edge_detector3.out, edge_detector4.out, edge_detector5.out, edge_detector6.out};
         if ( edge_detector0.out|edge_detector1.out|edge_detector2.out|edge_detector3.out|edge_detector4.out|edge_detector5.out|edge_detector6.out){
           game_state.d = game_state.XOR2;
@@ -239,7 +239,7 @@ module mojo_top (
         beta_game.alufn = b011010;
         beta_game.asel = 0;
         beta_game.bsel = 0;
-        io_led[2][2] = 1;
+        io_led[2] = beta_game.debug[7:0];
         //game_state.d = game_state.CMPEQC;
       game_state.CMPEQC:
         beta_game.board_en = 0;

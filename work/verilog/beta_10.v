@@ -15,21 +15,15 @@ module beta_10 (
     input [1:0] bsel,
     input [5:0] alufn,
     output reg [0:0] allon,
-    output reg [15:0] boardout
+    output reg [15:0] boardout,
+    output reg [15:0] debug
   );
   
   
-  
-  wire [16-1:0] M_buttons_mux_out;
-  reg [7-1:0] M_buttons_mux_buttons_sel;
-  buttons_mux_14 buttons_mux (
-    .buttons_sel(M_buttons_mux_buttons_sel),
-    .out(M_buttons_mux_out)
-  );
   
   wire [16-1:0] M_levels_mux_out;
   reg [2-1:0] M_levels_mux_levels_sel;
-  levels_mux_15 levels_mux (
+  levels_mux_14 levels_mux (
     .levels_sel(M_levels_mux_levels_sel),
     .out(M_levels_mux_out)
   );
@@ -41,7 +35,7 @@ module beta_10 (
   reg [8-1:0] M_alu_io_dip;
   reg [16-1:0] M_alu_a;
   reg [16-1:0] M_alu_b;
-  alu_16 alu (
+  alu_15 alu (
     .io_dip(M_alu_io_dip),
     .a(M_alu_a),
     .b(M_alu_b),
@@ -51,6 +45,14 @@ module beta_10 (
     .n(M_alu_n)
   );
   
+  wire [16-1:0] M_buttons_mux_out;
+  reg [7-1:0] M_buttons_mux_buttons_sel;
+  buttons_mux_16 buttons_mux (
+    .clk(clk),
+    .rst(rst),
+    .buttons_sel(M_buttons_mux_buttons_sel),
+    .out(M_buttons_mux_out)
+  );
   wire [16-1:0] M_board_out;
   reg [1-1:0] M_board_en;
   reg [16-1:0] M_board_data;
@@ -93,6 +95,7 @@ module beta_10 (
     allon = M_alu_out[0+0-:1];
     M_holder_data = M_alu_out;
     M_holder_en = 1'h1;
+    debug = M_buttons_mux_out;
     if (asel == 1'h0) begin
       M_alu_a = M_board_out;
     end else begin

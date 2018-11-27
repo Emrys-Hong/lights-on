@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.02 secs
+Total CPU time to Xst completion: 0.01 secs
  
 --> 
 Reading design: mojo_top_0.prj
@@ -57,6 +57,8 @@ Netlist Hierarchy                  : rebuilt
 =========================================================================
 Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/sft_23.v" into library work
 Parsing module <sft_23>.
+Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/register_17.v" into library work
+Parsing module <register_17>.
 Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mul_24.v" into library work
 Parsing module <mul_24>.
 Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/cmp_21.v" into library work
@@ -67,18 +69,16 @@ Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_
 Parsing module <add_20>.
 Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/seven_seg_12.v" into library work
 Parsing module <seven_seg_12>.
-Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/register_17.v" into library work
-Parsing module <register_17>.
-Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/levels_mux_15.v" into library work
-Parsing module <levels_mux_15>.
+Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/levels_mux_14.v" into library work
+Parsing module <levels_mux_14>.
 Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/decoder_13.v" into library work
 Parsing module <decoder_13>.
 Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/counter_11.v" into library work
 Parsing module <counter_11>.
-Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/buttons_mux_14.v" into library work
-Parsing module <buttons_mux_14>.
-Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/alu_16.v" into library work
-Parsing module <alu_16>.
+Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/buttons_mux_16.v" into library work
+Parsing module <buttons_mux_16>.
+Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/alu_15.v" into library work
+Parsing module <alu_15>.
 Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
 Parsing module <reset_conditioner_1>.
 Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/multi_seven_seg_9.v" into library work
@@ -110,11 +110,9 @@ Elaborating module <decoder_13>.
 
 Elaborating module <beta_10>.
 
-Elaborating module <buttons_mux_14>.
+Elaborating module <levels_mux_14>.
 
-Elaborating module <levels_mux_15>.
-
-Elaborating module <alu_16>.
+Elaborating module <alu_15>.
 
 Elaborating module <add_20>.
 
@@ -125,12 +123,14 @@ Elaborating module <bol_22>.
 Elaborating module <sft_23>.
 
 Elaborating module <mul_24>.
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/beta_10.v" Line 49: Assignment to M_alu_z ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/beta_10.v" Line 50: Assignment to M_alu_v ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/beta_10.v" Line 51: Assignment to M_alu_n ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/beta_10.v" Line 43: Assignment to M_alu_z ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/beta_10.v" Line 44: Assignment to M_alu_v ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/beta_10.v" Line 45: Assignment to M_alu_n ignored, since the identifier is never used
+
+Elaborating module <buttons_mux_16>.
 
 Elaborating module <register_17>.
-WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 219: Result of 17-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 221: Result of 17-bit expression is truncated to fit in 6-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -169,14 +169,14 @@ INFO:Xst:1799 - State 100 is never reached in FSM <M_game_state_q>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 145
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 145
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 145
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 145
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 145
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 145
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 147
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 147
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 147
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 147
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 147
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 147
     Summary:
-	inferred   3 Multiplexer(s).
+	inferred   9 Multiplexer(s).
 	inferred   6 Tristate(s).
 	inferred   1 Finite State Machine(s).
 Unit <mojo_top_0> synthesized.
@@ -229,32 +229,26 @@ Unit <decoder_13> synthesized.
 
 Synthesizing Unit <beta_10>.
     Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/beta_10.v".
-INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/beta_10.v" line 44: Output port <z> of the instance <alu> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/beta_10.v" line 44: Output port <v> of the instance <alu> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/beta_10.v" line 44: Output port <n> of the instance <alu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/beta_10.v" line 38: Output port <z> of the instance <alu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/beta_10.v" line 38: Output port <v> of the instance <alu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/beta_10.v" line 38: Output port <n> of the instance <alu> is unconnected or connected to loadless signal.
     Summary:
 	inferred   3 Multiplexer(s).
 Unit <beta_10> synthesized.
 
-Synthesizing Unit <buttons_mux_14>.
-    Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/buttons_mux_14.v".
-    Summary:
-	no macro.
-Unit <buttons_mux_14> synthesized.
-
-Synthesizing Unit <levels_mux_15>.
-    Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/levels_mux_15.v".
+Synthesizing Unit <levels_mux_14>.
+    Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/levels_mux_14.v".
     Found 4x16-bit Read Only RAM for signal <out>
     Summary:
 	inferred   1 RAM(s).
-Unit <levels_mux_15> synthesized.
+Unit <levels_mux_14> synthesized.
 
-Synthesizing Unit <alu_16>.
-    Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/alu_16.v".
+Synthesizing Unit <alu_15>.
+    Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/alu_15.v".
     Found 16-bit 4-to-1 multiplexer for signal <out> created at line 97.
     Summary:
 	inferred   8 Multiplexer(s).
-Unit <alu_16> synthesized.
+Unit <alu_15> synthesized.
 
 Synthesizing Unit <add_20>.
     Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/add_20.v".
@@ -308,37 +302,37 @@ Unit <mul_24> synthesized.
 Synthesizing Unit <div_16u_16u>.
     Related source file is "".
     Found 32-bit adder for signal <n0956> created at line 0.
-    Found 32-bit adder for signal <GND_18_o_b[15]_add_1_OUT> created at line 0.
+    Found 32-bit adder for signal <GND_17_o_b[15]_add_1_OUT> created at line 0.
     Found 31-bit adder for signal <n0960> created at line 0.
-    Found 31-bit adder for signal <GND_18_o_b[15]_add_3_OUT> created at line 0.
+    Found 31-bit adder for signal <GND_17_o_b[15]_add_3_OUT> created at line 0.
     Found 30-bit adder for signal <n0964> created at line 0.
-    Found 30-bit adder for signal <GND_18_o_b[15]_add_5_OUT> created at line 0.
+    Found 30-bit adder for signal <GND_17_o_b[15]_add_5_OUT> created at line 0.
     Found 29-bit adder for signal <n0968> created at line 0.
-    Found 29-bit adder for signal <GND_18_o_b[15]_add_7_OUT> created at line 0.
+    Found 29-bit adder for signal <GND_17_o_b[15]_add_7_OUT> created at line 0.
     Found 28-bit adder for signal <n0972> created at line 0.
-    Found 28-bit adder for signal <GND_18_o_b[15]_add_9_OUT> created at line 0.
+    Found 28-bit adder for signal <GND_17_o_b[15]_add_9_OUT> created at line 0.
     Found 27-bit adder for signal <n0976> created at line 0.
-    Found 27-bit adder for signal <GND_18_o_b[15]_add_11_OUT> created at line 0.
+    Found 27-bit adder for signal <GND_17_o_b[15]_add_11_OUT> created at line 0.
     Found 26-bit adder for signal <n0980> created at line 0.
-    Found 26-bit adder for signal <GND_18_o_b[15]_add_13_OUT> created at line 0.
+    Found 26-bit adder for signal <GND_17_o_b[15]_add_13_OUT> created at line 0.
     Found 25-bit adder for signal <n0984> created at line 0.
-    Found 25-bit adder for signal <GND_18_o_b[15]_add_15_OUT> created at line 0.
+    Found 25-bit adder for signal <GND_17_o_b[15]_add_15_OUT> created at line 0.
     Found 24-bit adder for signal <n0988> created at line 0.
-    Found 24-bit adder for signal <GND_18_o_b[15]_add_17_OUT> created at line 0.
+    Found 24-bit adder for signal <GND_17_o_b[15]_add_17_OUT> created at line 0.
     Found 23-bit adder for signal <n0992> created at line 0.
-    Found 23-bit adder for signal <GND_18_o_b[15]_add_19_OUT> created at line 0.
+    Found 23-bit adder for signal <GND_17_o_b[15]_add_19_OUT> created at line 0.
     Found 22-bit adder for signal <n0996> created at line 0.
-    Found 22-bit adder for signal <GND_18_o_b[15]_add_21_OUT> created at line 0.
+    Found 22-bit adder for signal <GND_17_o_b[15]_add_21_OUT> created at line 0.
     Found 21-bit adder for signal <n1000> created at line 0.
-    Found 21-bit adder for signal <GND_18_o_b[15]_add_23_OUT> created at line 0.
+    Found 21-bit adder for signal <GND_17_o_b[15]_add_23_OUT> created at line 0.
     Found 20-bit adder for signal <n1004> created at line 0.
-    Found 20-bit adder for signal <GND_18_o_b[15]_add_25_OUT> created at line 0.
+    Found 20-bit adder for signal <GND_17_o_b[15]_add_25_OUT> created at line 0.
     Found 19-bit adder for signal <n1008> created at line 0.
-    Found 19-bit adder for signal <GND_18_o_b[15]_add_27_OUT> created at line 0.
+    Found 19-bit adder for signal <GND_17_o_b[15]_add_27_OUT> created at line 0.
     Found 18-bit adder for signal <n1012> created at line 0.
-    Found 18-bit adder for signal <GND_18_o_b[15]_add_29_OUT> created at line 0.
+    Found 18-bit adder for signal <GND_17_o_b[15]_add_29_OUT> created at line 0.
     Found 17-bit adder for signal <n1016> created at line 0.
-    Found 17-bit adder for signal <GND_18_o_b[15]_add_31_OUT> created at line 0.
+    Found 17-bit adder for signal <GND_17_o_b[15]_add_31_OUT> created at line 0.
     Found 32-bit comparator lessequal for signal <BUS_0001> created at line 0
     Found 31-bit comparator lessequal for signal <BUS_0002> created at line 0
     Found 30-bit comparator lessequal for signal <BUS_0003> created at line 0
@@ -361,6 +355,12 @@ Synthesizing Unit <div_16u_16u>.
 	inferred  17 Comparator(s).
 	inferred 241 Multiplexer(s).
 Unit <div_16u_16u> synthesized.
+
+Synthesizing Unit <buttons_mux_16>.
+    Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/buttons_mux_16.v".
+    Summary:
+	no macro.
+Unit <buttons_mux_16> synthesized.
 
 Synthesizing Unit <register_17>.
     Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/register_17.v".
@@ -397,9 +397,9 @@ Macro Statistics
  31-bit adder                                          : 2
  32-bit adder                                          : 2
  4-bit adder                                           : 1
-# Registers                                            : 12
+# Registers                                            : 13
  1-bit register                                        : 7
- 16-bit register                                       : 3
+ 16-bit register                                       : 4
  18-bit register                                       : 1
  4-bit register                                        : 1
 # Comparators                                          : 20
@@ -422,8 +422,8 @@ Macro Statistics
  30-bit comparator lessequal                           : 1
  31-bit comparator lessequal                           : 1
  32-bit comparator lessequal                           : 1
-# Multiplexers                                         : 258
- 1-bit 2-to-1 multiplexer                              : 249
+# Multiplexers                                         : 264
+ 1-bit 2-to-1 multiplexer                              : 255
  16-bit 2-to-1 multiplexer                             : 5
  16-bit 4-to-1 multiplexer                             : 3
  18-bit 2-to-1 multiplexer                             : 1
@@ -450,7 +450,7 @@ Synthesizing (advanced) Unit <counter_11>.
 The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
 Unit <counter_11> synthesized (advanced).
 
-Synthesizing (advanced) Unit <levels_mux_15>.
+Synthesizing (advanced) Unit <levels_mux_14>.
 INFO:Xst:3212 - HDL ADVISOR - Asynchronous or synchronous initialization of the register <M_regs_q> prevents it from being combined with the RAM <Mram_out> for implementation as read-only block RAM.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
@@ -463,7 +463,7 @@ INFO:Xst:3212 - HDL ADVISOR - Asynchronous or synchronous initialization of the 
     |     doA            | connected to signal <out>           |          |
     -----------------------------------------------------------------------
 INFO:Xst:3231 - The small RAM <Mram_out> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
-Unit <levels_mux_15> synthesized (advanced).
+Unit <levels_mux_14> synthesized (advanced).
 
 Synthesizing (advanced) Unit <seven_seg_12>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_segs> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -494,8 +494,8 @@ Macro Statistics
  4-bit adder                                           : 1
 # Counters                                             : 1
  18-bit up counter                                     : 1
-# Registers                                            : 59
- Flip-Flops                                            : 59
+# Registers                                            : 75
+ Flip-Flops                                            : 75
 # Comparators                                          : 20
  16-bit comparator equal                               : 1
  16-bit comparator greater                             : 1
@@ -516,8 +516,8 @@ Macro Statistics
  30-bit comparator lessequal                           : 1
  31-bit comparator lessequal                           : 1
  32-bit comparator lessequal                           : 1
-# Multiplexers                                         : 257
- 1-bit 2-to-1 multiplexer                              : 249
+# Multiplexers                                         : 263
+ 1-bit 2-to-1 multiplexer                              : 255
  16-bit 2-to-1 multiplexer                             : 5
  16-bit 4-to-1 multiplexer                             : 3
 # Logic shifters                                       : 4
@@ -552,14 +552,20 @@ Optimizing unit <mojo_top_0> ...
 
 Optimizing unit <beta_10> ...
 
-Optimizing unit <alu_16> ...
+Optimizing unit <buttons_mux_16> ...
+
+Optimizing unit <alu_15> ...
 
 Optimizing unit <add_20> ...
 
 Optimizing unit <mul_24> ...
 
 Optimizing unit <div_16u_16u> ...
-WARNING:Xst:1293 - FF/Latch <beta_game/level/M_regs_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <beta_game/buttons_mux/register/M_regs_q_15> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/buttons_mux/register/M_regs_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/buttons_mux/register/M_regs_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/buttons_mux/register/M_regs_q_12> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/level/M_regs_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/level/M_regs_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <beta_game/level/M_regs_q_15> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:2677 - Node <beta_game/level/M_regs_q_14> of sequential type is unconnected in block <mojo_top_0>.
@@ -579,15 +585,24 @@ WARNING:Xst:1293 - FF/Latch <beta_game/holder/M_regs_q_15> has a constant value 
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/holder/M_regs_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/holder/M_regs_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/holder/M_regs_q_12> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/holder/M_regs_q_6> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/holder/M_regs_q_5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/holder/M_regs_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_15> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_12> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_6> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <beta_game/board/M_regs_q_11> in Unit <mojo_top_0> is equivalent to the following 8 FFs/Latches, which will be removed : <beta_game/board/M_regs_q_10> <beta_game/board/M_regs_q_9> <beta_game/board/M_regs_q_8> <beta_game/board/M_regs_q_7> <beta_game/board/M_regs_q_4> <beta_game/board/M_regs_q_3> <beta_game/board/M_regs_q_2> <beta_game/board/M_regs_q_1> 
+INFO:Xst:2261 - The FF/Latch <beta_game/holder/M_regs_q_11> in Unit <mojo_top_0> is equivalent to the following 8 FFs/Latches, which will be removed : <beta_game/holder/M_regs_q_10> <beta_game/holder/M_regs_q_9> <beta_game/holder/M_regs_q_8> <beta_game/holder/M_regs_q_7> <beta_game/holder/M_regs_q_4> <beta_game/holder/M_regs_q_3> <beta_game/holder/M_regs_q_2> <beta_game/holder/M_regs_q_1> 
 
 Mapping all equations...
 WARNING:Xst:2677 - Node <beta_game/alu/mul/Mmult_n0010> of sequential type is unconnected in block <mojo_top_0>.
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 1.
+FlipFlop beta_game/board/M_regs_q_11 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -599,8 +614,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 55
- Flip-Flops                                            : 55
+# Registers                                            : 46
+ Flip-Flops                                            : 46
 
 =========================================================================
 
@@ -623,26 +638,27 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 162
+# BELS                             : 136
 #      GND                         : 4
 #      INV                         : 2
-#      LUT1                        : 17
-#      LUT2                        : 25
-#      LUT3                        : 14
+#      LUT1                        : 19
+#      LUT2                        : 20
+#      LUT3                        : 1
+#      LUT4                        : 1
 #      LUT5                        : 18
 #      LUT6                        : 21
-#      MUXCY                       : 28
-#      VCC                         : 3
-#      XORCY                       : 30
-# FlipFlops/Latches                : 55
+#      MUXCY                       : 27
+#      VCC                         : 4
+#      XORCY                       : 19
+# FlipFlops/Latches                : 46
 #      FD                          : 25
-#      FDR                         : 2
-#      FDRE                        : 24
+#      FDR                         : 4
+#      FDRE                        : 13
 #      FDS                         : 4
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 74
-#      IBUF                        : 24
+# IO Buffers                       : 66
+#      IBUF                        : 16
 #      OBUF                        : 44
 #      OBUFT                       : 6
 
@@ -653,20 +669,20 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              55  out of  11440     0%  
- Number of Slice LUTs:                   97  out of   5720     1%  
-    Number used as Logic:                97  out of   5720     1%  
+ Number of Slice Registers:              46  out of  11440     0%  
+ Number of Slice LUTs:                   82  out of   5720     1%  
+    Number used as Logic:                82  out of   5720     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    152
-   Number with an unused Flip Flop:      97  out of    152    63%  
-   Number with an unused LUT:            55  out of    152    36%  
-   Number of fully used LUT-FF pairs:     0  out of    152     0%  
-   Number of unique control sets:        12
+ Number of LUT Flip Flop pairs used:    128
+   Number with an unused Flip Flop:      82  out of    128    64%  
+   Number with an unused LUT:            46  out of    128    35%  
+   Number of fully used LUT-FF pairs:     0  out of    128     0%  
+   Number of unique control sets:        13
 
 IO Utilization: 
  Number of IOs:                          95
- Number of bonded IOBs:                  75  out of    102    73%  
+ Number of bonded IOBs:                  67  out of    102    65%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -692,7 +708,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 55    |
+clk                                | BUFGP                  | 46    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -703,10 +719,10 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 4.772ns (Maximum Frequency: 209.578MHz)
-   Minimum input arrival time before clock: 5.716ns
-   Maximum output required time after clock: 5.929ns
-   Maximum combinational path delay: 5.857ns
+   Minimum period: 3.738ns (Maximum Frequency: 267.523MHz)
+   Minimum input arrival time before clock: 4.057ns
+   Maximum output required time after clock: 5.352ns
+   Maximum combinational path delay: 5.215ns
 
 Timing Details:
 ---------------
@@ -714,127 +730,108 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 4.772ns (frequency: 209.578MHz)
-  Total number of paths / destination ports: 1313 / 84
+  Clock period: 3.738ns (frequency: 267.523MHz)
+  Total number of paths / destination ports: 664 / 54
 -------------------------------------------------------------------------
-Delay:               4.772ns (Levels of Logic = 19)
-  Source:            edge_detector4/M_last_q (FF)
-  Destination:       beta_game/holder/M_regs_q_11 (FF)
+Delay:               3.738ns (Levels of Logic = 20)
+  Source:            seg/ctr/M_ctr_q_0 (FF)
+  Destination:       seg/ctr/M_ctr_q_17 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: edge_detector4/M_last_q to beta_game/holder/M_regs_q_11
+  Data Path: seg/ctr/M_ctr_q_0 to seg/ctr/M_ctr_q_17
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               4   0.525   0.804  M_last_q (M_last_q)
-     LUT2:I1->O            5   0.254   1.271  out1 (out)
-     end scope: 'edge_detector4:out'
-     begin scope: 'beta_game:button_press<2>'
-     begin scope: 'beta_game/alu:M_edge_detector4_out'
-     begin scope: 'beta_game/alu/add:M_edge_detector4_out'
-     LUT6:I1->O            1   0.254   0.000  Maddsub_holder_lut<0> (Maddsub_holder_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  Maddsub_holder_cy<0> (Maddsub_holder_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<1> (Maddsub_holder_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<2> (Maddsub_holder_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<3> (Maddsub_holder_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<4> (Maddsub_holder_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<5> (Maddsub_holder_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<6> (Maddsub_holder_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<7> (Maddsub_holder_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<8> (Maddsub_holder_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<9> (Maddsub_holder_cy<9>)
-     MUXCY:CI->O           0   0.023   0.000  Maddsub_holder_cy<10> (Maddsub_holder_cy<10>)
-     XORCY:CI->O           1   0.206   0.682  Maddsub_holder_xor<11> (out<11>)
-     end scope: 'beta_game/alu/add:out<11>'
-     LUT3:I2->O            1   0.254   0.000  Mmux_out31 (out<11>)
-     end scope: 'beta_game/alu:out<11>'
-     begin scope: 'beta_game/holder:data<11>'
-     FDRE:D                    0.074          M_regs_q_11
+     FD:C->Q               2   0.525   0.725  M_ctr_q_0 (M_ctr_q_0)
+     INV:I->O              1   0.255   0.000  Mcount_M_ctr_q_lut<0>_INV_0 (Mcount_M_ctr_q_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  Mcount_M_ctr_q_cy<0> (Mcount_M_ctr_q_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_M_ctr_q_cy<1> (Mcount_M_ctr_q_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_M_ctr_q_cy<2> (Mcount_M_ctr_q_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_M_ctr_q_cy<3> (Mcount_M_ctr_q_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_M_ctr_q_cy<4> (Mcount_M_ctr_q_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_M_ctr_q_cy<5> (Mcount_M_ctr_q_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_M_ctr_q_cy<6> (Mcount_M_ctr_q_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_M_ctr_q_cy<7> (Mcount_M_ctr_q_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_M_ctr_q_cy<8> (Mcount_M_ctr_q_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_M_ctr_q_cy<9> (Mcount_M_ctr_q_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_M_ctr_q_cy<10> (Mcount_M_ctr_q_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_M_ctr_q_cy<11> (Mcount_M_ctr_q_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_M_ctr_q_cy<12> (Mcount_M_ctr_q_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_M_ctr_q_cy<13> (Mcount_M_ctr_q_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_M_ctr_q_cy<14> (Mcount_M_ctr_q_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_M_ctr_q_cy<15> (Mcount_M_ctr_q_cy<15>)
+     MUXCY:CI->O           0   0.023   0.000  Mcount_M_ctr_q_cy<16> (Mcount_M_ctr_q_cy<16>)
+     XORCY:CI->O           1   0.206   1.112  Mcount_M_ctr_q_xor<17> (Result<17>)
+     LUT5:I0->O            1   0.254   0.000  M_ctr_q_17_rstpot (M_ctr_q_17_rstpot)
+     FD:D                      0.074          M_ctr_q_17
     ----------------------------------------
-    Total                      4.772ns (2.015ns logic, 2.757ns route)
-                                       (42.2% logic, 57.8% route)
+    Total                      3.738ns (1.901ns logic, 1.837ns route)
+                                       (50.9% logic, 49.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 564 / 24
+  Total number of paths / destination ports: 102 / 24
 -------------------------------------------------------------------------
-Offset:              5.716ns (Levels of Logic = 20)
+Offset:              4.057ns (Levels of Logic = 5)
   Source:            io_dip<4> (PAD)
-  Destination:       beta_game/holder/M_regs_q_11 (FF)
+  Destination:       beta_game/buttons_mux/register/M_regs_q_11 (FF)
   Destination Clock: clk rising
 
-  Data Path: io_dip<4> to beta_game/holder/M_regs_q_11
+  Data Path: io_dip<4> to beta_game/buttons_mux/register/M_regs_q_11
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             5   1.328   0.949  io_dip_4_IBUF (io_dip_4_IBUF)
-     begin scope: 'edge_detector4:in'
-     LUT2:I0->O            5   0.250   1.271  out1 (out)
-     end scope: 'edge_detector4:out'
-     begin scope: 'beta_game:button_press<2>'
-     begin scope: 'beta_game/alu:M_edge_detector4_out'
-     begin scope: 'beta_game/alu/add:M_edge_detector4_out'
-     LUT6:I1->O            1   0.254   0.000  Maddsub_holder_lut<0> (Maddsub_holder_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  Maddsub_holder_cy<0> (Maddsub_holder_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<1> (Maddsub_holder_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<2> (Maddsub_holder_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<3> (Maddsub_holder_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<4> (Maddsub_holder_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<5> (Maddsub_holder_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<6> (Maddsub_holder_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<7> (Maddsub_holder_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<8> (Maddsub_holder_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<9> (Maddsub_holder_cy<9>)
-     MUXCY:CI->O           0   0.023   0.000  Maddsub_holder_cy<10> (Maddsub_holder_cy<10>)
-     XORCY:CI->O           1   0.206   0.682  Maddsub_holder_xor<11> (out<11>)
-     end scope: 'beta_game/alu/add:out<11>'
-     LUT3:I2->O            1   0.254   0.000  Mmux_out31 (out<11>)
-     end scope: 'beta_game/alu:out<11>'
-     begin scope: 'beta_game/holder:data<11>'
-     FDRE:D                    0.074          M_regs_q_11
+     IBUF:I->O             6   1.328   1.306  io_dip_4_IBUF (io_dip_4_IBUF)
+     begin scope: 'beta_game:io_dip_4_IBUF'
+     begin scope: 'beta_game/buttons_mux:io_dip_4_IBUF'
+     LUT6:I1->O            5   0.254   0.841  M_register_data<10>21 (M_register_data<10>2)
+     LUT6:I5->O            1   0.254   0.000  M_register_data<3>1 (M_register_data<3>)
+     begin scope: 'beta_game/buttons_mux/register:data<3>'
+     FDRE:D                    0.074          M_regs_q_3
     ----------------------------------------
-    Total                      5.716ns (2.814ns logic, 2.902ns route)
-                                       (49.2% logic, 50.8% route)
+    Total                      4.057ns (1.910ns logic, 2.147ns route)
+                                       (47.1% logic, 52.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 25 / 19
+  Total number of paths / destination ports: 25 / 21
 -------------------------------------------------------------------------
-Offset:              5.929ns (Levels of Logic = 2)
-  Source:            M_game_state_q_FSM_FFd2 (FF)
-  Destination:       io_led<17> (PAD)
+Offset:              5.352ns (Levels of Logic = 3)
+  Source:            seg/ctr/M_ctr_q_17 (FF)
+  Destination:       io_sel<3> (PAD)
   Source Clock:      clk rising
 
-  Data Path: M_game_state_q_FSM_FFd2 to io_led<17>
+  Data Path: seg/ctr/M_ctr_q_17 to io_sel<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             28   0.525   1.561  M_game_state_q_FSM_FFd2 (M_game_state_q_FSM_FFd2)
-     LUT3:I1->O            1   0.250   0.681  Mmux_io_led<17>11 (io_led_17_OBUF)
-     OBUF:I->O                 2.912          io_led_17_OBUF (io_led<17>)
+     FD:C->Q               6   0.525   0.984  M_ctr_q_17 (M_ctr_q_17)
+     end scope: 'seg/ctr:value<1>'
+     end scope: 'seg:M_ctr_q_17'
+     LUT2:I0->O            1   0.250   0.681  io_sel<3>1 (io_sel_3_OBUF)
+     OBUF:I->O                 2.912          io_sel_3_OBUF (io_sel<3>)
     ----------------------------------------
-    Total                      5.929ns (3.687ns logic, 2.242ns route)
-                                       (62.2% logic, 37.8% route)
+    Total                      5.352ns (3.687ns logic, 1.665ns route)
+                                       (68.9% logic, 31.1% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 17 / 17
+  Total number of paths / destination ports: 9 / 9
 -------------------------------------------------------------------------
-Delay:               5.857ns (Levels of Logic = 3)
-  Source:            io_dip<18> (PAD)
-  Destination:       io_led<18> (PAD)
+Delay:               5.215ns (Levels of Logic = 2)
+  Source:            io_dip<6> (PAD)
+  Destination:       io_led<6> (PAD)
 
-  Data Path: io_dip<18> to io_led<18>
+  Data Path: io_dip<6> to io_led<6>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.328   0.682  io_dip_18_IBUF (io_dip_18_IBUF)
-     LUT2:I1->O            1   0.254   0.681  Mmux_io_led<18>11 (io_led_18_OBUF)
-     OBUF:I->O                 2.912          io_led_18_OBUF (io_led<18>)
+     IBUF:I->O             9   1.328   0.975  io_dip_6_IBUF (io_led_6_OBUF)
+     OBUF:I->O                 2.912          io_led_6_OBUF (io_led<6>)
     ----------------------------------------
-    Total                      5.857ns (4.494ns logic, 1.363ns route)
-                                       (76.7% logic, 23.3% route)
+    Total                      5.215ns (4.240ns logic, 0.975ns route)
+                                       (81.3% logic, 18.7% route)
 
 =========================================================================
 
@@ -846,21 +843,21 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    4.772|         |         |         |
+clk            |    3.738|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.44 secs
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 3.49 secs
  
 --> 
 
 
-Total memory usage is 404916 kilobytes
+Total memory usage is 405048 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   51 (   0 filtered)
-Number of infos    :    8 (   0 filtered)
+Number of warnings :   61 (   0 filtered)
+Number of infos    :   10 (   0 filtered)
 
