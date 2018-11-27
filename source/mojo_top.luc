@@ -109,7 +109,7 @@ module mojo_top (
     
     .rst(rst) {
       multi_seven_seg seg;
-      fsm game_state = {BEGIN, XOR, CMPEQC, ADDC};
+      fsm game_state = {BEGIN, XOR1, XOR2, CMPEQC, ADDC};
       beta beta_game;
     }
   }
@@ -218,11 +218,11 @@ module mojo_top (
         beta_game.level_en = 0;
         io_led[2][0] = 1;
         
-        game_state.d = game_state.XOR;
+        game_state.d = game_state.XOR1;
       
-      game_state.XOR:
+      game_state.XOR1:
         beta_game.board_sel = 0;
-        beta_game.board_en = 1;
+        beta_game.board_en = 0;
         beta_game.level_en = 0;
         beta_game.alufn = b011010;
         beta_game.asel = 0;
@@ -230,8 +230,17 @@ module mojo_top (
         io_led[2][1] = 1;
         beta_game.button_press = c{edge_detector0.out, edge_detector1.out, edge_detector2.out, edge_detector3.out, edge_detector4.out, edge_detector5.out, edge_detector6.out};
         if ( edge_detector0.out|edge_detector1.out|edge_detector2.out|edge_detector3.out|edge_detector4.out|edge_detector5.out|edge_detector6.out){
-          game_state.d = game_state.CMPEQC;
+          game_state.d = game_state.XOR2;
         }
+      game_state.XOR2:
+        beta_game.board_sel = 0;
+        beta_game.board_en = 1;
+        beta_game.level_en = 0;
+        beta_game.alufn = b011010;
+        beta_game.asel = 0;
+        beta_game.bsel = 0;
+        io_led[2][2] = 1;
+        //game_state.d = game_state.CMPEQC;
       game_state.CMPEQC:
         beta_game.board_en = 0;
         beta_game.level_en = 0;
@@ -242,7 +251,7 @@ module mojo_top (
         if (beta_game.allon == 1)
           game_state.d = game_state.ADDC;
         else
-          game_state.d = game_state.XOR;
+          game_state.d = game_state.XOR1;
       
       game_state.ADDC:
         beta_game.board_en = 0;

@@ -23,7 +23,7 @@ module alu_16 (
   reg [8-1:0] M_add_io_dip;
   reg [16-1:0] M_add_a;
   reg [16-1:0] M_add_b;
-  add_19 add (
+  add_20 add (
     .io_dip(M_add_io_dip),
     .a(M_add_a),
     .b(M_add_b),
@@ -37,7 +37,7 @@ module alu_16 (
   reg [8-1:0] M_cmp_io_dip;
   reg [16-1:0] M_cmp_a;
   reg [16-1:0] M_cmp_b;
-  cmp_20 cmp (
+  cmp_21 cmp (
     .io_dip(M_cmp_io_dip),
     .a(M_cmp_a),
     .b(M_cmp_b),
@@ -48,7 +48,7 @@ module alu_16 (
   reg [8-1:0] M_bol_io_dip;
   reg [16-1:0] M_bol_a;
   reg [16-1:0] M_bol_b;
-  bol_21 bol (
+  bol_22 bol (
     .io_dip(M_bol_io_dip),
     .a(M_bol_a),
     .b(M_bol_b),
@@ -59,7 +59,7 @@ module alu_16 (
   reg [8-1:0] M_sft_io_dip;
   reg [16-1:0] M_sft_a;
   reg [16-1:0] M_sft_b;
-  sft_22 sft (
+  sft_23 sft (
     .io_dip(M_sft_io_dip),
     .a(M_sft_a),
     .b(M_sft_b),
@@ -70,7 +70,7 @@ module alu_16 (
   reg [8-1:0] M_mul_io_dip;
   reg [16-1:0] M_mul_a;
   reg [16-1:0] M_mul_b;
-  mul_23 mul (
+  mul_24 mul (
     .io_dip(M_mul_io_dip),
     .a(M_mul_a),
     .b(M_mul_b),

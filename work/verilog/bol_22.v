@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module cmp_20 (
+module bol_22 (
     input [7:0] io_dip,
     input [15:0] a,
     input [15:0] b,
@@ -13,22 +13,22 @@ module cmp_20 (
   
   
   
-  reg [15:0] holder;
-  
   always @* begin
-    holder = 1'h0;
+    out = 1'h0;
     
-    case (io_dip[1+1-:2])
-      1'h1: begin
-        holder = {15'h0000, (a == b)};
+    case (io_dip[0+3-:4])
+      4'h8: begin
+        out = a & b;
       end
-      2'h2: begin
-        holder = {15'h0000, (a < b)};
+      4'he: begin
+        out = a | b;
       end
-      2'h3: begin
-        holder = {15'h0000, (a <= b)};
+      3'h6: begin
+        out = a ^ b;
+      end
+      4'ha: begin
+        out = a;
       end
     endcase
-    out = holder[0+15-:16];
   end
 endmodule

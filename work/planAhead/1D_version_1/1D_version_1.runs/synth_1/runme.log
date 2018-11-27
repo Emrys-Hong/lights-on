@@ -7,16 +7,16 @@ Reading design: mojo_top_0.prj
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/sft_22.v" into library work
-Parsing module <sft_22>.
-Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mul_23.v" into library work
-Parsing module <mul_23>.
-Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/cmp_20.v" into library work
-Parsing module <cmp_20>.
-Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/bol_21.v" into library work
-Parsing module <bol_21>.
-Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/add_19.v" into library work
-Parsing module <add_19>.
+Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/sft_23.v" into library work
+Parsing module <sft_23>.
+Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mul_24.v" into library work
+Parsing module <mul_24>.
+Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/cmp_21.v" into library work
+Parsing module <cmp_21>.
+Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/bol_22.v" into library work
+Parsing module <bol_22>.
+Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/add_20.v" into library work
+Parsing module <add_20>.
 Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/seven_seg_12.v" into library work
 Parsing module <seven_seg_12>.
 Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/register_17.v" into library work
@@ -68,21 +68,21 @@ Elaborating module <levels_mux_15>.
 
 Elaborating module <alu_16>.
 
-Elaborating module <add_19>.
+Elaborating module <add_20>.
 
-Elaborating module <cmp_20>.
+Elaborating module <cmp_21>.
 
-Elaborating module <bol_21>.
+Elaborating module <bol_22>.
 
-Elaborating module <sft_22>.
+Elaborating module <sft_23>.
 
-Elaborating module <mul_23>.
+Elaborating module <mul_24>.
 WARNING:HDLCompiler:1127 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/beta_10.v" Line 49: Assignment to M_alu_z ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/beta_10.v" Line 50: Assignment to M_alu_v ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/beta_10.v" Line 51: Assignment to M_alu_n ignored, since the identifier is never used
 
 Elaborating module <register_17>.
-WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 209: Result of 17-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 219: Result of 17-bit expression is truncated to fit in 6-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -105,27 +105,28 @@ WARNING:Xst:647 - Input <spi_mosi> is never used. This port will be preserved an
 WARNING:Xst:647 - Input <spi_sck> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_tx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 2-bit register for signal <M_game_state_q>.
+    Found 3-bit register for signal <M_game_state_q>.
+INFO:Xst:1799 - State 100 is never reached in FSM <M_game_state_q>.
     Found finite state machine <FSM_0> for signal <M_game_state_q>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
-    | Transitions        | 6                                              |
+    | Transitions        | 4                                              |
     | Inputs             | 2                                              |
-    | Outputs            | 11                                             |
+    | Outputs            | 7                                              |
     | Clock              | clk (rising_edge)                              |
     | Reset              | M_reset_cond_out (positive)                    |
     | Reset type         | synchronous                                    |
-    | Reset State        | 00                                             |
-    | Power Up State     | 00                                             |
+    | Reset State        | 000                                            |
+    | Power Up State     | 000                                            |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 144
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 144
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 144
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 144
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 144
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 144
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 145
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 145
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 145
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 145
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 145
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 145
     Summary:
 	inferred   3 Multiplexer(s).
 	inferred   6 Tristate(s).
@@ -207,17 +208,17 @@ Synthesizing Unit <alu_16>.
 	inferred   8 Multiplexer(s).
 Unit <alu_16> synthesized.
 
-Synthesizing Unit <add_19>.
-    Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/add_19.v".
+Synthesizing Unit <add_20>.
+    Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/add_20.v".
 WARNING:Xst:647 - Input <io_dip<6:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 16-bit subtractor for signal <a[15]_b[15]_sub_3_OUT> created at line 25.
     Found 16-bit adder for signal <a[15]_b[15]_add_1_OUT> created at line 23.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-Unit <add_19> synthesized.
+Unit <add_20> synthesized.
 
-Synthesizing Unit <cmp_20>.
-    Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/cmp_20.v".
+Synthesizing Unit <cmp_21>.
+    Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/cmp_21.v".
 WARNING:Xst:647 - Input <io_dip<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <io_dip<7:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 16-bit 4-to-1 multiplexer for signal <holder> created at line 21.
@@ -227,16 +228,16 @@ WARNING:Xst:647 - Input <io_dip<7:3>> is never used. This port will be preserved
     Summary:
 	inferred   3 Comparator(s).
 	inferred   1 Multiplexer(s).
-Unit <cmp_20> synthesized.
+Unit <cmp_21> synthesized.
 
-Synthesizing Unit <bol_21>.
-    Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/bol_21.v".
+Synthesizing Unit <bol_22>.
+    Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/bol_22.v".
 WARNING:Xst:647 - Input <io_dip<7:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
-Unit <bol_21> synthesized.
+Unit <bol_22> synthesized.
 
-Synthesizing Unit <sft_22>.
-    Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/sft_22.v".
+Synthesizing Unit <sft_23>.
+    Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/sft_23.v".
 WARNING:Xst:647 - Input <io_dip<7:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <b<15:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 16-bit shifter logical left for signal <a[15]_b[3]_shift_left_0_OUT> created at line 21
@@ -246,15 +247,15 @@ WARNING:Xst:647 - Input <b<15:4>> is never used. This port will be preserved and
     Summary:
 	inferred   1 Multiplexer(s).
 	inferred   3 Combinational logic shifter(s).
-Unit <sft_22> synthesized.
+Unit <sft_23> synthesized.
 
-Synthesizing Unit <mul_23>.
-    Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mul_23.v".
+Synthesizing Unit <mul_24>.
+    Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mul_24.v".
 WARNING:Xst:647 - Input <io_dip<7:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 16x16-bit multiplier for signal <n0010> created at line 21.
     Summary:
 	inferred   1 Multiplier(s).
-Unit <mul_23> synthesized.
+Unit <mul_24> synthesized.
 
 Synthesizing Unit <div_16u_16u>.
     Related source file is "".
@@ -348,9 +349,9 @@ Macro Statistics
  31-bit adder                                          : 2
  32-bit adder                                          : 2
  4-bit adder                                           : 1
-# Registers                                            : 11
+# Registers                                            : 12
  1-bit register                                        : 7
- 16-bit register                                       : 2
+ 16-bit register                                       : 3
  18-bit register                                       : 1
  4-bit register                                        : 1
 # Comparators                                          : 20
@@ -445,8 +446,8 @@ Macro Statistics
  4-bit adder                                           : 1
 # Counters                                             : 1
  18-bit up counter                                     : 1
-# Registers                                            : 43
- Flip-Flops                                            : 43
+# Registers                                            : 59
+ Flip-Flops                                            : 59
 # Comparators                                          : 20
  16-bit comparator equal                               : 1
  16-bit comparator greater                             : 1
@@ -491,10 +492,10 @@ Optimizing FSM <FSM_0> on signal <M_game_state_q[1:2]> with gray encoding.
 -------------------
  State | Encoding
 -------------------
- 00    | 00
- 01    | 01
- 10    | 11
- 11    | 10
+ 000   | 00
+ 001   | 01
+ 010   | 11
+ 100   | unreached
 -------------------
 
 Optimizing unit <register_17> ...
@@ -505,35 +506,35 @@ Optimizing unit <beta_10> ...
 
 Optimizing unit <alu_16> ...
 
-Optimizing unit <add_19> ...
+Optimizing unit <add_20> ...
 
-Optimizing unit <mul_23> ...
+Optimizing unit <mul_24> ...
 
 Optimizing unit <div_16u_16u> ...
-WARNING:Xst:1293 - FF/Latch <beta_game/board/M_regs_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_6> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_12> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_15> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <beta_game/level/M_regs_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/level/M_regs_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/level/M_regs_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/level/M_regs_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/level/M_regs_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/level/M_regs_q_4> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/level/M_regs_q_5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/level/M_regs_q_6> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/level/M_regs_q_7> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/level/M_regs_q_8> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/level/M_regs_q_9> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/level/M_regs_q_10> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/level/M_regs_q_11> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/level/M_regs_q_12> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/level/M_regs_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/level/M_regs_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/level/M_regs_q_15> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <M_game_state_q_FSM_FFd2> in Unit <mojo_top_0> is equivalent to the following 9 FFs/Latches, which will be removed : <beta_game/board/M_regs_q_11> <beta_game/board/M_regs_q_10> <beta_game/board/M_regs_q_9> <beta_game/board/M_regs_q_8> <beta_game/board/M_regs_q_7> <beta_game/board/M_regs_q_4> <beta_game/board/M_regs_q_3> <beta_game/board/M_regs_q_2> <beta_game/board/M_regs_q_1> 
+WARNING:Xst:2677 - Node <beta_game/level/M_regs_q_15> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <beta_game/level/M_regs_q_14> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <beta_game/level/M_regs_q_13> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <beta_game/level/M_regs_q_12> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <beta_game/level/M_regs_q_11> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <beta_game/level/M_regs_q_10> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <beta_game/level/M_regs_q_9> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <beta_game/level/M_regs_q_8> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <beta_game/level/M_regs_q_7> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <beta_game/level/M_regs_q_6> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <beta_game/level/M_regs_q_5> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <beta_game/level/M_regs_q_4> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <beta_game/level/M_regs_q_3> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <beta_game/level/M_regs_q_2> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:1293 - FF/Latch <beta_game/holder/M_regs_q_15> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/holder/M_regs_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/holder/M_regs_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/holder/M_regs_q_12> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_15> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_12> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 WARNING:Xst:2677 - Node <beta_game/alu/mul/Mmult_n0010> of sequential type is unconnected in block <mojo_top_0>.
@@ -550,8 +551,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 31
- Flip-Flops                                            : 31
+# Registers                                            : 55
+ Flip-Flops                                            : 55
 
 =========================================================================
 
@@ -575,7 +576,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 31    |
+clk                                | BUFGP                  | 55    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -586,9 +587,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 6.501ns (Maximum Frequency: 153.822MHz)
-   Minimum input arrival time before clock: 7.448ns
-   Maximum output required time after clock: 5.946ns
+   Minimum period: 4.772ns (Maximum Frequency: 209.578MHz)
+   Minimum input arrival time before clock: 5.716ns
+   Maximum output required time after clock: 5.929ns
    Maximum combinational path delay: 5.857ns
 
 =========================================================================

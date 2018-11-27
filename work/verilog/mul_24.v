@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module bol_21 (
+module mul_24 (
     input [7:0] io_dip,
     input [15:0] a,
     input [15:0] b,
@@ -16,18 +16,12 @@ module bol_21 (
   always @* begin
     out = 1'h0;
     
-    case (io_dip[0+3-:4])
-      4'h8: begin
-        out = a & b;
+    case (io_dip[0+1-:2])
+      2'h2: begin
+        out = a * b;
       end
-      4'he: begin
-        out = a | b;
-      end
-      3'h6: begin
-        out = a ^ b;
-      end
-      4'ha: begin
-        out = a;
+      2'h3: begin
+        out = a / b;
       end
     endcase
   end

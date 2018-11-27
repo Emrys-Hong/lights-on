@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue Nov 27 00:56:26 2018
+// Written by: Map P.20131013 on Tue Nov 27 11:24:30 2018
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -86,6 +86,18 @@ COMP "io_dip(12)" LOCATE = SITE "P102" LEVEL 1;
 COMP "io_dip(13)" LOCATE = SITE "P101" LEVEL 1;
 COMP "cclk" LOCATE = SITE "P70" LEVEL 1;
 TIMEGRP clk = BEL "M_game_state_q_FSM_FFd2" BEL "M_game_state_q_FSM_FFd1" BEL
+        "beta_game/holder/M_regs_q_11" BEL "beta_game/holder/M_regs_q_10" BEL
+        "beta_game/holder/M_regs_q_9" BEL "beta_game/holder/M_regs_q_8" BEL
+        "beta_game/holder/M_regs_q_7" BEL "beta_game/holder/M_regs_q_6" BEL
+        "beta_game/holder/M_regs_q_5" BEL "beta_game/holder/M_regs_q_4" BEL
+        "beta_game/holder/M_regs_q_3" BEL "beta_game/holder/M_regs_q_2" BEL
+        "beta_game/holder/M_regs_q_1" BEL "beta_game/holder/M_regs_q_0" BEL
+        "beta_game/board/M_regs_q_11" BEL "beta_game/board/M_regs_q_10" BEL
+        "beta_game/board/M_regs_q_9" BEL "beta_game/board/M_regs_q_8" BEL
+        "beta_game/board/M_regs_q_7" BEL "beta_game/board/M_regs_q_6" BEL
+        "beta_game/board/M_regs_q_5" BEL "beta_game/board/M_regs_q_4" BEL
+        "beta_game/board/M_regs_q_3" BEL "beta_game/board/M_regs_q_2" BEL
+        "beta_game/board/M_regs_q_1" BEL "beta_game/board/M_regs_q_0" BEL
         "clk_BUFGP/BUFG" BEL "reset_cond/M_stage_q_3" BEL
         "reset_cond/M_stage_q_2" BEL "reset_cond/M_stage_q_1" BEL
         "reset_cond/M_stage_q_0" BEL "edge_detector0/M_last_q" BEL

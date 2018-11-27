@@ -112,12 +112,13 @@ module mojo_top_0 (
     .seg(M_seg_seg),
     .sel(M_seg_sel)
   );
-  localparam BEGIN_game_state = 2'd0;
-  localparam XOR_game_state = 2'd1;
-  localparam CMPEQC_game_state = 2'd2;
-  localparam ADDC_game_state = 2'd3;
+  localparam BEGIN_game_state = 3'd0;
+  localparam XOR1_game_state = 3'd1;
+  localparam XOR2_game_state = 3'd2;
+  localparam CMPEQC_game_state = 3'd3;
+  localparam ADDC_game_state = 3'd4;
   
-  reg [1:0] M_game_state_d, M_game_state_q = BEGIN_game_state;
+  reg [2:0] M_game_state_d, M_game_state_q = BEGIN_game_state;
   wire [1-1:0] M_beta_game_allon;
   wire [16-1:0] M_beta_game_boardout;
   reg [7-1:0] M_beta_game_button_press;
@@ -188,11 +189,11 @@ module mojo_top_0 (
         M_beta_game_board_en = 1'h1;
         M_beta_game_level_en = 1'h0;
         io_led[16+0+0-:1] = 1'h1;
-        M_game_state_d = XOR_game_state;
+        M_game_state_d = XOR1_game_state;
       end
-      XOR_game_state: begin
+      XOR1_game_state: begin
         M_beta_game_board_sel = 1'h0;
-        M_beta_game_board_en = 1'h1;
+        M_beta_game_board_en = 1'h0;
         M_beta_game_level_en = 1'h0;
         M_beta_game_alufn = 6'h1a;
         M_beta_game_asel = 1'h0;
@@ -200,8 +201,17 @@ module mojo_top_0 (
         io_led[16+1+0-:1] = 1'h1;
         M_beta_game_button_press = {M_edge_detector0_out, M_edge_detector1_out, M_edge_detector2_out, M_edge_detector3_out, M_edge_detector4_out, M_edge_detector5_out, M_edge_detector6_out};
         if (M_edge_detector0_out | M_edge_detector1_out | M_edge_detector2_out | M_edge_detector3_out | M_edge_detector4_out | M_edge_detector5_out | M_edge_detector6_out) begin
-          M_game_state_d = CMPEQC_game_state;
+          M_game_state_d = XOR2_game_state;
         end
+      end
+      XOR2_game_state: begin
+        M_beta_game_board_sel = 1'h0;
+        M_beta_game_board_en = 1'h1;
+        M_beta_game_level_en = 1'h0;
+        M_beta_game_alufn = 6'h1a;
+        M_beta_game_asel = 1'h0;
+        M_beta_game_bsel = 1'h0;
+        io_led[16+2+0-:1] = 1'h1;
       end
       CMPEQC_game_state: begin
         M_beta_game_board_en = 1'h0;
@@ -213,7 +223,7 @@ module mojo_top_0 (
         if (M_beta_game_allon == 1'h1) begin
           M_game_state_d = ADDC_game_state;
         end else begin
-          M_game_state_d = XOR_game_state;
+          M_game_state_d = XOR1_game_state;
         end
       end
       ADDC_game_state: begin

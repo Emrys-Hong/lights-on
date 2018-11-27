@@ -71,16 +71,28 @@ module beta_10 (
     .data(M_level_data),
     .out(M_level_out)
   );
+  wire [16-1:0] M_holder_out;
+  reg [1-1:0] M_holder_en;
+  reg [16-1:0] M_holder_data;
+  register_17 holder (
+    .clk(clk),
+    .rst(rst),
+    .en(M_holder_en),
+    .data(M_holder_data),
+    .out(M_holder_out)
+  );
   
   always @* begin
     M_alu_io_dip = alufn;
     M_board_en = board_en;
     M_level_en = level_en;
-    M_level_data = M_alu_out;
+    M_level_data = M_holder_out;
     M_buttons_mux_buttons_sel = button_press;
     M_levels_mux_levels_sel = M_level_out[0+1-:2];
     boardout = M_board_out;
     allon = M_alu_out[0+0-:1];
+    M_holder_data = M_alu_out;
+    M_holder_en = 1'h1;
     if (asel == 1'h0) begin
       M_alu_a = M_board_out;
     end else begin
@@ -96,7 +108,7 @@ module beta_10 (
       end
     end
     if (board_sel == 1'h0) begin
-      M_board_data = M_alu_out;
+      M_board_data = M_holder_out;
     end else begin
       M_board_data = M_levels_mux_out;
     end

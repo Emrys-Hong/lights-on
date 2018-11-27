@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module mul_23 (
+module sft_23 (
     input [7:0] io_dip,
     input [15:0] a,
     input [15:0] b,
@@ -17,11 +17,14 @@ module mul_23 (
     out = 1'h0;
     
     case (io_dip[0+1-:2])
-      2'h2: begin
-        out = a * b;
+      1'h0: begin
+        out = a << b[0+3-:4];
+      end
+      1'h1: begin
+        out = a >> b[0+3-:4];
       end
       2'h3: begin
-        out = a / b;
+        out = $signed(a) >>> b[0+3-:4];
       end
     endcase
   end
