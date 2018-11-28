@@ -90,7 +90,7 @@ module beta (
     if (bsel == 0)
       alu.b = buttons_mux.out;
     else if (bsel == 1)
-      alu.b = 16b0000111111111111;
+      alu.b = 16b000011111111111;
     else
       alu.b = 16b0000000000000001;
     // Mux for BoardSel

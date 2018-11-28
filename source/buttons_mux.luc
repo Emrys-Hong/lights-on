@@ -8,6 +8,7 @@ module buttons_mux (
     out = 16b0000000000000000;  // initialise the value of out.
     
     case (buttons_sel) {
+      
       b1: out = 16b0000111111000000;
       b10: out = 16b0000000001100001;
       b100: out = 16b0000000010000011;

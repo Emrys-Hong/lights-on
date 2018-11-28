@@ -92,7 +92,7 @@ module beta_4 (
       M_alu_b = M_buttons_mux_out;
     end else begin
       if (bsel == 1'h1) begin
-        M_alu_b = 16'h0fff;
+        M_alu_b = 16'h0000;
       end else begin
         M_alu_b = 16'h0001;
       end

@@ -84,9 +84,10 @@ WARNING:HDLCompiler:1127 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_vers
 Elaborating module <buttons_mux_17>.
 
 Elaborating module <register_18>.
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 94: Assignment to M_beta_game_debug ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 88: Assignment to M_beta_game_debug ignored, since the identifier is never used
 
 Elaborating module <edge_detector_5>.
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 238: Assignment to M_testor_q ignored, since the identifier is never used
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -103,13 +104,7 @@ WARNING:Xst:647 - Input <button4> is never used. This port will be preserved and
 WARNING:Xst:647 - Input <button5> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <button6> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <button_reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <cclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <spi_ss> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <spi_mosi> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <spi_sck> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <avr_tx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" line 82: Output port <debug> of the instance <beta_game> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" line 76: Output port <debug> of the instance <beta_game> is unconnected or connected to loadless signal.
     Found 2-bit register for signal <M_game_state_q>.
     Found finite state machine <FSM_0> for signal <M_game_state_q>.
     -----------------------------------------------------------------------
@@ -125,17 +120,13 @@ INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_ve
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 153
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 153
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 153
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 153
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 153
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 153
-WARNING:Xst:737 - Found 1-bit latch for signal <io_led<17>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_led<16>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_led<18>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 148
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 148
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 148
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 148
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 148
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 148
     Summary:
-	inferred   3 Latch(s).
 	inferred   6 Tristate(s).
 	inferred   1 Finite State Machine(s).
 Unit <mojo_top_0> synthesized.
@@ -372,8 +363,6 @@ Macro Statistics
  18-bit register                                       : 1
  4-bit register                                        : 1
  5-bit register                                        : 1
-# Latches                                              : 3
- 1-bit latch                                           : 3
 # Comparators                                          : 20
  16-bit comparator equal                               : 1
  16-bit comparator greater                             : 1
@@ -512,9 +501,6 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <io_led_17> (without init value) has a constant value of 1 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <io_led_16> (without init value) has a constant value of 1 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <io_led_18> (without init value) has a constant value of 1 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <FSM_0> on signal <M_game_state_q[1:4]> with one-hot encoding.
 -------------------
@@ -549,7 +535,6 @@ Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 12.
 WARNING:Xst:2677 - Node <beta_game/alu/mul/Mmult_n0010> of sequential type is unconnected in block <mojo_top_0>.
-FlipFlop M_game_state_q_FSM_FFd1 has been replicated 2 time(s)
 FlipFlop M_game_state_q_FSM_FFd2 has been replicated 1 time(s)
 
 Final Macro Processing ...
@@ -562,8 +547,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 68
- Flip-Flops                                            : 68
+# Registers                                            : 66
+ Flip-Flops                                            : 66
 
 =========================================================================
 
@@ -587,7 +572,7 @@ Clock Information:
 -----------------------------------+------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)        | Load  |
 -----------------------------------+------------------------------+-------+
-seg/ctr/M_ctr_q_4                  | NONE(M_game_state_q_FSM_FFd3)| 14    |
+seg/ctr/M_ctr_q_4                  | NONE(M_game_state_q_FSM_FFd3)| 12    |
 clk                                | BUFGP                        | 54    |
 -----------------------------------+------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -600,9 +585,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 6.831ns (Maximum Frequency: 146.391MHz)
-   Minimum input arrival time before clock: 9.626ns
-   Maximum output required time after clock: 5.352ns
+   Minimum period: 8.120ns (Maximum Frequency: 123.149MHz)
+   Minimum input arrival time before clock: 9.337ns
+   Maximum output required time after clock: 5.505ns
    Maximum combinational path delay: 4.921ns
 
 =========================================================================

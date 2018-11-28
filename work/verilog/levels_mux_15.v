@@ -16,7 +16,7 @@ module levels_mux_15 (
     
     case (levels_sel)
       1'h0: begin
-        out = 16'h0002;
+        out = 16'h0fc0;
       end
       1'h1: begin
         out = 16'h074c;

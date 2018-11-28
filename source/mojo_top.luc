@@ -2,15 +2,9 @@ module mojo_top (
     input clk,              // 50MHz clock
     input rst_n,            // reset button (active low)
     output led [8],         // 8 user controllable LEDs
-    input cclk,             // configuration clock, AVR ready when high
     output spi_miso,        // AVR SPI MISO
-    input spi_ss,           // AVR SPI Slave Select
-    input spi_mosi,         // AVR SPI MOSI
-    input spi_sck,          // AVR SPI Clock
-    output spi_channel [4], // AVR general purpose pins (used by default to select ADC channel)
-    input avr_tx,           // AVR TX (FPGA RX)    
-    output avr_rx,          // AVR RX (FPGA
-    input avr_rx_busy,      // AVR RX buffer full     TX)
+    output spi_channel [4], // AVR general purpose pins (used by default to select ADC channel) 
+    output avr_rx,          // AVR RX (FPGA)
     
     
     
@@ -79,7 +73,7 @@ module mojo_top (
       multi_seven_seg seg;
       counter slowclk(#SIZE(1),#DIV(4));
       beta beta_game;
-      
+      dff testor;
     }
   }
   
@@ -136,7 +130,7 @@ module mojo_top (
     seg.values = {4h0, 4h0, 4h0, 4h0};
     io_seg = ~seg.seg; // connect segments to the driver
     io_sel = ~seg.sel; // connect digit select to the
-    //io_led = io_dip;   // connect the DIP switches to the LEDs    driver
+    io_led[2] = 0;   // connect the DIP switches to the LEDs    driver
     
     
 
@@ -214,7 +208,6 @@ module mojo_top (
     
     
     
-    
     case(game_state.q) {
       game_state.BEGIN:
         beta_game.board_sel = 1;
@@ -257,6 +250,7 @@ module mojo_top (
         beta_game.alufn = b000000;
         beta_game.bsel = 2;
         beta_game.asel = 1;
+        io_led[2][3] = 1;
         game_state.d = game_state.BEGIN;
     }
   }

@@ -8,15 +8,9 @@ module mojo_top_0 (
     input clk,
     input rst_n,
     output reg [7:0] led,
-    input cclk,
     output reg spi_miso,
-    input spi_ss,
-    input spi_mosi,
-    input spi_sck,
     output reg [3:0] spi_channel,
-    input avr_tx,
     output reg avr_rx,
-    input avr_rx_busy,
     output reg [23:0] io_led,
     output reg [7:0] io_seg,
     output reg [3:0] io_sel,
@@ -93,6 +87,7 @@ module mojo_top_0 (
     .boardout(M_beta_game_boardout),
     .debug(M_beta_game_debug)
   );
+  reg M_testor_d, M_testor_q = 1'h0;
   
   wire [1-1:0] M_edge_detector0_out;
   reg [1-1:0] M_edge_detector0_in;
@@ -162,6 +157,7 @@ module mojo_top_0 (
     M_seg_values = 16'h0000;
     io_seg = ~M_seg_seg;
     io_sel = ~M_seg_sel;
+    io_led[16+7-:8] = 1'h0;
     M_edge_detector0_in = io_dip[0+0+0-:1];
     M_edge_detector1_in = io_dip[0+1+0-:1];
     M_edge_detector2_in = io_dip[0+2+0-:1];
@@ -233,10 +229,20 @@ module mojo_top_0 (
         M_beta_game_alufn = 6'h00;
         M_beta_game_bsel = 2'h2;
         M_beta_game_asel = 1'h1;
+        io_led[16+3+0-:1] = 1'h1;
         M_game_state_d = BEGIN_game_state;
       end
     endcase
   end
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_testor_q <= 1'h0;
+    end else begin
+      M_testor_q <= M_testor_d;
+    end
+  end
+  
   
   always @(posedge M_slowclk_value) begin
     if (rst == 1'b1) begin
