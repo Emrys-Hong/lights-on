@@ -87,7 +87,6 @@ module mojo_top_0 (
     .boardout(M_beta_game_boardout),
     .debug(M_beta_game_debug)
   );
-  reg M_testor_d, M_testor_q = 1'h0;
   
   wire [1-1:0] M_edge_detector0_out;
   reg [1-1:0] M_edge_detector0_in;
@@ -158,7 +157,7 @@ module mojo_top_0 (
     io_seg = ~M_seg_seg;
     io_sel = ~M_seg_sel;
     io_led[16+7-:8] = 1'h0;
-    M_edge_detector0_in = io_dip[0+0+0-:1];
+    M_edge_detector0_in = io_button[1+0-:1];
     M_edge_detector1_in = io_dip[0+1+0-:1];
     M_edge_detector2_in = io_dip[0+2+0-:1];
     M_edge_detector3_in = io_dip[0+3+0-:1];
@@ -194,8 +193,10 @@ module mojo_top_0 (
         M_beta_game_board_sel = 1'h1;
         M_beta_game_board_en = 1'h1;
         M_beta_game_level_en = 1'h0;
-        io_led[16+0+0-:1] = 1'h1;
-        M_game_state_d = XOR_game_state;
+        io_led[16+7-:8] = M_beta_game_debug;
+        if (io_dip[0+0+0-:1] == 1'h1) begin
+          M_game_state_d = XOR_game_state;
+        end
       end
       XOR_game_state: begin
         M_beta_game_board_sel = 1'h0;
@@ -220,10 +221,13 @@ module mojo_top_0 (
         if (M_beta_game_allon == 1'h1) begin
           M_game_state_d = ADDC_game_state;
         end else begin
-          M_game_state_d = XOR_game_state;
+          if (M_beta_game_allon == 1'h0) begin
+            M_game_state_d = XOR_game_state;
+          end
         end
       end
       ADDC_game_state: begin
+        M_beta_game_board_sel = 1'h1;
         M_beta_game_board_en = 1'h0;
         M_beta_game_level_en = 1'h1;
         M_beta_game_alufn = 6'h00;
@@ -234,15 +238,6 @@ module mojo_top_0 (
       end
     endcase
   end
-  
-  always @(posedge clk) begin
-    if (rst == 1'b1) begin
-      M_testor_q <= 1'h0;
-    end else begin
-      M_testor_q <= M_testor_d;
-    end
-  end
-  
   
   always @(posedge M_slowclk_value) begin
     if (rst == 1'b1) begin

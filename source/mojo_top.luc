@@ -62,6 +62,7 @@ module mojo_top (
   
   
   
+
   
   
   
@@ -71,9 +72,9 @@ module mojo_top (
     reset_conditioner reset_cond;
     .rst(rst) {
       multi_seven_seg seg;
-      counter slowclk(#SIZE(1),#DIV(4));
+      counter slowclk(#SIZE(1),#DIV(2));
       beta beta_game;
-      dff testor;
+      
     }
   }
   
@@ -148,7 +149,7 @@ module mojo_top (
     
     
     // TO DELETE
-    edge_detector0.in = io_dip[0][0];
+    edge_detector0.in = io_button[1];
     edge_detector1.in = io_dip[0][1];
     edge_detector2.in = io_dip[0][2];
     edge_detector3.in = io_dip[0][3];
@@ -202,6 +203,13 @@ module mojo_top (
     
     
     
+ 
+    
+    
+    
+    
+    
+    
     
     
     
@@ -214,9 +222,9 @@ module mojo_top (
         beta_game.board_en = 1;
         beta_game.level_en = 0;
         io_led[2][0] = 1;
-        
         game_state.d = game_state.XOR;
-      
+        
+        
       game_state.XOR:
         beta_game.board_sel = 0;
         beta_game.board_en = 1;
@@ -225,6 +233,7 @@ module mojo_top (
         beta_game.asel = 0;
         beta_game.bsel = 0;
         io_led[2][1] = 1;
+        // rmb to change back 3 edge_detector
         beta_game.button_press = c{edge_detector6.out, edge_detector5.out, edge_detector4.out, edge_detector3.out, edge_detector2.out, edge_detector1.out, edge_detector0.out};
         if ( edge_detector0.out|edge_detector1.out|edge_detector2.out|edge_detector3.out|edge_detector4.out|edge_detector5.out|edge_detector6.out){
           game_state.d = game_state.CMPEQC;
@@ -240,11 +249,13 @@ module mojo_top (
         if (beta_game.allon == 1) {
           game_state.d = game_state.ADDC;
         }
-        else {
+        else if (beta_game.allon == 0) {
           game_state.d = game_state.XOR;
         }
+        
       
       game_state.ADDC:
+        beta_game.board_sel = 1;
         beta_game.board_en = 0;
         beta_game.level_en = 1;
         beta_game.alufn = b000000;
@@ -252,6 +263,7 @@ module mojo_top (
         beta_game.asel = 1;
         io_led[2][3] = 1;
         game_state.d = game_state.BEGIN;
+        
     }
   }
 }

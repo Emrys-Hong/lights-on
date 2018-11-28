@@ -79,10 +79,10 @@ module beta_4 (
     M_level_en = level_en;
     M_level_data = M_alu_out;
     M_buttons_mux_buttons_sel = button_press;
-    M_levels_mux_levels_sel = M_level_out[0+1-:2];
+    M_levels_mux_levels_sel = M_level_out[3+1-:2];
     boardout = M_board_out;
     allon = M_alu_out[0+0-:1];
-    debug = M_alu_out;
+    debug = M_level_out;
     if (asel == 1'h0) begin
       M_alu_a = M_board_out;
     end else begin
@@ -92,7 +92,7 @@ module beta_4 (
       M_alu_b = M_buttons_mux_out;
     end else begin
       if (bsel == 1'h1) begin
-        M_alu_b = 16'h0000;
+        M_alu_b = 16'h0fff;
       end else begin
         M_alu_b = 16'h0001;
       end

@@ -132,10 +132,9 @@ WARNING:HDLCompiler:1127 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_vers
 Elaborating module <buttons_mux_17>.
 
 Elaborating module <register_18>.
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 88: Assignment to M_beta_game_debug ignored, since the identifier is never used
 
 Elaborating module <edge_detector_5>.
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 238: Assignment to M_testor_q ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 196: Result of 16-bit expression is truncated to fit in 8-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -152,14 +151,13 @@ WARNING:Xst:647 - Input <button4> is never used. This port will be preserved and
 WARNING:Xst:647 - Input <button5> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <button6> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <button_reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" line 76: Output port <debug> of the instance <beta_game> is unconnected or connected to loadless signal.
     Found 2-bit register for signal <M_game_state_q>.
     Found finite state machine <FSM_0> for signal <M_game_state_q>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
-    | Transitions        | 6                                              |
-    | Inputs             | 2                                              |
-    | Outputs            | 12                                             |
+    | Transitions        | 7                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 11                                             |
     | Clock              | M_slowclk_value (rising_edge)                  |
     | Reset              | M_reset_cond_out (positive)                    |
     | Reset type         | synchronous                                    |
@@ -168,13 +166,14 @@ INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_ve
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 148
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 148
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 148
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 148
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 148
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 148
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 147
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 147
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 147
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 147
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 147
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 147
     Summary:
+	inferred   5 Multiplexer(s).
 	inferred   6 Tristate(s).
 	inferred   1 Finite State Machine(s).
 Unit <mojo_top_0> synthesized.
@@ -220,11 +219,11 @@ Unit <decoder_14> synthesized.
 
 Synthesizing Unit <counter_3>.
     Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/counter_3.v".
-    Found 5-bit register for signal <M_ctr_q>.
-    Found 5-bit adder for signal <M_ctr_d> created at line 35.
+    Found 3-bit register for signal <M_ctr_q>.
+    Found 3-bit adder for signal <M_ctr_d> created at line 35.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred   5 D-type flip-flop(s).
+	inferred   3 D-type flip-flop(s).
 Unit <counter_3> synthesized.
 
 Synthesizing Unit <beta_4>.
@@ -400,17 +399,17 @@ Macro Statistics
  27-bit adder                                          : 2
  28-bit adder                                          : 2
  29-bit adder                                          : 2
+ 3-bit adder                                           : 1
  30-bit adder                                          : 2
  31-bit adder                                          : 2
  32-bit adder                                          : 2
  4-bit adder                                           : 1
- 5-bit adder                                           : 1
 # Registers                                            : 12
  1-bit register                                        : 7
  16-bit register                                       : 2
  18-bit register                                       : 1
+ 3-bit register                                        : 1
  4-bit register                                        : 1
- 5-bit register                                        : 1
 # Comparators                                          : 20
  16-bit comparator equal                               : 1
  16-bit comparator greater                             : 1
@@ -431,8 +430,8 @@ Macro Statistics
  30-bit comparator lessequal                           : 1
  31-bit comparator lessequal                           : 1
  32-bit comparator lessequal                           : 1
-# Multiplexers                                         : 255
- 1-bit 2-to-1 multiplexer                              : 246
+# Multiplexers                                         : 260
+ 1-bit 2-to-1 multiplexer                              : 251
  16-bit 2-to-1 multiplexer                             : 5
  16-bit 4-to-1 multiplexer                             : 3
  18-bit 2-to-1 multiplexer                             : 1
@@ -507,7 +506,7 @@ Macro Statistics
  4-bit adder                                           : 1
 # Counters                                             : 2
  18-bit up counter                                     : 1
- 5-bit up counter                                      : 1
+ 3-bit up counter                                      : 1
 # Registers                                            : 43
  Flip-Flops                                            : 43
 # Comparators                                          : 20
@@ -530,8 +529,8 @@ Macro Statistics
  30-bit comparator lessequal                           : 1
  31-bit comparator lessequal                           : 1
  32-bit comparator lessequal                           : 1
-# Multiplexers                                         : 254
- 1-bit 2-to-1 multiplexer                              : 246
+# Multiplexers                                         : 259
+ 1-bit 2-to-1 multiplexer                              : 251
  16-bit 2-to-1 multiplexer                             : 5
  16-bit 4-to-1 multiplexer                             : 3
 # Logic shifters                                       : 4
@@ -550,14 +549,14 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <FSM_0> on signal <M_game_state_q[1:4]> with one-hot encoding.
+Optimizing FSM <FSM_0> on signal <M_game_state_q[1:2]> with gray encoding.
 -------------------
  State | Encoding
 -------------------
- 00    | 0001
- 01    | 0010
- 10    | 0100
- 11    | 1000
+ 00    | 00
+ 01    | 01
+ 10    | 11
+ 11    | 10
 -------------------
 
 Optimizing unit <register_18> ...
@@ -573,16 +572,19 @@ Optimizing unit <add_20> ...
 Optimizing unit <mul_24> ...
 
 Optimizing unit <div_16u_16u> ...
+WARNING:Xst:1293 - FF/Latch <beta_game/board/M_regs_q_15> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_12> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <slowclk/M_ctr_q_0> 
 INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <slowclk/M_ctr_q_1> 
 INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_2> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <slowclk/M_ctr_q_2> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <slowclk/M_ctr_q_3> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <slowclk/M_ctr_q_4> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 12.
 WARNING:Xst:2677 - Node <beta_game/alu/mul/Mmult_n0010> of sequential type is unconnected in block <mojo_top_0>.
+FlipFlop M_game_state_q_FSM_FFd1 has been replicated 3 time(s)
 FlipFlop M_game_state_q_FSM_FFd2 has been replicated 1 time(s)
 
 Final Macro Processing ...
@@ -595,8 +597,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 66
- Flip-Flops                                            : 66
+# Registers                                            : 63
+ Flip-Flops                                            : 63
 
 =========================================================================
 
@@ -619,24 +621,23 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 268
-#      GND                         : 5
-#      INV                         : 2
-#      LUT1                        : 17
-#      LUT2                        : 19
+# BELS                             : 251
+#      GND                         : 6
+#      INV                         : 3
+#      LUT1                        : 18
+#      LUT2                        : 17
 #      LUT3                        : 24
-#      LUT4                        : 36
-#      LUT5                        : 20
-#      LUT6                        : 58
-#      MUXCY                       : 48
-#      MUXF7                       : 1
-#      VCC                         : 4
+#      LUT4                        : 32
+#      LUT5                        : 27
+#      LUT6                        : 35
+#      MUXCY                       : 50
+#      VCC                         : 5
 #      XORCY                       : 34
-# FlipFlops/Latches                : 66
-#      FD                          : 8
-#      FDR                         : 21
-#      FDRE                        : 32
-#      FDS                         : 5
+# FlipFlops/Latches                : 63
+#      FD                          : 7
+#      FDR                         : 24
+#      FDRE                        : 28
+#      FDS                         : 4
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 63
@@ -651,16 +652,16 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              66  out of  11440     0%  
- Number of Slice LUTs:                  176  out of   5720     3%  
-    Number used as Logic:               176  out of   5720     3%  
+ Number of Slice Registers:              63  out of  11440     0%  
+ Number of Slice LUTs:                  156  out of   5720     2%  
+    Number used as Logic:               156  out of   5720     2%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    222
-   Number with an unused Flip Flop:     156  out of    222    70%  
-   Number with an unused LUT:            46  out of    222    20%  
-   Number of fully used LUT-FF pairs:    20  out of    222     9%  
-   Number of unique control sets:        14
+ Number of LUT Flip Flop pairs used:    196
+   Number with an unused Flip Flop:     133  out of    196    67%  
+   Number with an unused LUT:            40  out of    196    20%  
+   Number of fully used LUT-FF pairs:    23  out of    196    11%  
+   Number of unique control sets:        13
 
 IO Utilization: 
  Number of IOs:                          89
@@ -690,8 +691,8 @@ Clock Information:
 -----------------------------------+------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)        | Load  |
 -----------------------------------+------------------------------+-------+
-seg/ctr/M_ctr_q_4                  | NONE(M_game_state_q_FSM_FFd3)| 12    |
-clk                                | BUFGP                        | 54    |
+seg/ctr/M_ctr_q_2                  | NONE(M_game_state_q_FSM_FFd1)| 13    |
+clk                                | BUFGP                        | 50    |
 -----------------------------------+------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
@@ -703,79 +704,159 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 8.120ns (Maximum Frequency: 123.149MHz)
-   Minimum input arrival time before clock: 9.337ns
-   Maximum output required time after clock: 5.505ns
-   Maximum combinational path delay: 4.921ns
+   Minimum period: 6.880ns (Maximum Frequency: 145.354MHz)
+   Minimum input arrival time before clock: 7.902ns
+   Maximum output required time after clock: 6.650ns
+   Maximum combinational path delay: 5.043ns
 
 Timing Details:
 ---------------
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'seg/ctr/M_ctr_q_4'
-  Clock period: 8.120ns (frequency: 123.149MHz)
-  Total number of paths / destination ports: 1706 / 7
+Timing constraint: Default period analysis for Clock 'seg/ctr/M_ctr_q_2'
+  Clock period: 6.880ns (frequency: 145.354MHz)
+  Total number of paths / destination ports: 1620 / 10
 -------------------------------------------------------------------------
-Delay:               8.120ns (Levels of Logic = 17)
-  Source:            edge_detector5/M_last_q (FF)
-  Destination:       M_game_state_q_FSM_FFd3 (FF)
-  Source Clock:      seg/ctr/M_ctr_q_4 rising
-  Destination Clock: seg/ctr/M_ctr_q_4 rising
+Delay:               6.880ns (Levels of Logic = 17)
+  Source:            edge_detector1/M_last_q (FF)
+  Destination:       M_game_state_q_FSM_FFd2 (FF)
+  Source Clock:      seg/ctr/M_ctr_q_2 rising
+  Destination Clock: seg/ctr/M_ctr_q_2 rising
 
-  Data Path: edge_detector5/M_last_q to M_game_state_q_FSM_FFd3
+  Data Path: edge_detector1/M_last_q to M_game_state_q_FSM_FFd2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FD:C->Q               3   0.525   0.766  M_last_q (M_last_q)
-     LUT2:I1->O            7   0.254   1.340  out1 (out)
-     end scope: 'edge_detector5:out'
-     begin scope: 'beta_game:button_press<5>'
-     begin scope: 'beta_game/buttons_mux:buttons_sel<5>'
-     LUT6:I1->O            6   0.254   0.984  buttons_sel[6]_GND_18_o_equal_4_o<6>1 (buttons_sel[6]_GND_18_o_equal_4_o)
-     end scope: 'beta_game/buttons_mux:buttons_sel[6]_GND_18_o_equal_4_o'
-     LUT4:I2->O            5   0.250   1.069  M_alu_b<2>1 (M_alu_b<2>)
-     begin scope: 'beta_game/alu:b<2>'
-     begin scope: 'beta_game/alu/cmp:b<2>'
-     LUT6:I3->O            1   0.235   0.000  Mcompar_a[15]_b[15]_equal_1_o_lut<0> (Mcompar_a[15]_b[15]_equal_1_o_lut<0>)
+     LUT2:I1->O            7   0.254   1.018  out1 (out)
+     end scope: 'edge_detector1:out'
+     begin scope: 'beta_game:button_press<1>'
+     LUT6:I4->O            6   0.250   0.876  M_alu_b<1>21 (M_alu_b<1>2)
+     LUT6:I5->O            5   0.254   1.117  M_alu_b<1>1 (M_alu_b<1>)
+     begin scope: 'beta_game/alu:b<1>'
+     begin scope: 'beta_game/alu/cmp:b<1>'
+     LUT4:I0->O            0   0.254   0.000  Mcompar_a[15]_b[15]_LessThan_3_o_lutdi (Mcompar_a[15]_b[15]_LessThan_3_o_lutdi)
+     MUXCY:DI->O           1   0.181   0.000  Mcompar_a[15]_b[15]_LessThan_3_o_cy<0> (Mcompar_a[15]_b[15]_LessThan_3_o_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_LessThan_3_o_cy<1> (Mcompar_a[15]_b[15]_LessThan_3_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_LessThan_3_o_cy<2> (Mcompar_a[15]_b[15]_LessThan_3_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_LessThan_3_o_cy<3> (Mcompar_a[15]_b[15]_LessThan_3_o_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_LessThan_3_o_cy<4> (Mcompar_a[15]_b[15]_LessThan_3_o_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_LessThan_3_o_cy<5> (Mcompar_a[15]_b[15]_LessThan_3_o_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_LessThan_3_o_cy<6> (Mcompar_a[15]_b[15]_LessThan_3_o_cy<6>)
+     MUXCY:CI->O           1   0.235   0.682  Mcompar_a[15]_b[15]_LessThan_3_o_cy<7> (a[15]_b[15]_LessThan_3_o)
+     end scope: 'beta_game/alu/cmp:a[15]_b[15]_LessThan_3_o'
+     end scope: 'beta_game/alu:a[15]_b[15]_LessThan_3_o'
+     end scope: 'beta_game:a[15]_b[15]_LessThan_3_o'
+     LUT6:I5->O            2   0.254   0.000  M_game_state_q_FSM_FFd2-In1 (M_game_state_q_FSM_FFd2-In)
+     FDR:D                     0.074          M_game_state_q_FSM_FFd2
+    ----------------------------------------
+    Total                      6.880ns (2.421ns logic, 4.459ns route)
+                                       (35.2% logic, 64.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 5.356ns (frequency: 186.715MHz)
+  Total number of paths / destination ports: 1147 / 95
+-------------------------------------------------------------------------
+Delay:               5.356ns (Levels of Logic = 15)
+  Source:            beta_game/board/M_regs_q_2 (FF)
+  Destination:       beta_game/level/M_regs_q_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: beta_game/board/M_regs_q_2 to beta_game/level/M_regs_q_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             6   0.525   1.104  M_regs_q_2 (M_regs_q_2)
+     end scope: 'beta_game/board:out<2>'
+     LUT4:I1->O            3   0.235   0.874  Mmux_M_alu_a91 (M_alu_a<2>)
+     begin scope: 'beta_game/alu:a<2>'
+     begin scope: 'beta_game/alu/cmp:a<2>'
+     LUT6:I4->O            1   0.250   0.682  Mcompar_a[15]_b[15]_equal_1_o_lut<0>_SW1 (N32)
+     LUT6:I5->O            1   0.254   0.000  Mcompar_a[15]_b[15]_equal_1_o_lut<0> (Mcompar_a[15]_b[15]_equal_1_o_lut<0>)
      MUXCY:S->O            1   0.215   0.000  Mcompar_a[15]_b[15]_equal_1_o_cy<0> (Mcompar_a[15]_b[15]_equal_1_o_cy<0>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_equal_1_o_cy<1> (Mcompar_a[15]_b[15]_equal_1_o_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_equal_1_o_cy<2> (Mcompar_a[15]_b[15]_equal_1_o_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_equal_1_o_cy<3> (Mcompar_a[15]_b[15]_equal_1_o_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_equal_1_o_cy<4> (Mcompar_a[15]_b[15]_equal_1_o_cy<4>)
-     MUXCY:CI->O           2   0.023   0.726  Mcompar_a[15]_b[15]_equal_1_o_cy<5> (a[15]_b[15]_equal_1_o)
+     MUXCY:CI->O           3   0.023   0.000  Mcompar_a[15]_b[15]_equal_1_o_cy<5> (a[15]_b[15]_equal_1_o)
      end scope: 'beta_game/alu/cmp:a[15]_b[15]_equal_1_o'
-     LUT5:I4->O            4   0.254   0.804  Mmux_out29_SW2 (N27)
-     end scope: 'beta_game/alu:N27'
-     end scope: 'beta_game:N27'
-     LUT6:I5->O            1   0.254   0.000  M_game_state_q_FSM_FFd3-In1 (M_game_state_q_FSM_FFd3-In)
-     FDR:D                     0.074          M_game_state_q_FSM_FFd3
+     MUXCY:CI->O           1   0.023   0.000  Mmux_out22_cy (a[15]_b[15]_equal_1_o_l1)
+     MUXCY:CI->O           2   0.023   0.726  Mmux_out22_cy1 (Mmux_out21)
+     LUT3:I2->O            1   0.254   0.000  Mmux_out28 (out<0>)
+     end scope: 'beta_game/alu:out<0>'
+     begin scope: 'beta_game/level:data<0>'
+     FDRE:D                    0.074          M_regs_q_0
     ----------------------------------------
-    Total                      8.120ns (2.431ns logic, 5.689ns route)
-                                       (29.9% logic, 70.1% route)
+    Total                      5.356ns (1.970ns logic, 3.386ns route)
+                                       (36.8% logic, 63.2% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 6.392ns (frequency: 156.439MHz)
-  Total number of paths / destination ports: 1932 / 103
+Timing constraint: Default OFFSET IN BEFORE for Clock 'seg/ctr/M_ctr_q_2'
+  Total number of paths / destination ports: 869 / 13
 -------------------------------------------------------------------------
-Delay:               6.392ns (Levels of Logic = 18)
-  Source:            beta_game/level/M_regs_q_0 (FF)
-  Destination:       beta_game/board/M_regs_q_10 (FF)
-  Source Clock:      clk rising
-  Destination Clock: clk rising
+Offset:              7.825ns (Levels of Logic = 18)
+  Source:            io_dip<1> (PAD)
+  Destination:       M_game_state_q_FSM_FFd2 (FF)
+  Destination Clock: seg/ctr/M_ctr_q_2 rising
 
-  Data Path: beta_game/level/M_regs_q_0 to beta_game/board/M_regs_q_10
+  Data Path: io_dip<1> to M_game_state_q_FSM_FFd2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            10   0.525   1.116  M_regs_q_0 (M_regs_q_0)
-     end scope: 'beta_game/level:M_regs_q_0'
-     LUT3:I1->O            6   0.250   0.875  Mmux_M_alu_a17 (M_alu_a<0>)
-     begin scope: 'beta_game/alu:a<0>'
-     begin scope: 'beta_game/alu/add:a<0>'
-     MUXCY:DI->O           1   0.181   0.000  Maddsub_holder_cy<0> (Maddsub_holder_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<1> (Maddsub_holder_cy<1>)
+     IBUF:I->O             4   1.328   0.912  io_dip_1_IBUF (io_dip_1_IBUF)
+     begin scope: 'edge_detector1:in'
+     LUT2:I0->O            7   0.250   1.018  out1 (out)
+     end scope: 'edge_detector1:out'
+     begin scope: 'beta_game:button_press<1>'
+     LUT6:I4->O            6   0.250   0.876  M_alu_b<1>21 (M_alu_b<1>2)
+     LUT6:I5->O            5   0.254   1.117  M_alu_b<1>1 (M_alu_b<1>)
+     begin scope: 'beta_game/alu:b<1>'
+     begin scope: 'beta_game/alu/cmp:b<1>'
+     LUT4:I0->O            0   0.254   0.000  Mcompar_a[15]_b[15]_LessThan_3_o_lutdi (Mcompar_a[15]_b[15]_LessThan_3_o_lutdi)
+     MUXCY:DI->O           1   0.181   0.000  Mcompar_a[15]_b[15]_LessThan_3_o_cy<0> (Mcompar_a[15]_b[15]_LessThan_3_o_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_LessThan_3_o_cy<1> (Mcompar_a[15]_b[15]_LessThan_3_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_LessThan_3_o_cy<2> (Mcompar_a[15]_b[15]_LessThan_3_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_LessThan_3_o_cy<3> (Mcompar_a[15]_b[15]_LessThan_3_o_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_LessThan_3_o_cy<4> (Mcompar_a[15]_b[15]_LessThan_3_o_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_LessThan_3_o_cy<5> (Mcompar_a[15]_b[15]_LessThan_3_o_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_LessThan_3_o_cy<6> (Mcompar_a[15]_b[15]_LessThan_3_o_cy<6>)
+     MUXCY:CI->O           1   0.235   0.682  Mcompar_a[15]_b[15]_LessThan_3_o_cy<7> (a[15]_b[15]_LessThan_3_o)
+     end scope: 'beta_game/alu/cmp:a[15]_b[15]_LessThan_3_o'
+     end scope: 'beta_game/alu:a[15]_b[15]_LessThan_3_o'
+     end scope: 'beta_game:a[15]_b[15]_LessThan_3_o'
+     LUT6:I5->O            2   0.254   0.000  M_game_state_q_FSM_FFd2-In1 (M_game_state_q_FSM_FFd2-In)
+     FDR:D                     0.074          M_game_state_q_FSM_FFd2
+    ----------------------------------------
+    Total                      7.825ns (3.220ns logic, 4.605ns route)
+                                       (41.1% logic, 58.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 1208 / 32
+-------------------------------------------------------------------------
+Offset:              7.902ns (Levels of Logic = 24)
+  Source:            io_dip<1> (PAD)
+  Destination:       beta_game/level/M_regs_q_14 (FF)
+  Destination Clock: clk rising
+
+  Data Path: io_dip<1> to beta_game/level/M_regs_q_14
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.328   0.912  io_dip_1_IBUF (io_dip_1_IBUF)
+     begin scope: 'edge_detector1:in'
+     LUT2:I0->O            7   0.250   1.018  out1 (out)
+     end scope: 'edge_detector1:out'
+     begin scope: 'beta_game:button_press<1>'
+     LUT6:I4->O            6   0.250   0.876  M_alu_b<1>21 (M_alu_b<1>2)
+     LUT6:I5->O            5   0.254   0.841  M_alu_b<1>1 (M_alu_b<1>)
+     begin scope: 'beta_game/alu:b<1>'
+     begin scope: 'beta_game/alu/add:b<1>'
+     LUT5:I4->O            1   0.254   0.000  Maddsub_holder_lut<1> (Maddsub_holder_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  Maddsub_holder_cy<1> (Maddsub_holder_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<2> (Maddsub_holder_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<3> (Maddsub_holder_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<4> (Maddsub_holder_cy<4>)
@@ -784,154 +865,79 @@ Delay:               6.392ns (Levels of Logic = 18)
      MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<7> (Maddsub_holder_cy<7>)
      MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<8> (Maddsub_holder_cy<8>)
      MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<9> (Maddsub_holder_cy<9>)
-     XORCY:CI->O           1   0.206   0.790  Maddsub_holder_xor<10> (out<10>)
-     end scope: 'beta_game/alu/add:out<10>'
-     LUT3:I1->O            1   0.250   0.682  Mmux_out36_SW0 (N54)
-     LUT6:I5->O            2   0.254   0.726  Mmux_out36 (M_alu_out<10>)
-     end scope: 'beta_game/alu:M_alu_out<10>'
-     LUT4:I3->O            1   0.254   0.000  Mmux_M_board_data21 (M_board_data<10>)
-     begin scope: 'beta_game/board:data<10>'
-     FDRE:D                    0.074          M_regs_q_10
+     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<10> (Maddsub_holder_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<11> (Maddsub_holder_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<12> (Maddsub_holder_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<13> (Maddsub_holder_cy<13>)
+     XORCY:CI->O           1   0.206   0.910  Maddsub_holder_xor<14> (out<14>)
+     end scope: 'beta_game/alu/add:out<14>'
+     LUT3:I0->O            1   0.235   0.000  Mmux_out74 (out<14>)
+     end scope: 'beta_game/alu:out<14>'
+     begin scope: 'beta_game/level:data<14>'
+     FDRE:D                    0.074          M_regs_q_14
     ----------------------------------------
-    Total                      6.392ns (2.203ns logic, 4.189ns route)
-                                       (34.5% logic, 65.5% route)
+    Total                      7.902ns (3.345ns logic, 4.557ns route)
+                                       (42.3% logic, 57.7% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'seg/ctr/M_ctr_q_4'
-  Total number of paths / destination ports: 1365 / 11
+Timing constraint: Default OFFSET OUT AFTER for Clock 'seg/ctr/M_ctr_q_2'
+  Total number of paths / destination ports: 16 / 8
 -------------------------------------------------------------------------
-Offset:              9.233ns (Levels of Logic = 17)
-  Source:            io_dip<4> (PAD)
-  Destination:       M_game_state_q_FSM_FFd3 (FF)
-  Destination Clock: seg/ctr/M_ctr_q_4 rising
-
-  Data Path: io_dip<4> to M_game_state_q_FSM_FFd3
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O             8   1.328   1.374  io_dip_4_IBUF (io_dip_4_IBUF)
-     begin scope: 'beta_game:io_dip_4_IBUF'
-     begin scope: 'beta_game/buttons_mux:io_dip_4_IBUF'
-     LUT5:I0->O            1   0.254   1.112  buttons_sel[6]_GND_18_o_equal_5_o<6>1_SW0 (N12)
-     LUT6:I1->O            7   0.254   0.910  buttons_sel[6]_GND_18_o_equal_5_o<6>1 (buttons_sel[6]_GND_18_o_equal_5_o)
-     end scope: 'beta_game/buttons_mux:buttons_sel[6]_GND_18_o_equal_5_o'
-     LUT4:I3->O            5   0.254   1.069  M_alu_b<2>1 (M_alu_b<2>)
-     begin scope: 'beta_game/alu:b<2>'
-     begin scope: 'beta_game/alu/cmp:b<2>'
-     LUT6:I3->O            1   0.235   0.000  Mcompar_a[15]_b[15]_equal_1_o_lut<0> (Mcompar_a[15]_b[15]_equal_1_o_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  Mcompar_a[15]_b[15]_equal_1_o_cy<0> (Mcompar_a[15]_b[15]_equal_1_o_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_equal_1_o_cy<1> (Mcompar_a[15]_b[15]_equal_1_o_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_equal_1_o_cy<2> (Mcompar_a[15]_b[15]_equal_1_o_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_equal_1_o_cy<3> (Mcompar_a[15]_b[15]_equal_1_o_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_equal_1_o_cy<4> (Mcompar_a[15]_b[15]_equal_1_o_cy<4>)
-     MUXCY:CI->O           2   0.023   0.726  Mcompar_a[15]_b[15]_equal_1_o_cy<5> (a[15]_b[15]_equal_1_o)
-     end scope: 'beta_game/alu/cmp:a[15]_b[15]_equal_1_o'
-     LUT5:I4->O            4   0.254   0.804  Mmux_out29_SW2 (N27)
-     end scope: 'beta_game/alu:N27'
-     end scope: 'beta_game:N27'
-     LUT6:I5->O            1   0.254   0.000  M_game_state_q_FSM_FFd3-In1 (M_game_state_q_FSM_FFd3-In)
-     FDR:D                     0.074          M_game_state_q_FSM_FFd3
-    ----------------------------------------
-    Total                      9.233ns (3.238ns logic, 5.995ns route)
-                                       (35.1% logic, 64.9% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 5072 / 36
--------------------------------------------------------------------------
-Offset:              9.337ns (Levels of Logic = 17)
-  Source:            io_dip<4> (PAD)
-  Destination:       beta_game/level/M_regs_q_0 (FF)
-  Destination Clock: clk rising
-
-  Data Path: io_dip<4> to beta_game/level/M_regs_q_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O             8   1.328   1.374  io_dip_4_IBUF (io_dip_4_IBUF)
-     begin scope: 'beta_game:io_dip_4_IBUF'
-     begin scope: 'beta_game/buttons_mux:io_dip_4_IBUF'
-     LUT5:I0->O            1   0.254   1.112  buttons_sel[6]_GND_18_o_equal_5_o<6>1_SW0 (N12)
-     LUT6:I1->O            7   0.254   0.910  buttons_sel[6]_GND_18_o_equal_5_o<6>1 (buttons_sel[6]_GND_18_o_equal_5_o)
-     end scope: 'beta_game/buttons_mux:buttons_sel[6]_GND_18_o_equal_5_o'
-     LUT4:I3->O            5   0.254   1.069  M_alu_b<2>1 (M_alu_b<2>)
-     begin scope: 'beta_game/alu:b<2>'
-     begin scope: 'beta_game/alu/cmp:b<2>'
-     LUT6:I3->O            1   0.235   0.000  Mcompar_a[15]_b[15]_equal_1_o_lut<0> (Mcompar_a[15]_b[15]_equal_1_o_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  Mcompar_a[15]_b[15]_equal_1_o_cy<0> (Mcompar_a[15]_b[15]_equal_1_o_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_equal_1_o_cy<1> (Mcompar_a[15]_b[15]_equal_1_o_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_equal_1_o_cy<2> (Mcompar_a[15]_b[15]_equal_1_o_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_equal_1_o_cy<3> (Mcompar_a[15]_b[15]_equal_1_o_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_equal_1_o_cy<4> (Mcompar_a[15]_b[15]_equal_1_o_cy<4>)
-     MUXCY:CI->O           2   0.023   0.726  Mcompar_a[15]_b[15]_equal_1_o_cy<5> (a[15]_b[15]_equal_1_o)
-     end scope: 'beta_game/alu/cmp:a[15]_b[15]_equal_1_o'
-     LUT5:I4->O            4   0.254   0.912  Mmux_out29_SW2 (N27)
-     end scope: 'beta_game/alu:N27'
-     LUT6:I4->O            1   0.250   0.000  Mmux_M_board_data15 (M_board_data<0>)
-     begin scope: 'beta_game/board:data<0>'
-     FDRE:D                    0.074          M_regs_q_0
-    ----------------------------------------
-    Total                      9.337ns (3.234ns logic, 6.103ns route)
-                                       (34.6% logic, 65.4% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'seg/ctr/M_ctr_q_4'
-  Total number of paths / destination ports: 4 / 4
--------------------------------------------------------------------------
-Offset:              5.505ns (Levels of Logic = 1)
-  Source:            M_game_state_q_FSM_FFd1 (FF)
+Offset:              6.650ns (Levels of Logic = 2)
+  Source:            M_game_state_q_FSM_FFd2 (FF)
   Destination:       io_led<19> (PAD)
-  Source Clock:      seg/ctr/M_ctr_q_4 rising
+  Source Clock:      seg/ctr/M_ctr_q_2 rising
 
-  Data Path: M_game_state_q_FSM_FFd1 to io_led<19>
+  Data Path: M_game_state_q_FSM_FFd2 to io_led<19>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              82   0.525   2.068  M_game_state_q_FSM_FFd1 (M_game_state_q_FSM_FFd1)
+     FDR:C->Q             82   0.525   2.297  M_game_state_q_FSM_FFd2 (M_game_state_q_FSM_FFd2)
+     LUT3:I0->O            1   0.235   0.681  io_led<19><3>1 (io_led_19_OBUF)
      OBUF:I->O                 2.912          io_led_19_OBUF (io_led<19>)
     ----------------------------------------
-    Total                      5.505ns (3.437ns logic, 2.068ns route)
-                                       (62.4% logic, 37.6% route)
+    Total                      6.650ns (3.672ns logic, 2.978ns route)
+                                       (55.2% logic, 44.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 20 / 16
+  Total number of paths / destination ports: 28 / 24
 -------------------------------------------------------------------------
-Offset:              5.352ns (Levels of Logic = 3)
-  Source:            seg/ctr/M_ctr_q_17 (FF)
-  Destination:       io_sel<3> (PAD)
+Offset:              5.574ns (Levels of Logic = 3)
+  Source:            beta_game/level/M_regs_q_3 (FF)
+  Destination:       io_led<19> (PAD)
   Source Clock:      clk rising
 
-  Data Path: seg/ctr/M_ctr_q_17 to io_sel<3>
+  Data Path: beta_game/level/M_regs_q_3 to io_led<19>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              6   0.525   0.984  M_ctr_q_17 (M_ctr_q_17)
-     end scope: 'seg/ctr:value<1>'
-     end scope: 'seg:M_ctr_q_17'
-     LUT2:I0->O            1   0.250   0.681  io_sel<3>1 (io_sel_3_OBUF)
-     OBUF:I->O                 2.912          io_sel_3_OBUF (io_sel<3>)
+     FDRE:C->Q            13   0.525   1.206  M_regs_q_3 (M_regs_q_3)
+     end scope: 'beta_game/level:M_regs_q_3'
+     end scope: 'beta_game:M_regs_q_3'
+     LUT3:I1->O            1   0.250   0.681  io_led<19><3>1 (io_led_19_OBUF)
+     OBUF:I->O                 2.912          io_led_19_OBUF (io_led<19>)
     ----------------------------------------
-    Total                      5.352ns (3.687ns logic, 1.665ns route)
-                                       (68.9% logic, 31.1% route)
+    Total                      5.574ns (3.687ns logic, 1.887ns route)
+                                       (66.1% logic, 33.9% route)
 
 =========================================================================
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 5 / 5
 -------------------------------------------------------------------------
-Delay:               4.921ns (Levels of Logic = 2)
-  Source:            io_button<4> (PAD)
-  Destination:       led<4> (PAD)
+Delay:               5.043ns (Levels of Logic = 2)
+  Source:            io_button<1> (PAD)
+  Destination:       led<1> (PAD)
 
-  Data Path: io_button<4> to led<4>
+  Data Path: io_button<1> to led<1>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.328   0.681  io_button_4_IBUF (led_4_OBUF)
-     OBUF:I->O                 2.912          led_4_OBUF (led<4>)
+     IBUF:I->O             4   1.328   0.803  io_button_1_IBUF (led_1_OBUF)
+     OBUF:I->O                 2.912          led_1_OBUF (led<1>)
     ----------------------------------------
-    Total                      4.921ns (4.240ns logic, 0.681ns route)
-                                       (86.2% logic, 13.8% route)
+    Total                      5.043ns (4.240ns logic, 0.803ns route)
+                                       (84.1% logic, 15.9% route)
 
 =========================================================================
 
@@ -943,31 +949,31 @@ Clock to Setup on destination clock clk
                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------+---------+---------+---------+---------+
-clk              |    6.392|         |         |         |
-seg/ctr/M_ctr_q_4|    8.548|         |         |         |
+clk              |    5.356|         |         |         |
+seg/ctr/M_ctr_q_2|    6.957|         |         |         |
 -----------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock seg/ctr/M_ctr_q_4
+Clock to Setup on destination clock seg/ctr/M_ctr_q_2
 -----------------+---------+---------+---------+---------+
                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------+---------+---------+---------+---------+
-clk              |    5.894|         |         |         |
-seg/ctr/M_ctr_q_4|    8.120|         |         |         |
+clk              |    5.453|         |         |         |
+seg/ctr/M_ctr_q_2|    6.880|         |         |         |
 -----------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.71 secs
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 4.67 secs
  
 --> 
 
 
-Total memory usage is 404992 kilobytes
+Total memory usage is 405004 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   22 (   0 filtered)
-Number of infos    :   14 (   0 filtered)
+Number of warnings :   25 (   0 filtered)
+Number of infos    :   11 (   0 filtered)
 

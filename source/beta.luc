@@ -60,14 +60,14 @@ module beta (
     level.en = level_en;
     level.data = alu.out;
     buttons_mux.buttons_sel = button_press;
-    levels_mux.levels_sel = level.out[1:0];  // only 2 bits wide because we have levels 0 to 3.
+    levels_mux.levels_sel = level.out[4:3];  // only 2 bits wide because we have levels 0 to 3.
     boardout = board.out;
     allon = alu.out[0];
    
     
     
     
-    debug = alu.out;
+    debug = level.out;
     
     
     
@@ -90,13 +90,13 @@ module beta (
     if (bsel == 0)
       alu.b = buttons_mux.out;
     else if (bsel == 1)
-      alu.b = 16b000011111111111;
-    else
+      alu.b = 16b0000111111111111;
+    else 
       alu.b = 16b0000000000000001;
     // Mux for BoardSel
     if (board_sel == 0)
       board.data = alu.out;
-    else
+    else 
       board.data = levels_mux.out;
   }
 }
