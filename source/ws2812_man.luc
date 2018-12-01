@@ -1,11 +1,12 @@
+
 module ws2812_man(
     input clk,  // clock
     input rst,  // reset
-    input data[20][2],
+    input data[6][2],
     output out
   ) {
   
-  const NUM_LED = 10;
+  const NUM_LED = 6;
   
   // enum for different led_states
   const LED_OFF = 2d0;
@@ -26,8 +27,7 @@ module ws2812_man(
   sig grb[24]; // temp variable to store the GRB values for LED given its led_state
   
   var c; // for-loop counters
-
-  always {
+   always {
     out = 8b0;
     // update board
     for (c=0; c<NUM_LED; c++)  board.d[c] = data[c]; // refer to bit pattern for led_states

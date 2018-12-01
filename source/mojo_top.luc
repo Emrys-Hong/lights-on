@@ -32,7 +32,12 @@ module mojo_top (
     input button4[1],
     input button5[1],
     input button6[1],
-    input button_reset[1]
+    input button_reset[1],
+    
+    
+    
+    output led_strip,
+    output led_strip_1
     
   ) {
   
@@ -74,16 +79,14 @@ module mojo_top (
       multi_seven_seg seg;
       counter slowclk(#SIZE(1),#DIV(2));
       beta beta_game;
-      
+      ws2812_man ws2812_man;
+      ws2812_man ws2812_man_1;
     }
   }
   
   
   
   .clk(slowclk.value) {
-    
-    
-    
     // TO DELETE
     edge_detector edge_detector0(#RISE(1), #FALL(0));
     edge_detector edge_detector1(#RISE(1), #FALL(0));
@@ -131,7 +134,7 @@ module mojo_top (
     seg.values = {4h0, 4h0, 4h0, 4h0};
     io_seg = ~seg.seg; // connect segments to the driver
     io_sel = ~seg.sel; // connect digit select to the
-    io_led[2] = 0;   // connect the DIP switches to the LEDs    driver
+    io_led[2:0] = 3x{{8h00}};   // connect the DIP switches to the LEDs    driver
     
     
 
@@ -169,16 +172,55 @@ module mojo_top (
     io_led[1][4] = beta_game.boardout[10];
     io_led[1][5] = beta_game.boardout[11];
     
-    io_led[0][6] = 0;
-    io_led[0][7] = 0;
-    io_led[1][6] = 0;
-    io_led[1][7] = 0;
-    
-    
-    
-    
-    
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    ws2812_man.data[0] = 2 + beta_game.boardout[0];                                                     // led 1
+    ws2812_man.data[1] = 2 + beta_game.boardout[1];                                                    // led 2
+    ws2812_man.data[2] = 2 + beta_game.boardout[2];                                                      // led 3 
+    ws2812_man.data[3] = 2 + beta_game.boardout[3];                                                      // led 4
+    ws2812_man.data[4] = 2 + beta_game.boardout[4];                                                     // led 5
+    ws2812_man.data[5] = 2 + beta_game.boardout[5];                                                    // led 6
+    led_strip = ws2812_man.out;
+    ws2812_man_1.data[0] = 2 + beta_game.boardout[6];                                                    // led 10
+    ws2812_man_1.data[1] = 2 + beta_game.boardout[7];                                                   // led 20
+    ws2812_man_1.data[2] = 2 + beta_game.boardout[8];                                                  // led 30
+    ws2812_man_1.data[3] = 2 + beta_game.boardout[9];                                                    // led 40
+    ws2812_man_1.data[4] = 2 + beta_game.boardout[10];                                                    // led 50
+    ws2812_man_1.data[5] = 2 + beta_game.boardout[11];                                                   // led 60
+    led_strip_1 = ws2812_man_1.out;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -195,8 +237,6 @@ module mojo_top (
     beta_game.asel = 0;
     beta_game.bsel = 0;
     beta_game.alufn = 0;
-    //beta_game.button_press = c{button0, button1, button2, button3, button4, button5, button6};
-    // TO DELETE
     beta_game.button_press = c{edge_detector6.out, edge_detector5.out, edge_detector4.out, edge_detector3.out, edge_detector2.out, edge_detector1.out, edge_detector0.out};
     
 

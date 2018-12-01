@@ -4,8 +4,8 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module levels_mux_15 (
-    input [1:0] levels_sel,
+module buttons_mux_19 (
+    input [6:0] buttons_sel,
     output reg [15:0] out
   );
   
@@ -14,18 +14,27 @@ module levels_mux_15 (
   always @* begin
     out = 16'h0000;
     
-    case (levels_sel)
-      1'h0: begin
-        out = 16'h003f;
-      end
+    case (buttons_sel)
       1'h1: begin
-        out = 16'h074c;
+        out = 16'h0fc0;
       end
       2'h2: begin
-        out = 16'h0c94;
+        out = 16'h0043;
       end
-      2'h3: begin
-        out = 16'h090e;
+      3'h4: begin
+        out = 16'h0086;
+      end
+      4'h8: begin
+        out = 16'h010c;
+      end
+      5'h10: begin
+        out = 16'h0218;
+      end
+      6'h20: begin
+        out = 16'h0430;
+      end
+      7'h40: begin
+        out = 16'h0860;
       end
     endcase
   end

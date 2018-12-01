@@ -16,4 +16,4 @@ NET "button_reset"    LOC = P22 | IOSTANDARD = LVTTL;
 
 
 NET "led_strip"    LOC=P40 | IOSTANDARD = LVTTL;
-NET "led_Strip2"    LOC=P34 | IOSTANDARD = LVTTL;
+NET "led_strip_1"    LOC=P34 | IOSTANDARD = LVTTL;
