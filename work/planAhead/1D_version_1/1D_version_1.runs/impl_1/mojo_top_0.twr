@@ -28,16 +28,16 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 2152 paths analyzed, 289 endpoints analyzed, 0 failing endpoints
+ 2127 paths analyzed, 289 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   6.366ns.
+ Minimum period is   5.602ns.
 --------------------------------------------------------------------------------
-Slack:                  13.634ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/level/M_regs_q_5 (FF)
-  Destination:          beta_game/board/M_regs_q_0 (FF)
+Slack:                  14.398ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/board/M_regs_q_0 (FF)
+  Destination:          beta_game/level/M_regs_q_13 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.320ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.011ns (0.195 - 0.206)
+  Data Path Delay:      5.552ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.015ns (0.190 - 0.205)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -48,785 +48,46 @@ Slack:                  13.634ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: beta_game/level/M_regs_q_5 to beta_game/board/M_regs_q_0
+  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_0 to beta_game/level/M_regs_q_13
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y13.DQ      Tcko                  0.430   beta_game/M_regs_q_5
-                                                       beta_game/level/M_regs_q_5
-    SLICE_X21Y14.A3      net (fanout=3)        0.564   beta_game/M_regs_q_5
-    SLICE_X21Y14.A       Tilo                  0.259   beta_game/M_alu_a[5]
-                                                       beta_game/Mmux_M_alu_a121
-    SLICE_X19Y14.C2      net (fanout=3)        1.093   beta_game/M_alu_a[5]
-    SLICE_X19Y14.C       Tilo                  0.259   beta_game/M_levels_mux_out[11]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<1>_SW1
-    SLICE_X14Y15.B2      net (fanout=1)        1.209   beta_game/alu/cmp/N53
-    SLICE_X14Y15.COUT    Topcyb                0.448   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<1>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X20Y13.B3      net (fanout=3)        1.477   a[15]_b[15]_equal_1_o
-    SLICE_X20Y13.CLK     Tas                   0.339   M_beta_game_boardout[1]
-                                                       beta_game/Mmux_M_board_data17
+    SLICE_X12Y34.AQ      Tcko                  0.525   M_beta_game_boardout[2]
                                                        beta_game/board/M_regs_q_0
+    SLICE_X9Y33.D6       net (fanout=4)        0.848   M_beta_game_boardout[0]
+    SLICE_X9Y33.D        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/Mmux_M_alu_a17
+    SLICE_X9Y33.B2       net (fanout=4)        0.557   beta_game/M_alu_a[0]
+    SLICE_X9Y33.B        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/alu/add/Maddsub_holder_lut<0>
+    SLICE_X10Y34.A2      net (fanout=1)        0.731   beta_game/alu/add/Maddsub_holder_lut[0]
+    SLICE_X10Y34.COUT    Topcya                0.472   beta_game/alu/add/Maddsub_holder_cy[3]
+                                                       beta_game/alu/add/Maddsub_holder_lut[0]_rt
+                                                       beta_game/alu/add/Maddsub_holder_cy<3>
+    SLICE_X10Y35.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[3]
+    SLICE_X10Y35.COUT    Tbyp                  0.091   beta_game/alu/add/Maddsub_holder_cy[7]
+                                                       beta_game/alu/add/Maddsub_holder_cy<7>
+    SLICE_X10Y36.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[7]
+    SLICE_X10Y36.COUT    Tbyp                  0.091   beta_game/alu/add/Maddsub_holder_cy[11]
+                                                       beta_game/alu/add/Maddsub_holder_cy<11>
+    SLICE_X10Y37.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[11]
+    SLICE_X10Y37.BMUX    Tcinb                 0.277   beta_game/alu/M_add_n
+                                                       beta_game/alu/add/Maddsub_holder_xor<15>
+    SLICE_X13Y36.A2      net (fanout=1)        1.169   beta_game/alu/M_add_out[13]
+    SLICE_X13Y36.CLK     Tas                   0.264   beta_game/M_regs_q_15
+                                                       beta_game/alu/Mmux_out64
+                                                       beta_game/level/M_regs_q_13
     -------------------------------------------------  ---------------------------
-    Total                                      6.320ns (1.974ns logic, 4.346ns route)
-                                                       (31.2% logic, 68.8% route)
+    Total                                      5.552ns (2.238ns logic, 3.314ns route)
+                                                       (40.3% logic, 59.7% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.733ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/board/M_regs_q_5 (FF)
-  Destination:          beta_game/board/M_regs_q_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.219ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.013ns (0.195 - 0.208)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_5 to beta_game/board/M_regs_q_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X20Y15.AQ      Tcko                  0.525   M_beta_game_boardout[6]
-                                                       beta_game/board/M_regs_q_5
-    SLICE_X21Y14.A6      net (fanout=7)        0.368   M_beta_game_boardout[5]
-    SLICE_X21Y14.A       Tilo                  0.259   beta_game/M_alu_a[5]
-                                                       beta_game/Mmux_M_alu_a121
-    SLICE_X19Y14.C2      net (fanout=3)        1.093   beta_game/M_alu_a[5]
-    SLICE_X19Y14.C       Tilo                  0.259   beta_game/M_levels_mux_out[11]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<1>_SW1
-    SLICE_X14Y15.B2      net (fanout=1)        1.209   beta_game/alu/cmp/N53
-    SLICE_X14Y15.COUT    Topcyb                0.448   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<1>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X20Y13.B3      net (fanout=3)        1.477   a[15]_b[15]_equal_1_o
-    SLICE_X20Y13.CLK     Tas                   0.339   M_beta_game_boardout[1]
-                                                       beta_game/Mmux_M_board_data17
-                                                       beta_game/board/M_regs_q_0
-    -------------------------------------------------  ---------------------------
-    Total                                      6.219ns (2.069ns logic, 4.150ns route)
-                                                       (33.3% logic, 66.7% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.800ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/level/M_regs_q_5 (FF)
-  Destination:          beta_game/level/M_regs_q_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.165ns (Levels of Logic = 5)
-  Clock Path Skew:      0.000ns
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: beta_game/level/M_regs_q_5 to beta_game/level/M_regs_q_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X21Y13.DQ      Tcko                  0.430   beta_game/M_regs_q_5
-                                                       beta_game/level/M_regs_q_5
-    SLICE_X21Y14.A3      net (fanout=3)        0.564   beta_game/M_regs_q_5
-    SLICE_X21Y14.A       Tilo                  0.259   beta_game/M_alu_a[5]
-                                                       beta_game/Mmux_M_alu_a121
-    SLICE_X19Y14.C2      net (fanout=3)        1.093   beta_game/M_alu_a[5]
-    SLICE_X19Y14.C       Tilo                  0.259   beta_game/M_levels_mux_out[11]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<1>_SW1
-    SLICE_X14Y15.B2      net (fanout=1)        1.209   beta_game/alu/cmp/N53
-    SLICE_X14Y15.COUT    Topcyb                0.448   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<1>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X21Y13.A5      net (fanout=3)        1.288   a[15]_b[15]_equal_1_o
-    SLICE_X21Y13.CLK     Tas                   0.373   beta_game/M_regs_q_5
-                                                       beta_game/alu/Mmux_out28
-                                                       beta_game/level/M_regs_q_0
-    -------------------------------------------------  ---------------------------
-    Total                                      6.165ns (2.008ns logic, 4.157ns route)
-                                                       (32.6% logic, 67.4% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.888ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/board/M_regs_q_5 (FF)
-  Destination:          beta_game/level/M_regs_q_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.064ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.013ns (0.195 - 0.208)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_5 to beta_game/level/M_regs_q_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X20Y15.AQ      Tcko                  0.525   M_beta_game_boardout[6]
-                                                       beta_game/board/M_regs_q_5
-    SLICE_X21Y14.A6      net (fanout=7)        0.368   M_beta_game_boardout[5]
-    SLICE_X21Y14.A       Tilo                  0.259   beta_game/M_alu_a[5]
-                                                       beta_game/Mmux_M_alu_a121
-    SLICE_X19Y14.C2      net (fanout=3)        1.093   beta_game/M_alu_a[5]
-    SLICE_X19Y14.C       Tilo                  0.259   beta_game/M_levels_mux_out[11]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<1>_SW1
-    SLICE_X14Y15.B2      net (fanout=1)        1.209   beta_game/alu/cmp/N53
-    SLICE_X14Y15.COUT    Topcyb                0.448   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<1>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X21Y13.A5      net (fanout=3)        1.288   a[15]_b[15]_equal_1_o
-    SLICE_X21Y13.CLK     Tas                   0.373   beta_game/M_regs_q_5
-                                                       beta_game/alu/Mmux_out28
-                                                       beta_game/level/M_regs_q_0
-    -------------------------------------------------  ---------------------------
-    Total                                      6.064ns (2.103ns logic, 3.961ns route)
-                                                       (34.7% logic, 65.3% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.888ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/level/M_regs_q_10 (FF)
-  Destination:          beta_game/board/M_regs_q_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.119ns (Levels of Logic = 5)
-  Clock Path Skew:      0.042ns (0.667 - 0.625)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: beta_game/level/M_regs_q_10 to beta_game/board/M_regs_q_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X19Y16.AQ      Tcko                  0.430   beta_game/M_regs_q_15
-                                                       beta_game/level/M_regs_q_10
-    SLICE_X17Y15.D5      net (fanout=3)        0.685   beta_game/M_regs_q_10
-    SLICE_X17Y15.D       Tilo                  0.259   beta_game/M_alu_a[10]
-                                                       beta_game/Mmux_M_alu_a21
-    SLICE_X21Y15.B4      net (fanout=4)        0.993   beta_game/M_alu_a[10]
-    SLICE_X21Y15.B       Tilo                  0.259   M_edge_detector0_out
-                                                       beta_game/M_alu_b<10>1_SW2
-    SLICE_X14Y15.D4      net (fanout=1)        1.145   beta_game/N75
-    SLICE_X14Y15.COUT    Topcyd                0.290   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<3>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X20Y13.B3      net (fanout=3)        1.477   a[15]_b[15]_equal_1_o
-    SLICE_X20Y13.CLK     Tas                   0.339   M_beta_game_boardout[1]
-                                                       beta_game/Mmux_M_board_data17
-                                                       beta_game/board/M_regs_q_0
-    -------------------------------------------------  ---------------------------
-    Total                                      6.119ns (1.816ns logic, 4.303ns route)
-                                                       (29.7% logic, 70.3% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.965ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/level/M_regs_q_7 (FF)
-  Destination:          beta_game/board/M_regs_q_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.987ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.013ns (0.301 - 0.314)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: beta_game/level/M_regs_q_7 to beta_game/board/M_regs_q_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X19Y15.BQ      Tcko                  0.430   beta_game/M_regs_q_9
-                                                       beta_game/level/M_regs_q_7
-    SLICE_X17Y14.C1      net (fanout=3)        1.128   beta_game/M_regs_q_7
-    SLICE_X17Y14.C       Tilo                  0.259   M_game_state_q_FSM_FFd1
-                                                       beta_game/Mmux_M_alu_a141
-    SLICE_X17Y14.A2      net (fanout=3)        0.555   beta_game/M_alu_a[7]
-    SLICE_X17Y14.A       Tilo                  0.259   M_game_state_q_FSM_FFd1
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<2>_SW1
-    SLICE_X14Y15.C4      net (fanout=1)        0.973   beta_game/alu/cmp/N56
-    SLICE_X14Y15.COUT    Topcyc                0.325   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<2>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X20Y13.B3      net (fanout=3)        1.477   a[15]_b[15]_equal_1_o
-    SLICE_X20Y13.CLK     Tas                   0.339   M_beta_game_boardout[1]
-                                                       beta_game/Mmux_M_board_data17
-                                                       beta_game/board/M_regs_q_0
-    -------------------------------------------------  ---------------------------
-    Total                                      5.987ns (1.851ns logic, 4.136ns route)
-                                                       (30.9% logic, 69.1% route)
-
---------------------------------------------------------------------------------
-Slack:                  14.043ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/level/M_regs_q_10 (FF)
-  Destination:          beta_game/level/M_regs_q_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.964ns (Levels of Logic = 5)
-  Clock Path Skew:      0.042ns (0.667 - 0.625)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: beta_game/level/M_regs_q_10 to beta_game/level/M_regs_q_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X19Y16.AQ      Tcko                  0.430   beta_game/M_regs_q_15
-                                                       beta_game/level/M_regs_q_10
-    SLICE_X17Y15.D5      net (fanout=3)        0.685   beta_game/M_regs_q_10
-    SLICE_X17Y15.D       Tilo                  0.259   beta_game/M_alu_a[10]
-                                                       beta_game/Mmux_M_alu_a21
-    SLICE_X21Y15.B4      net (fanout=4)        0.993   beta_game/M_alu_a[10]
-    SLICE_X21Y15.B       Tilo                  0.259   M_edge_detector0_out
-                                                       beta_game/M_alu_b<10>1_SW2
-    SLICE_X14Y15.D4      net (fanout=1)        1.145   beta_game/N75
-    SLICE_X14Y15.COUT    Topcyd                0.290   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<3>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X21Y13.A5      net (fanout=3)        1.288   a[15]_b[15]_equal_1_o
-    SLICE_X21Y13.CLK     Tas                   0.373   beta_game/M_regs_q_5
-                                                       beta_game/alu/Mmux_out28
-                                                       beta_game/level/M_regs_q_0
-    -------------------------------------------------  ---------------------------
-    Total                                      5.964ns (1.850ns logic, 4.114ns route)
-                                                       (31.0% logic, 69.0% route)
-
---------------------------------------------------------------------------------
-Slack:                  14.120ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/level/M_regs_q_7 (FF)
-  Destination:          beta_game/level/M_regs_q_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.832ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.013ns (0.301 - 0.314)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: beta_game/level/M_regs_q_7 to beta_game/level/M_regs_q_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X19Y15.BQ      Tcko                  0.430   beta_game/M_regs_q_9
-                                                       beta_game/level/M_regs_q_7
-    SLICE_X17Y14.C1      net (fanout=3)        1.128   beta_game/M_regs_q_7
-    SLICE_X17Y14.C       Tilo                  0.259   M_game_state_q_FSM_FFd1
-                                                       beta_game/Mmux_M_alu_a141
-    SLICE_X17Y14.A2      net (fanout=3)        0.555   beta_game/M_alu_a[7]
-    SLICE_X17Y14.A       Tilo                  0.259   M_game_state_q_FSM_FFd1
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<2>_SW1
-    SLICE_X14Y15.C4      net (fanout=1)        0.973   beta_game/alu/cmp/N56
-    SLICE_X14Y15.COUT    Topcyc                0.325   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<2>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X21Y13.A5      net (fanout=3)        1.288   a[15]_b[15]_equal_1_o
-    SLICE_X21Y13.CLK     Tas                   0.373   beta_game/M_regs_q_5
-                                                       beta_game/alu/Mmux_out28
-                                                       beta_game/level/M_regs_q_0
-    -------------------------------------------------  ---------------------------
-    Total                                      5.832ns (1.885ns logic, 3.947ns route)
-                                                       (32.3% logic, 67.7% route)
-
---------------------------------------------------------------------------------
-Slack:                  14.134ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/board/M_regs_q_10 (FF)
-  Destination:          beta_game/board/M_regs_q_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.819ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.012ns (0.301 - 0.313)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_10 to beta_game/board/M_regs_q_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X15Y15.CQ      Tcko                  0.430   M_beta_game_boardout[10]
-                                                       beta_game/board/M_regs_q_10
-    SLICE_X17Y15.D6      net (fanout=7)        0.385   M_beta_game_boardout[10]
-    SLICE_X17Y15.D       Tilo                  0.259   beta_game/M_alu_a[10]
-                                                       beta_game/Mmux_M_alu_a21
-    SLICE_X21Y15.B4      net (fanout=4)        0.993   beta_game/M_alu_a[10]
-    SLICE_X21Y15.B       Tilo                  0.259   M_edge_detector0_out
-                                                       beta_game/M_alu_b<10>1_SW2
-    SLICE_X14Y15.D4      net (fanout=1)        1.145   beta_game/N75
-    SLICE_X14Y15.COUT    Topcyd                0.290   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<3>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X20Y13.B3      net (fanout=3)        1.477   a[15]_b[15]_equal_1_o
-    SLICE_X20Y13.CLK     Tas                   0.339   M_beta_game_boardout[1]
-                                                       beta_game/Mmux_M_board_data17
-                                                       beta_game/board/M_regs_q_0
-    -------------------------------------------------  ---------------------------
-    Total                                      5.819ns (1.816ns logic, 4.003ns route)
-                                                       (31.2% logic, 68.8% route)
-
---------------------------------------------------------------------------------
-Slack:                  14.198ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/board/M_regs_q_9 (FF)
-  Destination:          beta_game/board/M_regs_q_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.755ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.012ns (0.301 - 0.313)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_9 to beta_game/board/M_regs_q_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X15Y15.AQ      Tcko                  0.430   M_beta_game_boardout[10]
-                                                       beta_game/board/M_regs_q_9
-    SLICE_X17Y15.A2      net (fanout=7)        0.966   M_beta_game_boardout[9]
-    SLICE_X17Y15.A       Tilo                  0.259   beta_game/M_alu_a[10]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<3>_SW0
-    SLICE_X17Y15.C2      net (fanout=2)        0.537   beta_game/N58
-    SLICE_X17Y15.C       Tilo                  0.259   beta_game/M_alu_a[10]
-                                                       beta_game/M_alu_b<10>1_SW1
-    SLICE_X14Y15.D2      net (fanout=1)        0.956   beta_game/N74
-    SLICE_X14Y15.COUT    Topcyd                0.290   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<3>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X20Y13.B3      net (fanout=3)        1.477   a[15]_b[15]_equal_1_o
-    SLICE_X20Y13.CLK     Tas                   0.339   M_beta_game_boardout[1]
-                                                       beta_game/Mmux_M_board_data17
-                                                       beta_game/board/M_regs_q_0
-    -------------------------------------------------  ---------------------------
-    Total                                      5.755ns (1.816ns logic, 3.939ns route)
-                                                       (31.6% logic, 68.4% route)
-
---------------------------------------------------------------------------------
-Slack:                  14.289ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/board/M_regs_q_10 (FF)
-  Destination:          beta_game/level/M_regs_q_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.664ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.012ns (0.301 - 0.313)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_10 to beta_game/level/M_regs_q_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X15Y15.CQ      Tcko                  0.430   M_beta_game_boardout[10]
-                                                       beta_game/board/M_regs_q_10
-    SLICE_X17Y15.D6      net (fanout=7)        0.385   M_beta_game_boardout[10]
-    SLICE_X17Y15.D       Tilo                  0.259   beta_game/M_alu_a[10]
-                                                       beta_game/Mmux_M_alu_a21
-    SLICE_X21Y15.B4      net (fanout=4)        0.993   beta_game/M_alu_a[10]
-    SLICE_X21Y15.B       Tilo                  0.259   M_edge_detector0_out
-                                                       beta_game/M_alu_b<10>1_SW2
-    SLICE_X14Y15.D4      net (fanout=1)        1.145   beta_game/N75
-    SLICE_X14Y15.COUT    Topcyd                0.290   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<3>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X21Y13.A5      net (fanout=3)        1.288   a[15]_b[15]_equal_1_o
-    SLICE_X21Y13.CLK     Tas                   0.373   beta_game/M_regs_q_5
-                                                       beta_game/alu/Mmux_out28
-                                                       beta_game/level/M_regs_q_0
-    -------------------------------------------------  ---------------------------
-    Total                                      5.664ns (1.850ns logic, 3.814ns route)
-                                                       (32.7% logic, 67.3% route)
-
---------------------------------------------------------------------------------
-Slack:                  14.353ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/board/M_regs_q_9 (FF)
-  Destination:          beta_game/level/M_regs_q_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.600ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.012ns (0.301 - 0.313)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_9 to beta_game/level/M_regs_q_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X15Y15.AQ      Tcko                  0.430   M_beta_game_boardout[10]
-                                                       beta_game/board/M_regs_q_9
-    SLICE_X17Y15.A2      net (fanout=7)        0.966   M_beta_game_boardout[9]
-    SLICE_X17Y15.A       Tilo                  0.259   beta_game/M_alu_a[10]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<3>_SW0
-    SLICE_X17Y15.C2      net (fanout=2)        0.537   beta_game/N58
-    SLICE_X17Y15.C       Tilo                  0.259   beta_game/M_alu_a[10]
-                                                       beta_game/M_alu_b<10>1_SW1
-    SLICE_X14Y15.D2      net (fanout=1)        0.956   beta_game/N74
-    SLICE_X14Y15.COUT    Topcyd                0.290   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<3>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X21Y13.A5      net (fanout=3)        1.288   a[15]_b[15]_equal_1_o
-    SLICE_X21Y13.CLK     Tas                   0.373   beta_game/M_regs_q_5
-                                                       beta_game/alu/Mmux_out28
-                                                       beta_game/level/M_regs_q_0
-    -------------------------------------------------  ---------------------------
-    Total                                      5.600ns (1.850ns logic, 3.750ns route)
-                                                       (33.0% logic, 67.0% route)
-
---------------------------------------------------------------------------------
-Slack:                  14.356ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/board/M_regs_q_4 (FF)
-  Destination:          beta_game/board/M_regs_q_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.597ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.012ns (0.195 - 0.207)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_4 to beta_game/board/M_regs_q_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X20Y14.CQ      Tcko                  0.525   M_beta_game_boardout[4]
-                                                       beta_game/board/M_regs_q_4
-    SLICE_X19Y14.D5      net (fanout=7)        0.689   M_beta_game_boardout[4]
-    SLICE_X19Y14.D       Tilo                  0.259   beta_game/M_levels_mux_out[11]
-                                                       beta_game/Mmux_M_alu_a111
-    SLICE_X19Y14.C6      net (fanout=3)        0.150   beta_game/M_alu_a[4]
-    SLICE_X19Y14.C       Tilo                  0.259   beta_game/M_levels_mux_out[11]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<1>_SW1
-    SLICE_X14Y15.B2      net (fanout=1)        1.209   beta_game/alu/cmp/N53
-    SLICE_X14Y15.COUT    Topcyb                0.448   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<1>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X20Y13.B3      net (fanout=3)        1.477   a[15]_b[15]_equal_1_o
-    SLICE_X20Y13.CLK     Tas                   0.339   M_beta_game_boardout[1]
-                                                       beta_game/Mmux_M_board_data17
-                                                       beta_game/board/M_regs_q_0
-    -------------------------------------------------  ---------------------------
-    Total                                      5.597ns (2.069ns logic, 3.528ns route)
-                                                       (37.0% logic, 63.0% route)
-
---------------------------------------------------------------------------------
-Slack:                  14.402ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/board/M_regs_q_2 (FF)
-  Destination:          beta_game/board/M_regs_q_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.547ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.016ns (0.301 - 0.317)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_2 to beta_game/board/M_regs_q_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X22Y13.BMUX    Tshcko                0.535   beta_game/M_alu_a[15]
-                                                       beta_game/board/M_regs_q_2
-    SLICE_X19Y12.B3      net (fanout=7)        1.050   M_beta_game_boardout[2]
-    SLICE_X19Y12.B       Tilo                  0.259   M_game_state_q_FSM_FFd2_2
-                                                       beta_game/Mmux_M_alu_a91
-    SLICE_X14Y15.A2      net (fanout=2)        1.173   beta_game/M_alu_a[2]
-    SLICE_X14Y15.COUT    Topcya                0.472   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<0>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X20Y13.B3      net (fanout=3)        1.477   a[15]_b[15]_equal_1_o
-    SLICE_X20Y13.CLK     Tas                   0.339   M_beta_game_boardout[1]
-                                                       beta_game/Mmux_M_board_data17
-                                                       beta_game/board/M_regs_q_0
-    -------------------------------------------------  ---------------------------
-    Total                                      5.547ns (1.844ns logic, 3.703ns route)
-                                                       (33.2% logic, 66.8% route)
-
---------------------------------------------------------------------------------
-Slack:                  14.427ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/level/M_regs_q_11 (FF)
-  Destination:          beta_game/board/M_regs_q_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.580ns (Levels of Logic = 5)
-  Clock Path Skew:      0.042ns (0.667 - 0.625)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: beta_game/level/M_regs_q_11 to beta_game/board/M_regs_q_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X19Y16.BQ      Tcko                  0.430   beta_game/M_regs_q_15
-                                                       beta_game/level/M_regs_q_11
-    SLICE_X17Y15.A1      net (fanout=3)        0.791   beta_game/M_regs_q_11
-    SLICE_X17Y15.A       Tilo                  0.259   beta_game/M_alu_a[10]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<3>_SW0
-    SLICE_X17Y15.C2      net (fanout=2)        0.537   beta_game/N58
-    SLICE_X17Y15.C       Tilo                  0.259   beta_game/M_alu_a[10]
-                                                       beta_game/M_alu_b<10>1_SW1
-    SLICE_X14Y15.D2      net (fanout=1)        0.956   beta_game/N74
-    SLICE_X14Y15.COUT    Topcyd                0.290   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<3>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X20Y13.B3      net (fanout=3)        1.477   a[15]_b[15]_equal_1_o
-    SLICE_X20Y13.CLK     Tas                   0.339   M_beta_game_boardout[1]
-                                                       beta_game/Mmux_M_board_data17
-                                                       beta_game/board/M_regs_q_0
-    -------------------------------------------------  ---------------------------
-    Total                                      5.580ns (1.816ns logic, 3.764ns route)
-                                                       (32.5% logic, 67.5% route)
-
---------------------------------------------------------------------------------
-Slack:                  14.443ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/board/M_regs_q_7 (FF)
-  Destination:          beta_game/board/M_regs_q_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.510ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.012ns (0.301 - 0.313)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_7 to beta_game/board/M_regs_q_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X16Y14.AQ      Tcko                  0.525   M_beta_game_boardout[8]
-                                                       beta_game/board/M_regs_q_7
-    SLICE_X17Y14.C2      net (fanout=7)        0.556   M_beta_game_boardout[7]
-    SLICE_X17Y14.C       Tilo                  0.259   M_game_state_q_FSM_FFd1
-                                                       beta_game/Mmux_M_alu_a141
-    SLICE_X17Y14.A2      net (fanout=3)        0.555   beta_game/M_alu_a[7]
-    SLICE_X17Y14.A       Tilo                  0.259   M_game_state_q_FSM_FFd1
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<2>_SW1
-    SLICE_X14Y15.C4      net (fanout=1)        0.973   beta_game/alu/cmp/N56
-    SLICE_X14Y15.COUT    Topcyc                0.325   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<2>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X20Y13.B3      net (fanout=3)        1.477   a[15]_b[15]_equal_1_o
-    SLICE_X20Y13.CLK     Tas                   0.339   M_beta_game_boardout[1]
-                                                       beta_game/Mmux_M_board_data17
-                                                       beta_game/board/M_regs_q_0
-    -------------------------------------------------  ---------------------------
-    Total                                      5.510ns (1.946ns logic, 3.564ns route)
-                                                       (35.3% logic, 64.7% route)
-
---------------------------------------------------------------------------------
-Slack:                  14.511ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/board/M_regs_q_9 (FF)
-  Destination:          beta_game/board/M_regs_q_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.442ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.012ns (0.301 - 0.313)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_9 to beta_game/board/M_regs_q_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X15Y15.AQ      Tcko                  0.430   M_beta_game_boardout[10]
-                                                       beta_game/board/M_regs_q_9
-    SLICE_X17Y15.A2      net (fanout=7)        0.966   M_beta_game_boardout[9]
-    SLICE_X17Y15.A       Tilo                  0.259   beta_game/M_alu_a[10]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<3>_SW0
-    SLICE_X17Y15.B6      net (fanout=2)        0.150   beta_game/N58
-    SLICE_X17Y15.B       Tilo                  0.259   beta_game/M_alu_a[10]
-                                                       beta_game/M_alu_b<10>1_SW0
-    SLICE_X14Y15.D3      net (fanout=1)        1.030   beta_game/N73
-    SLICE_X14Y15.COUT    Topcyd                0.290   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<3>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X20Y13.B3      net (fanout=3)        1.477   a[15]_b[15]_equal_1_o
-    SLICE_X20Y13.CLK     Tas                   0.339   M_beta_game_boardout[1]
-                                                       beta_game/Mmux_M_board_data17
-                                                       beta_game/board/M_regs_q_0
-    -------------------------------------------------  ---------------------------
-    Total                                      5.442ns (1.816ns logic, 3.626ns route)
-                                                       (33.4% logic, 66.6% route)
-
---------------------------------------------------------------------------------
-Slack:                  14.511ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/board/M_regs_q_4 (FF)
-  Destination:          beta_game/level/M_regs_q_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.442ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.012ns (0.195 - 0.207)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_4 to beta_game/level/M_regs_q_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X20Y14.CQ      Tcko                  0.525   M_beta_game_boardout[4]
-                                                       beta_game/board/M_regs_q_4
-    SLICE_X19Y14.D5      net (fanout=7)        0.689   M_beta_game_boardout[4]
-    SLICE_X19Y14.D       Tilo                  0.259   beta_game/M_levels_mux_out[11]
-                                                       beta_game/Mmux_M_alu_a111
-    SLICE_X19Y14.C6      net (fanout=3)        0.150   beta_game/M_alu_a[4]
-    SLICE_X19Y14.C       Tilo                  0.259   beta_game/M_levels_mux_out[11]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<1>_SW1
-    SLICE_X14Y15.B2      net (fanout=1)        1.209   beta_game/alu/cmp/N53
-    SLICE_X14Y15.COUT    Topcyb                0.448   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<1>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X21Y13.A5      net (fanout=3)        1.288   a[15]_b[15]_equal_1_o
-    SLICE_X21Y13.CLK     Tas                   0.373   beta_game/M_regs_q_5
-                                                       beta_game/alu/Mmux_out28
-                                                       beta_game/level/M_regs_q_0
-    -------------------------------------------------  ---------------------------
-    Total                                      5.442ns (2.103ns logic, 3.339ns route)
-                                                       (38.6% logic, 61.4% route)
-
---------------------------------------------------------------------------------
-Slack:                  14.556ns (requirement - (data path - clock path skew + uncertainty))
+Slack:                  14.554ns (requirement - (data path - clock path skew + uncertainty))
   Source:               beta_game/board/M_regs_q_6 (FF)
   Destination:          beta_game/board/M_regs_q_0 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      5.396ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.013ns (0.195 - 0.208)
+  Data Path Delay:      5.398ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.013ns (0.194 - 0.207)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -841,33 +102,36 @@ Slack:                  14.556ns (requirement - (data path - clock path skew + u
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X20Y15.CQ      Tcko                  0.525   M_beta_game_boardout[6]
+    SLICE_X12Y33.CQ      Tcko                  0.525   M_beta_game_boardout[6]
                                                        beta_game/board/M_regs_q_6
-    SLICE_X17Y13.A3      net (fanout=6)        1.259   M_beta_game_boardout[6]
-    SLICE_X17Y13.A       Tilo                  0.259   M_game_state_q_FSM_FFd1_1
+    SLICE_X6Y35.A5       net (fanout=6)        1.275   M_beta_game_boardout[6]
+    SLICE_X6Y35.A        Tilo                  0.235   beta_game/M_alu_a[6]
                                                        beta_game/Mmux_M_alu_a131
-    SLICE_X14Y15.C1      net (fanout=3)        0.970   beta_game/M_alu_a[6]
-    SLICE_X14Y15.COUT    Topcyc                0.325   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
+    SLICE_X8Y34.C4       net (fanout=3)        0.847   beta_game/M_alu_a[6]
+    SLICE_X8Y34.COUT     Topcyc                0.328   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
                                                        beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<2>
                                                        beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X20Y13.B3      net (fanout=3)        1.477   a[15]_b[15]_equal_1_o
-    SLICE_X20Y13.CLK     Tas                   0.339   M_beta_game_boardout[1]
+    SLICE_X8Y35.CIN      net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
+    SLICE_X8Y35.BMUX     Tcinb                 0.286   a[15]_b[15]_equal_1_o
+                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<5>
+    SLICE_X11Y34.A3      net (fanout=3)        0.634   a[15]_b[15]_equal_1_o
+    SLICE_X11Y34.A       Tilo                  0.259   beta_game/M_regs_q_5
+                                                       beta_game/alu/Mmux_out28
+    SLICE_X12Y34.A5      net (fanout=1)        0.667   beta_game/M_alu_out[0]
+    SLICE_X12Y34.CLK     Tas                   0.339   M_beta_game_boardout[2]
                                                        beta_game/Mmux_M_board_data17
                                                        beta_game/board/M_regs_q_0
     -------------------------------------------------  ---------------------------
-    Total                                      5.396ns (1.687ns logic, 3.709ns route)
-                                                       (31.3% logic, 68.7% route)
+    Total                                      5.398ns (1.972ns logic, 3.426ns route)
+                                                       (36.5% logic, 63.5% route)
 
 --------------------------------------------------------------------------------
-Slack:                  14.557ns (requirement - (data path - clock path skew + uncertainty))
+Slack:                  14.594ns (requirement - (data path - clock path skew + uncertainty))
   Source:               beta_game/board/M_regs_q_2 (FF)
-  Destination:          beta_game/level/M_regs_q_0 (FF)
+  Destination:          beta_game/board/M_regs_q_0 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      5.392ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.016ns (0.301 - 0.317)
+  Data Path Delay:      5.371ns (Levels of Logic = 5)
+  Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -878,78 +142,40 @@ Slack:                  14.557ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_2 to beta_game/level/M_regs_q_0
+  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_2 to beta_game/board/M_regs_q_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X22Y13.BMUX    Tshcko                0.535   beta_game/M_alu_a[15]
+    SLICE_X12Y34.CQ      Tcko                  0.525   M_beta_game_boardout[2]
                                                        beta_game/board/M_regs_q_2
-    SLICE_X19Y12.B3      net (fanout=7)        1.050   M_beta_game_boardout[2]
-    SLICE_X19Y12.B       Tilo                  0.259   M_game_state_q_FSM_FFd2_2
+    SLICE_X7Y34.A4       net (fanout=6)        1.478   M_beta_game_boardout[2]
+    SLICE_X7Y34.A        Tilo                  0.259   beta_game/M_alu_a[1]
                                                        beta_game/Mmux_M_alu_a91
-    SLICE_X14Y15.A2      net (fanout=2)        1.173   beta_game/M_alu_a[2]
-    SLICE_X14Y15.COUT    Topcya                0.472   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
+    SLICE_X8Y34.A6       net (fanout=3)        0.447   beta_game/M_alu_a[2]
+    SLICE_X8Y34.COUT     Topcya                0.474   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
                                                        beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<0>
                                                        beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X21Y13.A5      net (fanout=3)        1.288   a[15]_b[15]_equal_1_o
-    SLICE_X21Y13.CLK     Tas                   0.373   beta_game/M_regs_q_5
+    SLICE_X8Y35.CIN      net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
+    SLICE_X8Y35.BMUX     Tcinb                 0.286   a[15]_b[15]_equal_1_o
+                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<5>
+    SLICE_X11Y34.A3      net (fanout=3)        0.634   a[15]_b[15]_equal_1_o
+    SLICE_X11Y34.A       Tilo                  0.259   beta_game/M_regs_q_5
                                                        beta_game/alu/Mmux_out28
-                                                       beta_game/level/M_regs_q_0
-    -------------------------------------------------  ---------------------------
-    Total                                      5.392ns (1.878ns logic, 3.514ns route)
-                                                       (34.8% logic, 65.2% route)
-
---------------------------------------------------------------------------------
-Slack:                  14.560ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/level/M_regs_q_4 (FF)
-  Destination:          beta_game/board/M_regs_q_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.392ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.013ns (0.301 - 0.314)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: beta_game/level/M_regs_q_4 to beta_game/board/M_regs_q_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X19Y14.BQ      Tcko                  0.430   beta_game/M_levels_mux_out[11]
-                                                       beta_game/level/M_regs_q_4
-    SLICE_X21Y15.A4      net (fanout=12)       0.932   beta_game/M_levels_mux_out[11]
-    SLICE_X21Y15.A       Tilo                  0.259   M_edge_detector0_out
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<1>_SW0
-    SLICE_X14Y15.B3      net (fanout=1)        1.265   beta_game/alu/cmp/N52
-    SLICE_X14Y15.COUT    Topcyb                0.448   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<1>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X20Y13.B3      net (fanout=3)        1.477   a[15]_b[15]_equal_1_o
-    SLICE_X20Y13.CLK     Tas                   0.339   M_beta_game_boardout[1]
+    SLICE_X12Y34.A5      net (fanout=1)        0.667   beta_game/M_alu_out[0]
+    SLICE_X12Y34.CLK     Tas                   0.339   M_beta_game_boardout[2]
                                                        beta_game/Mmux_M_board_data17
                                                        beta_game/board/M_regs_q_0
     -------------------------------------------------  ---------------------------
-    Total                                      5.392ns (1.715ns logic, 3.677ns route)
-                                                       (31.8% logic, 68.2% route)
+    Total                                      5.371ns (2.142ns logic, 3.229ns route)
+                                                       (39.9% logic, 60.1% route)
 
 --------------------------------------------------------------------------------
-Slack:                  14.582ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/level/M_regs_q_11 (FF)
-  Destination:          beta_game/level/M_regs_q_0 (FF)
+Slack:                  14.609ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/board/M_regs_q_5 (FF)
+  Destination:          beta_game/level/M_regs_q_13 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      5.425ns (Levels of Logic = 5)
-  Clock Path Skew:      0.042ns (0.667 - 0.625)
+  Data Path Delay:      5.339ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.017ns (0.190 - 0.207)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -960,128 +186,39 @@ Slack:                  14.582ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: beta_game/level/M_regs_q_11 to beta_game/level/M_regs_q_0
+  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_5 to beta_game/level/M_regs_q_13
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X19Y16.BQ      Tcko                  0.430   beta_game/M_regs_q_15
-                                                       beta_game/level/M_regs_q_11
-    SLICE_X17Y15.A1      net (fanout=3)        0.791   beta_game/M_regs_q_11
-    SLICE_X17Y15.A       Tilo                  0.259   beta_game/M_alu_a[10]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<3>_SW0
-    SLICE_X17Y15.C2      net (fanout=2)        0.537   beta_game/N58
-    SLICE_X17Y15.C       Tilo                  0.259   beta_game/M_alu_a[10]
-                                                       beta_game/M_alu_b<10>1_SW1
-    SLICE_X14Y15.D2      net (fanout=1)        0.956   beta_game/N74
-    SLICE_X14Y15.COUT    Topcyd                0.290   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<3>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X21Y13.A5      net (fanout=3)        1.288   a[15]_b[15]_equal_1_o
-    SLICE_X21Y13.CLK     Tas                   0.373   beta_game/M_regs_q_5
-                                                       beta_game/alu/Mmux_out28
-                                                       beta_game/level/M_regs_q_0
+    SLICE_X12Y33.AQ      Tcko                  0.525   M_beta_game_boardout[6]
+                                                       beta_game/board/M_regs_q_5
+    SLICE_X11Y35.A3      net (fanout=6)        1.094   M_beta_game_boardout[5]
+    SLICE_X11Y35.A       Tilo                  0.259   beta_game/M_alu_a[10]
+                                                       beta_game/Mmux_M_alu_a121
+    SLICE_X10Y35.BX      net (fanout=3)        1.457   beta_game/M_alu_a[5]
+    SLICE_X10Y35.COUT    Tbxcy                 0.197   beta_game/alu/add/Maddsub_holder_cy[7]
+                                                       beta_game/alu/add/Maddsub_holder_cy<7>
+    SLICE_X10Y36.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[7]
+    SLICE_X10Y36.COUT    Tbyp                  0.091   beta_game/alu/add/Maddsub_holder_cy[11]
+                                                       beta_game/alu/add/Maddsub_holder_cy<11>
+    SLICE_X10Y37.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[11]
+    SLICE_X10Y37.BMUX    Tcinb                 0.277   beta_game/alu/M_add_n
+                                                       beta_game/alu/add/Maddsub_holder_xor<15>
+    SLICE_X13Y36.A2      net (fanout=1)        1.169   beta_game/alu/M_add_out[13]
+    SLICE_X13Y36.CLK     Tas                   0.264   beta_game/M_regs_q_15
+                                                       beta_game/alu/Mmux_out64
+                                                       beta_game/level/M_regs_q_13
     -------------------------------------------------  ---------------------------
-    Total                                      5.425ns (1.850ns logic, 3.575ns route)
-                                                       (34.1% logic, 65.9% route)
+    Total                                      5.339ns (1.613ns logic, 3.726ns route)
+                                                       (30.2% logic, 69.8% route)
 
 --------------------------------------------------------------------------------
-Slack:                  14.598ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/board/M_regs_q_7 (FF)
-  Destination:          beta_game/level/M_regs_q_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.355ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.012ns (0.301 - 0.313)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_7 to beta_game/level/M_regs_q_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X16Y14.AQ      Tcko                  0.525   M_beta_game_boardout[8]
-                                                       beta_game/board/M_regs_q_7
-    SLICE_X17Y14.C2      net (fanout=7)        0.556   M_beta_game_boardout[7]
-    SLICE_X17Y14.C       Tilo                  0.259   M_game_state_q_FSM_FFd1
-                                                       beta_game/Mmux_M_alu_a141
-    SLICE_X17Y14.A2      net (fanout=3)        0.555   beta_game/M_alu_a[7]
-    SLICE_X17Y14.A       Tilo                  0.259   M_game_state_q_FSM_FFd1
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<2>_SW1
-    SLICE_X14Y15.C4      net (fanout=1)        0.973   beta_game/alu/cmp/N56
-    SLICE_X14Y15.COUT    Topcyc                0.325   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<2>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X21Y13.A5      net (fanout=3)        1.288   a[15]_b[15]_equal_1_o
-    SLICE_X21Y13.CLK     Tas                   0.373   beta_game/M_regs_q_5
-                                                       beta_game/alu/Mmux_out28
-                                                       beta_game/level/M_regs_q_0
-    -------------------------------------------------  ---------------------------
-    Total                                      5.355ns (1.980ns logic, 3.375ns route)
-                                                       (37.0% logic, 63.0% route)
-
---------------------------------------------------------------------------------
-Slack:                  14.606ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/level/M_regs_q_8 (FF)
-  Destination:          beta_game/board/M_regs_q_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.346ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.013ns (0.301 - 0.314)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: beta_game/level/M_regs_q_8 to beta_game/board/M_regs_q_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X19Y15.CQ      Tcko                  0.430   beta_game/M_regs_q_9
-                                                       beta_game/level/M_regs_q_8
-    SLICE_X17Y14.B2      net (fanout=3)        0.796   beta_game/M_regs_q_8
-    SLICE_X17Y14.B       Tilo                  0.259   M_game_state_q_FSM_FFd1
-                                                       beta_game/Mmux_M_alu_a151
-    SLICE_X17Y14.A5      net (fanout=3)        0.246   beta_game/M_alu_a[8]
-    SLICE_X17Y14.A       Tilo                  0.259   M_game_state_q_FSM_FFd1
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<2>_SW1
-    SLICE_X14Y15.C4      net (fanout=1)        0.973   beta_game/alu/cmp/N56
-    SLICE_X14Y15.COUT    Topcyc                0.325   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<2>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X20Y13.B3      net (fanout=3)        1.477   a[15]_b[15]_equal_1_o
-    SLICE_X20Y13.CLK     Tas                   0.339   M_beta_game_boardout[1]
-                                                       beta_game/Mmux_M_board_data17
-                                                       beta_game/board/M_regs_q_0
-    -------------------------------------------------  ---------------------------
-    Total                                      5.346ns (1.851ns logic, 3.495ns route)
-                                                       (34.6% logic, 65.4% route)
-
---------------------------------------------------------------------------------
-Slack:                  14.618ns (requirement - (data path - clock path skew + uncertainty))
+Slack:                  14.639ns (requirement - (data path - clock path skew + uncertainty))
   Source:               beta_game/board/M_regs_q_5 (FF)
   Destination:          beta_game/board/M_regs_q_0 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      5.334ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.013ns (0.195 - 0.208)
+  Data Path Delay:      5.313ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.013ns (0.194 - 0.207)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1096,33 +233,36 @@ Slack:                  14.618ns (requirement - (data path - clock path skew + u
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X20Y15.AQ      Tcko                  0.525   M_beta_game_boardout[6]
+    SLICE_X12Y33.AQ      Tcko                  0.525   M_beta_game_boardout[6]
                                                        beta_game/board/M_regs_q_5
-    SLICE_X21Y15.A1      net (fanout=7)        0.779   M_beta_game_boardout[5]
-    SLICE_X21Y15.A       Tilo                  0.259   M_edge_detector0_out
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<1>_SW0
-    SLICE_X14Y15.B3      net (fanout=1)        1.265   beta_game/alu/cmp/N52
-    SLICE_X14Y15.COUT    Topcyb                0.448   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
+    SLICE_X11Y35.A3      net (fanout=6)        1.094   M_beta_game_boardout[5]
+    SLICE_X11Y35.A       Tilo                  0.259   beta_game/M_alu_a[10]
+                                                       beta_game/Mmux_M_alu_a121
+    SLICE_X8Y34.B4       net (fanout=3)        0.764   beta_game/M_alu_a[5]
+    SLICE_X8Y34.COUT     Topcyb                0.483   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
                                                        beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<1>
                                                        beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X20Y13.B3      net (fanout=3)        1.477   a[15]_b[15]_equal_1_o
-    SLICE_X20Y13.CLK     Tas                   0.339   M_beta_game_boardout[1]
+    SLICE_X8Y35.CIN      net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
+    SLICE_X8Y35.BMUX     Tcinb                 0.286   a[15]_b[15]_equal_1_o
+                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<5>
+    SLICE_X11Y34.A3      net (fanout=3)        0.634   a[15]_b[15]_equal_1_o
+    SLICE_X11Y34.A       Tilo                  0.259   beta_game/M_regs_q_5
+                                                       beta_game/alu/Mmux_out28
+    SLICE_X12Y34.A5      net (fanout=1)        0.667   beta_game/M_alu_out[0]
+    SLICE_X12Y34.CLK     Tas                   0.339   M_beta_game_boardout[2]
                                                        beta_game/Mmux_M_board_data17
                                                        beta_game/board/M_regs_q_0
     -------------------------------------------------  ---------------------------
-    Total                                      5.334ns (1.810ns logic, 3.524ns route)
-                                                       (33.9% logic, 66.1% route)
+    Total                                      5.313ns (2.151ns logic, 3.162ns route)
+                                                       (40.5% logic, 59.5% route)
 
 --------------------------------------------------------------------------------
-Slack:                  14.643ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/level/M_regs_q_9 (FF)
-  Destination:          beta_game/board/M_regs_q_0 (FF)
+Slack:                  14.670ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/level/M_regs_q_0 (FF)
+  Destination:          beta_game/level/M_regs_q_13 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      5.309ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.013ns (0.301 - 0.314)
+  Data Path Delay:      5.239ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.056ns (0.595 - 0.651)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1133,40 +273,769 @@ Slack:                  14.643ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: beta_game/level/M_regs_q_9 to beta_game/board/M_regs_q_0
+  Maximum Data Path at Slow Process Corner: beta_game/level/M_regs_q_0 to beta_game/level/M_regs_q_13
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X19Y15.DQ      Tcko                  0.430   beta_game/M_regs_q_9
-                                                       beta_game/level/M_regs_q_9
-    SLICE_X17Y15.A4      net (fanout=3)        0.520   beta_game/M_regs_q_9
-    SLICE_X17Y15.A       Tilo                  0.259   beta_game/M_alu_a[10]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<3>_SW0
-    SLICE_X17Y15.C2      net (fanout=2)        0.537   beta_game/N58
-    SLICE_X17Y15.C       Tilo                  0.259   beta_game/M_alu_a[10]
-                                                       beta_game/M_alu_b<10>1_SW1
-    SLICE_X14Y15.D2      net (fanout=1)        0.956   beta_game/N74
-    SLICE_X14Y15.COUT    Topcyd                0.290   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<3>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X20Y13.B3      net (fanout=3)        1.477   a[15]_b[15]_equal_1_o
-    SLICE_X20Y13.CLK     Tas                   0.339   M_beta_game_boardout[1]
+    SLICE_X11Y34.AQ      Tcko                  0.430   beta_game/M_regs_q_5
+                                                       beta_game/level/M_regs_q_0
+    SLICE_X9Y33.D3       net (fanout=1)        0.630   beta_game/M_regs_q_0
+    SLICE_X9Y33.D        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/Mmux_M_alu_a17
+    SLICE_X9Y33.B2       net (fanout=4)        0.557   beta_game/M_alu_a[0]
+    SLICE_X9Y33.B        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/alu/add/Maddsub_holder_lut<0>
+    SLICE_X10Y34.A2      net (fanout=1)        0.731   beta_game/alu/add/Maddsub_holder_lut[0]
+    SLICE_X10Y34.COUT    Topcya                0.472   beta_game/alu/add/Maddsub_holder_cy[3]
+                                                       beta_game/alu/add/Maddsub_holder_lut[0]_rt
+                                                       beta_game/alu/add/Maddsub_holder_cy<3>
+    SLICE_X10Y35.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[3]
+    SLICE_X10Y35.COUT    Tbyp                  0.091   beta_game/alu/add/Maddsub_holder_cy[7]
+                                                       beta_game/alu/add/Maddsub_holder_cy<7>
+    SLICE_X10Y36.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[7]
+    SLICE_X10Y36.COUT    Tbyp                  0.091   beta_game/alu/add/Maddsub_holder_cy[11]
+                                                       beta_game/alu/add/Maddsub_holder_cy<11>
+    SLICE_X10Y37.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[11]
+    SLICE_X10Y37.BMUX    Tcinb                 0.277   beta_game/alu/M_add_n
+                                                       beta_game/alu/add/Maddsub_holder_xor<15>
+    SLICE_X13Y36.A2      net (fanout=1)        1.169   beta_game/alu/M_add_out[13]
+    SLICE_X13Y36.CLK     Tas                   0.264   beta_game/M_regs_q_15
+                                                       beta_game/alu/Mmux_out64
+                                                       beta_game/level/M_regs_q_13
+    -------------------------------------------------  ---------------------------
+    Total                                      5.239ns (2.143ns logic, 3.096ns route)
+                                                       (40.9% logic, 59.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.713ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/board/M_regs_q_0 (FF)
+  Destination:          beta_game/level/M_regs_q_15 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.237ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.015ns (0.190 - 0.205)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_0 to beta_game/level/M_regs_q_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y34.AQ      Tcko                  0.525   M_beta_game_boardout[2]
+                                                       beta_game/board/M_regs_q_0
+    SLICE_X9Y33.D6       net (fanout=4)        0.848   M_beta_game_boardout[0]
+    SLICE_X9Y33.D        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/Mmux_M_alu_a17
+    SLICE_X9Y33.B2       net (fanout=4)        0.557   beta_game/M_alu_a[0]
+    SLICE_X9Y33.B        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/alu/add/Maddsub_holder_lut<0>
+    SLICE_X10Y34.A2      net (fanout=1)        0.731   beta_game/alu/add/Maddsub_holder_lut[0]
+    SLICE_X10Y34.COUT    Topcya                0.472   beta_game/alu/add/Maddsub_holder_cy[3]
+                                                       beta_game/alu/add/Maddsub_holder_lut[0]_rt
+                                                       beta_game/alu/add/Maddsub_holder_cy<3>
+    SLICE_X10Y35.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[3]
+    SLICE_X10Y35.COUT    Tbyp                  0.091   beta_game/alu/add/Maddsub_holder_cy[7]
+                                                       beta_game/alu/add/Maddsub_holder_cy<7>
+    SLICE_X10Y36.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[7]
+    SLICE_X10Y36.COUT    Tbyp                  0.091   beta_game/alu/add/Maddsub_holder_cy[11]
+                                                       beta_game/alu/add/Maddsub_holder_cy<11>
+    SLICE_X10Y37.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[11]
+    SLICE_X10Y37.DMUX    Tcind                 0.289   beta_game/alu/M_add_n
+                                                       beta_game/alu/add/Maddsub_holder_xor<15>
+    SLICE_X13Y36.A5      net (fanout=1)        0.733   beta_game/alu/M_add_n
+    SLICE_X13Y36.CLK     Tas                   0.373   beta_game/M_regs_q_15
+                                                       beta_game/alu/Mmux_out86
+                                                       beta_game/level/M_regs_q_15
+    -------------------------------------------------  ---------------------------
+    Total                                      5.237ns (2.359ns logic, 2.878ns route)
+                                                       (45.0% logic, 55.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.742ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/board/M_regs_q_0 (FF)
+  Destination:          beta_game/board/M_regs_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.223ns (Levels of Logic = 5)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_0 to beta_game/board/M_regs_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y34.AQ      Tcko                  0.525   M_beta_game_boardout[2]
+                                                       beta_game/board/M_regs_q_0
+    SLICE_X9Y33.D6       net (fanout=4)        0.848   M_beta_game_boardout[0]
+    SLICE_X9Y33.D        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/Mmux_M_alu_a17
+    SLICE_X9Y33.B2       net (fanout=4)        0.557   beta_game/M_alu_a[0]
+    SLICE_X9Y33.B        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/alu/add/Maddsub_holder_lut<0>
+    SLICE_X10Y34.A2      net (fanout=1)        0.731   beta_game/alu/add/Maddsub_holder_lut[0]
+    SLICE_X10Y34.AMUX    Topaa                 0.449   beta_game/alu/add/Maddsub_holder_cy[3]
+                                                       beta_game/alu/add/Maddsub_holder_lut[0]_rt
+                                                       beta_game/alu/add/Maddsub_holder_cy<3>
+    SLICE_X11Y34.A4      net (fanout=2)        0.330   M_add_out[0]
+    SLICE_X11Y34.A       Tilo                  0.259   beta_game/M_regs_q_5
+                                                       beta_game/alu/Mmux_out28
+    SLICE_X12Y34.A5      net (fanout=1)        0.667   beta_game/M_alu_out[0]
+    SLICE_X12Y34.CLK     Tas                   0.339   M_beta_game_boardout[2]
                                                        beta_game/Mmux_M_board_data17
                                                        beta_game/board/M_regs_q_0
     -------------------------------------------------  ---------------------------
-    Total                                      5.309ns (1.816ns logic, 3.493ns route)
-                                                       (34.2% logic, 65.8% route)
+    Total                                      5.223ns (2.090ns logic, 3.133ns route)
+                                                       (40.0% logic, 60.0% route)
 
 --------------------------------------------------------------------------------
-Slack:                  14.647ns (requirement - (data path - clock path skew + uncertainty))
+Slack:                  14.769ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/board/M_regs_q_0 (FF)
+  Destination:          beta_game/level/M_regs_q_4 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.201ns (Levels of Logic = 5)
+  Clock Path Skew:      0.005ns (0.628 - 0.623)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_0 to beta_game/level/M_regs_q_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y34.AQ      Tcko                  0.525   M_beta_game_boardout[2]
+                                                       beta_game/board/M_regs_q_0
+    SLICE_X9Y33.D6       net (fanout=4)        0.848   M_beta_game_boardout[0]
+    SLICE_X9Y33.D        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/Mmux_M_alu_a17
+    SLICE_X9Y33.B2       net (fanout=4)        0.557   beta_game/M_alu_a[0]
+    SLICE_X9Y33.B        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/alu/add/Maddsub_holder_lut<0>
+    SLICE_X10Y34.A2      net (fanout=1)        0.731   beta_game/alu/add/Maddsub_holder_lut[0]
+    SLICE_X10Y34.COUT    Topcya                0.472   beta_game/alu/add/Maddsub_holder_cy[3]
+                                                       beta_game/alu/add/Maddsub_holder_lut[0]_rt
+                                                       beta_game/alu/add/Maddsub_holder_cy<3>
+    SLICE_X10Y35.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[3]
+    SLICE_X10Y35.AMUX    Tcina                 0.210   beta_game/alu/add/Maddsub_holder_cy[7]
+                                                       beta_game/alu/add/Maddsub_holder_cy<7>
+    SLICE_X9Y34.B1       net (fanout=1)        0.964   beta_game/alu/M_add_out[4]
+    SLICE_X9Y34.CLK      Tas                   0.373   beta_game/M_levels_mux_out[11]
+                                                       beta_game/alu/Mmux_out124
+                                                       beta_game/level/M_regs_q_4
+    -------------------------------------------------  ---------------------------
+    Total                                      5.201ns (2.098ns logic, 3.103ns route)
+                                                       (40.3% logic, 59.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.797ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/board/M_regs_q_0 (FF)
+  Destination:          beta_game/level/M_regs_q_9 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.169ns (Levels of Logic = 6)
+  Clock Path Skew:      0.001ns (0.624 - 0.623)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_0 to beta_game/level/M_regs_q_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y34.AQ      Tcko                  0.525   M_beta_game_boardout[2]
+                                                       beta_game/board/M_regs_q_0
+    SLICE_X9Y33.D6       net (fanout=4)        0.848   M_beta_game_boardout[0]
+    SLICE_X9Y33.D        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/Mmux_M_alu_a17
+    SLICE_X9Y33.B2       net (fanout=4)        0.557   beta_game/M_alu_a[0]
+    SLICE_X9Y33.B        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/alu/add/Maddsub_holder_lut<0>
+    SLICE_X10Y34.A2      net (fanout=1)        0.731   beta_game/alu/add/Maddsub_holder_lut[0]
+    SLICE_X10Y34.COUT    Topcya                0.472   beta_game/alu/add/Maddsub_holder_cy[3]
+                                                       beta_game/alu/add/Maddsub_holder_lut[0]_rt
+                                                       beta_game/alu/add/Maddsub_holder_cy<3>
+    SLICE_X10Y35.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[3]
+    SLICE_X10Y35.COUT    Tbyp                  0.091   beta_game/alu/add/Maddsub_holder_cy[7]
+                                                       beta_game/alu/add/Maddsub_holder_cy<7>
+    SLICE_X10Y36.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[7]
+    SLICE_X10Y36.BMUX    Tcinb                 0.277   beta_game/alu/add/Maddsub_holder_cy[11]
+                                                       beta_game/alu/add/Maddsub_holder_cy<11>
+    SLICE_X11Y36.A2      net (fanout=1)        0.771   beta_game/alu/M_add_out[9]
+    SLICE_X11Y36.CLK     Tas                   0.373   beta_game/M_regs_q_12
+                                                       beta_game/alu/Mmux_out175
+                                                       beta_game/level/M_regs_q_9
+    -------------------------------------------------  ---------------------------
+    Total                                      5.169ns (2.256ns logic, 2.913ns route)
+                                                       (43.6% logic, 56.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.797ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/board/M_regs_q_7 (FF)
+  Destination:          beta_game/board/M_regs_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.155ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.013ns (0.194 - 0.207)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_7 to beta_game/board/M_regs_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y33.AQ      Tcko                  0.430   M_beta_game_boardout[8]
+                                                       beta_game/board/M_regs_q_7
+    SLICE_X8Y36.A3       net (fanout=6)        1.345   M_beta_game_boardout[7]
+    SLICE_X8Y36.A        Tilo                  0.254   beta_game/M_alu_a[9]
+                                                       beta_game/Mmux_M_alu_a141
+    SLICE_X8Y34.C3       net (fanout=4)        0.610   beta_game/M_alu_a[7]
+    SLICE_X8Y34.COUT     Topcyc                0.328   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
+                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<2>
+                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
+    SLICE_X8Y35.CIN      net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
+    SLICE_X8Y35.BMUX     Tcinb                 0.286   a[15]_b[15]_equal_1_o
+                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<5>
+    SLICE_X11Y34.A3      net (fanout=3)        0.634   a[15]_b[15]_equal_1_o
+    SLICE_X11Y34.A       Tilo                  0.259   beta_game/M_regs_q_5
+                                                       beta_game/alu/Mmux_out28
+    SLICE_X12Y34.A5      net (fanout=1)        0.667   beta_game/M_alu_out[0]
+    SLICE_X12Y34.CLK     Tas                   0.339   M_beta_game_boardout[2]
+                                                       beta_game/Mmux_M_board_data17
+                                                       beta_game/board/M_regs_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                      5.155ns (1.896ns logic, 3.259ns route)
+                                                       (36.8% logic, 63.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.828ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/board/M_regs_q_0 (FF)
+  Destination:          beta_game/level/M_regs_q_11 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.138ns (Levels of Logic = 6)
+  Clock Path Skew:      0.001ns (0.624 - 0.623)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_0 to beta_game/level/M_regs_q_11
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y34.AQ      Tcko                  0.525   M_beta_game_boardout[2]
+                                                       beta_game/board/M_regs_q_0
+    SLICE_X9Y33.D6       net (fanout=4)        0.848   M_beta_game_boardout[0]
+    SLICE_X9Y33.D        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/Mmux_M_alu_a17
+    SLICE_X9Y33.B2       net (fanout=4)        0.557   beta_game/M_alu_a[0]
+    SLICE_X9Y33.B        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/alu/add/Maddsub_holder_lut<0>
+    SLICE_X10Y34.A2      net (fanout=1)        0.731   beta_game/alu/add/Maddsub_holder_lut[0]
+    SLICE_X10Y34.COUT    Topcya                0.472   beta_game/alu/add/Maddsub_holder_cy[3]
+                                                       beta_game/alu/add/Maddsub_holder_lut[0]_rt
+                                                       beta_game/alu/add/Maddsub_holder_cy<3>
+    SLICE_X10Y35.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[3]
+    SLICE_X10Y35.COUT    Tbyp                  0.091   beta_game/alu/add/Maddsub_holder_cy[7]
+                                                       beta_game/alu/add/Maddsub_holder_cy<7>
+    SLICE_X10Y36.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[7]
+    SLICE_X10Y36.DMUX    Tcind                 0.289   beta_game/alu/add/Maddsub_holder_cy[11]
+                                                       beta_game/alu/add/Maddsub_holder_cy<11>
+    SLICE_X11Y36.C1      net (fanout=1)        0.728   beta_game/alu/M_add_out[11]
+    SLICE_X11Y36.CLK     Tas                   0.373   beta_game/M_regs_q_12
+                                                       beta_game/alu/Mmux_out45
+                                                       beta_game/level/M_regs_q_11
+    -------------------------------------------------  ---------------------------
+    Total                                      5.138ns (2.268ns logic, 2.870ns route)
+                                                       (44.1% logic, 55.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.862ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/board/M_regs_q_2 (FF)
+  Destination:          beta_game/level/M_regs_q_13 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.088ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.015ns (0.190 - 0.205)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_2 to beta_game/level/M_regs_q_13
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y34.CQ      Tcko                  0.525   M_beta_game_boardout[2]
+                                                       beta_game/board/M_regs_q_2
+    SLICE_X7Y34.A4       net (fanout=6)        1.478   M_beta_game_boardout[2]
+    SLICE_X7Y34.A        Tilo                  0.259   beta_game/M_alu_a[1]
+                                                       beta_game/Mmux_M_alu_a91
+    SLICE_X10Y34.CX      net (fanout=3)        0.791   beta_game/M_alu_a[2]
+    SLICE_X10Y34.COUT    Tcxcy                 0.134   beta_game/alu/add/Maddsub_holder_cy[3]
+                                                       beta_game/alu/add/Maddsub_holder_cy<3>
+    SLICE_X10Y35.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[3]
+    SLICE_X10Y35.COUT    Tbyp                  0.091   beta_game/alu/add/Maddsub_holder_cy[7]
+                                                       beta_game/alu/add/Maddsub_holder_cy<7>
+    SLICE_X10Y36.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[7]
+    SLICE_X10Y36.COUT    Tbyp                  0.091   beta_game/alu/add/Maddsub_holder_cy[11]
+                                                       beta_game/alu/add/Maddsub_holder_cy<11>
+    SLICE_X10Y37.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[11]
+    SLICE_X10Y37.BMUX    Tcinb                 0.277   beta_game/alu/M_add_n
+                                                       beta_game/alu/add/Maddsub_holder_xor<15>
+    SLICE_X13Y36.A2      net (fanout=1)        1.169   beta_game/alu/M_add_out[13]
+    SLICE_X13Y36.CLK     Tas                   0.264   beta_game/M_regs_q_15
+                                                       beta_game/alu/Mmux_out64
+                                                       beta_game/level/M_regs_q_13
+    -------------------------------------------------  ---------------------------
+    Total                                      5.088ns (1.641ns logic, 3.447ns route)
+                                                       (32.3% logic, 67.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.911ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/board/M_regs_q_1 (FF)
+  Destination:          beta_game/board/M_regs_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.054ns (Levels of Logic = 5)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_1 to beta_game/board/M_regs_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y34.BQ      Tcko                  0.525   M_beta_game_boardout[2]
+                                                       beta_game/board/M_regs_q_1
+    SLICE_X7Y34.B3       net (fanout=6)        1.067   M_beta_game_boardout[1]
+    SLICE_X7Y34.B        Tilo                  0.259   beta_game/M_alu_a[1]
+                                                       beta_game/Mmux_M_alu_a81
+    SLICE_X8Y34.A5       net (fanout=3)        0.541   beta_game/M_alu_a[1]
+    SLICE_X8Y34.COUT     Topcya                0.474   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
+                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<0>
+                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
+    SLICE_X8Y35.CIN      net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
+    SLICE_X8Y35.BMUX     Tcinb                 0.286   a[15]_b[15]_equal_1_o
+                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<5>
+    SLICE_X11Y34.A3      net (fanout=3)        0.634   a[15]_b[15]_equal_1_o
+    SLICE_X11Y34.A       Tilo                  0.259   beta_game/M_regs_q_5
+                                                       beta_game/alu/Mmux_out28
+    SLICE_X12Y34.A5      net (fanout=1)        0.667   beta_game/M_alu_out[0]
+    SLICE_X12Y34.CLK     Tas                   0.339   M_beta_game_boardout[2]
+                                                       beta_game/Mmux_M_board_data17
+                                                       beta_game/board/M_regs_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                      5.054ns (2.142ns logic, 2.912ns route)
+                                                       (42.4% logic, 57.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.924ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/board/M_regs_q_5 (FF)
+  Destination:          beta_game/level/M_regs_q_15 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.024ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.017ns (0.190 - 0.207)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_5 to beta_game/level/M_regs_q_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y33.AQ      Tcko                  0.525   M_beta_game_boardout[6]
+                                                       beta_game/board/M_regs_q_5
+    SLICE_X11Y35.A3      net (fanout=6)        1.094   M_beta_game_boardout[5]
+    SLICE_X11Y35.A       Tilo                  0.259   beta_game/M_alu_a[10]
+                                                       beta_game/Mmux_M_alu_a121
+    SLICE_X10Y35.BX      net (fanout=3)        1.457   beta_game/M_alu_a[5]
+    SLICE_X10Y35.COUT    Tbxcy                 0.197   beta_game/alu/add/Maddsub_holder_cy[7]
+                                                       beta_game/alu/add/Maddsub_holder_cy<7>
+    SLICE_X10Y36.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[7]
+    SLICE_X10Y36.COUT    Tbyp                  0.091   beta_game/alu/add/Maddsub_holder_cy[11]
+                                                       beta_game/alu/add/Maddsub_holder_cy<11>
+    SLICE_X10Y37.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[11]
+    SLICE_X10Y37.DMUX    Tcind                 0.289   beta_game/alu/M_add_n
+                                                       beta_game/alu/add/Maddsub_holder_xor<15>
+    SLICE_X13Y36.A5      net (fanout=1)        0.733   beta_game/alu/M_add_n
+    SLICE_X13Y36.CLK     Tas                   0.373   beta_game/M_regs_q_15
+                                                       beta_game/alu/Mmux_out86
+                                                       beta_game/level/M_regs_q_15
+    -------------------------------------------------  ---------------------------
+    Total                                      5.024ns (1.734ns logic, 3.290ns route)
+                                                       (34.5% logic, 65.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.954ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/level/M_regs_q_10 (FF)
+  Destination:          beta_game/board/M_regs_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.962ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.049ns (0.599 - 0.648)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: beta_game/level/M_regs_q_10 to beta_game/board/M_regs_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y36.BQ      Tcko                  0.430   beta_game/M_regs_q_12
+                                                       beta_game/level/M_regs_q_10
+    SLICE_X11Y35.B2      net (fanout=2)        0.737   beta_game/M_regs_q_10
+    SLICE_X11Y35.B       Tilo                  0.259   beta_game/M_alu_a[10]
+                                                       beta_game/Mmux_M_alu_a21
+    SLICE_X8Y34.D2       net (fanout=4)        1.036   beta_game/M_alu_a[10]
+    SLICE_X8Y34.COUT     Topcyd                0.312   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
+                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<3>
+                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
+    SLICE_X8Y35.CIN      net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
+    SLICE_X8Y35.BMUX     Tcinb                 0.286   a[15]_b[15]_equal_1_o
+                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<5>
+    SLICE_X11Y34.A3      net (fanout=3)        0.634   a[15]_b[15]_equal_1_o
+    SLICE_X11Y34.A       Tilo                  0.259   beta_game/M_regs_q_5
+                                                       beta_game/alu/Mmux_out28
+    SLICE_X12Y34.A5      net (fanout=1)        0.667   beta_game/M_alu_out[0]
+    SLICE_X12Y34.CLK     Tas                   0.339   M_beta_game_boardout[2]
+                                                       beta_game/Mmux_M_board_data17
+                                                       beta_game/board/M_regs_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                      4.962ns (1.885ns logic, 3.077ns route)
+                                                       (38.0% logic, 62.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.985ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/level/M_regs_q_0 (FF)
+  Destination:          beta_game/level/M_regs_q_15 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.924ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.056ns (0.595 - 0.651)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: beta_game/level/M_regs_q_0 to beta_game/level/M_regs_q_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y34.AQ      Tcko                  0.430   beta_game/M_regs_q_5
+                                                       beta_game/level/M_regs_q_0
+    SLICE_X9Y33.D3       net (fanout=1)        0.630   beta_game/M_regs_q_0
+    SLICE_X9Y33.D        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/Mmux_M_alu_a17
+    SLICE_X9Y33.B2       net (fanout=4)        0.557   beta_game/M_alu_a[0]
+    SLICE_X9Y33.B        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/alu/add/Maddsub_holder_lut<0>
+    SLICE_X10Y34.A2      net (fanout=1)        0.731   beta_game/alu/add/Maddsub_holder_lut[0]
+    SLICE_X10Y34.COUT    Topcya                0.472   beta_game/alu/add/Maddsub_holder_cy[3]
+                                                       beta_game/alu/add/Maddsub_holder_lut[0]_rt
+                                                       beta_game/alu/add/Maddsub_holder_cy<3>
+    SLICE_X10Y35.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[3]
+    SLICE_X10Y35.COUT    Tbyp                  0.091   beta_game/alu/add/Maddsub_holder_cy[7]
+                                                       beta_game/alu/add/Maddsub_holder_cy<7>
+    SLICE_X10Y36.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[7]
+    SLICE_X10Y36.COUT    Tbyp                  0.091   beta_game/alu/add/Maddsub_holder_cy[11]
+                                                       beta_game/alu/add/Maddsub_holder_cy<11>
+    SLICE_X10Y37.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[11]
+    SLICE_X10Y37.DMUX    Tcind                 0.289   beta_game/alu/M_add_n
+                                                       beta_game/alu/add/Maddsub_holder_xor<15>
+    SLICE_X13Y36.A5      net (fanout=1)        0.733   beta_game/alu/M_add_n
+    SLICE_X13Y36.CLK     Tas                   0.373   beta_game/M_regs_q_15
+                                                       beta_game/alu/Mmux_out86
+                                                       beta_game/level/M_regs_q_15
+    -------------------------------------------------  ---------------------------
+    Total                                      4.924ns (2.264ns logic, 2.660ns route)
+                                                       (46.0% logic, 54.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  14.993ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/board/M_regs_q_1 (FF)
+  Destination:          beta_game/level/M_regs_q_13 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.957ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.015ns (0.190 - 0.205)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_1 to beta_game/level/M_regs_q_13
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y34.BQ      Tcko                  0.525   M_beta_game_boardout[2]
+                                                       beta_game/board/M_regs_q_1
+    SLICE_X7Y34.B3       net (fanout=6)        1.067   M_beta_game_boardout[1]
+    SLICE_X7Y34.B        Tilo                  0.259   beta_game/M_alu_a[1]
+                                                       beta_game/Mmux_M_alu_a81
+    SLICE_X10Y34.BX      net (fanout=3)        1.008   beta_game/M_alu_a[1]
+    SLICE_X10Y34.COUT    Tbxcy                 0.197   beta_game/alu/add/Maddsub_holder_cy[3]
+                                                       beta_game/alu/add/Maddsub_holder_cy<3>
+    SLICE_X10Y35.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[3]
+    SLICE_X10Y35.COUT    Tbyp                  0.091   beta_game/alu/add/Maddsub_holder_cy[7]
+                                                       beta_game/alu/add/Maddsub_holder_cy<7>
+    SLICE_X10Y36.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[7]
+    SLICE_X10Y36.COUT    Tbyp                  0.091   beta_game/alu/add/Maddsub_holder_cy[11]
+                                                       beta_game/alu/add/Maddsub_holder_cy<11>
+    SLICE_X10Y37.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[11]
+    SLICE_X10Y37.BMUX    Tcinb                 0.277   beta_game/alu/M_add_n
+                                                       beta_game/alu/add/Maddsub_holder_xor<15>
+    SLICE_X13Y36.A2      net (fanout=1)        1.169   beta_game/alu/M_add_out[13]
+    SLICE_X13Y36.CLK     Tas                   0.264   beta_game/M_regs_q_15
+                                                       beta_game/alu/Mmux_out64
+                                                       beta_game/level/M_regs_q_13
+    -------------------------------------------------  ---------------------------
+    Total                                      4.957ns (1.704ns logic, 3.253ns route)
+                                                       (34.4% logic, 65.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  15.003ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/level/M_regs_q_0 (FF)
+  Destination:          beta_game/board/M_regs_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.910ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.052ns (0.599 - 0.651)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: beta_game/level/M_regs_q_0 to beta_game/board/M_regs_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y34.AQ      Tcko                  0.430   beta_game/M_regs_q_5
+                                                       beta_game/level/M_regs_q_0
+    SLICE_X9Y33.D3       net (fanout=1)        0.630   beta_game/M_regs_q_0
+    SLICE_X9Y33.D        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/Mmux_M_alu_a17
+    SLICE_X9Y33.B2       net (fanout=4)        0.557   beta_game/M_alu_a[0]
+    SLICE_X9Y33.B        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/alu/add/Maddsub_holder_lut<0>
+    SLICE_X10Y34.A2      net (fanout=1)        0.731   beta_game/alu/add/Maddsub_holder_lut[0]
+    SLICE_X10Y34.AMUX    Topaa                 0.449   beta_game/alu/add/Maddsub_holder_cy[3]
+                                                       beta_game/alu/add/Maddsub_holder_lut[0]_rt
+                                                       beta_game/alu/add/Maddsub_holder_cy<3>
+    SLICE_X11Y34.A4      net (fanout=2)        0.330   M_add_out[0]
+    SLICE_X11Y34.A       Tilo                  0.259   beta_game/M_regs_q_5
+                                                       beta_game/alu/Mmux_out28
+    SLICE_X12Y34.A5      net (fanout=1)        0.667   beta_game/M_alu_out[0]
+    SLICE_X12Y34.CLK     Tas                   0.339   M_beta_game_boardout[2]
+                                                       beta_game/Mmux_M_board_data17
+                                                       beta_game/board/M_regs_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                      4.910ns (1.995ns logic, 2.915ns route)
+                                                       (40.6% logic, 59.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  15.008ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/board/M_regs_q_5 (FF)
+  Destination:          beta_game/level/M_regs_q_9 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.956ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.001ns (0.624 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_5 to beta_game/level/M_regs_q_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y33.AQ      Tcko                  0.525   M_beta_game_boardout[6]
+                                                       beta_game/board/M_regs_q_5
+    SLICE_X11Y35.A3      net (fanout=6)        1.094   M_beta_game_boardout[5]
+    SLICE_X11Y35.A       Tilo                  0.259   beta_game/M_alu_a[10]
+                                                       beta_game/Mmux_M_alu_a121
+    SLICE_X10Y35.BX      net (fanout=3)        1.457   beta_game/M_alu_a[5]
+    SLICE_X10Y35.COUT    Tbxcy                 0.197   beta_game/alu/add/Maddsub_holder_cy[7]
+                                                       beta_game/alu/add/Maddsub_holder_cy<7>
+    SLICE_X10Y36.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[7]
+    SLICE_X10Y36.BMUX    Tcinb                 0.277   beta_game/alu/add/Maddsub_holder_cy[11]
+                                                       beta_game/alu/add/Maddsub_holder_cy<11>
+    SLICE_X11Y36.A2      net (fanout=1)        0.771   beta_game/alu/M_add_out[9]
+    SLICE_X11Y36.CLK     Tas                   0.373   beta_game/M_regs_q_12
+                                                       beta_game/alu/Mmux_out175
+                                                       beta_game/level/M_regs_q_9
+    -------------------------------------------------  ---------------------------
+    Total                                      4.956ns (1.631ns logic, 3.325ns route)
+                                                       (32.9% logic, 67.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  15.011ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/board/M_regs_q_0 (FF)
+  Destination:          beta_game/level/M_regs_q_10 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.955ns (Levels of Logic = 6)
+  Clock Path Skew:      0.001ns (0.624 - 0.623)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_0 to beta_game/level/M_regs_q_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y34.AQ      Tcko                  0.525   M_beta_game_boardout[2]
+                                                       beta_game/board/M_regs_q_0
+    SLICE_X9Y33.D6       net (fanout=4)        0.848   M_beta_game_boardout[0]
+    SLICE_X9Y33.D        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/Mmux_M_alu_a17
+    SLICE_X9Y33.B2       net (fanout=4)        0.557   beta_game/M_alu_a[0]
+    SLICE_X9Y33.B        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/alu/add/Maddsub_holder_lut<0>
+    SLICE_X10Y34.A2      net (fanout=1)        0.731   beta_game/alu/add/Maddsub_holder_lut[0]
+    SLICE_X10Y34.COUT    Topcya                0.472   beta_game/alu/add/Maddsub_holder_cy[3]
+                                                       beta_game/alu/add/Maddsub_holder_lut[0]_rt
+                                                       beta_game/alu/add/Maddsub_holder_cy<3>
+    SLICE_X10Y35.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[3]
+    SLICE_X10Y35.COUT    Tbyp                  0.091   beta_game/alu/add/Maddsub_holder_cy[7]
+                                                       beta_game/alu/add/Maddsub_holder_cy<7>
+    SLICE_X10Y36.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[7]
+    SLICE_X10Y36.CMUX    Tcinc                 0.289   beta_game/alu/add/Maddsub_holder_cy[11]
+                                                       beta_game/alu/add/Maddsub_holder_cy<11>
+    SLICE_X11Y36.B1      net (fanout=1)        0.545   beta_game/alu/M_add_out[10]
+    SLICE_X11Y36.CLK     Tas                   0.373   beta_game/M_regs_q_12
+                                                       beta_game/alu/Mmux_out35
+                                                       beta_game/level/M_regs_q_10
+    -------------------------------------------------  ---------------------------
+    Total                                      4.955ns (2.268ns logic, 2.687ns route)
+                                                       (45.8% logic, 54.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  15.026ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/level/M_regs_q_5 (FF)
+  Destination:          beta_game/level/M_regs_q_13 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.883ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.056ns (0.595 - 0.651)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: beta_game/level/M_regs_q_5 to beta_game/level/M_regs_q_13
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y34.DQ      Tcko                  0.430   beta_game/M_regs_q_5
+                                                       beta_game/level/M_regs_q_5
+    SLICE_X11Y35.A1      net (fanout=2)        0.733   beta_game/M_regs_q_5
+    SLICE_X11Y35.A       Tilo                  0.259   beta_game/M_alu_a[10]
+                                                       beta_game/Mmux_M_alu_a121
+    SLICE_X10Y35.BX      net (fanout=3)        1.457   beta_game/M_alu_a[5]
+    SLICE_X10Y35.COUT    Tbxcy                 0.197   beta_game/alu/add/Maddsub_holder_cy[7]
+                                                       beta_game/alu/add/Maddsub_holder_cy<7>
+    SLICE_X10Y36.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[7]
+    SLICE_X10Y36.COUT    Tbyp                  0.091   beta_game/alu/add/Maddsub_holder_cy[11]
+                                                       beta_game/alu/add/Maddsub_holder_cy<11>
+    SLICE_X10Y37.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[11]
+    SLICE_X10Y37.BMUX    Tcinb                 0.277   beta_game/alu/M_add_n
+                                                       beta_game/alu/add/Maddsub_holder_xor<15>
+    SLICE_X13Y36.A2      net (fanout=1)        1.169   beta_game/alu/M_add_out[13]
+    SLICE_X13Y36.CLK     Tas                   0.264   beta_game/M_regs_q_15
+                                                       beta_game/alu/Mmux_out64
+                                                       beta_game/level/M_regs_q_13
+    -------------------------------------------------  ---------------------------
+    Total                                      4.883ns (1.518ns logic, 3.365ns route)
+                                                       (31.1% logic, 68.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  15.031ns (requirement - (data path - clock path skew + uncertainty))
   Source:               beta_game/board/M_regs_q_4 (FF)
   Destination:          beta_game/board/M_regs_q_0 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      5.306ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.012ns (0.195 - 0.207)
+  Data Path Delay:      4.923ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.011ns (0.194 - 0.205)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1181,33 +1050,36 @@ Slack:                  14.647ns (requirement - (data path - clock path skew + u
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X20Y14.CQ      Tcko                  0.525   M_beta_game_boardout[4]
+    SLICE_X13Y34.CQ      Tcko                  0.430   M_beta_game_boardout[4]
                                                        beta_game/board/M_regs_q_4
-    SLICE_X21Y15.A2      net (fanout=7)        0.751   M_beta_game_boardout[4]
-    SLICE_X21Y15.A       Tilo                  0.259   M_edge_detector0_out
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<1>_SW0
-    SLICE_X14Y15.B3      net (fanout=1)        1.265   beta_game/alu/cmp/N52
-    SLICE_X14Y15.COUT    Topcyb                0.448   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
+    SLICE_X9Y34.D3       net (fanout=6)        1.137   M_beta_game_boardout[4]
+    SLICE_X9Y34.D        Tilo                  0.259   beta_game/M_levels_mux_out[11]
+                                                       beta_game/Mmux_M_alu_a111
+    SLICE_X8Y34.B3       net (fanout=3)        0.426   beta_game/M_alu_a[4]
+    SLICE_X8Y34.COUT     Topcyb                0.483   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
                                                        beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<1>
                                                        beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X20Y13.B3      net (fanout=3)        1.477   a[15]_b[15]_equal_1_o
-    SLICE_X20Y13.CLK     Tas                   0.339   M_beta_game_boardout[1]
+    SLICE_X8Y35.CIN      net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
+    SLICE_X8Y35.BMUX     Tcinb                 0.286   a[15]_b[15]_equal_1_o
+                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<5>
+    SLICE_X11Y34.A3      net (fanout=3)        0.634   a[15]_b[15]_equal_1_o
+    SLICE_X11Y34.A       Tilo                  0.259   beta_game/M_regs_q_5
+                                                       beta_game/alu/Mmux_out28
+    SLICE_X12Y34.A5      net (fanout=1)        0.667   beta_game/M_alu_out[0]
+    SLICE_X12Y34.CLK     Tas                   0.339   M_beta_game_boardout[2]
                                                        beta_game/Mmux_M_board_data17
                                                        beta_game/board/M_regs_q_0
     -------------------------------------------------  ---------------------------
-    Total                                      5.306ns (1.810ns logic, 3.496ns route)
-                                                       (34.1% logic, 65.9% route)
+    Total                                      4.923ns (2.056ns logic, 2.867ns route)
+                                                       (41.8% logic, 58.2% route)
 
 --------------------------------------------------------------------------------
-Slack:                  14.666ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/board/M_regs_q_9 (FF)
-  Destination:          beta_game/level/M_regs_q_0 (FF)
+Slack:                  15.039ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/board/M_regs_q_5 (FF)
+  Destination:          beta_game/level/M_regs_q_11 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      5.287ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.012ns (0.301 - 0.313)
+  Data Path Delay:      4.925ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.001ns (0.624 - 0.625)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1218,40 +1090,36 @@ Slack:                  14.666ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_9 to beta_game/level/M_regs_q_0
+  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_5 to beta_game/level/M_regs_q_11
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X15Y15.AQ      Tcko                  0.430   M_beta_game_boardout[10]
-                                                       beta_game/board/M_regs_q_9
-    SLICE_X17Y15.A2      net (fanout=7)        0.966   M_beta_game_boardout[9]
-    SLICE_X17Y15.A       Tilo                  0.259   beta_game/M_alu_a[10]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<3>_SW0
-    SLICE_X17Y15.B6      net (fanout=2)        0.150   beta_game/N58
-    SLICE_X17Y15.B       Tilo                  0.259   beta_game/M_alu_a[10]
-                                                       beta_game/M_alu_b<10>1_SW0
-    SLICE_X14Y15.D3      net (fanout=1)        1.030   beta_game/N73
-    SLICE_X14Y15.COUT    Topcyd                0.290   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<3>
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X21Y13.A5      net (fanout=3)        1.288   a[15]_b[15]_equal_1_o
-    SLICE_X21Y13.CLK     Tas                   0.373   beta_game/M_regs_q_5
-                                                       beta_game/alu/Mmux_out28
-                                                       beta_game/level/M_regs_q_0
+    SLICE_X12Y33.AQ      Tcko                  0.525   M_beta_game_boardout[6]
+                                                       beta_game/board/M_regs_q_5
+    SLICE_X11Y35.A3      net (fanout=6)        1.094   M_beta_game_boardout[5]
+    SLICE_X11Y35.A       Tilo                  0.259   beta_game/M_alu_a[10]
+                                                       beta_game/Mmux_M_alu_a121
+    SLICE_X10Y35.BX      net (fanout=3)        1.457   beta_game/M_alu_a[5]
+    SLICE_X10Y35.COUT    Tbxcy                 0.197   beta_game/alu/add/Maddsub_holder_cy[7]
+                                                       beta_game/alu/add/Maddsub_holder_cy<7>
+    SLICE_X10Y36.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[7]
+    SLICE_X10Y36.DMUX    Tcind                 0.289   beta_game/alu/add/Maddsub_holder_cy[11]
+                                                       beta_game/alu/add/Maddsub_holder_cy<11>
+    SLICE_X11Y36.C1      net (fanout=1)        0.728   beta_game/alu/M_add_out[11]
+    SLICE_X11Y36.CLK     Tas                   0.373   beta_game/M_regs_q_12
+                                                       beta_game/alu/Mmux_out45
+                                                       beta_game/level/M_regs_q_11
     -------------------------------------------------  ---------------------------
-    Total                                      5.287ns (1.850ns logic, 3.437ns route)
-                                                       (35.0% logic, 65.0% route)
+    Total                                      4.925ns (1.643ns logic, 3.282ns route)
+                                                       (33.4% logic, 66.6% route)
 
 --------------------------------------------------------------------------------
-Slack:                  14.711ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/board/M_regs_q_6 (FF)
-  Destination:          beta_game/level/M_regs_q_0 (FF)
+Slack:                  15.046ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/level/M_regs_q_2 (FF)
+  Destination:          beta_game/board/M_regs_q_0 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      5.241ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.013ns (0.195 - 0.208)
+  Data Path Delay:      4.867ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.052ns (0.599 - 0.651)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1262,37 +1130,40 @@ Slack:                  14.711ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_6 to beta_game/level/M_regs_q_0
+  Maximum Data Path at Slow Process Corner: beta_game/level/M_regs_q_2 to beta_game/board/M_regs_q_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X20Y15.CQ      Tcko                  0.525   M_beta_game_boardout[6]
-                                                       beta_game/board/M_regs_q_6
-    SLICE_X17Y13.A3      net (fanout=6)        1.259   M_beta_game_boardout[6]
-    SLICE_X17Y13.A       Tilo                  0.259   M_game_state_q_FSM_FFd1_1
-                                                       beta_game/Mmux_M_alu_a131
-    SLICE_X14Y15.C1      net (fanout=3)        0.970   beta_game/M_alu_a[6]
-    SLICE_X14Y15.COUT    Topcyc                0.325   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<2>
+    SLICE_X11Y34.CQ      Tcko                  0.430   beta_game/M_regs_q_5
+                                                       beta_game/level/M_regs_q_2
+    SLICE_X7Y34.A1       net (fanout=2)        1.069   beta_game/M_regs_q_2
+    SLICE_X7Y34.A        Tilo                  0.259   beta_game/M_alu_a[1]
+                                                       beta_game/Mmux_M_alu_a91
+    SLICE_X8Y34.A6       net (fanout=3)        0.447   beta_game/M_alu_a[2]
+    SLICE_X8Y34.COUT     Topcya                0.474   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
+                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<0>
                                                        beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X21Y13.A5      net (fanout=3)        1.288   a[15]_b[15]_equal_1_o
-    SLICE_X21Y13.CLK     Tas                   0.373   beta_game/M_regs_q_5
+    SLICE_X8Y35.CIN      net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
+    SLICE_X8Y35.BMUX     Tcinb                 0.286   a[15]_b[15]_equal_1_o
+                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<5>
+    SLICE_X11Y34.A3      net (fanout=3)        0.634   a[15]_b[15]_equal_1_o
+    SLICE_X11Y34.A       Tilo                  0.259   beta_game/M_regs_q_5
                                                        beta_game/alu/Mmux_out28
-                                                       beta_game/level/M_regs_q_0
+    SLICE_X12Y34.A5      net (fanout=1)        0.667   beta_game/M_alu_out[0]
+    SLICE_X12Y34.CLK     Tas                   0.339   M_beta_game_boardout[2]
+                                                       beta_game/Mmux_M_board_data17
+                                                       beta_game/board/M_regs_q_0
     -------------------------------------------------  ---------------------------
-    Total                                      5.241ns (1.721ns logic, 3.520ns route)
-                                                       (32.8% logic, 67.2% route)
+    Total                                      4.867ns (2.047ns logic, 2.820ns route)
+                                                       (42.1% logic, 57.9% route)
 
 --------------------------------------------------------------------------------
-Slack:                  14.715ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               beta_game/level/M_regs_q_4 (FF)
-  Destination:          beta_game/level/M_regs_q_0 (FF)
+Slack:                  15.056ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/level/M_regs_q_5 (FF)
+  Destination:          beta_game/board/M_regs_q_0 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      5.237ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.013ns (0.301 - 0.314)
+  Data Path Delay:      4.857ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.052ns (0.599 - 0.651)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1303,29 +1174,214 @@ Slack:                  14.715ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: beta_game/level/M_regs_q_4 to beta_game/level/M_regs_q_0
+  Maximum Data Path at Slow Process Corner: beta_game/level/M_regs_q_5 to beta_game/board/M_regs_q_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X19Y14.BQ      Tcko                  0.430   beta_game/M_levels_mux_out[11]
-                                                       beta_game/level/M_regs_q_4
-    SLICE_X21Y15.A4      net (fanout=12)       0.932   beta_game/M_levels_mux_out[11]
-    SLICE_X21Y15.A       Tilo                  0.259   M_edge_detector0_out
-                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<1>_SW0
-    SLICE_X14Y15.B3      net (fanout=1)        1.265   beta_game/alu/cmp/N52
-    SLICE_X14Y15.COUT    Topcyb                0.448   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
+    SLICE_X11Y34.DQ      Tcko                  0.430   beta_game/M_regs_q_5
+                                                       beta_game/level/M_regs_q_5
+    SLICE_X11Y35.A1      net (fanout=2)        0.733   beta_game/M_regs_q_5
+    SLICE_X11Y35.A       Tilo                  0.259   beta_game/M_alu_a[10]
+                                                       beta_game/Mmux_M_alu_a121
+    SLICE_X8Y34.B4       net (fanout=3)        0.764   beta_game/M_alu_a[5]
+    SLICE_X8Y34.COUT     Topcyb                0.483   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
                                                        beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_lut<1>
                                                        beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<3>
-    SLICE_X14Y16.CIN     net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
-    SLICE_X14Y16.BMUX    Tcinb                 0.239   M_game_state_q_FSM_FFd2
-                                                       M_game_state_q_FSM_FFd2-In1_cy1
-    SLICE_X21Y13.A5      net (fanout=3)        1.288   a[15]_b[15]_equal_1_o
-    SLICE_X21Y13.CLK     Tas                   0.373   beta_game/M_regs_q_5
+    SLICE_X8Y35.CIN      net (fanout=1)        0.003   beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy[3]
+    SLICE_X8Y35.BMUX     Tcinb                 0.286   a[15]_b[15]_equal_1_o
+                                                       beta_game/alu/cmp/Mcompar_a[15]_b[15]_equal_1_o_cy<5>
+    SLICE_X11Y34.A3      net (fanout=3)        0.634   a[15]_b[15]_equal_1_o
+    SLICE_X11Y34.A       Tilo                  0.259   beta_game/M_regs_q_5
                                                        beta_game/alu/Mmux_out28
-                                                       beta_game/level/M_regs_q_0
+    SLICE_X12Y34.A5      net (fanout=1)        0.667   beta_game/M_alu_out[0]
+    SLICE_X12Y34.CLK     Tas                   0.339   M_beta_game_boardout[2]
+                                                       beta_game/Mmux_M_board_data17
+                                                       beta_game/board/M_regs_q_0
     -------------------------------------------------  ---------------------------
-    Total                                      5.237ns (1.749ns logic, 3.488ns route)
-                                                       (33.4% logic, 66.6% route)
+    Total                                      4.857ns (2.056ns logic, 2.801ns route)
+                                                       (42.3% logic, 57.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  15.061ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/level/M_regs_q_0 (FF)
+  Destination:          beta_game/level/M_regs_q_4 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.888ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.016ns (0.323 - 0.339)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: beta_game/level/M_regs_q_0 to beta_game/level/M_regs_q_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y34.AQ      Tcko                  0.430   beta_game/M_regs_q_5
+                                                       beta_game/level/M_regs_q_0
+    SLICE_X9Y33.D3       net (fanout=1)        0.630   beta_game/M_regs_q_0
+    SLICE_X9Y33.D        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/Mmux_M_alu_a17
+    SLICE_X9Y33.B2       net (fanout=4)        0.557   beta_game/M_alu_a[0]
+    SLICE_X9Y33.B        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/alu/add/Maddsub_holder_lut<0>
+    SLICE_X10Y34.A2      net (fanout=1)        0.731   beta_game/alu/add/Maddsub_holder_lut[0]
+    SLICE_X10Y34.COUT    Topcya                0.472   beta_game/alu/add/Maddsub_holder_cy[3]
+                                                       beta_game/alu/add/Maddsub_holder_lut[0]_rt
+                                                       beta_game/alu/add/Maddsub_holder_cy<3>
+    SLICE_X10Y35.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[3]
+    SLICE_X10Y35.AMUX    Tcina                 0.210   beta_game/alu/add/Maddsub_holder_cy[7]
+                                                       beta_game/alu/add/Maddsub_holder_cy<7>
+    SLICE_X9Y34.B1       net (fanout=1)        0.964   beta_game/alu/M_add_out[4]
+    SLICE_X9Y34.CLK      Tas                   0.373   beta_game/M_levels_mux_out[11]
+                                                       beta_game/alu/Mmux_out124
+                                                       beta_game/level/M_regs_q_4
+    -------------------------------------------------  ---------------------------
+    Total                                      4.888ns (2.003ns logic, 2.885ns route)
+                                                       (41.0% logic, 59.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  15.066ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/board/M_regs_q_0 (FF)
+  Destination:          beta_game/level/M_regs_q_5 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.903ns (Levels of Logic = 5)
+  Clock Path Skew:      0.004ns (0.627 - 0.623)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_0 to beta_game/level/M_regs_q_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y34.AQ      Tcko                  0.525   M_beta_game_boardout[2]
+                                                       beta_game/board/M_regs_q_0
+    SLICE_X9Y33.D6       net (fanout=4)        0.848   M_beta_game_boardout[0]
+    SLICE_X9Y33.D        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/Mmux_M_alu_a17
+    SLICE_X9Y33.B2       net (fanout=4)        0.557   beta_game/M_alu_a[0]
+    SLICE_X9Y33.B        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/alu/add/Maddsub_holder_lut<0>
+    SLICE_X10Y34.A2      net (fanout=1)        0.731   beta_game/alu/add/Maddsub_holder_lut[0]
+    SLICE_X10Y34.COUT    Topcya                0.472   beta_game/alu/add/Maddsub_holder_cy[3]
+                                                       beta_game/alu/add/Maddsub_holder_lut[0]_rt
+                                                       beta_game/alu/add/Maddsub_holder_cy<3>
+    SLICE_X10Y35.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[3]
+    SLICE_X10Y35.BMUX    Tcinb                 0.277   beta_game/alu/add/Maddsub_holder_cy[7]
+                                                       beta_game/alu/add/Maddsub_holder_cy<7>
+    SLICE_X11Y34.D3      net (fanout=1)        0.599   beta_game/alu/M_add_out[5]
+    SLICE_X11Y34.CLK     Tas                   0.373   beta_game/M_regs_q_5
+                                                       beta_game/alu/Mmux_out134
+                                                       beta_game/level/M_regs_q_5
+    -------------------------------------------------  ---------------------------
+    Total                                      4.903ns (2.165ns logic, 2.738ns route)
+                                                       (44.2% logic, 55.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  15.073ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/board/M_regs_q_0 (FF)
+  Destination:          beta_game/level/M_regs_q_14 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.893ns (Levels of Logic = 7)
+  Clock Path Skew:      0.001ns (0.624 - 0.623)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_0 to beta_game/level/M_regs_q_14
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y34.AQ      Tcko                  0.525   M_beta_game_boardout[2]
+                                                       beta_game/board/M_regs_q_0
+    SLICE_X9Y33.D6       net (fanout=4)        0.848   M_beta_game_boardout[0]
+    SLICE_X9Y33.D        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/Mmux_M_alu_a17
+    SLICE_X9Y33.B2       net (fanout=4)        0.557   beta_game/M_alu_a[0]
+    SLICE_X9Y33.B        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/alu/add/Maddsub_holder_lut<0>
+    SLICE_X10Y34.A2      net (fanout=1)        0.731   beta_game/alu/add/Maddsub_holder_lut[0]
+    SLICE_X10Y34.COUT    Topcya                0.472   beta_game/alu/add/Maddsub_holder_cy[3]
+                                                       beta_game/alu/add/Maddsub_holder_lut[0]_rt
+                                                       beta_game/alu/add/Maddsub_holder_cy<3>
+    SLICE_X10Y35.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[3]
+    SLICE_X10Y35.COUT    Tbyp                  0.091   beta_game/alu/add/Maddsub_holder_cy[7]
+                                                       beta_game/alu/add/Maddsub_holder_cy<7>
+    SLICE_X10Y36.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[7]
+    SLICE_X10Y36.COUT    Tbyp                  0.091   beta_game/alu/add/Maddsub_holder_cy[11]
+                                                       beta_game/alu/add/Maddsub_holder_cy<11>
+    SLICE_X10Y37.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[11]
+    SLICE_X10Y37.CMUX    Tcinc                 0.289   beta_game/alu/M_add_n
+                                                       beta_game/alu/add/Maddsub_holder_xor<15>
+    SLICE_X11Y36.D4      net (fanout=1)        0.498   beta_game/alu/M_add_out[14]
+    SLICE_X11Y36.CLK     Tas                   0.264   beta_game/M_regs_q_12
+                                                       beta_game/alu/Mmux_out74
+                                                       beta_game/level/M_regs_q_14
+    -------------------------------------------------  ---------------------------
+    Total                                      4.893ns (2.250ns logic, 2.643ns route)
+                                                       (46.0% logic, 54.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  15.076ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               beta_game/board/M_regs_q_0 (FF)
+  Destination:          beta_game/level/M_regs_q_7 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.892ns (Levels of Logic = 5)
+  Clock Path Skew:      0.003ns (0.626 - 0.623)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: beta_game/board/M_regs_q_0 to beta_game/level/M_regs_q_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y34.AQ      Tcko                  0.525   M_beta_game_boardout[2]
+                                                       beta_game/board/M_regs_q_0
+    SLICE_X9Y33.D6       net (fanout=4)        0.848   M_beta_game_boardout[0]
+    SLICE_X9Y33.D        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/Mmux_M_alu_a17
+    SLICE_X9Y33.B2       net (fanout=4)        0.557   beta_game/M_alu_a[0]
+    SLICE_X9Y33.B        Tilo                  0.259   beta_game/M_alu_a[0]
+                                                       beta_game/alu/add/Maddsub_holder_lut<0>
+    SLICE_X10Y34.A2      net (fanout=1)        0.731   beta_game/alu/add/Maddsub_holder_lut[0]
+    SLICE_X10Y34.COUT    Topcya                0.472   beta_game/alu/add/Maddsub_holder_cy[3]
+                                                       beta_game/alu/add/Maddsub_holder_lut[0]_rt
+                                                       beta_game/alu/add/Maddsub_holder_cy<3>
+    SLICE_X10Y35.CIN     net (fanout=1)        0.003   beta_game/alu/add/Maddsub_holder_cy[3]
+    SLICE_X10Y35.DMUX    Tcind                 0.289   beta_game/alu/add/Maddsub_holder_cy[7]
+                                                       beta_game/alu/add/Maddsub_holder_cy<7>
+    SLICE_X9Y35.B6       net (fanout=1)        0.576   beta_game/alu/M_add_out[7]
+    SLICE_X9Y35.CLK      Tas                   0.373   beta_game/M_regs_q_8
+                                                       beta_game/alu/Mmux_out155
+                                                       beta_game/level/M_regs_q_7
+    -------------------------------------------------  ---------------------------
+    Total                                      4.892ns (2.177ns logic, 2.715ns route)
+                                                       (44.5% logic, 55.5% route)
 
 --------------------------------------------------------------------------------
 
@@ -1342,201 +1398,33 @@ Slack: 17.334ns (period - min period limit)
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_ctr_q_3/CLK
-  Logical resource: seg/ctr/M_ctr_q_0/CK
-  Location pin: SLICE_X8Y22.CLK
+  Physical resource: display_1/M_board_q[9]/CLK
+  Logical resource: display_1/M_board_q_0/CK
+  Location pin: SLICE_X8Y14.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_ctr_q_3/CLK
-  Logical resource: seg/ctr/M_ctr_q_1/CK
-  Location pin: SLICE_X8Y22.CLK
+  Physical resource: display_1/M_board_q[9]/CLK
+  Logical resource: display_1/M_board_q_3/CK
+  Location pin: SLICE_X8Y14.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_ctr_q_3/CLK
-  Logical resource: seg/ctr/M_ctr_q_2/CK
-  Location pin: SLICE_X8Y22.CLK
+  Physical resource: display_1/M_board_q[9]/CLK
+  Logical resource: display_1/M_board_q_6/CK
+  Location pin: SLICE_X8Y14.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_ctr_q_3/CLK
-  Logical resource: seg/ctr/M_ctr_q_3/CK
-  Location pin: SLICE_X8Y22.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_ctr_q_7/CLK
-  Logical resource: seg/ctr/M_ctr_q_4/CK
-  Location pin: SLICE_X8Y23.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_ctr_q_7/CLK
-  Logical resource: seg/ctr/M_ctr_q_5/CK
-  Location pin: SLICE_X8Y23.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_ctr_q_7/CLK
-  Logical resource: seg/ctr/M_ctr_q_6/CK
-  Location pin: SLICE_X8Y23.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_ctr_q_7/CLK
-  Logical resource: seg/ctr/M_ctr_q_7/CK
-  Location pin: SLICE_X8Y23.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_ctr_q_11/CLK
-  Logical resource: seg/ctr/M_ctr_q_8/CK
-  Location pin: SLICE_X8Y24.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_ctr_q_11/CLK
-  Logical resource: seg/ctr/M_ctr_q_9/CK
-  Location pin: SLICE_X8Y24.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_ctr_q_11/CLK
-  Logical resource: seg/ctr/M_ctr_q_10/CK
-  Location pin: SLICE_X8Y24.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_ctr_q_11/CLK
-  Logical resource: seg/ctr/M_ctr_q_11/CK
-  Location pin: SLICE_X8Y24.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: seg/ctr/M_ctr_q[15]/CLK
-  Logical resource: seg/ctr/M_ctr_q_12/CK
-  Location pin: SLICE_X8Y25.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: seg/ctr/M_ctr_q[15]/CLK
-  Logical resource: seg/ctr/M_ctr_q_13/CK
-  Location pin: SLICE_X8Y25.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: seg/ctr/M_ctr_q[15]/CLK
-  Logical resource: seg/ctr/M_ctr_q_14/CK
-  Location pin: SLICE_X8Y25.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: seg/ctr/M_ctr_q[15]/CLK
-  Logical resource: seg/ctr/M_ctr_q_15/CK
-  Location pin: SLICE_X8Y25.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_ctr_q_17/CLK
-  Logical resource: seg/ctr/M_ctr_q_16/CK
-  Location pin: SLICE_X8Y26.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_ctr_q_17/CLK
-  Logical resource: seg/ctr/M_ctr_q_17/CK
-  Location pin: SLICE_X8Y26.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_beta_game_boardout[8]/CLK
-  Logical resource: beta_game/board/M_regs_q_7/CK
-  Location pin: SLICE_X16Y14.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_beta_game_boardout[8]/CLK
-  Logical resource: beta_game/board/M_regs_q_8/CK
-  Location pin: SLICE_X16Y14.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_beta_game_boardout[11]/CLK
-  Logical resource: beta_game/board/M_regs_q_11/CK
-  Location pin: SLICE_X16Y15.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_beta_game_boardout[1]/CLK
-  Logical resource: beta_game/board/M_regs_q_0/CK
-  Location pin: SLICE_X20Y13.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_beta_game_boardout[1]/CLK
-  Logical resource: beta_game/board/M_regs_q_1/CK
-  Location pin: SLICE_X20Y13.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_beta_game_boardout[4]/CLK
-  Logical resource: beta_game/board/M_regs_q_3/CK
-  Location pin: SLICE_X20Y14.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_beta_game_boardout[4]/CLK
-  Logical resource: beta_game/board/M_regs_q_4/CK
-  Location pin: SLICE_X20Y14.CLK
+  Physical resource: display_1/M_board_q[9]/CLK
+  Logical resource: display_1/M_board_q_9/CK
+  Location pin: SLICE_X8Y14.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
@@ -1544,7 +1432,7 @@ Slack: 19.520ns (period - min period limit)
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: M_beta_game_boardout[6]/CLK
   Logical resource: beta_game/board/M_regs_q_5/CK
-  Location pin: SLICE_X20Y15.CLK
+  Location pin: SLICE_X12Y33.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
@@ -1552,23 +1440,191 @@ Slack: 19.520ns (period - min period limit)
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: M_beta_game_boardout[6]/CLK
   Logical resource: beta_game/board/M_regs_q_6/CK
-  Location pin: SLICE_X20Y15.CLK
+  Location pin: SLICE_X12Y33.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_beta_game_boardout[2]/CLK
+  Logical resource: beta_game/board/M_regs_q_0/CK
+  Location pin: SLICE_X12Y34.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_beta_game_boardout[2]/CLK
+  Logical resource: beta_game/board/M_regs_q_1/CK
+  Location pin: SLICE_X12Y34.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_beta_game_boardout[2]/CLK
+  Logical resource: beta_game/board/M_regs_q_2/CK
+  Location pin: SLICE_X12Y34.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: M_ctr_q_3/CLK
+  Logical resource: seg/ctr/M_ctr_q_0/CK
+  Location pin: SLICE_X6Y18.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: M_ctr_q_3/CLK
+  Logical resource: seg/ctr/M_ctr_q_1/CK
+  Location pin: SLICE_X6Y18.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: M_ctr_q_3/CLK
+  Logical resource: seg/ctr/M_ctr_q_2/CK
+  Location pin: SLICE_X6Y18.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: M_ctr_q_3/CLK
+  Logical resource: seg/ctr/M_ctr_q_3/CK
+  Location pin: SLICE_X6Y18.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: M_ctr_q_7/CLK
+  Logical resource: seg/ctr/M_ctr_q_4/CK
+  Location pin: SLICE_X6Y19.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: M_ctr_q_7/CLK
+  Logical resource: seg/ctr/M_ctr_q_5/CK
+  Location pin: SLICE_X6Y19.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: M_ctr_q_7/CLK
+  Logical resource: seg/ctr/M_ctr_q_6/CK
+  Location pin: SLICE_X6Y19.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: M_ctr_q_7/CLK
+  Logical resource: seg/ctr/M_ctr_q_7/CK
+  Location pin: SLICE_X6Y19.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: M_ctr_q_11/CLK
+  Logical resource: seg/ctr/M_ctr_q_8/CK
+  Location pin: SLICE_X6Y20.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: M_ctr_q_11/CLK
+  Logical resource: seg/ctr/M_ctr_q_9/CK
+  Location pin: SLICE_X6Y20.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: M_ctr_q_11/CLK
+  Logical resource: seg/ctr/M_ctr_q_10/CK
+  Location pin: SLICE_X6Y20.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: M_ctr_q_11/CLK
+  Logical resource: seg/ctr/M_ctr_q_11/CK
+  Location pin: SLICE_X6Y20.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: seg/ctr/M_ctr_q[15]/CLK
+  Logical resource: seg/ctr/M_ctr_q_12/CK
+  Location pin: SLICE_X6Y21.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: seg/ctr/M_ctr_q[15]/CLK
+  Logical resource: seg/ctr/M_ctr_q_13/CK
+  Location pin: SLICE_X6Y21.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: seg/ctr/M_ctr_q[15]/CLK
+  Logical resource: seg/ctr/M_ctr_q_14/CK
+  Location pin: SLICE_X6Y21.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: seg/ctr/M_ctr_q[15]/CLK
+  Logical resource: seg/ctr/M_ctr_q_15/CK
+  Location pin: SLICE_X6Y21.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: M_ctr_q_17/CLK
+  Logical resource: seg/ctr/M_ctr_q_16/CK
+  Location pin: SLICE_X6Y22.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: M_ctr_q_17/CLK
+  Logical resource: seg/ctr/M_ctr_q_17/CK
+  Location pin: SLICE_X6Y22.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
   Physical resource: display/M_board_q[15]/CLK
   Logical resource: display/M_board_q_12/CK
-  Location pin: SLICE_X20Y34.CLK
+  Location pin: SLICE_X6Y23.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
+Slack: 19.525ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
   Physical resource: display/M_board_q[15]/CLK
   Logical resource: display/M_board_q_15/CK
-  Location pin: SLICE_X20Y34.CLK
+  Location pin: SLICE_X6Y23.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 
@@ -1585,7 +1641,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    6.366|         |         |         |
+clk            |    5.602|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -1594,23 +1650,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 2152 paths, 0 nets, and 408 connections
+Constraints cover 2127 paths, 0 nets, and 390 connections
 
 Design statistics:
-   Minimum period:   6.366ns{1}   (Maximum frequency: 157.085MHz)
+   Minimum period:   5.602ns{1}   (Maximum frequency: 178.508MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Sat Dec  1 17:09:15 2018 
+Analysis completed Sat Dec  1 17:59:05 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 405 MB
+Peak Memory Usage: 406 MB
 
 
 

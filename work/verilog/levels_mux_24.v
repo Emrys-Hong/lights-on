@@ -4,31 +4,29 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module cmp_23 (
-    input [7:0] io_dip,
-    input [15:0] a,
-    input [15:0] b,
+module levels_mux_24 (
+    input [1:0] levels_sel,
     output reg [15:0] out
   );
   
   
   
-  reg [15:0] holder;
-  
   always @* begin
-    holder = 1'h0;
+    out = 16'h0000;
     
-    case (io_dip[1+1-:2])
+    case (levels_sel)
+      1'h0: begin
+        out = 16'h003f;
+      end
       1'h1: begin
-        holder = {15'h0000, (a == b)};
+        out = 16'h074c;
       end
       2'h2: begin
-        holder = {15'h0000, (a < b)};
+        out = 16'h0c94;
       end
       2'h3: begin
-        holder = {15'h0000, (a <= b)};
+        out = 16'h090e;
       end
     endcase
-    out = holder[0+15-:16];
   end
 endmodule

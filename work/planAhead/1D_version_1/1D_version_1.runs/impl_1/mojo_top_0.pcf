@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sat Dec 01 17:09:08 2018
+// Written by: Map P.20131013 on Sat Dec 01 17:58:57 2018
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -60,10 +60,10 @@ COMP "io_dip(13)" LOCATE = SITE "P101" LEVEL 1;
 COMP "io_dip(14)" LOCATE = SITE "P100" LEVEL 1;
 COMP "io_dip(15)" LOCATE = SITE "P99" LEVEL 1;
 COMP "io_dip(23)" LOCATE = SITE "P57" LEVEL 1;
+COMP "io_dip(16)" LOCATE = SITE "P79" LEVEL 1;
 COMP "io_dip[20]" LOCATE = SITE "P67" LEVEL 1;
 COMP "io_dip[21]" LOCATE = SITE "P66" LEVEL 1;
 COMP "io_dip[22]" LOCATE = SITE "P58" LEVEL 1;
-COMP "io_dip[16]" LOCATE = SITE "P79" LEVEL 1;
 COMP "io_dip[17]" LOCATE = SITE "P78" LEVEL 1;
 COMP "io_dip[18]" LOCATE = SITE "P75" LEVEL 1;
 COMP "io_dip[19]" LOCATE = SITE "P74" LEVEL 1;

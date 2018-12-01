@@ -30,16 +30,6 @@ module mojo_top_0 (
   
   
   
-  reg [0:0] anyButtonPressed;
-  
-  localparam LED_OFF = 2'h0;
-  
-  localparam LED_RED = 2'h1;
-  
-  localparam LED_GREEN = 2'h2;
-  
-  localparam LED_BLUE = 2'h3;
-  
   reg rst;
   
   wire [1-1:0] M_reset_cond_out;
@@ -163,6 +153,55 @@ module mojo_top_0 (
     .in(M_edge_detector6_in),
     .out(M_edge_detector6_out)
   );
+  wire [1-1:0] M_conditioner0_out;
+  reg [1-1:0] M_conditioner0_in;
+  button_conditioner_14 conditioner0 (
+    .clk(M_slowclk_value),
+    .in(M_conditioner0_in),
+    .out(M_conditioner0_out)
+  );
+  wire [1-1:0] M_conditioner1_out;
+  reg [1-1:0] M_conditioner1_in;
+  button_conditioner_14 conditioner1 (
+    .clk(M_slowclk_value),
+    .in(M_conditioner1_in),
+    .out(M_conditioner1_out)
+  );
+  wire [1-1:0] M_conditioner2_out;
+  reg [1-1:0] M_conditioner2_in;
+  button_conditioner_14 conditioner2 (
+    .clk(M_slowclk_value),
+    .in(M_conditioner2_in),
+    .out(M_conditioner2_out)
+  );
+  wire [1-1:0] M_conditioner3_out;
+  reg [1-1:0] M_conditioner3_in;
+  button_conditioner_14 conditioner3 (
+    .clk(M_slowclk_value),
+    .in(M_conditioner3_in),
+    .out(M_conditioner3_out)
+  );
+  wire [1-1:0] M_conditioner4_out;
+  reg [1-1:0] M_conditioner4_in;
+  button_conditioner_14 conditioner4 (
+    .clk(M_slowclk_value),
+    .in(M_conditioner4_in),
+    .out(M_conditioner4_out)
+  );
+  wire [1-1:0] M_conditioner5_out;
+  reg [1-1:0] M_conditioner5_in;
+  button_conditioner_14 conditioner5 (
+    .clk(M_slowclk_value),
+    .in(M_conditioner5_in),
+    .out(M_conditioner5_out)
+  );
+  wire [1-1:0] M_conditioner6_out;
+  reg [1-1:0] M_conditioner6_in;
+  button_conditioner_14 conditioner6 (
+    .clk(M_slowclk_value),
+    .in(M_conditioner6_in),
+    .out(M_conditioner6_out)
+  );
   localparam BEGIN_game_state = 2'd0;
   localparam XOR_game_state = 2'd1;
   localparam CMPEQC_game_state = 2'd2;
@@ -183,13 +222,21 @@ module mojo_top_0 (
     io_seg = ~M_seg_seg;
     io_sel = ~M_seg_sel;
     io_led[0+23-:24] = 24'h000000;
-    M_edge_detector0_in = io_dip[16+0+0-:1];
-    M_edge_detector1_in = io_dip[16+1+0-:1];
-    M_edge_detector2_in = io_dip[16+2+0-:1];
-    M_edge_detector3_in = io_dip[16+3+0-:1];
-    M_edge_detector4_in = io_dip[16+4+0-:1];
-    M_edge_detector5_in = io_dip[16+5+0-:1];
-    M_edge_detector6_in = io_dip[16+6+0-:1];
+    M_conditioner0_in = io_dip[16+0+0-:1];
+    M_conditioner0_in = io_button[1+0-:1];
+    M_edge_detector0_in = M_conditioner0_out;
+    M_conditioner1_in = io_dip[16+1+0-:1];
+    M_edge_detector1_in = M_conditioner1_out;
+    M_conditioner2_in = io_dip[16+2+0-:1];
+    M_edge_detector2_in = M_conditioner2_out;
+    M_conditioner3_in = io_dip[16+3+0-:1];
+    M_edge_detector3_in = M_conditioner3_out;
+    M_conditioner4_in = io_dip[16+4+0-:1];
+    M_edge_detector4_in = M_conditioner4_out;
+    M_conditioner5_in = io_dip[16+5+0-:1];
+    M_edge_detector5_in = M_conditioner5_out;
+    M_conditioner6_in = io_dip[16+6+0-:1];
+    M_edge_detector6_in = M_conditioner6_out;
     io_led[0+0+0-:1] = M_beta_game_boardout[0+0-:1];
     io_led[0+1+0-:1] = M_beta_game_boardout[1+0-:1];
     io_led[0+2+0-:1] = M_beta_game_boardout[2+0-:1];

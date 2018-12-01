@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module buttons_mux_19 (
+module buttons_mux_26 (
     input [6:0] buttons_sel,
     output reg [15:0] out
   );
@@ -16,25 +16,25 @@ module buttons_mux_19 (
     
     case (buttons_sel)
       1'h1: begin
-        out = 16'h0fc0;
+        out = 16'h0fff;
       end
       2'h2: begin
-        out = 16'h0043;
+        out = 16'h0803;
       end
       3'h4: begin
-        out = 16'h0086;
+        out = 16'h0406;
       end
       4'h8: begin
-        out = 16'h010c;
+        out = 16'h028c;
       end
       5'h10: begin
-        out = 16'h0218;
+        out = 16'h0118;
       end
       6'h20: begin
-        out = 16'h0430;
+        out = 16'h00b0;
       end
       7'h40: begin
-        out = 16'h0860;
+        out = 16'h0061;
       end
     endcase
   end

@@ -7,7 +7,6 @@ module levels_mux (
     out = 16b0000000000000000;  // initialise the value of out.  
     
     case (levels_sel) {
-      //0: out = 16b0000000000000010;
       0: out = 16b0000000000111111;
       1: out = 16b0000011101001100;
       2: out = 16b0000110010010100;

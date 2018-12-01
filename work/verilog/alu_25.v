@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module alu_18 (
+module alu_25 (
     input [5:0] io_dip,
     input [15:0] a,
     input [15:0] b,
@@ -23,7 +23,7 @@ module alu_18 (
   reg [8-1:0] M_add_io_dip;
   reg [16-1:0] M_add_a;
   reg [16-1:0] M_add_b;
-  add_22 add (
+  add_36 add (
     .io_dip(M_add_io_dip),
     .a(M_add_a),
     .b(M_add_b),
@@ -37,7 +37,7 @@ module alu_18 (
   reg [8-1:0] M_cmp_io_dip;
   reg [16-1:0] M_cmp_a;
   reg [16-1:0] M_cmp_b;
-  cmp_23 cmp (
+  cmp_37 cmp (
     .io_dip(M_cmp_io_dip),
     .a(M_cmp_a),
     .b(M_cmp_b),
@@ -48,7 +48,7 @@ module alu_18 (
   reg [6-1:0] M_bol_io_dip;
   reg [16-1:0] M_bol_a;
   reg [16-1:0] M_bol_b;
-  bol_24 bol (
+  bol_38 bol (
     .io_dip(M_bol_io_dip),
     .a(M_bol_a),
     .b(M_bol_b),
@@ -59,7 +59,7 @@ module alu_18 (
   reg [8-1:0] M_sft_io_dip;
   reg [16-1:0] M_sft_a;
   reg [16-1:0] M_sft_b;
-  sft_25 sft (
+  sft_39 sft (
     .io_dip(M_sft_io_dip),
     .a(M_sft_a),
     .b(M_sft_b),
@@ -70,7 +70,7 @@ module alu_18 (
   reg [8-1:0] M_mul_io_dip;
   reg [16-1:0] M_mul_a;
   reg [16-1:0] M_mul_b;
-  mul_26 mul (
+  mul_40 mul (
     .io_dip(M_mul_io_dip),
     .a(M_mul_a),
     .b(M_mul_b),

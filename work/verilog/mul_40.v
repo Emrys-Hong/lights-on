@@ -4,28 +4,24 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module levels_mux_17 (
-    input [1:0] levels_sel,
+module mul_40 (
+    input [7:0] io_dip,
+    input [15:0] a,
+    input [15:0] b,
     output reg [15:0] out
   );
   
   
   
   always @* begin
-    out = 16'h0000;
+    out = 1'h0;
     
-    case (levels_sel)
-      1'h0: begin
-        out = 16'h003f;
-      end
-      1'h1: begin
-        out = 16'h074c;
-      end
+    case (io_dip[0+1-:2])
       2'h2: begin
-        out = 16'h0c94;
+        out = a * b;
       end
       2'h3: begin
-        out = 16'h090e;
+        out = a / b;
       end
     endcase
   end
