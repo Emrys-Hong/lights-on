@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.02 secs
+Total CPU time to Xst completion: 0.01 secs
  
 --> 
 Reading design: mojo_top_0.prj
@@ -79,14 +79,14 @@ Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_
 Parsing module <buttons_mux_19>.
 Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/alu_18.v" into library work
 Parsing module <alu_18>.
-Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/ws2812_man_5.v" into library work
-Parsing module <ws2812_man_5>.
 Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
 Parsing module <reset_conditioner_1>.
 Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/multi_seven_seg_2.v" into library work
 Parsing module <multi_seven_seg_2>.
 Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/edge_detector_7.v" into library work
 Parsing module <edge_detector_7>.
+Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/display_5.v" into library work
+Parsing module <display_5>.
 Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/counter_3.v" into library work
 Parsing module <counter_3>.
 Analyzing Verilog file "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/beta_4.v" into library work
@@ -136,8 +136,8 @@ Elaborating module <buttons_mux_19>.
 Elaborating module <register_20>.
 WARNING:HDLCompiler:1127 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 90: Assignment to M_beta_game_debug ignored, since the identifier is never used
 
-Elaborating module <ws2812_man_5>.
-WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/ws2812_man_5.v" Line 75: Result of 14-bit expression is truncated to fit in 11-bit target.
+Elaborating module <display_5>.
+WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/display_5.v" Line 120: Result of 14-bit expression is truncated to fit in 11-bit target.
 
 Elaborating module <edge_detector_7>.
 
@@ -147,8 +147,8 @@ Elaborating module <edge_detector_7>.
 
 Synthesizing Unit <mojo_top_0>.
     Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v".
-WARNING:Xst:647 - Input <io_dip<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <io_dip<23:7>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <io_dip<15:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <io_dip<23:23>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <button0> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <button1> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <button2> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -173,26 +173,13 @@ INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_ve
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 2-bit adder for signal <M_ws2812_man_data<1:0>> created at line 197.
-    Found 2-bit adder for signal <M_ws2812_man_data<3:2>> created at line 198.
-    Found 2-bit adder for signal <M_ws2812_man_data<5:4>> created at line 199.
-    Found 2-bit adder for signal <M_ws2812_man_data<7:6>> created at line 200.
-    Found 2-bit adder for signal <M_ws2812_man_data<9:8>> created at line 201.
-    Found 2-bit adder for signal <M_ws2812_man_data<11:10>> created at line 202.
-    Found 2-bit adder for signal <M_ws2812_man_1_data<1:0>> created at line 204.
-    Found 2-bit adder for signal <M_ws2812_man_1_data<3:2>> created at line 205.
-    Found 2-bit adder for signal <M_ws2812_man_1_data<5:4>> created at line 206.
-    Found 2-bit adder for signal <M_ws2812_man_1_data<7:6>> created at line 207.
-    Found 2-bit adder for signal <M_ws2812_man_1_data<9:8>> created at line 208.
-    Found 2-bit adder for signal <M_ws2812_man_1_data<11:10>> created at line 209.
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 165
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 165
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 165
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 165
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 165
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 165
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 173
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 173
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 173
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 173
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 173
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 173
     Summary:
-	inferred  12 Adder/Subtractor(s).
 	inferred   6 Tristate(s).
 	inferred   1 Finite State Machine(s).
 Unit <mojo_top_0> synthesized.
@@ -387,30 +374,35 @@ Synthesizing Unit <register_20>.
 	inferred  16 D-type flip-flop(s).
 Unit <register_20> synthesized.
 
-Synthesizing Unit <ws2812_man_5>.
-    Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/ws2812_man_5.v".
-    Found 40-bit register for signal <M_board_q>.
+Synthesizing Unit <display_5>.
+    Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/display_5.v".
+    Found 18-bit register for signal <M_board_q>.
     Found 14-bit register for signal <M_counter_q>.
-    Found 7-bit subtractor for signal <n0042> created at line 56.
-    Found 17-bit adder for signal <n0026> created at line 56.
-    Found 14-bit adder for signal <M_counter_q[13]_GND_20_o_add_13_OUT> created at line 85.
-    Found 11-bit subtractor for signal <M_counter_q[13]_M_counter_q[13]_sub_8_OUT<10:0>> created at line 75.
-    Found 5-bit subtractor for signal <GND_20_o_GND_20_o_sub_9_OUT<4:0>> created at line 76.
-    Found 79-bit shifter logical right for signal <n0044> created at line 56
-    Found 14x11-bit multiplier for signal <n0030> created at line 75.
-    Found 47-bit shifter logical right for signal <n0033> created at line 76
-    Found 79-bit shifter logical left for signal <n0043> created at line 56
-    Found 14-bit comparator greater for signal <M_counter_q[13]_PWR_21_o_LessThan_1_o> created at line 54
-    Found 6-bit comparator greater for signal <M_counter_q[13]_GND_20_o_LessThan_12_o> created at line 77
-    Found 6-bit comparator greater for signal <M_counter_q[13]_PWR_21_o_LessThan_13_o> created at line 81
+    Found 6-bit subtractor for signal <n0061> created at line 83.
+    Found 5-bit subtractor for signal <n0065> created at line 111.
+    Found 19-bit adder for signal <n0038> created at line 83.
+    Found 17-bit adder for signal <n0041> created at line 111.
+    Found 14-bit adder for signal <M_counter_d> created at line 131.
+    Found 11-bit subtractor for signal <M_counter_q[13]_M_counter_q[13]_sub_17_OUT<10:0>> created at line 120.
+    Found 5-bit subtractor for signal <GND_20_o_GND_20_o_sub_18_OUT<4:0>> created at line 121.
+    Found 15x3-bit multiplier for signal <GND_20_o_GND_20_o_MuLt_2_OUT> created at line 83.
+    Found 35-bit shifter logical right for signal <n0063> created at line 83
+    Found 23-bit shifter logical right for signal <n0067> created at line 111
+    Found 14x11-bit multiplier for signal <n0047> created at line 120.
+    Found 47-bit shifter logical right for signal <n0050> created at line 121
+    Found 35-bit shifter logical left for signal <n0062> created at line 83
+    Found 23-bit shifter logical left for signal <n0066> created at line 111
+    Found 14-bit comparator greater for signal <M_counter_q[13]_PWR_21_o_LessThan_1_o> created at line 81
+    Found 6-bit comparator greater for signal <M_counter_q[13]_GND_20_o_LessThan_21_o> created at line 122
+    Found 6-bit comparator greater for signal <M_counter_q[13]_PWR_21_o_LessThan_22_o> created at line 126
     Summary:
-	inferred   1 Multiplier(s).
-	inferred   5 Adder/Subtractor(s).
-	inferred  54 D-type flip-flop(s).
+	inferred   2 Multiplier(s).
+	inferred   7 Adder/Subtractor(s).
+	inferred  32 D-type flip-flop(s).
 	inferred   3 Comparator(s).
-	inferred   4 Multiplexer(s).
-	inferred   3 Combinational logic shifter(s).
-Unit <ws2812_man_5> synthesized.
+	inferred   6 Multiplexer(s).
+	inferred   5 Combinational logic shifter(s).
+Unit <display_5> synthesized.
 
 Synthesizing Unit <div_14u_11u>.
     Related source file is "".
@@ -463,10 +455,11 @@ Macro Statistics
 # RAMs                                                 : 2
  16x7-bit single-port Read Only RAM                    : 1
  4x16-bit single-port Read Only RAM                    : 1
-# Multipliers                                          : 3
+# Multipliers                                          : 5
  14x11-bit multiplier                                  : 2
+ 15x3-bit multiplier                                   : 2
  16x16-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 86
+# Adders/Subtractors                                   : 78
  11-bit subtractor                                     : 2
  14-bit adder                                          : 8
  15-bit adder                                          : 2
@@ -474,8 +467,7 @@ Macro Statistics
  16-bit addsub                                         : 1
  17-bit adder                                          : 6
  18-bit adder                                          : 5
- 19-bit adder                                          : 4
- 2-bit adder                                           : 12
+ 19-bit adder                                          : 6
  20-bit adder                                          : 4
  21-bit adder                                          : 4
  22-bit adder                                          : 4
@@ -491,16 +483,15 @@ Macro Statistics
  31-bit adder                                          : 2
  32-bit adder                                          : 2
  4-bit adder                                           : 1
- 5-bit subtractor                                      : 2
- 7-bit subtractor                                      : 2
+ 5-bit subtractor                                      : 4
+ 6-bit subtractor                                      : 2
 # Registers                                            : 16
  1-bit register                                        : 7
  14-bit register                                       : 2
  16-bit register                                       : 2
- 18-bit register                                       : 1
+ 18-bit register                                       : 3
  3-bit register                                        : 1
  4-bit register                                        : 1
- 40-bit register                                       : 2
 # Comparators                                          : 56
  14-bit comparator greater                             : 2
  14-bit comparator lessequal                           : 8
@@ -525,20 +516,25 @@ Macro Statistics
  31-bit comparator lessequal                           : 1
  32-bit comparator lessequal                           : 1
  6-bit comparator greater                              : 4
-# Multiplexers                                         : 577
- 1-bit 2-to-1 multiplexer                              : 562
+# Multiplexers                                         : 581
+ 1-bit 2-to-1 multiplexer                              : 558
  14-bit 2-to-1 multiplexer                             : 6
  16-bit 2-to-1 multiplexer                             : 5
  16-bit 4-to-1 multiplexer                             : 3
  18-bit 2-to-1 multiplexer                             : 1
-# Logic shifters                                       : 10
+ 23-bit 2-to-1 multiplexer                             : 2
+ 24-bit 2-to-1 multiplexer                             : 4
+ 35-bit 2-to-1 multiplexer                             : 2
+# Logic shifters                                       : 14
  16-bit shifter arithmetic right                       : 1
  16-bit shifter logical left                           : 1
  16-bit shifter logical right                          : 1
+ 23-bit shifter logical left                           : 2
+ 23-bit shifter logical right                          : 2
  31-bit shifter logical right                          : 1
+ 35-bit shifter logical left                           : 2
+ 35-bit shifter logical right                          : 2
  47-bit shifter logical right                          : 2
- 79-bit shifter logical left                           : 2
- 79-bit shifter logical right                          : 2
 # Tristates                                            : 6
  1-bit tristate buffer                                 : 6
 # FSMs                                                 : 1
@@ -560,6 +556,12 @@ Unit <counter_14> synthesized (advanced).
 Synthesizing (advanced) Unit <counter_3>.
 The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
 Unit <counter_3> synthesized (advanced).
+
+Synthesizing (advanced) Unit <display_5>.
+The following registers are absorbed into counter <M_counter_q>: 1 register on signal <M_counter_q>.
+	Multiplier <Mmult_n0047> in block <display_5> and adder/subtractor <Msub_M_counter_q[13]_M_counter_q[13]_sub_17_OUT<10:0>> in block <display_5> are combined into a MAC<Maddsub_n0047>.
+	Multiplier <Mmult_GND_20_o_GND_20_o_MuLt_2_OUT> in block <display_5> and adder/subtractor <Madd_n0038_Madd> in block <display_5> are combined into a MAC<Maddsub_GND_20_o_GND_20_o_MuLt_2_OUT>.
+Unit <display_5> synthesized (advanced).
 
 Synthesizing (advanced) Unit <levels_mux_17>.
 INFO:Xst:3212 - HDL ADVISOR - Asynchronous or synchronous initialization of the register <M_regs_q> prevents it from being combined with the RAM <Mram_out> for implementation as read-only block RAM.
@@ -590,11 +592,6 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_segs> will be implemented on LUTs ei
     -----------------------------------------------------------------------
 Unit <seven_seg_15> synthesized (advanced).
 
-Synthesizing (advanced) Unit <ws2812_man_5>.
-The following registers are absorbed into counter <M_counter_q>: 1 register on signal <M_counter_q>.
-	Multiplier <Mmult_n0030> in block <ws2812_man_5> and adder/subtractor <Msub_M_counter_q[13]_M_counter_q[13]_sub_8_OUT<10:0>> in block <ws2812_man_5> are combined into a MAC<Maddsub_n0030>.
-Unit <ws2812_man_5> synthesized (advanced).
-
 =========================================================================
 Advanced HDL Synthesis Report
 
@@ -602,25 +599,25 @@ Macro Statistics
 # RAMs                                                 : 2
  16x7-bit single-port distributed Read Only RAM        : 1
  4x16-bit single-port distributed Read Only RAM        : 1
-# MACs                                                 : 2
+# MACs                                                 : 4
  14x10-to-11-bit MAC                                   : 2
+ 15x3-to-6-bit MAC                                     : 2
 # Multipliers                                          : 1
  16x16-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 64
+# Adders/Subtractors                                   : 54
  14-bit adder                                          : 28
  16-bit adder carry in                                 : 16
  16-bit addsub                                         : 1
- 2-bit adder                                           : 12
  4-bit adder                                           : 1
- 5-bit subtractor                                      : 2
- 7-bit adder                                           : 2
- 7-bit subtractor                                      : 2
+ 5-bit adder                                           : 2
+ 5-bit subtractor                                      : 4
+ 6-bit subtractor                                      : 2
 # Counters                                             : 4
  14-bit up counter                                     : 2
  18-bit up counter                                     : 1
  3-bit up counter                                      : 1
-# Registers                                            : 123
- Flip-Flops                                            : 123
+# Registers                                            : 79
+ Flip-Flops                                            : 79
 # Comparators                                          : 56
  14-bit comparator greater                             : 2
  14-bit comparator lessequal                           : 8
@@ -645,19 +642,24 @@ Macro Statistics
  31-bit comparator lessequal                           : 1
  32-bit comparator lessequal                           : 1
  6-bit comparator greater                              : 4
-# Multiplexers                                         : 576
- 1-bit 2-to-1 multiplexer                              : 562
+# Multiplexers                                         : 580
+ 1-bit 2-to-1 multiplexer                              : 558
  14-bit 2-to-1 multiplexer                             : 6
  16-bit 2-to-1 multiplexer                             : 5
  16-bit 4-to-1 multiplexer                             : 3
-# Logic shifters                                       : 10
+ 23-bit 2-to-1 multiplexer                             : 2
+ 24-bit 2-to-1 multiplexer                             : 4
+ 35-bit 2-to-1 multiplexer                             : 2
+# Logic shifters                                       : 14
  16-bit shifter arithmetic right                       : 1
  16-bit shifter logical left                           : 1
  16-bit shifter logical right                          : 1
+ 23-bit shifter logical left                           : 2
+ 23-bit shifter logical right                          : 2
  31-bit shifter logical right                          : 1
+ 35-bit shifter logical left                           : 2
+ 35-bit shifter logical right                          : 2
  47-bit shifter logical right                          : 2
- 79-bit shifter logical left                           : 2
- 79-bit shifter logical right                          : 2
 # FSMs                                                 : 1
 # Xors                                                 : 3
  1-bit xor2                                            : 2
@@ -668,34 +670,6 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1293 - FF/Latch <M_board_q_39> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_38> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_37> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_36> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_35> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_34> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_33> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_32> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_31> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_30> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_29> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_28> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_27> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_26> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_25> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_24> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_23> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_22> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_21> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_20> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_19> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_18> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_17> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_16> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_15> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_14> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_13> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_board_q_12> has a constant value of 0 in block <ws2812_man_5>. This FF/Latch will be trimmed during the optimization process.
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <FSM_0> on signal <M_game_state_q[1:2]> with gray encoding.
 -------------------
@@ -721,31 +695,51 @@ Optimizing unit <mul_26> ...
 
 Optimizing unit <div_16u_16u> ...
 
-Optimizing unit <ws2812_man_5> ...
+Optimizing unit <display_5> ...
 
 Optimizing unit <div_14u_11u> ...
+WARNING:Xst:1293 - FF/Latch <display/M_board_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_4> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_7> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_8> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_10> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_11> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_16> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_17> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_4> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_7> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_8> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_10> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_11> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_16> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_17> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <beta_game/board/M_regs_q_15> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_12> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <ws2812_man_1/M_counter_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ws2812_man/M_counter_q_10> 
-INFO:Xst:2261 - The FF/Latch <ws2812_man_1/M_counter_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ws2812_man/M_counter_q_11> 
-INFO:Xst:2261 - The FF/Latch <ws2812_man_1/M_counter_q_12> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ws2812_man/M_counter_q_12> 
-INFO:Xst:2261 - The FF/Latch <ws2812_man_1/M_counter_q_13> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ws2812_man/M_counter_q_13> 
-INFO:Xst:2261 - The FF/Latch <ws2812_man_1/M_counter_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ws2812_man/M_counter_q_0> 
-INFO:Xst:2261 - The FF/Latch <ws2812_man_1/M_counter_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ws2812_man/M_counter_q_1> 
-INFO:Xst:2261 - The FF/Latch <ws2812_man_1/M_counter_q_2> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ws2812_man/M_counter_q_2> 
-INFO:Xst:2261 - The FF/Latch <ws2812_man_1/M_counter_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ws2812_man/M_counter_q_3> 
-INFO:Xst:2261 - The FF/Latch <ws2812_man_1/M_counter_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ws2812_man/M_counter_q_4> 
-INFO:Xst:2261 - The FF/Latch <ws2812_man_1/M_counter_q_5> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ws2812_man/M_counter_q_5> 
-INFO:Xst:2261 - The FF/Latch <ws2812_man_1/M_counter_q_6> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ws2812_man/M_counter_q_6> 
-INFO:Xst:2261 - The FF/Latch <ws2812_man_1/M_counter_q_7> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ws2812_man/M_counter_q_7> 
-INFO:Xst:2261 - The FF/Latch <ws2812_man_1/M_counter_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ws2812_man/M_counter_q_8> 
-INFO:Xst:2261 - The FF/Latch <ws2812_man_1/M_counter_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ws2812_man/M_counter_q_9> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <slowclk/M_ctr_q_0> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <slowclk/M_ctr_q_1> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_2> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <slowclk/M_ctr_q_2> 
-INFO:Xst:2261 - The FF/Latch <ws2812_man_1/M_board_q_11> in Unit <mojo_top_0> is equivalent to the following 11 FFs/Latches, which will be removed : <ws2812_man_1/M_board_q_9> <ws2812_man_1/M_board_q_7> <ws2812_man_1/M_board_q_5> <ws2812_man_1/M_board_q_3> <ws2812_man_1/M_board_q_1> <ws2812_man/M_board_q_11> <ws2812_man/M_board_q_9> <ws2812_man/M_board_q_7> <ws2812_man/M_board_q_5> <ws2812_man/M_board_q_3> <ws2812_man/M_board_q_1> 
+INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_0> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <slowclk/M_ctr_q_0> <display_1/M_counter_q_0> <display/M_counter_q_0> 
+INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_1> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <slowclk/M_ctr_q_1> <display_1/M_counter_q_1> <display/M_counter_q_1> 
+INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_2> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <slowclk/M_ctr_q_2> <display_1/M_counter_q_2> <display/M_counter_q_2> 
+INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_3> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <display_1/M_counter_q_3> <display/M_counter_q_3> 
+INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_4> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <display_1/M_counter_q_4> <display/M_counter_q_4> 
+INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_5> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <display_1/M_counter_q_5> <display/M_counter_q_5> 
+INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_6> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <display_1/M_counter_q_6> <display/M_counter_q_6> 
+INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_7> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <display_1/M_counter_q_7> <display/M_counter_q_7> 
+INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_10> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <display_1/M_counter_q_10> <display/M_counter_q_10> 
+INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_8> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <display_1/M_counter_q_8> <display/M_counter_q_8> 
+INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_11> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <display_1/M_counter_q_11> <display/M_counter_q_11> 
+INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_9> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <display_1/M_counter_q_9> <display/M_counter_q_9> 
+INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_12> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <display_1/M_counter_q_12> <display/M_counter_q_12> 
+INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_13> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <display_1/M_counter_q_13> <display/M_counter_q_13> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -764,8 +758,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 89
- Flip-Flops                                            : 89
+# Registers                                            : 74
+ Flip-Flops                                            : 74
 
 =========================================================================
 
@@ -788,32 +782,32 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 334
+# BELS                             : 352
 #      GND                         : 7
 #      INV                         : 5
-#      LUT1                        : 42
-#      LUT2                        : 19
-#      LUT3                        : 16
-#      LUT4                        : 20
-#      LUT5                        : 32
-#      LUT6                        : 62
-#      MUXCY                       : 63
-#      MUXF7                       : 4
+#      LUT1                        : 39
+#      LUT2                        : 22
+#      LUT3                        : 19
+#      LUT4                        : 19
+#      LUT5                        : 38
+#      LUT6                        : 75
+#      MUXCY                       : 60
+#      MUXF7                       : 7
 #      VCC                         : 5
-#      XORCY                       : 59
-# FlipFlops/Latches                : 89
+#      XORCY                       : 56
+# FlipFlops/Latches                : 74
 #      FD                          : 7
-#      FDR                         : 36
-#      FDRE                        : 42
+#      FDR                         : 35
+#      FDRE                        : 28
 #      FDS                         : 4
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 64
-#      IBUF                        : 12
+# IO Buffers                       : 65
+#      IBUF                        : 13
 #      OBUF                        : 46
 #      OBUFT                       : 6
-# DSPs                             : 2
-#      DSP48A1                     : 2
+# DSPs                             : 4
+#      DSP48A1                     : 4
 
 Device utilization summary:
 ---------------------------
@@ -822,24 +816,24 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              89  out of  11440     0%  
- Number of Slice LUTs:                  196  out of   5720     3%  
-    Number used as Logic:               196  out of   5720     3%  
+ Number of Slice Registers:              74  out of  11440     0%  
+ Number of Slice LUTs:                  217  out of   5720     3%  
+    Number used as Logic:               217  out of   5720     3%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    250
-   Number with an unused Flip Flop:     161  out of    250    64%  
-   Number with an unused LUT:            54  out of    250    21%  
-   Number of fully used LUT-FF pairs:    35  out of    250    14%  
-   Number of unique control sets:        16
+ Number of LUT Flip Flop pairs used:    270
+   Number with an unused Flip Flop:     196  out of    270    72%  
+   Number with an unused LUT:            53  out of    270    19%  
+   Number of fully used LUT-FF pairs:    21  out of    270     7%  
+   Number of unique control sets:        15
 
 IO Utilization: 
  Number of IOs:                          91
- Number of bonded IOBs:                  65  out of    102    63%  
+ Number of bonded IOBs:                  66  out of    102    64%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
- Number of DSP48A1s:                      2  out of     16    12%  
+ Number of DSP48A1s:                      4  out of     16    25%  
 
 ---------------------------
 Partition Resource Summary:
@@ -863,7 +857,7 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)        | Load  |
 -----------------------------------+------------------------------+-------+
 seg/ctr/M_ctr_q_2                  | NONE(M_game_state_q_FSM_FFd2)| 12    |
-clk                                | BUFGP                        | 79    |
+clk                                | BUFGP                        | 64    |
 -----------------------------------+------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
@@ -877,8 +871,8 @@ Speed Grade: -2
 
    Minimum period: 7.676ns (Maximum Frequency: 130.276MHz)
    Minimum input arrival time before clock: 8.623ns
-   Maximum output required time after clock: 15.459ns
-   Maximum combinational path delay: 5.080ns
+   Maximum output required time after clock: 19.240ns
+   Maximum combinational path delay: 4.921ns
 
 Timing Details:
 ---------------
@@ -907,10 +901,10 @@ Delay:               7.676ns (Levels of Logic = 10)
      LUT6:I5->O            8   0.254   0.944  M_alu_b<1>1 (M_alu_b<1>)
      begin scope: 'beta_game/alu:b<1>'
      LUT6:I5->O            4   0.254   0.912  Mmux_out23 (Mmux_out22)
-     LUT6:I4->O            1   0.250   0.000  Mmux_out24_SW1_G (N68)
-     MUXF7:I1->O           1   0.175   0.790  Mmux_out24_SW1 (N34)
-     end scope: 'beta_game/alu:N34'
-     end scope: 'beta_game:N34'
+     LUT6:I4->O            1   0.250   0.000  Mmux_out24_SW1_G (N82)
+     MUXF7:I1->O           1   0.175   0.790  Mmux_out24_SW1 (N48)
+     end scope: 'beta_game/alu:N48'
+     end scope: 'beta_game:N48'
      LUT5:I3->O            2   0.250   0.000  M_game_state_q_FSM_FFd1-In131 (M_game_state_q_FSM_FFd1-In1)
      FDR:D                     0.074          M_game_state_q_FSM_FFd1
     ----------------------------------------
@@ -920,7 +914,7 @@ Delay:               7.676ns (Levels of Logic = 10)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 5.795ns (frequency: 172.577MHz)
-  Total number of paths / destination ports: 2336 / 262
+  Total number of paths / destination ports: 2152 / 217
 -------------------------------------------------------------------------
 Delay:               5.795ns (Levels of Logic = 12)
   Source:            beta_game/level/M_regs_q_9 (FF)
@@ -936,12 +930,12 @@ Delay:               5.795ns (Levels of Logic = 12)
      end scope: 'beta_game/level:M_regs_q_9'
      begin scope: 'beta_game/alu:beta_game/level/M_regs_q_9'
      begin scope: 'beta_game/alu/cmp:M_regs_q_9'
-     LUT6:I0->O            2   0.254   0.726  Mcompar_a[15]_b[15]_equal_1_o_lut<3>_SW0 (N44)
-     end scope: 'beta_game/alu/cmp:N44'
-     end scope: 'beta_game/alu:N44'
-     LUT5:I4->O            1   0.254   0.958  M_alu_b<10>1_SW0 (N59)
-     begin scope: 'beta_game/alu:N59'
-     begin scope: 'beta_game/alu/cmp:N59'
+     LUT6:I0->O            2   0.254   0.726  Mcompar_a[15]_b[15]_equal_1_o_lut<3>_SW0 (N58)
+     end scope: 'beta_game/alu/cmp:N58'
+     end scope: 'beta_game/alu:N58'
+     LUT5:I4->O            1   0.254   0.958  M_alu_b<10>1_SW0 (N73)
+     begin scope: 'beta_game/alu:N73'
+     begin scope: 'beta_game/alu/cmp:N73'
      LUT6:I2->O            1   0.254   0.000  Mcompar_a[15]_b[15]_equal_1_o_lut<3> (Mcompar_a[15]_b[15]_equal_1_o_lut<3>)
      MUXCY:S->O            1   0.215   0.000  Mcompar_a[15]_b[15]_equal_1_o_cy<3> (Mcompar_a[15]_b[15]_equal_1_o_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_a[15]_b[15]_equal_1_o_cy<4> (Mcompar_a[15]_b[15]_equal_1_o_cy<4>)
@@ -960,15 +954,15 @@ Timing constraint: Default OFFSET IN BEFORE for Clock 'seg/ctr/M_ctr_q_2'
   Total number of paths / destination ports: 919 / 12
 -------------------------------------------------------------------------
 Offset:              8.623ns (Levels of Logic = 11)
-  Source:            io_dip<6> (PAD)
+  Source:            io_dip<22> (PAD)
   Destination:       M_game_state_q_FSM_FFd1 (FF)
   Destination Clock: seg/ctr/M_ctr_q_2 rising
 
-  Data Path: io_dip<6> to M_game_state_q_FSM_FFd1
+  Data Path: io_dip<22> to M_game_state_q_FSM_FFd1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             3   1.328   0.874  io_dip_6_IBUF (io_dip_6_IBUF)
+     IBUF:I->O             3   1.328   0.874  io_dip_22_IBUF (io_dip_22_IBUF)
      begin scope: 'edge_detector6:in'
      LUT2:I0->O           12   0.250   1.177  out1 (out)
      end scope: 'edge_detector6:out'
@@ -977,10 +971,10 @@ Offset:              8.623ns (Levels of Logic = 11)
      LUT6:I5->O            8   0.254   0.944  M_alu_b<1>1 (M_alu_b<1>)
      begin scope: 'beta_game/alu:b<1>'
      LUT6:I5->O            4   0.254   0.912  Mmux_out23 (Mmux_out22)
-     LUT6:I4->O            1   0.250   0.000  Mmux_out24_SW1_G (N68)
-     MUXF7:I1->O           1   0.175   0.790  Mmux_out24_SW1 (N34)
-     end scope: 'beta_game/alu:N34'
-     end scope: 'beta_game:N34'
+     LUT6:I4->O            1   0.250   0.000  Mmux_out24_SW1_G (N82)
+     MUXF7:I1->O           1   0.175   0.790  Mmux_out24_SW1 (N48)
+     end scope: 'beta_game/alu:N48'
+     end scope: 'beta_game:N48'
      LUT5:I3->O            2   0.250   0.000  M_game_state_q_FSM_FFd1-In131 (M_game_state_q_FSM_FFd1-In1)
      FDR:D                     0.074          M_game_state_q_FSM_FFd1
     ----------------------------------------
@@ -992,15 +986,15 @@ Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
   Total number of paths / destination ports: 1178 / 32
 -------------------------------------------------------------------------
 Offset:              8.157ns (Levels of Logic = 22)
-  Source:            io_dip<1> (PAD)
+  Source:            io_dip<17> (PAD)
   Destination:       beta_game/level/M_regs_q_15 (FF)
   Destination Clock: clk rising
 
-  Data Path: io_dip<1> to beta_game/level/M_regs_q_15
+  Data Path: io_dip<17> to beta_game/level/M_regs_q_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   1.328   0.912  io_dip_1_IBUF (io_dip_1_IBUF)
+     IBUF:I->O             4   1.328   0.912  io_dip_17_IBUF (io_dip_17_IBUF)
      begin scope: 'edge_detector1:in'
      LUT2:I0->O            9   0.250   1.204  out1 (out)
      end scope: 'edge_detector1:out'
@@ -1045,7 +1039,7 @@ Offset:              6.530ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDR:C->Q             80   0.525   2.162  M_game_state_q_FSM_FFd2 (M_game_state_q_FSM_FFd2)
-     LUT2:I0->O            1   0.250   0.681  io_led<17>1 (_n0162<3>)
+     LUT2:I0->O            1   0.250   0.681  io_led<17>1 (_n0112<3>)
      OBUF:I->O                 2.912          io_led_17_OBUF (io_led<17>)
     ----------------------------------------
     Total                      6.530ns (3.687ns logic, 2.843ns route)
@@ -1053,52 +1047,57 @@ Offset:              6.530ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 454 / 18
+  Total number of paths / destination ports: 2672 / 18
 -------------------------------------------------------------------------
-Offset:              15.459ns (Levels of Logic = 9)
-  Source:            ws2812_man_1/M_counter_q_10 (FF)
-  Destination:       led_strip (PAD)
+Offset:              19.240ns (Levels of Logic = 14)
+  Source:            seg/ctr/M_ctr_q_10 (FF)
+  Destination:       led_strip_1 (PAD)
   Source Clock:      clk rising
 
-  Data Path: ws2812_man_1/M_counter_q_10 to led_strip
+  Data Path: seg/ctr/M_ctr_q_10 to led_strip_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             7   0.525   1.340  M_counter_q_10 (M_counter_q_10)
-     end scope: 'ws2812_man_1:M_counter_q_10'
-     begin scope: 'ws2812_man:M_counter_q_10'
-     begin scope: 'ws2812_man/M_counter_q[13]_PWR_21_o_div_5:a<10>'
-     LUT5:I0->O            5   0.254   0.840  o<0>1 (o<0>)
-     end scope: 'ws2812_man/M_counter_q[13]_PWR_21_o_div_5:o<0>'
-     end scope: 'ws2812_man:M_counter_q[13]_PWR_21_o_div_5_OUT<0>'
-     begin scope: 'ws2812_man_1:M_counter_q[13]_PWR_21_o_div_5_OUT<0>'
-     DSP48A1:B0->P5        2   5.145   1.181  Maddsub_n0030 (M_counter_q[13]_M_counter_q[13]_sub_8_OUT<5>)
-     LUT6:I0->O            1   0.254   1.137  Mmux_out13_SW0 (N81)
-     LUT6:I0->O            1   0.254   0.682  Mmux_out13 (Mmux_out12)
-     LUT6:I5->O            1   0.254   0.681  Mmux_out14 (out)
-     end scope: 'ws2812_man_1:out'
+     FDR:C->Q              6   0.525   1.306  M_ctr_q_10 (M_ctr_q_10)
+     end scope: 'seg/ctr:M_ctr_q_10'
+     end scope: 'seg:M_ctr_q_10'
+     begin scope: 'display:M_ctr_q_10'
+     begin scope: 'display/M_counter_q[13]_PWR_21_o_div_14:a<10>'
+     LUT5:I0->O            4   0.254   0.803  o<0>1 (o<0>)
+     end scope: 'display/M_counter_q[13]_PWR_21_o_div_14:o<0>'
+     end scope: 'display:M_counter_q[13]_PWR_21_o_div_14_OUT<0>'
+     begin scope: 'display_1:M_counter_q[13]_PWR_21_o_div_14_OUT<0>'
+     DSP48A1:B0->P0        9   5.145   1.084  Maddsub_GND_20_o_GND_20_o_MuLt_2_OUT (n0038<0>1)
+     LUT2:I0->O            2   0.250   0.954  Sh10011 (Sh1001)
+     LUT6:I3->O            1   0.235   0.000  Mmux_n003933_G (N98)
+     MUXF7:I1->O           2   0.175   0.834  Mmux_n003933 (Mmux_n003932)
+     LUT3:I1->O            3   0.250   1.221  Mmux_n003934 (n0039<17>)
+     LUT6:I0->O            1   0.254   0.958  Sh465_SW2 (N6)
+     LUT6:I2->O            1   0.254   0.910  Sh465 (Sh465)
+     LUT6:I3->O            1   0.235   0.681  Mmux_out1 (out<0>)
+     end scope: 'display_1:out<0>'
      OBUF:I->O                 2.912          led_strip_1_OBUF (led_strip_1)
     ----------------------------------------
-    Total                     15.459ns (9.598ns logic, 5.861ns route)
-                                       (62.1% logic, 37.9% route)
+    Total                     19.240ns (10.489ns logic, 8.751ns route)
+                                       (54.5% logic, 45.5% route)
 
 =========================================================================
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 5 / 5
 -------------------------------------------------------------------------
-Delay:               5.080ns (Levels of Logic = 2)
-  Source:            io_button<1> (PAD)
-  Destination:       led<1> (PAD)
+Delay:               4.921ns (Levels of Logic = 2)
+  Source:            io_button<4> (PAD)
+  Destination:       led<4> (PAD)
 
-  Data Path: io_button<1> to led<1>
+  Data Path: io_button<4> to led<4>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             5   1.328   0.840  io_button_1_IBUF (led_1_OBUF)
-     OBUF:I->O                 2.912          led_1_OBUF (led<1>)
+     IBUF:I->O             1   1.328   0.681  io_button_4_IBUF (led_4_OBUF)
+     OBUF:I->O                 2.912          led_4_OBUF (led<4>)
     ----------------------------------------
-    Total                      5.080ns (4.240ns logic, 0.840ns route)
-                                       (83.5% logic, 16.5% route)
+    Total                      4.921ns (4.240ns logic, 0.681ns route)
+                                       (86.2% logic, 13.8% route)
 
 =========================================================================
 
@@ -1127,14 +1126,14 @@ seg/ctr/M_ctr_q_2|    7.676|         |         |         |
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.59 secs
+Total CPU time to Xst completion: 5.70 secs
  
 --> 
 
 
-Total memory usage is 410404 kilobytes
+Total memory usage is 410888 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   55 (   0 filtered)
-Number of infos    :   27 (   0 filtered)
+Number of warnings :   51 (   0 filtered)
+Number of infos    :   23 (   0 filtered)
 

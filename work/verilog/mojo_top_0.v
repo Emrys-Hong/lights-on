@@ -89,21 +89,29 @@ module mojo_top_0 (
     .boardout(M_beta_game_boardout),
     .debug(M_beta_game_debug)
   );
-  wire [1-1:0] M_ws2812_man_out;
-  reg [12-1:0] M_ws2812_man_data;
-  ws2812_man_5 ws2812_man (
+  wire [1-1:0] M_display_out;
+  reg [12-1:0] M_display_data;
+  reg [6-1:0] M_display_mask;
+  reg [12-1:0] M_display_init;
+  display_5 display (
     .clk(clk),
     .rst(rst),
-    .data(M_ws2812_man_data),
-    .out(M_ws2812_man_out)
+    .data(M_display_data),
+    .mask(M_display_mask),
+    .init(M_display_init),
+    .out(M_display_out)
   );
-  wire [1-1:0] M_ws2812_man_1_out;
-  reg [12-1:0] M_ws2812_man_1_data;
-  ws2812_man_5 ws2812_man_1 (
+  wire [1-1:0] M_display_1_out;
+  reg [12-1:0] M_display_1_data;
+  reg [6-1:0] M_display_1_mask;
+  reg [12-1:0] M_display_1_init;
+  display_5 display_1 (
     .clk(clk),
     .rst(rst),
-    .data(M_ws2812_man_1_data),
-    .out(M_ws2812_man_1_out)
+    .data(M_display_1_data),
+    .mask(M_display_1_mask),
+    .init(M_display_1_init),
+    .out(M_display_1_out)
   );
   
   wire [1-1:0] M_edge_detector0_out;
@@ -175,13 +183,13 @@ module mojo_top_0 (
     io_seg = ~M_seg_seg;
     io_sel = ~M_seg_sel;
     io_led[0+23-:24] = 24'h000000;
-    M_edge_detector0_in = io_button[1+0-:1];
-    M_edge_detector1_in = io_dip[0+1+0-:1];
-    M_edge_detector2_in = io_dip[0+2+0-:1];
-    M_edge_detector3_in = io_dip[0+3+0-:1];
-    M_edge_detector4_in = io_dip[0+4+0-:1];
-    M_edge_detector5_in = io_dip[0+5+0-:1];
-    M_edge_detector6_in = io_dip[0+6+0-:1];
+    M_edge_detector0_in = io_dip[16+0+0-:1];
+    M_edge_detector1_in = io_dip[16+1+0-:1];
+    M_edge_detector2_in = io_dip[16+2+0-:1];
+    M_edge_detector3_in = io_dip[16+3+0-:1];
+    M_edge_detector4_in = io_dip[16+4+0-:1];
+    M_edge_detector5_in = io_dip[16+5+0-:1];
+    M_edge_detector6_in = io_dip[16+6+0-:1];
     io_led[0+0+0-:1] = M_beta_game_boardout[0+0-:1];
     io_led[0+1+0-:1] = M_beta_game_boardout[1+0-:1];
     io_led[0+2+0-:1] = M_beta_game_boardout[2+0-:1];
@@ -194,20 +202,44 @@ module mojo_top_0 (
     io_led[8+3+0-:1] = M_beta_game_boardout[9+0-:1];
     io_led[8+4+0-:1] = M_beta_game_boardout[10+0-:1];
     io_led[8+5+0-:1] = M_beta_game_boardout[11+0-:1];
-    M_ws2812_man_data[0+1-:2] = 2'h2 + M_beta_game_boardout[0+0-:1];
-    M_ws2812_man_data[2+1-:2] = 2'h2 + M_beta_game_boardout[1+0-:1];
-    M_ws2812_man_data[4+1-:2] = 2'h2 + M_beta_game_boardout[2+0-:1];
-    M_ws2812_man_data[6+1-:2] = 2'h2 + M_beta_game_boardout[3+0-:1];
-    M_ws2812_man_data[8+1-:2] = 2'h2 + M_beta_game_boardout[4+0-:1];
-    M_ws2812_man_data[10+1-:2] = 2'h2 + M_beta_game_boardout[5+0-:1];
-    led_strip = M_ws2812_man_out;
-    M_ws2812_man_1_data[0+1-:2] = 2'h2 + M_beta_game_boardout[6+0-:1];
-    M_ws2812_man_1_data[2+1-:2] = 2'h2 + M_beta_game_boardout[7+0-:1];
-    M_ws2812_man_1_data[4+1-:2] = 2'h2 + M_beta_game_boardout[8+0-:1];
-    M_ws2812_man_1_data[6+1-:2] = 2'h2 + M_beta_game_boardout[9+0-:1];
-    M_ws2812_man_1_data[8+1-:2] = 2'h2 + M_beta_game_boardout[10+0-:1];
-    M_ws2812_man_1_data[10+1-:2] = 2'h2 + M_beta_game_boardout[11+0-:1];
-    led_strip_1 = M_ws2812_man_1_out;
+    M_display_init[0+0+1-:2] = 1'h0;
+    M_display_init[0+2+1-:2] = 1'h0;
+    M_display_init[0+4+1-:2] = 1'h0;
+    M_display_init[0+6+1-:2] = 1'h0;
+    M_display_init[0+8+1-:2] = 1'h0;
+    M_display_init[0+10+1-:2] = 1'h0;
+    M_display_mask[0+0+0-:1] = 1'h0;
+    M_display_mask[0+1+0-:1] = 1'h0;
+    M_display_mask[0+2+0-:1] = 1'h0;
+    M_display_mask[0+3+0-:1] = 1'h0;
+    M_display_mask[0+4+0-:1] = 1'h0;
+    M_display_mask[0+5+0-:1] = 1'h0;
+    M_display_data[0+0+1-:2] = M_beta_game_boardout[0+0-:1];
+    M_display_data[0+2+1-:2] = M_beta_game_boardout[1+0-:1];
+    M_display_data[0+4+1-:2] = M_beta_game_boardout[2+0-:1];
+    M_display_data[0+6+1-:2] = M_beta_game_boardout[3+0-:1];
+    M_display_data[0+8+1-:2] = M_beta_game_boardout[4+0-:1];
+    M_display_data[0+10+1-:2] = M_beta_game_boardout[5+0-:1];
+    led_strip = M_display_out;
+    M_display_1_init[0+0+1-:2] = 1'h0;
+    M_display_1_init[0+2+1-:2] = 1'h0;
+    M_display_1_init[0+4+1-:2] = 1'h0;
+    M_display_1_init[0+6+1-:2] = 1'h0;
+    M_display_1_init[0+8+1-:2] = 1'h0;
+    M_display_1_init[0+10+1-:2] = 1'h0;
+    M_display_1_mask[0+0+0-:1] = 1'h0;
+    M_display_1_mask[0+1+0-:1] = 1'h0;
+    M_display_1_mask[0+2+0-:1] = 1'h0;
+    M_display_1_mask[0+3+0-:1] = 1'h0;
+    M_display_1_mask[0+4+0-:1] = 1'h0;
+    M_display_1_mask[0+5+0-:1] = 1'h0;
+    M_display_1_data[0+0+1-:2] = M_beta_game_boardout[6+0-:1];
+    M_display_1_data[0+2+1-:2] = M_beta_game_boardout[7+0-:1];
+    M_display_1_data[0+4+1-:2] = M_beta_game_boardout[8+0-:1];
+    M_display_1_data[0+6+1-:2] = M_beta_game_boardout[9+0-:1];
+    M_display_1_data[0+8+1-:2] = M_beta_game_boardout[10+0-:1];
+    M_display_1_data[0+10+1-:2] = M_beta_game_boardout[11+0-:1];
+    led_strip_1 = M_display_1_out;
     M_beta_game_board_en = 1'h0;
     M_beta_game_board_sel = 1'h0;
     M_beta_game_level_en = 1'h0;
