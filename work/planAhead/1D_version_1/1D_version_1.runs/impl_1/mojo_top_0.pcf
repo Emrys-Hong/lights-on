@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sun Dec 02 22:25:00 2018
+// Written by: Map P.20131013 on Sun Dec 02 22:50:31 2018
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -104,20 +104,21 @@ TIMEGRP clk = BEL "beta_game/level/M_regs_q_15" BEL
         "display_1/Maddsub_n0047_pins<92>" BEL "display_1/M_board_q_15" BEL
         "display_1/M_board_q_12" BEL "display_1/M_board_q_9" BEL
         "display_1/M_board_q_6" BEL "display_1/M_board_q_3" BEL
-        "display_1/M_board_q_0" BEL "blink/M_ctr_q_0" BEL "blink/M_ctr_q_1"
-        BEL "blink/M_ctr_q_2" BEL "blink/M_ctr_q_3" BEL "blink/M_ctr_q_4" BEL
-        "blink/M_ctr_q_5" BEL "blink/M_ctr_q_6" BEL "blink/M_ctr_q_7" BEL
-        "blink/M_ctr_q_8" BEL "blink/M_ctr_q_9" BEL "blink/M_ctr_q_10" BEL
-        "blink/M_ctr_q_11" BEL "blink/M_ctr_q_12" BEL "blink/M_ctr_q_13" BEL
-        "blink/M_ctr_q_14" BEL "blink/M_ctr_q_15" BEL "blink/M_ctr_q_16" BEL
-        "blink/M_ctr_q_17" BEL "blink/M_ctr_q_18" BEL "blink/M_ctr_q_19" BEL
-        "blink/M_ctr_q_20" BEL "blink/M_ctr_q_21" BEL "blink/M_ctr_q_22" BEL
-        "blink/M_ctr_q_23" BEL "blink/M_ctr_q_24" BEL "blink/M_ctr_q_25" BEL
-        "blink/M_ctr_q_26" BEL "blink/M_ctr_q_27" PIN
+        "display_1/M_board_q_0" BEL "blink/M_ctr_q_18" BEL "blink/M_ctr_q_19"
+        BEL "blink/M_ctr_q_20" BEL "blink/M_ctr_q_21" BEL "blink/M_ctr_q_22"
+        BEL "blink/M_ctr_q_23" BEL "blink/M_ctr_q_24" BEL "blink/M_ctr_q_25"
+        BEL "blink/M_ctr_q_26" BEL "blink/M_ctr_q_27" PIN
         "display/Maddsub_n0047_pins<92>" BEL "display/M_board_q_15" BEL
         "display/M_board_q_12" BEL "display/M_board_q_9" BEL
         "display/M_board_q_6" BEL "display/M_board_q_3" BEL
-        "display/M_board_q_0";
+        "display/M_board_q_0" BEL "seg/ctr/M_ctr_q_0" BEL "seg/ctr/M_ctr_q_1"
+        BEL "seg/ctr/M_ctr_q_2" BEL "seg/ctr/M_ctr_q_3" BEL
+        "seg/ctr/M_ctr_q_4" BEL "seg/ctr/M_ctr_q_5" BEL "seg/ctr/M_ctr_q_6"
+        BEL "seg/ctr/M_ctr_q_7" BEL "seg/ctr/M_ctr_q_8" BEL
+        "seg/ctr/M_ctr_q_9" BEL "seg/ctr/M_ctr_q_10" BEL "seg/ctr/M_ctr_q_11"
+        BEL "seg/ctr/M_ctr_q_12" BEL "seg/ctr/M_ctr_q_13" BEL
+        "seg/ctr/M_ctr_q_14" BEL "seg/ctr/M_ctr_q_15" BEL "seg/ctr/M_ctr_q_16"
+        BEL "seg/ctr/M_ctr_q_17";
 TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
 SCHEMATIC END;
 

@@ -63,18 +63,22 @@ module mojo_top (
   sig rst;                  // reset signal
   .clk(clk) {
     reset_conditioner reset_cond;
+    button_conditioner conditioner0;
+    button_conditioner conditioner1;
+    button_conditioner conditioner2;
+    button_conditioner conditioner3;
+    button_conditioner conditioner4;
+    button_conditioner conditioner5;
+    button_conditioner conditioner6;
     .rst(rst) {
       multi_seven_seg seg;
       counter slowclk(#SIZE(1),#DIV(2));
       beta beta_game;
       display display;
       display display_1;
-      counter blink(#SIZE(4),#DIV(24));                                                    // blinker
+      counter blink(#SIZE(4),#DIV(24));
     }
   }
-  
-  
-  
   .clk(slowclk.value) {
     edge_detector edge_detector0(#RISE(1), #FALL(0));
     edge_detector edge_detector1(#RISE(1), #FALL(0));
@@ -83,26 +87,6 @@ module mojo_top (
     edge_detector edge_detector4(#RISE(1), #FALL(0));
     edge_detector edge_detector5(#RISE(1), #FALL(0));
     edge_detector edge_detector6(#RISE(1), #FALL(0));
-    //button_conditioner conditioner0;
-    //button_conditioner conditioner1;
-    //button_conditioner conditioner2;
-    //button_conditioner conditioner3;
-    //button_conditioner conditioner4;
-    //button_conditioner conditioner5;
-    //button_conditioner conditioner6;
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     .rst(rst) {
       fsm game_state = {BEGIN, XOR, CMPEQC, ADDC, BLINK};
     }
@@ -126,10 +110,10 @@ module mojo_top (
     spi_miso = bz;            // not using SPI
     spi_channel = bzzzz;      // not using flags
     avr_rx = bz;              // not using serial port
-    seg.values = {4h0, 4h0, 4h0, 4h0};
     io_seg = ~seg.seg; // connect segments to the driver
     io_sel = ~seg.sel; // connect digit select to the
     io_led[2:0] = 3x{{8h00}};   // connect the DIP switches to the LEDs    driver
+    seg.values[3:1] = {4h0, 4h0, 4h0}; seg.values[0] = beta_game.levelout[6:3];
     
     
     
@@ -145,21 +129,20 @@ module mojo_top (
     
     
     
-    
-    //conditioner0.in = io_dip[2][0];
-    //edge_detector0.in = conditioner0.out;
-    //conditioner1.in = io_dip[2][1];
-    //edge_detector1.in = conditioner1.out;
-    //conditioner2.in = io_dip[2][2];
-    //edge_detector2.in = conditioner2.out;
-    //conditioner3.in = io_dip[2][3];
-    //edge_detector3.in = conditioner3.out;
-    //conditioner4.in = io_dip[2][4];
-    //edge_detector4.in = conditioner4.out;
-    //conditioner5.in = io_dip[2][5];
-    //edge_detector5.in = conditioner5.out;
-    //conditioner6.in = io_dip[2][6];
-    //edge_detector6.in = conditioner6.out;
+    conditioner0.in = io_dip[2][0];
+    edge_detector0.in = conditioner0.out;
+    conditioner1.in = io_dip[2][1];
+    edge_detector1.in = conditioner1.out;
+    conditioner2.in = io_dip[2][2];
+    edge_detector2.in = conditioner2.out;
+    conditioner3.in = io_dip[2][3];
+    edge_detector3.in = conditioner3.out;
+    conditioner4.in = io_dip[2][4];
+    edge_detector4.in = conditioner4.out;
+    conditioner5.in = io_dip[2][5];
+    edge_detector5.in = conditioner5.out;
+    conditioner6.in = io_dip[2][6];
+    edge_detector6.in = conditioner6.out;
     edge_detector0.in = io_dip[2][0];
     edge_detector1.in = io_dip[2][1];
     edge_detector2.in = io_dip[2][2];
@@ -196,23 +179,22 @@ module mojo_top (
     // LED CONNECTION
     display.init[0][0] = 0;display.init[0][1] = 0;display.init[0][2] = 0;display.init[0][3] = 0;display.init[0][4] = 0;display.init[0][5] = 0;
     display.mask[0][0] = 0;display.mask[0][1] = 0;display.mask[0][2] = 0;display.mask[0][3] = 0;display.mask[0][4] = 0;display.mask[0][5] = 0;
+    display_1.init[0][0] = 0;display_1.init[0][1] = 0;display_1.init[0][2] = 0;display_1.init[0][3] = 0;display_1.init[0][4] = 0;display_1.init[0][5] = 0;
+    display_1.mask[0][0] = 0;display_1.mask[0][1] = 0;display_1.mask[0][2] = 0;display_1.mask[0][3] = 0;display_1.mask[0][4] = 0;display_1.mask[0][5] = 0;
+    led_strip = display.out; led_strip_1 = display_1.out;
     display.data[0][0] = beta_game.boardout[0];
     display.data[0][1] = beta_game.boardout[1];
     display.data[0][2] = beta_game.boardout[2];
     display.data[0][3] = beta_game.boardout[3];
     display.data[0][4] = beta_game.boardout[4];
     display.data[0][5] = beta_game.boardout[5];
-    led_strip = display.out;
-    
-    display_1.init[0][0] = 0;display_1.init[0][1] = 0;display_1.init[0][2] = 0;display_1.init[0][3] = 0;display_1.init[0][4] = 0;display_1.init[0][5] = 0;
-    display_1.mask[0][0] = 0;display_1.mask[0][1] = 0;display_1.mask[0][2] = 0;display_1.mask[0][3] = 0;display_1.mask[0][4] = 0;display_1.mask[0][5] = 0;
     display_1.data[0][0] = beta_game.boardout[6];
     display_1.data[0][1] = beta_game.boardout[7];
     display_1.data[0][2] = beta_game.boardout[8];
     display_1.data[0][3] = beta_game.boardout[9];
     display_1.data[0][4] = beta_game.boardout[10];
     display_1.data[0][5] = beta_game.boardout[11];
-    led_strip_1 = display_1.out;
+    
     
     
     
@@ -354,7 +336,7 @@ module mojo_top (
           display_1.data[0][5] = 0;
         }
         
-        if (blink.value == 12) {
+        if (blink.value == 15) {
           game_state.d = game_state.BEGIN;
         }
       

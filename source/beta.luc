@@ -19,7 +19,7 @@ module beta (
     output boardout[16],
     
     
-    output debug[16]
+    output levelout[16]
   ) {
  
   
@@ -63,11 +63,7 @@ module beta (
     levels_mux.levels_sel = level.out[4:3];  // only 2 bits wide because we have levels 0 to 3.
     boardout = board.out;
     allon = alu.out[0];
-   
-    
-    
-    
-    debug = level.out;
+    levelout = level.out;
     
     
     
