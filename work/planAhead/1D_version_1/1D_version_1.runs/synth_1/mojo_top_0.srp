@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.02 secs
+Total CPU time to Xst completion: 0.01 secs
  
 --> 
 Reading design: mojo_top_0.prj
@@ -168,7 +168,7 @@ INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_ve
     | States             | 5                                              |
     | Transitions        | 8                                              |
     | Inputs             | 3                                              |
-    | Outputs            | 13                                             |
+    | Outputs            | 16                                             |
     | Clock              | M_slowclk_value (rising_edge)                  |
     | Reset              | M_reset_cond_out (positive)                    |
     | Reset type         | synchronous                                    |
@@ -184,6 +184,7 @@ INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_ve
     Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 170
     Found 1-bit tristate buffer for signal <avr_rx> created at line 170
     Summary:
+	inferred   2 Multiplexer(s).
 	inferred   6 Tristate(s).
 	inferred   1 Finite State Machine(s).
 Unit <mojo_top_0> synthesized.
@@ -447,11 +448,11 @@ Unit <div_14u_11u> synthesized.
 
 Synthesizing Unit <counter_7>.
     Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/counter_7.v".
-    Found 27-bit register for signal <M_ctr_q>.
-    Found 27-bit adder for signal <M_ctr_d> created at line 35.
+    Found 28-bit register for signal <M_ctr_q>.
+    Found 28-bit adder for signal <M_ctr_d> created at line 35.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  27 D-type flip-flop(s).
+	inferred  28 D-type flip-flop(s).
 Unit <counter_7> synthesized.
 
 Synthesizing Unit <edge_detector_8>.
@@ -488,8 +489,8 @@ Macro Statistics
  24-bit adder                                          : 4
  25-bit adder                                          : 4
  26-bit adder                                          : 2
- 27-bit adder                                          : 3
- 28-bit adder                                          : 2
+ 27-bit adder                                          : 2
+ 28-bit adder                                          : 3
  29-bit adder                                          : 2
  3-bit adder                                           : 1
  30-bit adder                                          : 2
@@ -503,7 +504,7 @@ Macro Statistics
  14-bit register                                       : 2
  16-bit register                                       : 2
  18-bit register                                       : 3
- 27-bit register                                       : 1
+ 28-bit register                                       : 1
  3-bit register                                        : 1
  4-bit register                                        : 1
 # Comparators                                          : 56
@@ -530,8 +531,9 @@ Macro Statistics
  31-bit comparator lessequal                           : 1
  32-bit comparator lessequal                           : 1
  6-bit comparator greater                              : 4
-# Multiplexers                                         : 581
+# Multiplexers                                         : 583
  1-bit 2-to-1 multiplexer                              : 558
+ 12-bit 2-to-1 multiplexer                             : 2
  14-bit 2-to-1 multiplexer                             : 6
  16-bit 2-to-1 multiplexer                             : 5
  16-bit 4-to-1 multiplexer                             : 3
@@ -633,7 +635,7 @@ Macro Statistics
 # Counters                                             : 5
  14-bit up counter                                     : 2
  18-bit up counter                                     : 1
- 27-bit up counter                                     : 1
+ 28-bit up counter                                     : 1
  3-bit up counter                                      : 1
 # Registers                                            : 79
  Flip-Flops                                            : 79
@@ -661,8 +663,9 @@ Macro Statistics
  31-bit comparator lessequal                           : 1
  32-bit comparator lessequal                           : 1
  6-bit comparator greater                              : 4
-# Multiplexers                                         : 580
+# Multiplexers                                         : 582
  1-bit 2-to-1 multiplexer                              : 558
+ 12-bit 2-to-1 multiplexer                             : 2
  14-bit 2-to-1 multiplexer                             : 6
  16-bit 2-to-1 multiplexer                             : 5
  16-bit 4-to-1 multiplexer                             : 3
@@ -695,10 +698,10 @@ Optimizing FSM <FSM_0> on signal <M_game_state_q[1:5]> with one-hot encoding.
  State | Encoding
 -------------------
  000   | 00001
- 010   | 00010
- 011   | 00100
- 100   | 01000
- 001   | 10000
+ 001   | 00010
+ 010   | 00100
+ 011   | 01000
+ 100   | 10000
 -------------------
 
 Optimizing unit <register_21> ...
@@ -746,24 +749,24 @@ WARNING:Xst:1293 - FF/Latch <beta_game/board/M_regs_q_15> has a constant value o
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_12> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_0> in Unit <mojo_top_0> is equivalent to the following 4 FFs/Latches, which will be removed : <blink/M_ctr_q_0> <slowclk/M_ctr_q_0> <display_1/M_counter_q_0> <display/M_counter_q_0> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_1> in Unit <mojo_top_0> is equivalent to the following 4 FFs/Latches, which will be removed : <blink/M_ctr_q_1> <slowclk/M_ctr_q_1> <display_1/M_counter_q_1> <display/M_counter_q_1> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_2> in Unit <mojo_top_0> is equivalent to the following 4 FFs/Latches, which will be removed : <blink/M_ctr_q_2> <slowclk/M_ctr_q_2> <display_1/M_counter_q_2> <display/M_counter_q_2> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_3> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <blink/M_ctr_q_3> <display_1/M_counter_q_3> <display/M_counter_q_3> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_4> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <blink/M_ctr_q_4> <display_1/M_counter_q_4> <display/M_counter_q_4> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_5> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <blink/M_ctr_q_5> <display_1/M_counter_q_5> <display/M_counter_q_5> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_6> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <blink/M_ctr_q_6> <display_1/M_counter_q_6> <display/M_counter_q_6> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_7> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <blink/M_ctr_q_7> <display_1/M_counter_q_7> <display/M_counter_q_7> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_8> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <blink/M_ctr_q_8> <display_1/M_counter_q_8> <display/M_counter_q_8> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_10> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <blink/M_ctr_q_10> <display_1/M_counter_q_10> <display/M_counter_q_10> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_9> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <blink/M_ctr_q_9> <display_1/M_counter_q_9> <display/M_counter_q_9> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_11> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <blink/M_ctr_q_11> <display_1/M_counter_q_11> <display/M_counter_q_11> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_12> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <blink/M_ctr_q_12> <display_1/M_counter_q_12> <display/M_counter_q_12> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_13> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <blink/M_ctr_q_13> <display_1/M_counter_q_13> <display/M_counter_q_13> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_14> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <blink/M_ctr_q_14> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_15> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <blink/M_ctr_q_15> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_16> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <blink/M_ctr_q_16> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_17> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <blink/M_ctr_q_17> 
+INFO:Xst:2261 - The FF/Latch <blink/M_ctr_q_0> in Unit <mojo_top_0> is equivalent to the following 4 FFs/Latches, which will be removed : <seg/ctr/M_ctr_q_0> <slowclk/M_ctr_q_0> <display_1/M_counter_q_0> <display/M_counter_q_0> 
+INFO:Xst:2261 - The FF/Latch <blink/M_ctr_q_1> in Unit <mojo_top_0> is equivalent to the following 4 FFs/Latches, which will be removed : <seg/ctr/M_ctr_q_1> <slowclk/M_ctr_q_1> <display_1/M_counter_q_1> <display/M_counter_q_1> 
+INFO:Xst:2261 - The FF/Latch <blink/M_ctr_q_2> in Unit <mojo_top_0> is equivalent to the following 4 FFs/Latches, which will be removed : <seg/ctr/M_ctr_q_2> <slowclk/M_ctr_q_2> <display_1/M_counter_q_2> <display/M_counter_q_2> 
+INFO:Xst:2261 - The FF/Latch <blink/M_ctr_q_3> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <seg/ctr/M_ctr_q_3> <display_1/M_counter_q_3> <display/M_counter_q_3> 
+INFO:Xst:2261 - The FF/Latch <blink/M_ctr_q_4> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <seg/ctr/M_ctr_q_4> <display_1/M_counter_q_4> <display/M_counter_q_4> 
+INFO:Xst:2261 - The FF/Latch <blink/M_ctr_q_5> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <seg/ctr/M_ctr_q_5> <display_1/M_counter_q_5> <display/M_counter_q_5> 
+INFO:Xst:2261 - The FF/Latch <blink/M_ctr_q_6> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <seg/ctr/M_ctr_q_6> <display_1/M_counter_q_6> <display/M_counter_q_6> 
+INFO:Xst:2261 - The FF/Latch <blink/M_ctr_q_7> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <seg/ctr/M_ctr_q_7> <display_1/M_counter_q_7> <display/M_counter_q_7> 
+INFO:Xst:2261 - The FF/Latch <blink/M_ctr_q_8> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <seg/ctr/M_ctr_q_8> <display_1/M_counter_q_8> <display/M_counter_q_8> 
+INFO:Xst:2261 - The FF/Latch <blink/M_ctr_q_9> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <seg/ctr/M_ctr_q_9> <display_1/M_counter_q_9> <display/M_counter_q_9> 
+INFO:Xst:2261 - The FF/Latch <blink/M_ctr_q_10> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <seg/ctr/M_ctr_q_10> <display_1/M_counter_q_10> <display/M_counter_q_10> 
+INFO:Xst:2261 - The FF/Latch <blink/M_ctr_q_11> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <seg/ctr/M_ctr_q_11> <display_1/M_counter_q_11> <display/M_counter_q_11> 
+INFO:Xst:2261 - The FF/Latch <blink/M_ctr_q_12> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <seg/ctr/M_ctr_q_12> <display_1/M_counter_q_12> <display/M_counter_q_12> 
+INFO:Xst:2261 - The FF/Latch <blink/M_ctr_q_13> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <seg/ctr/M_ctr_q_13> <display_1/M_counter_q_13> <display/M_counter_q_13> 
+INFO:Xst:2261 - The FF/Latch <blink/M_ctr_q_14> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <seg/ctr/M_ctr_q_14> 
+INFO:Xst:2261 - The FF/Latch <blink/M_ctr_q_15> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <seg/ctr/M_ctr_q_15> 
+INFO:Xst:2261 - The FF/Latch <blink/M_ctr_q_16> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <seg/ctr/M_ctr_q_16> 
+INFO:Xst:2261 - The FF/Latch <blink/M_ctr_q_17> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <seg/ctr/M_ctr_q_17> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -782,8 +785,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 86
- Flip-Flops                                            : 86
+# Registers                                            : 87
+ Flip-Flops                                            : 87
 
 =========================================================================
 
@@ -806,22 +809,22 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 415
-#      GND                         : 8
-#      INV                         : 5
-#      LUT1                        : 63
+# BELS                             : 389
+#      GND                         : 7
+#      INV                         : 4
+#      LUT1                        : 47
 #      LUT2                        : 25
-#      LUT3                        : 24
-#      LUT4                        : 23
+#      LUT3                        : 36
+#      LUT4                        : 21
 #      LUT5                        : 37
-#      LUT6                        : 63
-#      MUXCY                       : 92
+#      LUT6                        : 61
+#      MUXCY                       : 76
 #      MUXF7                       : 4
-#      VCC                         : 6
-#      XORCY                       : 65
-# FlipFlops/Latches                : 86
+#      VCC                         : 5
+#      XORCY                       : 66
+# FlipFlops/Latches                : 87
 #      FD                          : 10
-#      FDR                         : 43
+#      FDR                         : 44
 #      FDRE                        : 28
 #      FDS                         : 5
 # Clock Buffers                    : 1
@@ -840,16 +843,16 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              86  out of  11440     0%  
- Number of Slice LUTs:                  240  out of   5720     4%  
-    Number used as Logic:               240  out of   5720     4%  
+ Number of Slice Registers:              87  out of  11440     0%  
+ Number of Slice LUTs:                  231  out of   5720     4%  
+    Number used as Logic:               231  out of   5720     4%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    294
-   Number with an unused Flip Flop:     208  out of    294    70%  
-   Number with an unused LUT:            54  out of    294    18%  
-   Number of fully used LUT-FF pairs:    32  out of    294    10%  
-   Number of unique control sets:        17
+ Number of LUT Flip Flop pairs used:    285
+   Number with an unused Flip Flop:     198  out of    285    69%  
+   Number with an unused LUT:            54  out of    285    18%  
+   Number of fully used LUT-FF pairs:    33  out of    285    11%  
+   Number of unique control sets:        16
 
 IO Utilization: 
  Number of IOs:                          91
@@ -880,8 +883,8 @@ Clock Information:
 -----------------------------------+------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)        | Load  |
 -----------------------------------+------------------------------+-------+
-seg/ctr/M_ctr_q_2                  | NONE(M_game_state_q_FSM_FFd5)| 15    |
-clk                                | BUFGP                        | 73    |
+blink/M_ctr_q_2                    | NONE(M_game_state_q_FSM_FFd5)| 15    |
+clk                                | BUFGP                        | 74    |
 -----------------------------------+------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
@@ -895,7 +898,7 @@ Speed Grade: -2
 
    Minimum period: 6.876ns (Maximum Frequency: 145.444MHz)
    Minimum input arrival time before clock: 9.622ns
-   Maximum output required time after clock: 19.182ns
+   Maximum output required time after clock: 19.113ns
    Maximum combinational path delay: 4.921ns
 
 Timing Details:
@@ -903,15 +906,15 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'seg/ctr/M_ctr_q_2'
+Timing constraint: Default period analysis for Clock 'blink/M_ctr_q_2'
   Clock period: 6.876ns (frequency: 145.444MHz)
   Total number of paths / destination ports: 1611 / 10
 -------------------------------------------------------------------------
 Delay:               6.876ns (Levels of Logic = 16)
   Source:            edge_detector4/M_last_q (FF)
   Destination:       M_game_state_q_FSM_FFd4 (FF)
-  Source Clock:      seg/ctr/M_ctr_q_2 rising
-  Destination Clock: seg/ctr/M_ctr_q_2 rising
+  Source Clock:      blink/M_ctr_q_2 rising
+  Destination Clock: blink/M_ctr_q_2 rising
 
   Data Path: edge_detector4/M_last_q to M_game_state_q_FSM_FFd4
                                 Gate     Net
@@ -945,7 +948,7 @@ Delay:               6.876ns (Levels of Logic = 16)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 6.080ns (frequency: 164.467MHz)
-  Total number of paths / destination ports: 2747 / 235
+  Total number of paths / destination ports: 2464 / 237
 -------------------------------------------------------------------------
 Delay:               6.080ns (Levels of Logic = 14)
   Source:            beta_game/level/M_regs_q_3 (FF)
@@ -981,13 +984,13 @@ Delay:               6.080ns (Levels of Logic = 14)
                                        (34.8% logic, 65.2% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'seg/ctr/M_ctr_q_2'
+Timing constraint: Default OFFSET IN BEFORE for Clock 'blink/M_ctr_q_2'
   Total number of paths / destination ports: 1036 / 13
 -------------------------------------------------------------------------
 Offset:              7.820ns (Levels of Logic = 17)
   Source:            io_dip<20> (PAD)
   Destination:       M_game_state_q_FSM_FFd4 (FF)
-  Destination Clock: seg/ctr/M_ctr_q_2 rising
+  Destination Clock: blink/M_ctr_q_2 rising
 
   Data Path: io_dip<20> to M_game_state_q_FSM_FFd4
                                 Gate     Net
@@ -1061,13 +1064,13 @@ Offset:              9.622ns (Levels of Logic = 19)
                                        (38.6% logic, 61.4% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'seg/ctr/M_ctr_q_2'
+Timing constraint: Default OFFSET OUT AFTER for Clock 'blink/M_ctr_q_2'
   Total number of paths / destination ports: 4 / 4
 -------------------------------------------------------------------------
 Offset:              5.467ns (Levels of Logic = 1)
   Source:            M_game_state_q_FSM_FFd2 (FF)
   Destination:       io_led<19> (PAD)
-  Source Clock:      seg/ctr/M_ctr_q_2 rising
+  Source Clock:      blink/M_ctr_q_2 rising
 
   Data Path: M_game_state_q_FSM_FFd2 to io_led<19>
                                 Gate     Net
@@ -1083,18 +1086,17 @@ Offset:              5.467ns (Levels of Logic = 1)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 2672 / 18
 -------------------------------------------------------------------------
-Offset:              19.182ns (Levels of Logic = 14)
-  Source:            seg/ctr/M_ctr_q_10 (FF)
+Offset:              19.113ns (Levels of Logic = 14)
+  Source:            blink/M_ctr_q_10 (FF)
   Destination:       led_strip_1 (PAD)
   Source Clock:      clk rising
 
-  Data Path: seg/ctr/M_ctr_q_10 to led_strip_1
+  Data Path: blink/M_ctr_q_10 to led_strip_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              7   0.525   1.340  M_ctr_q_10 (M_ctr_q_10)
-     end scope: 'seg/ctr:M_ctr_q_10'
-     end scope: 'seg:M_ctr_q_10'
+     FDR:C->Q              5   0.525   1.271  M_ctr_q_10 (M_ctr_q_10)
+     end scope: 'blink:M_ctr_q_10'
      begin scope: 'display:M_ctr_q_10'
      begin scope: 'display/M_counter_q[13]_PWR_21_o_div_14:a<10>'
      LUT5:I0->O            4   0.254   0.803  o<0>1 (o<0>)
@@ -1112,8 +1114,8 @@ Offset:              19.182ns (Levels of Logic = 14)
      end scope: 'display_1:out<0>'
      OBUF:I->O                 2.912          led_strip_1_OBUF (led_strip_1)
     ----------------------------------------
-    Total                     19.182ns (10.470ns logic, 8.712ns route)
-                                       (54.6% logic, 45.4% route)
+    Total                     19.113ns (10.470ns logic, 8.643ns route)
+                                       (54.8% logic, 45.2% route)
 
 =========================================================================
 Timing constraint: Default path analysis
@@ -1138,34 +1140,34 @@ Delay:               4.921ns (Levels of Logic = 2)
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock clk
------------------+---------+---------+---------+---------+
-                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
------------------+---------+---------+---------+---------+
-clk              |    6.080|         |         |         |
-seg/ctr/M_ctr_q_2|    8.677|         |         |         |
------------------+---------+---------+---------+---------+
+Clock to Setup on destination clock blink/M_ctr_q_2
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+blink/M_ctr_q_2|    6.876|         |         |         |
+clk            |    5.016|         |         |         |
+---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock seg/ctr/M_ctr_q_2
------------------+---------+---------+---------+---------+
-                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
------------------+---------+---------+---------+---------+
-clk              |    5.016|         |         |         |
-seg/ctr/M_ctr_q_2|    6.876|         |         |         |
------------------+---------+---------+---------+---------+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+blink/M_ctr_q_2|    8.677|         |         |         |
+clk            |    6.080|         |         |         |
+---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.86 secs
+Total CPU time to Xst completion: 5.88 secs
  
 --> 
 
 
-Total memory usage is 411216 kilobytes
+Total memory usage is 411252 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   51 (   0 filtered)

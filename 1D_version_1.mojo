@@ -7,7 +7,6 @@
     <src>mul.luc</src>
     <src>register.luc</src>
     <src>multi_dec_ctr.luc</src>
-    <src>ws2812_man.luc</src>
     <src>display.luc</src>
     <src>beta.luc</src>
     <src>add.luc</src>

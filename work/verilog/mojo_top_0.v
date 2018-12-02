@@ -103,7 +103,7 @@ module mojo_top_0 (
     .init(M_display_1_init),
     .out(M_display_1_out)
   );
-  wire [3-1:0] M_blink_value;
+  wire [4-1:0] M_blink_value;
   counter_7 blink (
     .clk(clk),
     .rst(rst),
@@ -160,10 +160,10 @@ module mojo_top_0 (
     .out(M_edge_detector6_out)
   );
   localparam BEGIN_game_state = 3'd0;
-  localparam BLINK_game_state = 3'd1;
-  localparam XOR_game_state = 3'd2;
-  localparam CMPEQC_game_state = 3'd3;
-  localparam ADDC_game_state = 3'd4;
+  localparam XOR_game_state = 3'd1;
+  localparam CMPEQC_game_state = 3'd2;
+  localparam ADDC_game_state = 3'd3;
+  localparam BLINK_game_state = 3'd4;
   
   reg [2:0] M_game_state_d, M_game_state_q = BEGIN_game_state;
   
@@ -319,20 +319,33 @@ module mojo_top_0 (
         led_strip = M_display_out;
         led_strip_1 = M_display_1_out;
         if (M_blink_value[0+0-:1] == 1'h1) begin
-          M_display_data[0+0+1-:2] = M_beta_game_boardout[0+0-:1];
-          M_display_data[0+2+1-:2] = M_beta_game_boardout[1+0-:1];
-          M_display_data[0+4+1-:2] = M_beta_game_boardout[2+0-:1];
-          M_display_data[0+6+1-:2] = M_beta_game_boardout[3+0-:1];
-          M_display_data[0+8+1-:2] = M_beta_game_boardout[4+0-:1];
-          M_display_data[0+10+1-:2] = M_beta_game_boardout[5+0-:1];
-          M_display_1_data[0+0+1-:2] = M_beta_game_boardout[6+0-:1];
-          M_display_1_data[0+2+1-:2] = M_beta_game_boardout[7+0-:1];
-          M_display_1_data[0+4+1-:2] = M_beta_game_boardout[8+0-:1];
-          M_display_1_data[0+6+1-:2] = M_beta_game_boardout[9+0-:1];
-          M_display_1_data[0+8+1-:2] = M_beta_game_boardout[10+0-:1];
-          M_display_1_data[0+10+1-:2] = M_beta_game_boardout[11+0-:1];
+          M_display_data[0+0+1-:2] = 1'h1;
+          M_display_data[0+2+1-:2] = 1'h1;
+          M_display_data[0+4+1-:2] = 1'h1;
+          M_display_data[0+6+1-:2] = 1'h1;
+          M_display_data[0+8+1-:2] = 1'h1;
+          M_display_data[0+10+1-:2] = 1'h1;
+          M_display_1_data[0+0+1-:2] = 1'h1;
+          M_display_1_data[0+2+1-:2] = 1'h1;
+          M_display_1_data[0+4+1-:2] = 1'h1;
+          M_display_1_data[0+6+1-:2] = 1'h1;
+          M_display_1_data[0+8+1-:2] = 1'h1;
+          M_display_1_data[0+10+1-:2] = 1'h1;
+        end else begin
+          M_display_data[0+0+1-:2] = 1'h0;
+          M_display_data[0+2+1-:2] = 1'h0;
+          M_display_data[0+4+1-:2] = 1'h0;
+          M_display_data[0+6+1-:2] = 1'h0;
+          M_display_data[0+8+1-:2] = 1'h0;
+          M_display_data[0+10+1-:2] = 1'h0;
+          M_display_1_data[0+0+1-:2] = 1'h0;
+          M_display_1_data[0+2+1-:2] = 1'h0;
+          M_display_1_data[0+4+1-:2] = 1'h0;
+          M_display_1_data[0+6+1-:2] = 1'h0;
+          M_display_1_data[0+8+1-:2] = 1'h0;
+          M_display_1_data[0+10+1-:2] = 1'h0;
         end
-        if (M_blink_value == 3'h7) begin
+        if (M_blink_value == 4'hc) begin
           M_game_state_d = BEGIN_game_state;
         end
       end

@@ -69,7 +69,7 @@ module mojo_top (
       beta beta_game;
       display display;
       display display_1;
-      counter blink(#SIZE(3),#DIV(24));                                                      // blinker
+      counter blink(#SIZE(4),#DIV(24));                                                    // blinker
     }
   }
   
@@ -327,21 +327,34 @@ module mojo_top (
         
         
         if (blink.value[0] == 1) {
-          display.data[0][0] = beta_game.boardout[0];
-          display.data[0][1] = beta_game.boardout[1];
-          display.data[0][2] = beta_game.boardout[2];
-          display.data[0][3] = beta_game.boardout[3];
-          display.data[0][4] = beta_game.boardout[4];
-          display.data[0][5] = beta_game.boardout[5];
-          display_1.data[0][0] = beta_game.boardout[6];
-          display_1.data[0][1] = beta_game.boardout[7];
-          display_1.data[0][2] = beta_game.boardout[8];
-          display_1.data[0][3] = beta_game.boardout[9];
-          display_1.data[0][4] = beta_game.boardout[10];
-          display_1.data[0][5] = beta_game.boardout[11];
+          display.data[0][0] = 1;
+          display.data[0][1] = 1;
+          display.data[0][2] = 1;
+          display.data[0][3] = 1;
+          display.data[0][4] = 1;
+          display.data[0][5] = 1;
+          display_1.data[0][0] = 1;
+          display_1.data[0][1] = 1;
+          display_1.data[0][2] = 1;
+          display_1.data[0][3] = 1;
+          display_1.data[0][4] = 1;
+          display_1.data[0][5] = 1;
+        } else {
+          display.data[0][0] = 0;
+          display.data[0][1] = 0;
+          display.data[0][2] = 0;
+          display.data[0][3] = 0;
+          display.data[0][4] = 0;
+          display.data[0][5] = 0;
+          display_1.data[0][0] = 0;
+          display_1.data[0][1] = 0;
+          display_1.data[0][2] = 0;
+          display_1.data[0][3] = 0;
+          display_1.data[0][4] = 0;
+          display_1.data[0][5] = 0;
         }
         
-        if (blink.value == 7) {
+        if (blink.value == 12) {
           game_state.d = game_state.BEGIN;
         }
       

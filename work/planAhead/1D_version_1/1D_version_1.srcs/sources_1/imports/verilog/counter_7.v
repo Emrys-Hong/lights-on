@@ -6,7 +6,7 @@
 
 /*
    Parameters:
-     SIZE = 3
+     SIZE = 4
      DIV = 24
      TOP = 0
      UP = 1
@@ -14,23 +14,23 @@
 module counter_7 (
     input clk,
     input rst,
-    output reg [2:0] value
+    output reg [3:0] value
   );
   
-  localparam SIZE = 2'h3;
+  localparam SIZE = 3'h4;
   localparam DIV = 5'h18;
   localparam TOP = 1'h0;
   localparam UP = 1'h1;
   
   
-  reg [26:0] M_ctr_d, M_ctr_q = 1'h0;
+  reg [27:0] M_ctr_d, M_ctr_q = 1'h0;
   
   localparam MAX_VALUE = 25'h0ffffff;
   
   always @* begin
     M_ctr_d = M_ctr_q;
     
-    value = M_ctr_q[24+2-:3];
+    value = M_ctr_q[24+3-:4];
     if (1'h1) begin
       M_ctr_d = M_ctr_q + 1'h1;
       if (1'h0 && M_ctr_q == 25'h0ffffff) begin
