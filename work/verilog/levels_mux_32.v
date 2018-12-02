@@ -5,7 +5,7 @@
 */
 
 module levels_mux_32 (
-    input [1:0] levels_sel,
+    input [2:0] levels_sel,
     output reg [15:0] out
   );
   
@@ -19,13 +19,16 @@ module levels_mux_32 (
         out = 16'h003f;
       end
       1'h1: begin
-        out = 16'h074c;
+        out = 16'h0ae1;
       end
       2'h2: begin
-        out = 16'h0c94;
+        out = 16'h0ceb;
       end
       2'h3: begin
-        out = 16'h090e;
+        out = 16'h0c8a;
+      end
+      3'h4: begin
+        out = 16'h0458;
       end
     endcase
   end

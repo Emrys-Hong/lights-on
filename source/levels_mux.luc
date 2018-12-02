@@ -1,5 +1,5 @@
 module levels_mux (
-    input levels_sel[2],    // mux selector
+    input levels_sel[3],    // mux selector
     output out[16]    // output of mux is connected to board_sel's mux.
   ) {
 
@@ -8,9 +8,10 @@ module levels_mux (
     
     case (levels_sel) {
       0: out = 16b0000000000111111;
-      1: out = 16b0000011101001100;
-      2: out = 16b0000110010010100;
-      3: out = 16b0000100100001110;
+      1: out = 16b0000101011100001;
+      2: out = 16b0000110011101011;
+      3: out = 16b0000110010001010;
+      4: out = 16b0000010001011000;
       }
   }
 }

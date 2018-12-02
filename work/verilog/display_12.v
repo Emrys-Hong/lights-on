@@ -38,15 +38,15 @@ module display_12 (
   
   localparam COLOR_BLACK = 24'h000000;
   
-  localparam COLOR_RED = 24'h008010;
+  localparam COLOR_RED = 24'hff00ff;
   
-  localparam COLOR_GREEN = 24'h800010;
+  localparam COLOR_GREEN = 24'h9933ff;
   
-  localparam COLOR_SELECTED_BLACK = 24'h404040;
+  localparam COLOR_SELECTED_BLACK = 24'h33ccff;
   
-  localparam COLOR_SELECTED_RED = 24'h40ff40;
+  localparam COLOR_SELECTED_RED = 24'h33ff99;
   
-  localparam COLOR_SELECTED_GREEN = 24'hff4040;
+  localparam COLOR_SELECTED_GREEN = 24'h00ff33;
   
   localparam COLOR_BLUE = 24'h0000ff;
   
@@ -87,19 +87,19 @@ module display_12 (
             grb = 24'h000000;
           end
           2'h2: begin
-            grb = 24'h008010;
+            grb = 24'hff00ff;
           end
           2'h3: begin
-            grb = 24'h800010;
+            grb = 24'h9933ff;
           end
           3'h4: begin
-            grb = 24'h404040;
+            grb = 24'h33ccff;
           end
           3'h6: begin
-            grb = 24'h40ff40;
+            grb = 24'h33ff99;
           end
           3'h7: begin
-            grb = 24'hff4040;
+            grb = 24'h00ff33;
           end
           1'h1: begin
             grb = 24'h0000ff;
@@ -134,18 +134,18 @@ module display_12 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_board_q <= 1'h0;
+      M_counter_q <= 1'h0;
     end else begin
-      M_board_q <= M_board_d;
+      M_counter_q <= M_counter_d;
     end
   end
   
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_counter_q <= 1'h0;
+      M_board_q <= 1'h0;
     end else begin
-      M_counter_q <= M_counter_d;
+      M_board_q <= M_board_d;
     end
   end
   

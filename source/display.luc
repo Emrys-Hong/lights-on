@@ -18,11 +18,13 @@ module display #(ROW=1, COL=6)(
   
   // preset colours (in GRB)
   const COLOR_BLACK = 24h0;
-  const COLOR_RED = c{8h00, 8h80, 8h10};
-  const COLOR_GREEN = c{8h80, 8h00, 8h10};
-  const COLOR_SELECTED_BLACK = c{8h40, 8h40, 8h40};
-  const COLOR_SELECTED_RED = c{8h40, 8hff, 8h40};
-  const COLOR_SELECTED_GREEN = c{8hff, 8h40, 8h40};
+  const COLOR_RED = c{8hff, 8h00, 8hff};
+  const COLOR_GREEN = c{8h99, 8h33, 8hff};
+  const COLOR_SELECTED_BLACK = c{8h33, 8hcc, 8hff};
+  const COLOR_SELECTED_RED = c{8h33, 8hff, 8h99};
+  const COLOR_SELECTED_GREEN = c{8h00, 8hff, 8h33};
+  
+  
   const COLOR_BLUE = c{8h00, 8h00, 8hff};
   const COLOR_INIT_RED = c{8h00, 8hff, 8h00};
   const COLOR_INIT_GREEN = c{8hff, 8h00, 8h00};

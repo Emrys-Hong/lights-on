@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.01 secs
+Total CPU time to Xst completion: 0.02 secs
  
 --> 
 Reading design: mojo_top_0.prj
@@ -151,6 +151,19 @@ WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_versi
 Elaborating module <counter_14>.
 
 Elaborating module <edge_detector_15>.
+WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 295: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 300: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 305: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 310: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 315: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 320: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 325: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 330: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 335: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 340: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 345: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 350: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 359: Result of 16-bit expression is truncated to fit in 8-bit target.
 WARNING:Xst:2972 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" line 44. All outputs of instance <conditioner0> of block <button_conditioner_2> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
 WARNING:Xst:2972 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" line 51. All outputs of instance <conditioner1> of block <button_conditioner_2> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
 WARNING:Xst:2972 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" line 58. All outputs of instance <conditioner2> of block <button_conditioner_2> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
@@ -188,7 +201,7 @@ INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_ve
     | States             | 5                                              |
     | Transitions        | 8                                              |
     | Inputs             | 3                                              |
-    | Outputs            | 16                                             |
+    | Outputs            | 13                                             |
     | Clock              | M_slowclk_value (rising_edge)                  |
     | Reset              | M_reset_cond_out (positive)                    |
     | Reset type         | synchronous                                    |
@@ -197,18 +210,18 @@ INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_ve
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_3_OUT> created at line 295.
-    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_5_OUT> created at line 300.
-    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_7_OUT> created at line 305.
-    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_9_OUT> created at line 310.
-    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_11_OUT> created at line 315.
-    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_13_OUT> created at line 320.
-    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_15_OUT> created at line 325.
-    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_17_OUT> created at line 330.
-    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_19_OUT> created at line 335.
-    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_21_OUT> created at line 340.
-    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_23_OUT> created at line 345.
-    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_25_OUT> created at line 350.
+    Found 3-bit adder for signal <n0133> created at line 295.
+    Found 3-bit adder for signal <n0134> created at line 300.
+    Found 3-bit adder for signal <n0135> created at line 305.
+    Found 3-bit adder for signal <n0136> created at line 310.
+    Found 3-bit adder for signal <n0137> created at line 315.
+    Found 3-bit adder for signal <n0138> created at line 320.
+    Found 3-bit adder for signal <n0139> created at line 325.
+    Found 3-bit adder for signal <n0140> created at line 330.
+    Found 3-bit adder for signal <n0141> created at line 335.
+    Found 3-bit adder for signal <n0142> created at line 340.
+    Found 3-bit adder for signal <n0143> created at line 345.
+    Found 3-bit adder for signal <n0144> created at line 350.
     Found 1-bit tristate buffer for signal <spi_miso> created at line 219
     Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 219
     Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 219
@@ -289,7 +302,7 @@ Unit <beta_11> synthesized.
 
 Synthesizing Unit <levels_mux_32>.
     Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/levels_mux_32.v".
-    Found 4x16-bit Read Only RAM for signal <out>
+    Found 8x16-bit Read Only RAM for signal <out>
     Summary:
 	inferred   1 RAM(s).
 Unit <levels_mux_32> synthesized.
@@ -422,8 +435,8 @@ Unit <register_35> synthesized.
 
 Synthesizing Unit <display_12>.
     Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/display_12.v".
-    Found 14-bit register for signal <M_counter_q>.
     Found 18-bit register for signal <M_board_q>.
+    Found 14-bit register for signal <M_counter_q>.
     Found 6-bit subtractor for signal <n0061> created at line 83.
     Found 5-bit subtractor for signal <n0065> created at line 111.
     Found 19-bit adder for signal <n0038> created at line 83.
@@ -509,7 +522,7 @@ HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 2
  16x7-bit single-port Read Only RAM                    : 1
- 4x16-bit single-port Read Only RAM                    : 1
+ 8x16-bit single-port Read Only RAM                    : 1
 # Multipliers                                          : 5
  14x11-bit multiplier                                  : 2
  15x3-bit multiplier                                   : 2
@@ -523,7 +536,6 @@ Macro Statistics
  17-bit adder                                          : 6
  18-bit adder                                          : 5
  19-bit adder                                          : 6
- 2-bit adder                                           : 12
  20-bit adder                                          : 4
  21-bit adder                                          : 4
  22-bit adder                                          : 4
@@ -534,7 +546,7 @@ Macro Statistics
  27-bit adder                                          : 2
  28-bit adder                                          : 3
  29-bit adder                                          : 2
- 3-bit adder                                           : 1
+ 3-bit adder                                           : 13
  30-bit adder                                          : 2
  31-bit adder                                          : 2
  32-bit adder                                          : 2
@@ -631,7 +643,7 @@ INFO:Xst:3212 - HDL ADVISOR - Asynchronous or synchronous initialization of the 
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 4-word x 16-bit                     |          |
+    |     aspect ratio   | 8-word x 16-bit                     |          |
     |     weA            | connected to signal <GND>           | high     |
     |     addrA          | connected to signal <levels_sel>    |          |
     |     diA            | connected to signal <GND>           |          |
@@ -660,7 +672,7 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 2
  16x7-bit single-port distributed Read Only RAM        : 1
- 4x16-bit single-port distributed Read Only RAM        : 1
+ 8x16-bit single-port distributed Read Only RAM        : 1
 # MACs                                                 : 4
  14x10-to-11-bit MAC                                   : 2
  15x3-to-6-bit MAC                                     : 2
@@ -841,17 +853,17 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 466
+# BELS                             : 461
 #      GND                         : 8
 #      INV                         : 5
 #      LUT1                        : 64
-#      LUT2                        : 28
-#      LUT3                        : 28
-#      LUT4                        : 50
-#      LUT5                        : 35
-#      LUT6                        : 81
+#      LUT2                        : 25
+#      LUT3                        : 30
+#      LUT4                        : 45
+#      LUT5                        : 29
+#      LUT6                        : 87
 #      MUXCY                       : 93
-#      MUXF7                       : 2
+#      MUXF7                       : 3
 #      VCC                         : 6
 #      XORCY                       : 66
 # FlipFlops/Latches                : 100
@@ -876,14 +888,14 @@ Selected Device : 6slx9tqg144-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:             100  out of  11440     0%  
- Number of Slice LUTs:                  291  out of   5720     5%  
-    Number used as Logic:               291  out of   5720     5%  
+ Number of Slice LUTs:                  285  out of   5720     4%  
+    Number used as Logic:               285  out of   5720     4%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    358
-   Number with an unused Flip Flop:     258  out of    358    72%  
-   Number with an unused LUT:            67  out of    358    18%  
-   Number of fully used LUT-FF pairs:    33  out of    358     9%  
+ Number of LUT Flip Flop pairs used:    352
+   Number with an unused Flip Flop:     252  out of    352    71%  
+   Number with an unused LUT:            67  out of    352    19%  
+   Number of fully used LUT-FF pairs:    33  out of    352     9%  
    Number of unique control sets:        17
 
 IO Utilization: 
@@ -930,7 +942,7 @@ Speed Grade: -2
 
    Minimum period: 6.876ns (Maximum Frequency: 145.444MHz)
    Minimum input arrival time before clock: 9.622ns
-   Maximum output required time after clock: 21.437ns
+   Maximum output required time after clock: 20.383ns
    Maximum combinational path delay: 4.921ns
 
 Timing Details:
@@ -979,10 +991,10 @@ Delay:               6.876ns (Levels of Logic = 16)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 6.453ns (frequency: 154.959MHz)
-  Total number of paths / destination ports: 2865 / 263
+  Clock period: 6.503ns (frequency: 153.764MHz)
+  Total number of paths / destination ports: 2878 / 263
 -------------------------------------------------------------------------
-Delay:               6.453ns (Levels of Logic = 13)
+Delay:               6.503ns (Levels of Logic = 13)
   Source:            beta_game/level/M_regs_q_4 (FF)
   Destination:       beta_game/board/M_regs_q_9 (FF)
   Source Clock:      clk rising
@@ -992,8 +1004,8 @@ Delay:               6.453ns (Levels of Logic = 13)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            31   0.525   1.503  M_regs_q_4 (M_regs_q_4)
-     end scope: 'beta_game/level:M_regs_q_4'
+     FDRE:C->Q            34   0.525   1.553  M_regs_q_4 (M_regs_q_4)
+     end scope: 'beta_game/level:out<4>'
      LUT3:I2->O            3   0.254   0.765  Mmux_M_alu_a111 (M_alu_a<4>)
      begin scope: 'beta_game/alu:a<4>'
      begin scope: 'beta_game/alu/add:a<4>'
@@ -1004,15 +1016,15 @@ Delay:               6.453ns (Levels of Logic = 13)
      MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<8> (Maddsub_holder_cy<8>)
      XORCY:CI->O           1   0.206   0.682  Maddsub_holder_xor<9> (out<9>)
      end scope: 'beta_game/alu/add:out<9>'
-     LUT3:I2->O            1   0.254   0.682  Mmux_out175_SW0 (N57)
+     LUT3:I2->O            1   0.254   0.682  Mmux_out175_SW0 (N59)
      LUT6:I5->O            2   0.254   0.726  Mmux_out175 (out<9>)
      end scope: 'beta_game/alu:out<9>'
-     LUT5:I4->O            1   0.254   0.000  Mmux_M_board_data161 (M_board_data<9>)
+     LUT6:I5->O            1   0.254   0.000  Mmux_M_board_data161 (M_board_data<9>)
      begin scope: 'beta_game/board:data<9>'
      FDRE:D                    0.074          M_regs_q_9
     ----------------------------------------
-    Total                      6.453ns (2.095ns logic, 4.358ns route)
-                                       (32.5% logic, 67.5% route)
+    Total                      6.503ns (2.095ns logic, 4.408ns route)
+                                       (32.2% logic, 67.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'seg/ctr/M_ctr_q_2'
@@ -1084,10 +1096,10 @@ Offset:              9.622ns (Levels of Logic = 19)
      MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<8> (Maddsub_holder_cy<8>)
      XORCY:CI->O           1   0.206   0.682  Maddsub_holder_xor<9> (out<9>)
      end scope: 'beta_game/alu/add:out<9>'
-     LUT3:I2->O            1   0.254   0.682  Mmux_out175_SW0 (N57)
+     LUT3:I2->O            1   0.254   0.682  Mmux_out175_SW0 (N59)
      LUT6:I5->O            2   0.254   0.726  Mmux_out175 (out<9>)
      end scope: 'beta_game/alu:out<9>'
-     LUT5:I4->O            1   0.254   0.000  Mmux_M_board_data161 (M_board_data<9>)
+     LUT6:I5->O            1   0.254   0.000  Mmux_M_board_data161 (M_board_data<9>)
      begin scope: 'beta_game/board:data<9>'
      FDRE:D                    0.074          M_regs_q_9
     ----------------------------------------
@@ -1095,29 +1107,10 @@ Offset:              9.622ns (Levels of Logic = 19)
                                        (38.6% logic, 61.4% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'seg/ctr/M_ctr_q_2'
-  Total number of paths / destination ports: 4 / 4
--------------------------------------------------------------------------
-Offset:              5.474ns (Levels of Logic = 1)
-  Source:            M_game_state_q_FSM_FFd2 (FF)
-  Destination:       io_led<19> (PAD)
-  Source Clock:      seg/ctr/M_ctr_q_2 rising
-
-  Data Path: M_game_state_q_FSM_FFd2 to io_led<19>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q              78   0.525   2.037  M_game_state_q_FSM_FFd2 (M_game_state_q_FSM_FFd2)
-     OBUF:I->O                 2.912          io_led_19_OBUF (io_led<19>)
-    ----------------------------------------
-    Total                      5.474ns (3.437ns logic, 2.037ns route)
-                                       (62.8% logic, 37.2% route)
-
-=========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 4528 / 25
+  Total number of paths / destination ports: 5687 / 33
 -------------------------------------------------------------------------
-Offset:              21.437ns (Levels of Logic = 16)
+Offset:              20.383ns (Levels of Logic = 16)
   Source:            seg/ctr/M_ctr_q_10 (FF)
   Destination:       led_strip_1 (PAD)
   Source Clock:      clk rising
@@ -1138,18 +1131,18 @@ Offset:              21.437ns (Levels of Logic = 16)
      DSP48A1:B0->P0       11   5.145   1.267  Maddsub_GND_22_o_GND_22_o_MuLt_2_OUT (n0038<0>1)
      LUT3:I0->O            2   0.235   0.834  Sh9011 (Sh901)
      LUT6:I4->O            2   0.250   1.002  Mmux_n003933 (Mmux_n003932)
-     LUT6:I2->O            1   0.254   0.000  Mmux_n003934_G (N64)
+     LUT6:I2->O            1   0.254   0.000  Mmux_n003934_G (N70)
      MUXF7:I1->O           1   0.175   0.682  Mmux_n003934 (Mmux_n003933)
-     LUT6:I5->O            2   0.254   0.834  Mmux_n003935 (Mmux_n003934)
-     LUT2:I0->O            3   0.250   1.196  Mmux_n003936 (n0039<17>)
-     LUT6:I1->O            1   0.254   0.910  Sh465_SW3 (N11)
-     LUT6:I3->O            1   0.235   0.910  Sh465 (Sh465)
+     LUT6:I5->O            1   0.254   0.790  Mmux_n003935 (Mmux_n003934)
+     LUT2:I0->O            2   0.250   1.156  Mmux_n003936 (n0039<17>)
+     LUT6:I1->O            1   0.254   0.000  Sh465_G (N66)
+     MUXF7:I1->O           1   0.175   0.910  Sh465 (Sh465)
      LUT6:I3->O            1   0.235   0.681  Mmux_out1 (out<0>)
      end scope: 'display_1:out<0>'
      OBUF:I->O                 2.912          led_strip_1_OBUF (led_strip_1)
     ----------------------------------------
-    Total                     21.437ns (10.978ns logic, 10.459ns route)
-                                       (51.2% logic, 48.8% route)
+    Total                     20.383ns (10.918ns logic, 9.465ns route)
+                                       (53.6% logic, 46.4% route)
 
 =========================================================================
 Timing constraint: Default path analysis
@@ -1179,7 +1172,7 @@ Clock to Setup on destination clock clk
                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------+---------+---------+---------+---------+
-clk              |    6.453|         |         |         |
+clk              |    6.503|         |         |         |
 seg/ctr/M_ctr_q_2|    8.677|         |         |         |
 -----------------+---------+---------+---------+---------+
 
@@ -1188,7 +1181,7 @@ Clock to Setup on destination clock seg/ctr/M_ctr_q_2
                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------+---------+---------+---------+---------+
-clk              |    5.296|         |         |         |
+clk              |    5.346|         |         |         |
 seg/ctr/M_ctr_q_2|    6.876|         |         |         |
 -----------------+---------+---------+---------+---------+
 
@@ -1196,14 +1189,14 @@ seg/ctr/M_ctr_q_2|    6.876|         |         |         |
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.02 secs
+Total CPU time to Xst completion: 5.65 secs
  
 --> 
 
 
-Total memory usage is 411824 kilobytes
+Total memory usage is 411876 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   45 (   0 filtered)
+Number of warnings :   58 (   0 filtered)
 Number of infos    :   33 (   0 filtered)
 

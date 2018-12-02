@@ -60,7 +60,7 @@ module beta (
     level.en = level_en;
     level.data = alu.out;
     buttons_mux.buttons_sel = button_press;
-    levels_mux.levels_sel = level.out[4:3];  // only 2 bits wide because we have levels 0 to 3.
+    levels_mux.levels_sel = level.out[5:3];  // only 3 bits wide because we have levels 0 to 4.
     boardout = board.out;
     allon = alu.out[0];
     levelout = level.out;

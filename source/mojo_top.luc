@@ -186,62 +186,62 @@ module mojo_top (
     if (beta_game.boardout[0] == 0) {
       display.data[0][0] = beta_game.boardout[0];
     } else {
-      display.data[0][0] = beta_game.boardout[0]+beta_game.levelout[4:3];
+      display.data[0][0] = beta_game.boardout[0]+beta_game.levelout[5:3];
     }
     if (beta_game.boardout[1] == 0) {
       display.data[0][1] = beta_game.boardout[1];
     } else {
-      display.data[0][1] = beta_game.boardout[1]+beta_game.levelout[4:3];
+      display.data[0][1] = beta_game.boardout[1]+beta_game.levelout[5:3];
     }
     if (beta_game.boardout[2] == 0) {
       display.data[0][2] = beta_game.boardout[2];
     } else {
-      display.data[0][2] = beta_game.boardout[2]+beta_game.levelout[4:3];
+      display.data[0][2] = beta_game.boardout[2]+beta_game.levelout[5:3];
     }
     if (beta_game.boardout[3] == 0) {
       display.data[0][3] = beta_game.boardout[3];
     } else {
-      display.data[0][3] = beta_game.boardout[3]+beta_game.levelout[4:3];
+      display.data[0][3] = beta_game.boardout[3]+beta_game.levelout[5:3];
     }
     if (beta_game.boardout[4] == 0) {
       display.data[0][4] = beta_game.boardout[4];
     } else {
-      display.data[0][4] = beta_game.boardout[4]+beta_game.levelout[4:3];
+      display.data[0][4] = beta_game.boardout[4]+beta_game.levelout[5:3];
     }
     if (beta_game.boardout[5] == 0) {
       display.data[0][5] = beta_game.boardout[5];
     } else {
-      display.data[0][5] = beta_game.boardout[5]+beta_game.levelout[4:3];
+      display.data[0][5] = beta_game.boardout[5]+beta_game.levelout[5:3];
     }
     if (beta_game.boardout[6] == 0) {
       display_1.data[0][0] = beta_game.boardout[6];
     } else {
-      display_1.data[0][0] = beta_game.boardout[6]+beta_game.levelout[4:3];
+      display_1.data[0][0] = beta_game.boardout[6]+beta_game.levelout[5:3];
     }
     if (beta_game.boardout[7] == 0) {
       display_1.data[0][1] = beta_game.boardout[7];
     } else {
-      display_1.data[0][1] = beta_game.boardout[7]+beta_game.levelout[4:3];
+      display_1.data[0][1] = beta_game.boardout[7]+beta_game.levelout[5:3];
     }
     if (beta_game.boardout[8] == 0) {
       display_1.data[0][2] = beta_game.boardout[8];
     } else {
-      display_1.data[0][2] = beta_game.boardout[8]+beta_game.levelout[4:3];
+      display_1.data[0][2] = beta_game.boardout[8]+beta_game.levelout[5:3];
     }
     if (beta_game.boardout[9] == 0) {
       display_1.data[0][3] = beta_game.boardout[9];
     } else {
-      display_1.data[0][3] = beta_game.boardout[9]+beta_game.levelout[4:3];
+      display_1.data[0][3] = beta_game.boardout[9]+beta_game.levelout[5:3];
     }
     if (beta_game.boardout[10] == 0) {
       display_1.data[0][4] = beta_game.boardout[10];
     } else {
-      display_1.data[0][4] = beta_game.boardout[10]+beta_game.levelout[4:3];
+      display_1.data[0][4] = beta_game.boardout[10]+beta_game.levelout[5:3];
     }
     if (beta_game.boardout[11] == 0) {
       display_1.data[0][5] = beta_game.boardout[11];
     } else {
-      display_1.data[0][5] = beta_game.boardout[11]+beta_game.levelout[4:3];
+      display_1.data[0][5] = beta_game.boardout[11]+beta_game.levelout[5:3];
     }
     
     
@@ -297,7 +297,7 @@ module mojo_top (
     
     
     
-    
+    io_led[2] = beta_game.levelout;
     
     
     
@@ -307,7 +307,6 @@ module mojo_top (
         beta_game.board_sel = 1;
         beta_game.board_en = 1;
         beta_game.level_en = 0;
-        io_led[2][0] = 1;
         game_state.d = game_state.XOR;
       
       
@@ -318,8 +317,6 @@ module mojo_top (
         beta_game.alufn = b010110;
         beta_game.asel = 0;
         beta_game.bsel = 0;
-        io_led[2][1] = 1;
-        // rmb to change back 3 edge_detector
         beta_game.button_press = c{edge_detector6.out, edge_detector5.out, edge_detector4.out, edge_detector3.out, edge_detector2.out, edge_detector1.out, edge_detector0.out};
         if ( edge_detector0.out|edge_detector1.out|edge_detector2.out|edge_detector3.out|edge_detector4.out|edge_detector5.out|edge_detector6.out){
           game_state.d = game_state.CMPEQC;
@@ -331,7 +328,6 @@ module mojo_top (
         beta_game.alufn = b110011;
         beta_game.asel = 0;
         beta_game.bsel = 1;
-        io_led[2][2] = 1;
         if (beta_game.allon == 1) {
           game_state.d = game_state.ADDC;
         }
@@ -347,7 +343,6 @@ module mojo_top (
         beta_game.alufn = b000000;
         beta_game.bsel = 2;
         beta_game.asel = 1;
-        io_led[2][3] = 1;
         game_state.d = game_state.BLINK;
       
       
@@ -359,7 +354,6 @@ module mojo_top (
         display_1.init[0][0] = 0;display_1.init[0][1] = 0;display_1.init[0][2] = 0;display_1.init[0][3] = 0;display_1.init[0][4] = 0;display_1.init[0][5] = 0;
         display_1.mask[0][0] = 0;display_1.mask[0][1] = 0;display_1.mask[0][2] = 0;display_1.mask[0][3] = 0;display_1.mask[0][4] = 0;display_1.mask[0][5] = 0;
         led_strip = display.out; led_strip_1 = display_1.out;
-        
         
         if (blink.value[0] == 1) {
           display.data[0][0] = 1;

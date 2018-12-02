@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Sun Dec  2 23:08:09 2018">
+  <application stringID="par" timeStamp="Sun Dec  2 23:47:42 2018">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -89,7 +89,7 @@
         <column stringID="speed"/>
         <row stringID="row" value="0">
           <item stringID="arch" value="Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz"/>
-          <item stringID="speed" value="4503.351 MHz"/>
+          <item stringID="speed" value="4180.806 MHz"/>
         </row>
       </table>
     </section>
@@ -102,12 +102,12 @@
     </task>
     <task stringID="PAR_PAR">
       <section stringID="PAR_DESIGN_SUMMARY">
-        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="3 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="3 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="2 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="2 secs "/>
         <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
         <item dataType="float" stringID="PAR_TIMING_SCORE" value="0.000000"/>
-        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="3 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="3 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="2 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="2 secs "/>
       </section>
     </task>
     <task stringID="PAR_par">
@@ -126,17 +126,17 @@
             <item label="Routed" stringID="ROUTED" value="ROUTED"/>
             <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X2Y11"/>
             <item label="Locked" stringID="LOCKED" value="No"/>
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="28.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.044000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.437000"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="27.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.057000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.448000"/>
           </row>
           <row stringID="row" value="2">
             <item label="Clock Net" stringID="CLOCK_NET" value="M_ctr_q_2"/>
             <item label="Routed" stringID="ROUTED" value="ROUTED"/>
             <item label="Resource" stringID="RESOURCE" value="Local"/>
             <item dataType="float" label="Fanout" stringID="FANOUT" value="18.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="3.285000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="4.220000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="2.870000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="4.070000"/>
           </row>
         </table>
       </section>
@@ -1623,7 +1623,7 @@
     </task>
   </application>
 
-  <application stringID="Par" timeStamp="Sun Dec  2 23:08:09 2018">
+  <application stringID="Par" timeStamp="Sun Dec  2 23:47:42 2018">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -1707,7 +1707,7 @@
         <column stringID="speed"/>
         <row stringID="row" value="0">
           <item stringID="arch" value="Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz"/>
-          <item stringID="speed" value="4500.016 MHz"/>
+          <item stringID="speed" value="3767.688 MHz"/>
         </row>
       </table>
     </section>
@@ -1719,10 +1719,10 @@
           <item dataType="int" stringID="PAR_NUM_SLICE_LATCHTHRU" value="0"/>
           <item dataType="int" stringID="PAR_NUM_SLICE_LATCHLOGIC" value="0"/>
         </item>
-        <item AVAILABLE="5720" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="252">
+        <item AVAILABLE="5720" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="249">
           <item dataType="int" stringID="PAR_NUM_LOGIC_O5ONLY" value="60"/>
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O6ONLY" value="142"/>
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ANDO6" value="45"/>
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O6ONLY" value="141"/>
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ANDO6" value="43"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O5ONLY" value="0"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O6ONLY" value="0"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O5ANDO6" value="0"/>
@@ -1743,12 +1743,12 @@
           <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_OTHERS" value="0"/>
         </item>
         <item AVAILABLE="1430" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="88">
-          <item AVAILABLE="355" dataType="int" stringID="PAR_NUM_SLICEL" value="28"/>
+          <item AVAILABLE="355" dataType="int" stringID="PAR_NUM_SLICEL" value="29"/>
           <item AVAILABLE="360" dataType="int" stringID="PAR_NUM_SLICEM" value="0"/>
-          <item AVAILABLE="715" dataType="int" stringID="PAR_NUM_SLICEX" value="60"/>
+          <item AVAILABLE="715" dataType="int" stringID="PAR_NUM_SLICEX" value="59"/>
         </item>
-        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="255">
-          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="175"/>
+        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="252">
+          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="172"/>
           <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="3"/>
           <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="77"/>
         </item>

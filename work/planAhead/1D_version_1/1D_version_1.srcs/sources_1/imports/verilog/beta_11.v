@@ -22,7 +22,7 @@ module beta_11 (
   
   
   wire [16-1:0] M_levels_mux_out;
-  reg [2-1:0] M_levels_mux_levels_sel;
+  reg [3-1:0] M_levels_mux_levels_sel;
   levels_mux_32 levels_mux (
     .levels_sel(M_levels_mux_levels_sel),
     .out(M_levels_mux_out)
@@ -79,7 +79,7 @@ module beta_11 (
     M_level_en = level_en;
     M_level_data = M_alu_out;
     M_buttons_mux_buttons_sel = button_press;
-    M_levels_mux_levels_sel = M_level_out[3+1-:2];
+    M_levels_mux_levels_sel = M_level_out[3+2-:3];
     boardout = M_board_out;
     allon = M_alu_out[0+0-:1];
     levelout = M_level_out;
