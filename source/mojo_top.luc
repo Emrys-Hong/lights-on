@@ -182,18 +182,71 @@ module mojo_top (
     display_1.init[0][0] = 0;display_1.init[0][1] = 0;display_1.init[0][2] = 0;display_1.init[0][3] = 0;display_1.init[0][4] = 0;display_1.init[0][5] = 0;
     display_1.mask[0][0] = 0;display_1.mask[0][1] = 0;display_1.mask[0][2] = 0;display_1.mask[0][3] = 0;display_1.mask[0][4] = 0;display_1.mask[0][5] = 0;
     led_strip = display.out; led_strip_1 = display_1.out;
-    display.data[0][0] = beta_game.boardout[0];
-    display.data[0][1] = beta_game.boardout[1];
-    display.data[0][2] = beta_game.boardout[2];
-    display.data[0][3] = beta_game.boardout[3];
-    display.data[0][4] = beta_game.boardout[4];
-    display.data[0][5] = beta_game.boardout[5];
-    display_1.data[0][0] = beta_game.boardout[6];
-    display_1.data[0][1] = beta_game.boardout[7];
-    display_1.data[0][2] = beta_game.boardout[8];
-    display_1.data[0][3] = beta_game.boardout[9];
-    display_1.data[0][4] = beta_game.boardout[10];
-    display_1.data[0][5] = beta_game.boardout[11];
+    
+    if (beta_game.boardout[0] == 0) {
+      display.data[0][0] = beta_game.boardout[0];
+    } else {
+      display.data[0][0] = beta_game.boardout[0]+beta_game.levelout[4:3];
+    }
+    if (beta_game.boardout[1] == 0) {
+      display.data[0][1] = beta_game.boardout[1];
+    } else {
+      display.data[0][1] = beta_game.boardout[1]+beta_game.levelout[4:3];
+    }
+    if (beta_game.boardout[2] == 0) {
+      display.data[0][2] = beta_game.boardout[2];
+    } else {
+      display.data[0][2] = beta_game.boardout[2]+beta_game.levelout[4:3];
+    }
+    if (beta_game.boardout[3] == 0) {
+      display.data[0][3] = beta_game.boardout[3];
+    } else {
+      display.data[0][3] = beta_game.boardout[3]+beta_game.levelout[4:3];
+    }
+    if (beta_game.boardout[4] == 0) {
+      display.data[0][4] = beta_game.boardout[4];
+    } else {
+      display.data[0][4] = beta_game.boardout[4]+beta_game.levelout[4:3];
+    }
+    if (beta_game.boardout[5] == 0) {
+      display.data[0][5] = beta_game.boardout[5];
+    } else {
+      display.data[0][5] = beta_game.boardout[5]+beta_game.levelout[4:3];
+    }
+    if (beta_game.boardout[6] == 0) {
+      display_1.data[0][0] = beta_game.boardout[6];
+    } else {
+      display_1.data[0][0] = beta_game.boardout[6]+beta_game.levelout[4:3];
+    }
+    if (beta_game.boardout[7] == 0) {
+      display_1.data[0][1] = beta_game.boardout[7];
+    } else {
+      display_1.data[0][1] = beta_game.boardout[7]+beta_game.levelout[4:3];
+    }
+    if (beta_game.boardout[8] == 0) {
+      display_1.data[0][2] = beta_game.boardout[8];
+    } else {
+      display_1.data[0][2] = beta_game.boardout[8]+beta_game.levelout[4:3];
+    }
+    if (beta_game.boardout[9] == 0) {
+      display_1.data[0][3] = beta_game.boardout[9];
+    } else {
+      display_1.data[0][3] = beta_game.boardout[9]+beta_game.levelout[4:3];
+    }
+    if (beta_game.boardout[10] == 0) {
+      display_1.data[0][4] = beta_game.boardout[10];
+    } else {
+      display_1.data[0][4] = beta_game.boardout[10]+beta_game.levelout[4:3];
+    }
+    if (beta_game.boardout[11] == 0) {
+      display_1.data[0][5] = beta_game.boardout[11];
+    } else {
+      display_1.data[0][5] = beta_game.boardout[11]+beta_game.levelout[4:3];
+    }
+    
+    
+    
+  
     
     
     

@@ -149,6 +149,18 @@ INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_ve
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_3_OUT> created at line 295.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_5_OUT> created at line 300.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_7_OUT> created at line 305.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_9_OUT> created at line 310.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_11_OUT> created at line 315.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_13_OUT> created at line 320.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_15_OUT> created at line 325.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_17_OUT> created at line 330.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_19_OUT> created at line 335.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_21_OUT> created at line 340.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_23_OUT> created at line 345.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_25_OUT> created at line 350.
     Found 1-bit tristate buffer for signal <spi_miso> created at line 219
     Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 219
     Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 219
@@ -156,7 +168,8 @@ INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_ve
     Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 219
     Found 1-bit tristate buffer for signal <avr_rx> created at line 219
     Summary:
-	inferred   2 Multiplexer(s).
+	inferred  12 Adder/Subtractor(s).
+	inferred  26 Multiplexer(s).
 	inferred   6 Tristate(s).
 	inferred   1 Finite State Machine(s).
 Unit <mojo_top_0> synthesized.
@@ -453,7 +466,7 @@ Macro Statistics
  14x11-bit multiplier                                  : 2
  15x3-bit multiplier                                   : 2
  16x16-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 79
+# Adders/Subtractors                                   : 91
  11-bit subtractor                                     : 2
  14-bit adder                                          : 8
  15-bit adder                                          : 2
@@ -462,6 +475,7 @@ Macro Statistics
  17-bit adder                                          : 6
  18-bit adder                                          : 5
  19-bit adder                                          : 6
+ 2-bit adder                                           : 12
  20-bit adder                                          : 4
  21-bit adder                                          : 4
  22-bit adder                                          : 4
@@ -511,8 +525,8 @@ Macro Statistics
  31-bit comparator lessequal                           : 1
  32-bit comparator lessequal                           : 1
  6-bit comparator greater                              : 4
-# Multiplexers                                         : 583
- 1-bit 2-to-1 multiplexer                              : 558
+# Multiplexers                                         : 607
+ 1-bit 2-to-1 multiplexer                              : 582
  12-bit 2-to-1 multiplexer                             : 2
  14-bit 2-to-1 multiplexer                             : 6
  16-bit 2-to-1 multiplexer                             : 5
@@ -604,10 +618,11 @@ Macro Statistics
  15x3-to-6-bit MAC                                     : 2
 # Multipliers                                          : 1
  16x16-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 54
+# Adders/Subtractors                                   : 66
  14-bit adder                                          : 28
  16-bit adder carry in                                 : 16
  16-bit addsub                                         : 1
+ 2-bit adder                                           : 12
  4-bit adder                                           : 1
  5-bit adder                                           : 2
  5-bit subtractor                                      : 4
@@ -643,8 +658,8 @@ Macro Statistics
  31-bit comparator lessequal                           : 1
  32-bit comparator lessequal                           : 1
  6-bit comparator greater                              : 4
-# Multiplexers                                         : 582
- 1-bit 2-to-1 multiplexer                              : 558
+# Multiplexers                                         : 606
+ 1-bit 2-to-1 multiplexer                              : 582
  12-bit 2-to-1 multiplexer                             : 2
  14-bit 2-to-1 multiplexer                             : 6
  16-bit 2-to-1 multiplexer                             : 5
@@ -701,30 +716,18 @@ Optimizing unit <div_16u_16u> ...
 Optimizing unit <display_12> ...
 
 Optimizing unit <div_14u_11u> ...
-WARNING:Xst:1293 - FF/Latch <display/M_board_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_4> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_7> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_8> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_10> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_11> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_16> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_17> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_4> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_7> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_8> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_10> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_11> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <display_1/M_board_q_17> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_16> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_17> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_11> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_8> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_17> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_11> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_8> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <beta_game/board/M_regs_q_15> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
@@ -750,10 +753,11 @@ INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_17> in Unit <mojo_top_0> is equiva
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 14.
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 15.
 WARNING:Xst:2677 - Node <beta_game/alu/mul/Mmult_n0010> of sequential type is unconnected in block <mojo_top_0>.
 FlipFlop M_game_state_q_FSM_FFd2 has been replicated 2 time(s)
 FlipFlop M_game_state_q_FSM_FFd3 has been replicated 1 time(s)
+FlipFlop beta_game/level/M_regs_q_3 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -765,8 +769,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 87
- Flip-Flops                                            : 87
+# Registers                                            : 100
+ Flip-Flops                                            : 100
 
 =========================================================================
 
@@ -790,8 +794,8 @@ Clock Information:
 -----------------------------------+------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)        | Load  |
 -----------------------------------+------------------------------+-------+
-seg/ctr/M_ctr_q_2                  | NONE(M_game_state_q_FSM_FFd5)| 15    |
-clk                                | BUFGP                        | 74    |
+seg/ctr/M_ctr_q_2                  | NONE(M_game_state_q_FSM_FFd4)| 15    |
+clk                                | BUFGP                        | 87    |
 -----------------------------------+------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
@@ -805,7 +809,7 @@ Speed Grade: -2
 
    Minimum period: 6.876ns (Maximum Frequency: 145.444MHz)
    Minimum input arrival time before clock: 9.622ns
-   Maximum output required time after clock: 19.182ns
+   Maximum output required time after clock: 21.437ns
    Maximum combinational path delay: 4.921ns
 
 =========================================================================

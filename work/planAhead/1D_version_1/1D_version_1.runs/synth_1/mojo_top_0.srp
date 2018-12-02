@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.02 secs
+Total CPU time to Xst completion: 0.01 secs
  
 --> 
 Reading design: mojo_top_0.prj
@@ -197,6 +197,18 @@ INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_ve
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_3_OUT> created at line 295.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_5_OUT> created at line 300.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_7_OUT> created at line 305.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_9_OUT> created at line 310.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_11_OUT> created at line 315.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_13_OUT> created at line 320.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_15_OUT> created at line 325.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_17_OUT> created at line 330.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_19_OUT> created at line 335.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_21_OUT> created at line 340.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_23_OUT> created at line 345.
+    Found 2-bit adder for signal <GND_1_o_M_beta_game_levelout[4]_add_25_OUT> created at line 350.
     Found 1-bit tristate buffer for signal <spi_miso> created at line 219
     Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 219
     Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 219
@@ -204,7 +216,8 @@ INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_ve
     Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 219
     Found 1-bit tristate buffer for signal <avr_rx> created at line 219
     Summary:
-	inferred   2 Multiplexer(s).
+	inferred  12 Adder/Subtractor(s).
+	inferred  26 Multiplexer(s).
 	inferred   6 Tristate(s).
 	inferred   1 Finite State Machine(s).
 Unit <mojo_top_0> synthesized.
@@ -501,7 +514,7 @@ Macro Statistics
  14x11-bit multiplier                                  : 2
  15x3-bit multiplier                                   : 2
  16x16-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 79
+# Adders/Subtractors                                   : 91
  11-bit subtractor                                     : 2
  14-bit adder                                          : 8
  15-bit adder                                          : 2
@@ -510,6 +523,7 @@ Macro Statistics
  17-bit adder                                          : 6
  18-bit adder                                          : 5
  19-bit adder                                          : 6
+ 2-bit adder                                           : 12
  20-bit adder                                          : 4
  21-bit adder                                          : 4
  22-bit adder                                          : 4
@@ -559,8 +573,8 @@ Macro Statistics
  31-bit comparator lessequal                           : 1
  32-bit comparator lessequal                           : 1
  6-bit comparator greater                              : 4
-# Multiplexers                                         : 583
- 1-bit 2-to-1 multiplexer                              : 558
+# Multiplexers                                         : 607
+ 1-bit 2-to-1 multiplexer                              : 582
  12-bit 2-to-1 multiplexer                             : 2
  14-bit 2-to-1 multiplexer                             : 6
  16-bit 2-to-1 multiplexer                             : 5
@@ -652,10 +666,11 @@ Macro Statistics
  15x3-to-6-bit MAC                                     : 2
 # Multipliers                                          : 1
  16x16-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 54
+# Adders/Subtractors                                   : 66
  14-bit adder                                          : 28
  16-bit adder carry in                                 : 16
  16-bit addsub                                         : 1
+ 2-bit adder                                           : 12
  4-bit adder                                           : 1
  5-bit adder                                           : 2
  5-bit subtractor                                      : 4
@@ -691,8 +706,8 @@ Macro Statistics
  31-bit comparator lessequal                           : 1
  32-bit comparator lessequal                           : 1
  6-bit comparator greater                              : 4
-# Multiplexers                                         : 582
- 1-bit 2-to-1 multiplexer                              : 558
+# Multiplexers                                         : 606
+ 1-bit 2-to-1 multiplexer                              : 582
  12-bit 2-to-1 multiplexer                             : 2
  14-bit 2-to-1 multiplexer                             : 6
  16-bit 2-to-1 multiplexer                             : 5
@@ -749,30 +764,18 @@ Optimizing unit <div_16u_16u> ...
 Optimizing unit <display_12> ...
 
 Optimizing unit <div_14u_11u> ...
-WARNING:Xst:1293 - FF/Latch <display/M_board_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_4> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_7> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_8> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_10> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_11> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_16> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_17> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_4> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_7> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_8> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_10> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_11> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <display_1/M_board_q_17> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_16> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_17> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_11> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_8> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_17> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_11> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_8> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <beta_game/board/M_regs_q_15> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
@@ -798,10 +801,11 @@ INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_17> in Unit <mojo_top_0> is equiva
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 14.
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 15.
 WARNING:Xst:2677 - Node <beta_game/alu/mul/Mmult_n0010> of sequential type is unconnected in block <mojo_top_0>.
 FlipFlop M_game_state_q_FSM_FFd2 has been replicated 2 time(s)
 FlipFlop M_game_state_q_FSM_FFd3 has been replicated 1 time(s)
+FlipFlop beta_game/level/M_regs_q_3 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -813,8 +817,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 87
- Flip-Flops                                            : 87
+# Registers                                            : 100
+ Flip-Flops                                            : 100
 
 =========================================================================
 
@@ -837,23 +841,23 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 437
+# BELS                             : 466
 #      GND                         : 8
 #      INV                         : 5
 #      LUT1                        : 64
-#      LUT2                        : 25
-#      LUT3                        : 36
-#      LUT4                        : 22
-#      LUT5                        : 37
-#      LUT6                        : 71
+#      LUT2                        : 28
+#      LUT3                        : 28
+#      LUT4                        : 50
+#      LUT5                        : 35
+#      LUT6                        : 81
 #      MUXCY                       : 93
-#      MUXF7                       : 4
+#      MUXF7                       : 2
 #      VCC                         : 6
 #      XORCY                       : 66
-# FlipFlops/Latches                : 87
+# FlipFlops/Latches                : 100
 #      FD                          : 10
-#      FDR                         : 44
-#      FDRE                        : 28
+#      FDR                         : 56
+#      FDRE                        : 29
 #      FDS                         : 5
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
@@ -871,15 +875,15 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              87  out of  11440     0%  
- Number of Slice LUTs:                  260  out of   5720     4%  
-    Number used as Logic:               260  out of   5720     4%  
+ Number of Slice Registers:             100  out of  11440     0%  
+ Number of Slice LUTs:                  291  out of   5720     5%  
+    Number used as Logic:               291  out of   5720     5%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    314
-   Number with an unused Flip Flop:     227  out of    314    72%  
-   Number with an unused LUT:            54  out of    314    17%  
-   Number of fully used LUT-FF pairs:    33  out of    314    10%  
+ Number of LUT Flip Flop pairs used:    358
+   Number with an unused Flip Flop:     258  out of    358    72%  
+   Number with an unused LUT:            67  out of    358    18%  
+   Number of fully used LUT-FF pairs:    33  out of    358     9%  
    Number of unique control sets:        17
 
 IO Utilization: 
@@ -911,8 +915,8 @@ Clock Information:
 -----------------------------------+------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)        | Load  |
 -----------------------------------+------------------------------+-------+
-seg/ctr/M_ctr_q_2                  | NONE(M_game_state_q_FSM_FFd5)| 15    |
-clk                                | BUFGP                        | 74    |
+seg/ctr/M_ctr_q_2                  | NONE(M_game_state_q_FSM_FFd4)| 15    |
+clk                                | BUFGP                        | 87    |
 -----------------------------------+------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
@@ -926,7 +930,7 @@ Speed Grade: -2
 
    Minimum period: 6.876ns (Maximum Frequency: 145.444MHz)
    Minimum input arrival time before clock: 9.622ns
-   Maximum output required time after clock: 19.182ns
+   Maximum output required time after clock: 21.437ns
    Maximum combinational path delay: 4.921ns
 
 Timing Details:
@@ -975,26 +979,25 @@ Delay:               6.876ns (Levels of Logic = 16)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 6.272ns (frequency: 159.432MHz)
-  Total number of paths / destination ports: 2788 / 237
+  Clock period: 6.453ns (frequency: 154.959MHz)
+  Total number of paths / destination ports: 2865 / 263
 -------------------------------------------------------------------------
-Delay:               6.272ns (Levels of Logic = 14)
-  Source:            beta_game/level/M_regs_q_3 (FF)
+Delay:               6.453ns (Levels of Logic = 13)
+  Source:            beta_game/level/M_regs_q_4 (FF)
   Destination:       beta_game/board/M_regs_q_9 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: beta_game/level/M_regs_q_3 to beta_game/board/M_regs_q_9
+  Data Path: beta_game/level/M_regs_q_4 to beta_game/board/M_regs_q_9
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            19   0.525   1.261  M_regs_q_3 (M_regs_q_3)
-     end scope: 'beta_game/level:M_regs_q_3'
-     LUT3:I2->O            4   0.254   0.803  Mmux_M_alu_a101 (M_alu_a<3>)
-     begin scope: 'beta_game/alu:a<3>'
-     begin scope: 'beta_game/alu/add:a<3>'
-     MUXCY:DI->O           1   0.181   0.000  Maddsub_holder_cy<3> (Maddsub_holder_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<4> (Maddsub_holder_cy<4>)
+     FDRE:C->Q            31   0.525   1.503  M_regs_q_4 (M_regs_q_4)
+     end scope: 'beta_game/level:M_regs_q_4'
+     LUT3:I2->O            3   0.254   0.765  Mmux_M_alu_a111 (M_alu_a<4>)
+     begin scope: 'beta_game/alu:a<4>'
+     begin scope: 'beta_game/alu/add:a<4>'
+     MUXCY:DI->O           1   0.181   0.000  Maddsub_holder_cy<4> (Maddsub_holder_cy<4>)
      MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<5> (Maddsub_holder_cy<5>)
      MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<6> (Maddsub_holder_cy<6>)
      MUXCY:CI->O           1   0.023   0.000  Maddsub_holder_cy<7> (Maddsub_holder_cy<7>)
@@ -1008,8 +1011,8 @@ Delay:               6.272ns (Levels of Logic = 14)
      begin scope: 'beta_game/board:data<9>'
      FDRE:D                    0.074          M_regs_q_9
     ----------------------------------------
-    Total                      6.272ns (2.118ns logic, 4.154ns route)
-                                       (33.8% logic, 66.2% route)
+    Total                      6.453ns (2.095ns logic, 4.358ns route)
+                                       (32.5% logic, 67.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'seg/ctr/M_ctr_q_2'
@@ -1052,7 +1055,7 @@ Offset:              7.820ns (Levels of Logic = 17)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 2146 / 32
+  Total number of paths / destination ports: 2181 / 33
 -------------------------------------------------------------------------
 Offset:              9.622ns (Levels of Logic = 19)
   Source:            io_dip<16> (PAD)
@@ -1095,7 +1098,7 @@ Offset:              9.622ns (Levels of Logic = 19)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'seg/ctr/M_ctr_q_2'
   Total number of paths / destination ports: 4 / 4
 -------------------------------------------------------------------------
-Offset:              5.467ns (Levels of Logic = 1)
+Offset:              5.474ns (Levels of Logic = 1)
   Source:            M_game_state_q_FSM_FFd2 (FF)
   Destination:       io_led<19> (PAD)
   Source Clock:      seg/ctr/M_ctr_q_2 rising
@@ -1104,17 +1107,17 @@ Offset:              5.467ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              77   0.525   2.030  M_game_state_q_FSM_FFd2 (M_game_state_q_FSM_FFd2)
+     FD:C->Q              78   0.525   2.037  M_game_state_q_FSM_FFd2 (M_game_state_q_FSM_FFd2)
      OBUF:I->O                 2.912          io_led_19_OBUF (io_led<19>)
     ----------------------------------------
-    Total                      5.467ns (3.437ns logic, 2.030ns route)
-                                       (62.9% logic, 37.1% route)
+    Total                      5.474ns (3.437ns logic, 2.037ns route)
+                                       (62.8% logic, 37.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 2714 / 25
+  Total number of paths / destination ports: 4528 / 25
 -------------------------------------------------------------------------
-Offset:              19.182ns (Levels of Logic = 14)
+Offset:              21.437ns (Levels of Logic = 16)
   Source:            seg/ctr/M_ctr_q_10 (FF)
   Destination:       led_strip_1 (PAD)
   Source Clock:      clk rising
@@ -1132,19 +1135,21 @@ Offset:              19.182ns (Levels of Logic = 14)
      end scope: 'display/M_counter_q[13]_PWR_23_o_div_14:o<0>'
      end scope: 'display:M_counter_q[13]_PWR_23_o_div_14_OUT<0>'
      begin scope: 'display_1:M_counter_q[13]_PWR_23_o_div_14_OUT<0>'
-     DSP48A1:B0->P0        9   5.145   1.084  Maddsub_GND_22_o_GND_22_o_MuLt_2_OUT (n0038<0>1)
-     LUT2:I0->O            2   0.250   0.954  Sh10011 (Sh1001)
-     LUT6:I3->O            1   0.235   0.000  Mmux_n003933_G (N62)
-     MUXF7:I1->O           2   0.175   0.834  Mmux_n003933 (Mmux_n003932)
-     LUT3:I1->O            3   0.250   1.196  Mmux_n003934 (n0039<17>)
+     DSP48A1:B0->P0       11   5.145   1.267  Maddsub_GND_22_o_GND_22_o_MuLt_2_OUT (n0038<0>1)
+     LUT3:I0->O            2   0.235   0.834  Sh9011 (Sh901)
+     LUT6:I4->O            2   0.250   1.002  Mmux_n003933 (Mmux_n003932)
+     LUT6:I2->O            1   0.254   0.000  Mmux_n003934_G (N64)
+     MUXF7:I1->O           1   0.175   0.682  Mmux_n003934 (Mmux_n003933)
+     LUT6:I5->O            2   0.254   0.834  Mmux_n003935 (Mmux_n003934)
+     LUT2:I0->O            3   0.250   1.196  Mmux_n003936 (n0039<17>)
      LUT6:I1->O            1   0.254   0.910  Sh465_SW3 (N11)
      LUT6:I3->O            1   0.235   0.910  Sh465 (Sh465)
      LUT6:I3->O            1   0.235   0.681  Mmux_out1 (out<0>)
      end scope: 'display_1:out<0>'
      OBUF:I->O                 2.912          led_strip_1_OBUF (led_strip_1)
     ----------------------------------------
-    Total                     19.182ns (10.470ns logic, 8.712ns route)
-                                       (54.6% logic, 45.4% route)
+    Total                     21.437ns (10.978ns logic, 10.459ns route)
+                                       (51.2% logic, 48.8% route)
 
 =========================================================================
 Timing constraint: Default path analysis
@@ -1174,7 +1179,7 @@ Clock to Setup on destination clock clk
                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------+---------+---------+---------+---------+
-clk              |    6.272|         |         |         |
+clk              |    6.453|         |         |         |
 seg/ctr/M_ctr_q_2|    8.677|         |         |         |
 -----------------+---------+---------+---------+---------+
 
@@ -1183,7 +1188,7 @@ Clock to Setup on destination clock seg/ctr/M_ctr_q_2
                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------+---------+---------+---------+---------+
-clk              |    5.208|         |         |         |
+clk              |    5.296|         |         |         |
 seg/ctr/M_ctr_q_2|    6.876|         |         |         |
 -----------------+---------+---------+---------+---------+
 
@@ -1191,14 +1196,14 @@ seg/ctr/M_ctr_q_2|    6.876|         |         |         |
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.21 secs
+Total CPU time to Xst completion: 6.02 secs
  
 --> 
 
 
-Total memory usage is 411580 kilobytes
+Total memory usage is 411824 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   57 (   0 filtered)
+Number of warnings :   45 (   0 filtered)
 Number of infos    :   33 (   0 filtered)
 
