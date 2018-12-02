@@ -4,25 +4,20 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module mul_40 (
-    input [7:0] io_dip,
-    input [15:0] a,
-    input [15:0] b,
-    output reg [15:0] out
+/*
+   Parameters:
+     WIDTH = DIGIT_BITS
+*/
+module decoder_17 (
+    input [1:0] in,
+    output reg [3:0] out
   );
   
+  localparam WIDTH = 2'h2;
   
   
   always @* begin
     out = 1'h0;
-    
-    case (io_dip[0+1-:2])
-      2'h2: begin
-        out = a * b;
-      end
-      2'h3: begin
-        out = a / b;
-      end
-    endcase
+    out[(in)*1+0-:1] = 1'h1;
   end
 endmodule

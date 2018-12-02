@@ -4,28 +4,27 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module levels_mux_24 (
-    input [1:0] levels_sel,
+module sft_26 (
+    input [7:0] io_dip,
+    input [15:0] a,
+    input [15:0] b,
     output reg [15:0] out
   );
   
   
   
   always @* begin
-    out = 16'h0000;
+    out = 1'h0;
     
-    case (levels_sel)
+    case (io_dip[0+1-:2])
       1'h0: begin
-        out = 16'h003f;
+        out = a << b[0+3-:4];
       end
       1'h1: begin
-        out = 16'h074c;
-      end
-      2'h2: begin
-        out = 16'h0c94;
+        out = a >> b[0+3-:4];
       end
       2'h3: begin
-        out = 16'h090e;
+        out = $signed(a) >>> b[0+3-:4];
       end
     endcase
   end

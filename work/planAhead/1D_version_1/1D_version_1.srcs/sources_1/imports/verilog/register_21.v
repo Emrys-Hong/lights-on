@@ -8,7 +8,7 @@
    Parameters:
      WIDTH = 16
 */
-module register_27 (
+module register_21 (
     input clk,
     input en,
     input rst,

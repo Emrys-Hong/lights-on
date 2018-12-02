@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sat Dec 01 17:58:57 2018
+// Written by: Map P.20131013 on Sun Dec 02 22:13:28 2018
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -60,10 +60,10 @@ COMP "io_dip(13)" LOCATE = SITE "P101" LEVEL 1;
 COMP "io_dip(14)" LOCATE = SITE "P100" LEVEL 1;
 COMP "io_dip(15)" LOCATE = SITE "P99" LEVEL 1;
 COMP "io_dip(23)" LOCATE = SITE "P57" LEVEL 1;
-COMP "io_dip(16)" LOCATE = SITE "P79" LEVEL 1;
 COMP "io_dip[20]" LOCATE = SITE "P67" LEVEL 1;
 COMP "io_dip[21]" LOCATE = SITE "P66" LEVEL 1;
 COMP "io_dip[22]" LOCATE = SITE "P58" LEVEL 1;
+COMP "io_dip[16]" LOCATE = SITE "P79" LEVEL 1;
 COMP "io_dip[17]" LOCATE = SITE "P78" LEVEL 1;
 COMP "io_dip[18]" LOCATE = SITE "P75" LEVEL 1;
 COMP "io_dip[19]" LOCATE = SITE "P74" LEVEL 1;
@@ -104,7 +104,10 @@ TIMEGRP clk = BEL "beta_game/level/M_regs_q_15" BEL
         "display_1/Maddsub_n0047_pins<92>" BEL "display_1/M_board_q_15" BEL
         "display_1/M_board_q_12" BEL "display_1/M_board_q_9" BEL
         "display_1/M_board_q_6" BEL "display_1/M_board_q_3" BEL
-        "display_1/M_board_q_0" PIN "display/Maddsub_n0047_pins<92>" BEL
+        "display_1/M_board_q_0" BEL "blink/M_ctr_q_18" BEL "blink/M_ctr_q_19"
+        BEL "blink/M_ctr_q_20" BEL "blink/M_ctr_q_21" BEL "blink/M_ctr_q_22"
+        BEL "blink/M_ctr_q_23" BEL "blink/M_ctr_q_24" BEL "blink/M_ctr_q_25"
+        BEL "blink/M_ctr_q_26" PIN "display/Maddsub_n0047_pins<92>" BEL
         "display/M_board_q_15" BEL "display/M_board_q_12" BEL
         "display/M_board_q_9" BEL "display/M_board_q_6" BEL
         "display/M_board_q_3" BEL "display/M_board_q_0" BEL

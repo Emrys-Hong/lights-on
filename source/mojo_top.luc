@@ -3,7 +3,7 @@ module mojo_top (
     input rst_n,            // reset button (active low)
     output led [8],         // 8 user controllable LEDs
     output spi_miso,        // AVR SPI MISO
-    output spi_channel [4], // AVR general purpose pins (used by default to select ADC channel) 
+    output spi_channel [4], // AVR general purpose pins (used by default to select ADC channel)
     output avr_rx,          // AVR RX (FPGA)
     
     
@@ -55,7 +55,7 @@ module mojo_top (
   
   
   
-
+  
   
   
   
@@ -67,10 +67,9 @@ module mojo_top (
       multi_seven_seg seg;
       counter slowclk(#SIZE(1),#DIV(2));
       beta beta_game;
-      //ws2812_man ws2812_man;
-      //ws2812_man ws2812_man_1;
       display display;
       display display_1;
+      counter blink(#SIZE(3),#DIV(24));                                                      // blinker
     }
   }
   
@@ -84,13 +83,13 @@ module mojo_top (
     edge_detector edge_detector4(#RISE(1), #FALL(0));
     edge_detector edge_detector5(#RISE(1), #FALL(0));
     edge_detector edge_detector6(#RISE(1), #FALL(0));
-    button_conditioner conditioner0;
-    button_conditioner conditioner1;
-    button_conditioner conditioner2;
-    button_conditioner conditioner3;
-    button_conditioner conditioner4;
-    button_conditioner conditioner5;
-    button_conditioner conditioner6;
+    //button_conditioner conditioner0;
+    //button_conditioner conditioner1;
+    //button_conditioner conditioner2;
+    //button_conditioner conditioner3;
+    //button_conditioner conditioner4;
+    //button_conditioner conditioner5;
+    //button_conditioner conditioner6;
     
     
     
@@ -105,7 +104,7 @@ module mojo_top (
     
     
     .rst(rst) {
-      fsm game_state = {BEGIN, XOR, CMPEQC, ADDC};
+      fsm game_state = {BEGIN, XOR, CMPEQC, ADDC, BLINK};
     }
   }
   
@@ -133,7 +132,6 @@ module mojo_top (
     io_led[2:0] = 3x{{8h00}};   // connect the DIP switches to the LEDs    driver
     
     
-
     
     
     
@@ -147,20 +145,28 @@ module mojo_top (
     
     
     
-    conditioner0.in = io_dip[2][0];
-    edge_detector0.in = conditioner0.out;
-    conditioner1.in = io_dip[2][1];
-    edge_detector1.in = conditioner1.out;
-    conditioner2.in = io_dip[2][2];
-    edge_detector2.in = conditioner2.out;
-    conditioner3.in = io_dip[2][3];
-    edge_detector3.in = conditioner3.out; 
-    conditioner4.in = io_dip[2][4];
-    edge_detector4.in = conditioner4.out;
-    conditioner5.in = io_dip[2][5];
-    edge_detector5.in = conditioner5.out;
-    conditioner6.in = io_dip[2][6];
-    edge_detector6.in = conditioner6.out;
+    
+    //conditioner0.in = io_dip[2][0];
+    //edge_detector0.in = conditioner0.out;
+    //conditioner1.in = io_dip[2][1];
+    //edge_detector1.in = conditioner1.out;
+    //conditioner2.in = io_dip[2][2];
+    //edge_detector2.in = conditioner2.out;
+    //conditioner3.in = io_dip[2][3];
+    //edge_detector3.in = conditioner3.out;
+    //conditioner4.in = io_dip[2][4];
+    //edge_detector4.in = conditioner4.out;
+    //conditioner5.in = io_dip[2][5];
+    //edge_detector5.in = conditioner5.out;
+    //conditioner6.in = io_dip[2][6];
+    //edge_detector6.in = conditioner6.out;
+    edge_detector0.in = io_dip[2][0];
+    edge_detector1.in = io_dip[2][1];
+    edge_detector2.in = io_dip[2][2];
+    edge_detector3.in = io_dip[2][3];
+    edge_detector4.in = io_dip[2][4];
+    edge_detector5.in = io_dip[2][5];
+    edge_detector6.in = io_dip[2][6];
     io_led[0][0] = beta_game.boardout[0];
     io_led[0][1] = beta_game.boardout[1];
     io_led[0][2] = beta_game.boardout[2];
@@ -174,7 +180,6 @@ module mojo_top (
     io_led[1][4] = beta_game.boardout[10];
     io_led[1][5] = beta_game.boardout[11];
     
-
     
     
     
@@ -188,6 +193,7 @@ module mojo_top (
     
     
     
+    // LED CONNECTION
     display.init[0][0] = 0;display.init[0][1] = 0;display.init[0][2] = 0;display.init[0][3] = 0;display.init[0][4] = 0;display.init[0][5] = 0;
     display.mask[0][0] = 0;display.mask[0][1] = 0;display.mask[0][2] = 0;display.mask[0][3] = 0;display.mask[0][4] = 0;display.mask[0][5] = 0;
     display.data[0][0] = beta_game.boardout[0];
@@ -216,7 +222,7 @@ module mojo_top (
     
     
     
-
+    
     
     
     
@@ -244,11 +250,11 @@ module mojo_top (
     beta_game.alufn = 0;
     beta_game.button_press = c{edge_detector6.out, edge_detector5.out, edge_detector4.out, edge_detector3.out, edge_detector2.out, edge_detector1.out, edge_detector0.out};
     
-
     
     
     
- 
+    
+    
     
     
     
@@ -268,8 +274,8 @@ module mojo_top (
         beta_game.level_en = 0;
         io_led[2][0] = 1;
         game_state.d = game_state.XOR;
-        
-        
+      
+      
       game_state.XOR:
         beta_game.board_sel = 0;
         beta_game.board_en = 1;
@@ -297,7 +303,7 @@ module mojo_top (
         else if (beta_game.allon == 0) {
           game_state.d = game_state.XOR;
         }
-        
+      
       
       game_state.ADDC:
         beta_game.board_sel = 1;
@@ -307,8 +313,38 @@ module mojo_top (
         beta_game.bsel = 2;
         beta_game.asel = 1;
         io_led[2][3] = 1;
-        game_state.d = game_state.BEGIN;
+        game_state.d = game_state.BLINK;
+      
+      
+      
+      
+      game_state.BLINK:
+        display.init[0][0] = 0;display.init[0][1] = 0;display.init[0][2] = 0;display.init[0][3] = 0;display.init[0][4] = 0;display.init[0][5] = 0;
+        display.mask[0][0] = 0;display.mask[0][1] = 0;display.mask[0][2] = 0;display.mask[0][3] = 0;display.mask[0][4] = 0;display.mask[0][5] = 0;
+        display_1.init[0][0] = 0;display_1.init[0][1] = 0;display_1.init[0][2] = 0;display_1.init[0][3] = 0;display_1.init[0][4] = 0;display_1.init[0][5] = 0;
+        display_1.mask[0][0] = 0;display_1.mask[0][1] = 0;display_1.mask[0][2] = 0;display_1.mask[0][3] = 0;display_1.mask[0][4] = 0;display_1.mask[0][5] = 0;
+        led_strip = display.out; led_strip_1 = display_1.out;
         
+        
+        if (blink.value[0] == 1) {
+          display.data[0][0] = beta_game.boardout[0];
+          display.data[0][1] = beta_game.boardout[1];
+          display.data[0][2] = beta_game.boardout[2];
+          display.data[0][3] = beta_game.boardout[3];
+          display.data[0][4] = beta_game.boardout[4];
+          display.data[0][5] = beta_game.boardout[5];
+          display_1.data[0][0] = beta_game.boardout[6];
+          display_1.data[0][1] = beta_game.boardout[7];
+          display_1.data[0][2] = beta_game.boardout[8];
+          display_1.data[0][3] = beta_game.boardout[9];
+          display_1.data[0][4] = beta_game.boardout[10];
+          display_1.data[0][5] = beta_game.boardout[11];
+        }
+        
+        if (blink.value == 7) {
+          game_state.d = game_state.BEGIN;
+        }
+      
     }
   }
 }
