@@ -1,7 +1,7 @@
 module display #(ROW=1, COL=6)(
     input clk,  // clock
     input rst,  // reset
-    input data[ROW][COL][2], // (row, col, led_state)
+    input data[ROW][COL][3], // (row, col, led_state)
     input mask[ROW][COL][1],
     input init[ROW][COL][2],
     output out[ROW]

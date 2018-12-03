@@ -129,7 +129,7 @@ module mojo_top_0 (
     .levelout(M_beta_game_levelout)
   );
   wire [1-1:0] M_display_out;
-  reg [12-1:0] M_display_data;
+  reg [18-1:0] M_display_data;
   reg [6-1:0] M_display_mask;
   reg [12-1:0] M_display_init;
   display_12 display (
@@ -141,7 +141,7 @@ module mojo_top_0 (
     .out(M_display_out)
   );
   wire [1-1:0] M_display_1_out;
-  reg [12-1:0] M_display_1_data;
+  reg [18-1:0] M_display_1_data;
   reg [6-1:0] M_display_1_mask;
   reg [12-1:0] M_display_1_init;
   display_12 display_1 (
@@ -290,64 +290,64 @@ module mojo_top_0 (
     led_strip = M_display_out;
     led_strip_1 = M_display_1_out;
     if (M_beta_game_boardout[0+0-:1] == 1'h0) begin
-      M_display_data[0+0+1-:2] = M_beta_game_boardout[0+0-:1];
+      M_display_data[0+0+2-:3] = M_beta_game_boardout[0+0-:1];
     end else begin
-      M_display_data[0+0+1-:2] = M_beta_game_boardout[0+0-:1] + M_beta_game_levelout[3+2-:3];
+      M_display_data[0+0+2-:3] = M_beta_game_boardout[0+0-:1] + M_beta_game_levelout[3+2-:3];
     end
     if (M_beta_game_boardout[1+0-:1] == 1'h0) begin
-      M_display_data[0+2+1-:2] = M_beta_game_boardout[1+0-:1];
+      M_display_data[0+3+2-:3] = M_beta_game_boardout[1+0-:1];
     end else begin
-      M_display_data[0+2+1-:2] = M_beta_game_boardout[1+0-:1] + M_beta_game_levelout[3+2-:3];
+      M_display_data[0+3+2-:3] = M_beta_game_boardout[1+0-:1] + M_beta_game_levelout[3+2-:3];
     end
     if (M_beta_game_boardout[2+0-:1] == 1'h0) begin
-      M_display_data[0+4+1-:2] = M_beta_game_boardout[2+0-:1];
+      M_display_data[0+6+2-:3] = M_beta_game_boardout[2+0-:1];
     end else begin
-      M_display_data[0+4+1-:2] = M_beta_game_boardout[2+0-:1] + M_beta_game_levelout[3+2-:3];
+      M_display_data[0+6+2-:3] = M_beta_game_boardout[2+0-:1] + M_beta_game_levelout[3+2-:3];
     end
     if (M_beta_game_boardout[3+0-:1] == 1'h0) begin
-      M_display_data[0+6+1-:2] = M_beta_game_boardout[3+0-:1];
+      M_display_data[0+9+2-:3] = M_beta_game_boardout[3+0-:1];
     end else begin
-      M_display_data[0+6+1-:2] = M_beta_game_boardout[3+0-:1] + M_beta_game_levelout[3+2-:3];
+      M_display_data[0+9+2-:3] = M_beta_game_boardout[3+0-:1] + M_beta_game_levelout[3+2-:3];
     end
     if (M_beta_game_boardout[4+0-:1] == 1'h0) begin
-      M_display_data[0+8+1-:2] = M_beta_game_boardout[4+0-:1];
+      M_display_data[0+12+2-:3] = M_beta_game_boardout[4+0-:1];
     end else begin
-      M_display_data[0+8+1-:2] = M_beta_game_boardout[4+0-:1] + M_beta_game_levelout[3+2-:3];
+      M_display_data[0+12+2-:3] = M_beta_game_boardout[4+0-:1] + M_beta_game_levelout[3+2-:3];
     end
     if (M_beta_game_boardout[5+0-:1] == 1'h0) begin
-      M_display_data[0+10+1-:2] = M_beta_game_boardout[5+0-:1];
+      M_display_data[0+15+2-:3] = M_beta_game_boardout[5+0-:1];
     end else begin
-      M_display_data[0+10+1-:2] = M_beta_game_boardout[5+0-:1] + M_beta_game_levelout[3+2-:3];
+      M_display_data[0+15+2-:3] = M_beta_game_boardout[5+0-:1] + M_beta_game_levelout[3+2-:3];
     end
     if (M_beta_game_boardout[6+0-:1] == 1'h0) begin
-      M_display_1_data[0+0+1-:2] = M_beta_game_boardout[6+0-:1];
+      M_display_1_data[0+0+2-:3] = M_beta_game_boardout[6+0-:1];
     end else begin
-      M_display_1_data[0+0+1-:2] = M_beta_game_boardout[6+0-:1] + M_beta_game_levelout[3+2-:3];
+      M_display_1_data[0+0+2-:3] = M_beta_game_boardout[6+0-:1] + M_beta_game_levelout[3+2-:3];
     end
     if (M_beta_game_boardout[7+0-:1] == 1'h0) begin
-      M_display_1_data[0+2+1-:2] = M_beta_game_boardout[7+0-:1];
+      M_display_1_data[0+3+2-:3] = M_beta_game_boardout[7+0-:1];
     end else begin
-      M_display_1_data[0+2+1-:2] = M_beta_game_boardout[7+0-:1] + M_beta_game_levelout[3+2-:3];
+      M_display_1_data[0+3+2-:3] = M_beta_game_boardout[7+0-:1] + M_beta_game_levelout[3+2-:3];
     end
     if (M_beta_game_boardout[8+0-:1] == 1'h0) begin
-      M_display_1_data[0+4+1-:2] = M_beta_game_boardout[8+0-:1];
+      M_display_1_data[0+6+2-:3] = M_beta_game_boardout[8+0-:1];
     end else begin
-      M_display_1_data[0+4+1-:2] = M_beta_game_boardout[8+0-:1] + M_beta_game_levelout[3+2-:3];
+      M_display_1_data[0+6+2-:3] = M_beta_game_boardout[8+0-:1] + M_beta_game_levelout[3+2-:3];
     end
     if (M_beta_game_boardout[9+0-:1] == 1'h0) begin
-      M_display_1_data[0+6+1-:2] = M_beta_game_boardout[9+0-:1];
+      M_display_1_data[0+9+2-:3] = M_beta_game_boardout[9+0-:1];
     end else begin
-      M_display_1_data[0+6+1-:2] = M_beta_game_boardout[9+0-:1] + M_beta_game_levelout[3+2-:3];
+      M_display_1_data[0+9+2-:3] = M_beta_game_boardout[9+0-:1] + M_beta_game_levelout[3+2-:3];
     end
     if (M_beta_game_boardout[10+0-:1] == 1'h0) begin
-      M_display_1_data[0+8+1-:2] = M_beta_game_boardout[10+0-:1];
+      M_display_1_data[0+12+2-:3] = M_beta_game_boardout[10+0-:1];
     end else begin
-      M_display_1_data[0+8+1-:2] = M_beta_game_boardout[10+0-:1] + M_beta_game_levelout[3+2-:3];
+      M_display_1_data[0+12+2-:3] = M_beta_game_boardout[10+0-:1] + M_beta_game_levelout[3+2-:3];
     end
     if (M_beta_game_boardout[11+0-:1] == 1'h0) begin
-      M_display_1_data[0+10+1-:2] = M_beta_game_boardout[11+0-:1];
+      M_display_1_data[0+15+2-:3] = M_beta_game_boardout[11+0-:1];
     end else begin
-      M_display_1_data[0+10+1-:2] = M_beta_game_boardout[11+0-:1] + M_beta_game_levelout[3+2-:3];
+      M_display_1_data[0+15+2-:3] = M_beta_game_boardout[11+0-:1] + M_beta_game_levelout[3+2-:3];
     end
     M_beta_game_board_en = 1'h0;
     M_beta_game_board_sel = 1'h0;
@@ -428,31 +428,31 @@ module mojo_top_0 (
         led_strip = M_display_out;
         led_strip_1 = M_display_1_out;
         if (M_blink_value[0+0-:1] == 1'h1) begin
-          M_display_data[0+0+1-:2] = 1'h1;
-          M_display_data[0+2+1-:2] = 1'h1;
-          M_display_data[0+4+1-:2] = 1'h1;
-          M_display_data[0+6+1-:2] = 1'h1;
-          M_display_data[0+8+1-:2] = 1'h1;
-          M_display_data[0+10+1-:2] = 1'h1;
-          M_display_1_data[0+0+1-:2] = 1'h1;
-          M_display_1_data[0+2+1-:2] = 1'h1;
-          M_display_1_data[0+4+1-:2] = 1'h1;
-          M_display_1_data[0+6+1-:2] = 1'h1;
-          M_display_1_data[0+8+1-:2] = 1'h1;
-          M_display_1_data[0+10+1-:2] = 1'h1;
+          M_display_data[0+0+2-:3] = 1'h1;
+          M_display_data[0+3+2-:3] = 1'h1;
+          M_display_data[0+6+2-:3] = 1'h1;
+          M_display_data[0+9+2-:3] = 1'h1;
+          M_display_data[0+12+2-:3] = 1'h1;
+          M_display_data[0+15+2-:3] = 1'h1;
+          M_display_1_data[0+0+2-:3] = 1'h1;
+          M_display_1_data[0+3+2-:3] = 1'h1;
+          M_display_1_data[0+6+2-:3] = 1'h1;
+          M_display_1_data[0+9+2-:3] = 1'h1;
+          M_display_1_data[0+12+2-:3] = 1'h1;
+          M_display_1_data[0+15+2-:3] = 1'h1;
         end else begin
-          M_display_data[0+0+1-:2] = 1'h0;
-          M_display_data[0+2+1-:2] = 1'h0;
-          M_display_data[0+4+1-:2] = 1'h0;
-          M_display_data[0+6+1-:2] = 1'h0;
-          M_display_data[0+8+1-:2] = 1'h0;
-          M_display_data[0+10+1-:2] = 1'h0;
-          M_display_1_data[0+0+1-:2] = 1'h0;
-          M_display_1_data[0+2+1-:2] = 1'h0;
-          M_display_1_data[0+4+1-:2] = 1'h0;
-          M_display_1_data[0+6+1-:2] = 1'h0;
-          M_display_1_data[0+8+1-:2] = 1'h0;
-          M_display_1_data[0+10+1-:2] = 1'h0;
+          M_display_data[0+0+2-:3] = 1'h0;
+          M_display_data[0+3+2-:3] = 1'h0;
+          M_display_data[0+6+2-:3] = 1'h0;
+          M_display_data[0+9+2-:3] = 1'h0;
+          M_display_data[0+12+2-:3] = 1'h0;
+          M_display_data[0+15+2-:3] = 1'h0;
+          M_display_1_data[0+0+2-:3] = 1'h0;
+          M_display_1_data[0+3+2-:3] = 1'h0;
+          M_display_1_data[0+6+2-:3] = 1'h0;
+          M_display_1_data[0+9+2-:3] = 1'h0;
+          M_display_1_data[0+12+2-:3] = 1'h0;
+          M_display_1_data[0+15+2-:3] = 1'h0;
         end
         if (M_blink_value == 4'hf) begin
           M_game_state_d = BEGIN_game_state;

@@ -12,7 +12,7 @@
 module display_12 (
     input clk,
     input rst,
-    input [11:0] data,
+    input [17:0] data,
     input [5:0] mask,
     input [11:0] init,
     output reg [0:0] out
@@ -74,7 +74,7 @@ module display_12 (
     out = 8'h00;
     for (r = 1'h0; r < 1'h1; r = r + 1) begin
       for (c = 1'h0; c < 3'h6; c = c + 1) begin
-        M_board_d[(r)*18+(c)*3+2-:3] = {mask[(r)*6+(c)*1+0+0-:1], data[(r)*12+(c)*2+1-:2]};
+        M_board_d[(r)*18+(c)*3+2-:3] = {mask[(r)*6+(c)*1+0+0-:1], data[(r)*18+(c)*3+2-:3]};
       end
     end
     for (r = 1'h0; r < 1'h1; r = r + 1) begin
@@ -134,18 +134,18 @@ module display_12 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_counter_q <= 1'h0;
+      M_board_q <= 1'h0;
     end else begin
-      M_counter_q <= M_counter_d;
+      M_board_q <= M_board_d;
     end
   end
   
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_board_q <= 1'h0;
+      M_counter_q <= 1'h0;
     end else begin
-      M_board_q <= M_board_d;
+      M_counter_q <= M_counter_d;
     end
   end
   

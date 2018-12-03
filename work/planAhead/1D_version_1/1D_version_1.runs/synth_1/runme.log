@@ -98,23 +98,12 @@ Elaborating module <buttons_mux_34>.
 Elaborating module <register_35>.
 
 Elaborating module <display_12>.
+WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/display_12.v" Line 77: Result of 4-bit expression is truncated to fit in 3-bit target.
 WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/display_12.v" Line 120: Result of 14-bit expression is truncated to fit in 11-bit target.
 
 Elaborating module <counter_14>.
 
 Elaborating module <edge_detector_15>.
-WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 295: Result of 3-bit expression is truncated to fit in 2-bit target.
-WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 300: Result of 3-bit expression is truncated to fit in 2-bit target.
-WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 305: Result of 3-bit expression is truncated to fit in 2-bit target.
-WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 310: Result of 3-bit expression is truncated to fit in 2-bit target.
-WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 315: Result of 3-bit expression is truncated to fit in 2-bit target.
-WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 320: Result of 3-bit expression is truncated to fit in 2-bit target.
-WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 325: Result of 3-bit expression is truncated to fit in 2-bit target.
-WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 330: Result of 3-bit expression is truncated to fit in 2-bit target.
-WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 335: Result of 3-bit expression is truncated to fit in 2-bit target.
-WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 340: Result of 3-bit expression is truncated to fit in 2-bit target.
-WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 345: Result of 3-bit expression is truncated to fit in 2-bit target.
-WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 350: Result of 3-bit expression is truncated to fit in 2-bit target.
 WARNING:HDLCompiler:413 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 359: Result of 16-bit expression is truncated to fit in 8-bit target.
 WARNING:Xst:2972 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" line 44. All outputs of instance <conditioner0> of block <button_conditioner_2> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
 WARNING:Xst:2972 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/mojo_top_0.v" line 51. All outputs of instance <conditioner1> of block <button_conditioner_2> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
@@ -162,18 +151,18 @@ INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_ve
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 3-bit adder for signal <n0133> created at line 295.
-    Found 3-bit adder for signal <n0134> created at line 300.
-    Found 3-bit adder for signal <n0135> created at line 305.
-    Found 3-bit adder for signal <n0136> created at line 310.
-    Found 3-bit adder for signal <n0137> created at line 315.
-    Found 3-bit adder for signal <n0138> created at line 320.
-    Found 3-bit adder for signal <n0139> created at line 325.
-    Found 3-bit adder for signal <n0140> created at line 330.
-    Found 3-bit adder for signal <n0141> created at line 335.
-    Found 3-bit adder for signal <n0142> created at line 340.
-    Found 3-bit adder for signal <n0143> created at line 345.
-    Found 3-bit adder for signal <n0144> created at line 350.
+    Found 3-bit adder for signal <GND_1_o_M_beta_game_levelout[5]_add_3_OUT> created at line 295.
+    Found 3-bit adder for signal <GND_1_o_M_beta_game_levelout[5]_add_5_OUT> created at line 300.
+    Found 3-bit adder for signal <GND_1_o_M_beta_game_levelout[5]_add_7_OUT> created at line 305.
+    Found 3-bit adder for signal <GND_1_o_M_beta_game_levelout[5]_add_9_OUT> created at line 310.
+    Found 3-bit adder for signal <GND_1_o_M_beta_game_levelout[5]_add_11_OUT> created at line 315.
+    Found 3-bit adder for signal <GND_1_o_M_beta_game_levelout[5]_add_13_OUT> created at line 320.
+    Found 3-bit adder for signal <GND_1_o_M_beta_game_levelout[5]_add_15_OUT> created at line 325.
+    Found 3-bit adder for signal <GND_1_o_M_beta_game_levelout[5]_add_17_OUT> created at line 330.
+    Found 3-bit adder for signal <GND_1_o_M_beta_game_levelout[5]_add_19_OUT> created at line 335.
+    Found 3-bit adder for signal <GND_1_o_M_beta_game_levelout[5]_add_21_OUT> created at line 340.
+    Found 3-bit adder for signal <GND_1_o_M_beta_game_levelout[5]_add_23_OUT> created at line 345.
+    Found 3-bit adder for signal <GND_1_o_M_beta_game_levelout[5]_add_25_OUT> created at line 350.
     Found 1-bit tristate buffer for signal <spi_miso> created at line 219
     Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 219
     Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 219
@@ -182,7 +171,7 @@ INFO:Xst:3210 - "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_ve
     Found 1-bit tristate buffer for signal <avr_rx> created at line 219
     Summary:
 	inferred  12 Adder/Subtractor(s).
-	inferred  26 Multiplexer(s).
+	inferred  38 Multiplexer(s).
 	inferred   6 Tristate(s).
 	inferred   1 Finite State Machine(s).
 Unit <mojo_top_0> synthesized.
@@ -387,22 +376,23 @@ Unit <register_35> synthesized.
 
 Synthesizing Unit <display_12>.
     Related source file is "/home/emrys/mojo/1D_version_1/work/planAhead/1D_version_1/1D_version_1.srcs/sources_1/imports/verilog/display_12.v".
-    Found 18-bit register for signal <M_board_q>.
+WARNING:Xst:647 - Input <mask> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 14-bit register for signal <M_counter_q>.
-    Found 6-bit subtractor for signal <n0061> created at line 83.
-    Found 5-bit subtractor for signal <n0065> created at line 111.
+    Found 18-bit register for signal <M_board_q>.
+    Found 6-bit subtractor for signal <n0060> created at line 83.
+    Found 5-bit subtractor for signal <n0064> created at line 111.
     Found 19-bit adder for signal <n0038> created at line 83.
     Found 17-bit adder for signal <n0041> created at line 111.
     Found 14-bit adder for signal <M_counter_d> created at line 131.
     Found 11-bit subtractor for signal <M_counter_q[13]_M_counter_q[13]_sub_17_OUT<10:0>> created at line 120.
     Found 5-bit subtractor for signal <GND_22_o_GND_22_o_sub_18_OUT<4:0>> created at line 121.
     Found 15x3-bit multiplier for signal <GND_22_o_GND_22_o_MuLt_2_OUT> created at line 83.
-    Found 35-bit shifter logical right for signal <n0063> created at line 83
-    Found 23-bit shifter logical right for signal <n0067> created at line 111
+    Found 35-bit shifter logical right for signal <n0062> created at line 83
+    Found 23-bit shifter logical right for signal <n0066> created at line 111
     Found 14x11-bit multiplier for signal <n0047> created at line 120.
     Found 47-bit shifter logical right for signal <n0050> created at line 121
-    Found 35-bit shifter logical left for signal <n0062> created at line 83
-    Found 23-bit shifter logical left for signal <n0066> created at line 111
+    Found 35-bit shifter logical left for signal <n0061> created at line 83
+    Found 23-bit shifter logical left for signal <n0065> created at line 111
     Found 14-bit comparator greater for signal <M_counter_q[13]_PWR_23_o_LessThan_1_o> created at line 81
     Found 6-bit comparator greater for signal <M_counter_q[13]_GND_22_o_LessThan_21_o> created at line 122
     Found 6-bit comparator greater for signal <M_counter_q[13]_PWR_23_o_LessThan_22_o> created at line 126
@@ -537,13 +527,12 @@ Macro Statistics
  31-bit comparator lessequal                           : 1
  32-bit comparator lessequal                           : 1
  6-bit comparator greater                              : 4
-# Multiplexers                                         : 607
- 1-bit 2-to-1 multiplexer                              : 582
- 12-bit 2-to-1 multiplexer                             : 2
+# Multiplexers                                         : 619
+ 1-bit 2-to-1 multiplexer                              : 594
  14-bit 2-to-1 multiplexer                             : 6
  16-bit 2-to-1 multiplexer                             : 5
  16-bit 4-to-1 multiplexer                             : 3
- 18-bit 2-to-1 multiplexer                             : 1
+ 18-bit 2-to-1 multiplexer                             : 3
  23-bit 2-to-1 multiplexer                             : 2
  24-bit 2-to-1 multiplexer                             : 4
  35-bit 2-to-1 multiplexer                             : 2
@@ -634,7 +623,7 @@ Macro Statistics
  14-bit adder                                          : 28
  16-bit adder carry in                                 : 16
  16-bit addsub                                         : 1
- 2-bit adder                                           : 12
+ 3-bit adder                                           : 12
  4-bit adder                                           : 1
  5-bit adder                                           : 2
  5-bit subtractor                                      : 4
@@ -670,12 +659,12 @@ Macro Statistics
  31-bit comparator lessequal                           : 1
  32-bit comparator lessequal                           : 1
  6-bit comparator greater                              : 4
-# Multiplexers                                         : 606
- 1-bit 2-to-1 multiplexer                              : 582
- 12-bit 2-to-1 multiplexer                             : 2
+# Multiplexers                                         : 618
+ 1-bit 2-to-1 multiplexer                              : 594
  14-bit 2-to-1 multiplexer                             : 6
  16-bit 2-to-1 multiplexer                             : 5
  16-bit 4-to-1 multiplexer                             : 3
+ 18-bit 2-to-1 multiplexer                             : 2
  23-bit 2-to-1 multiplexer                             : 2
  24-bit 2-to-1 multiplexer                             : 4
  35-bit 2-to-1 multiplexer                             : 2
@@ -728,18 +717,6 @@ Optimizing unit <div_16u_16u> ...
 Optimizing unit <display_12> ...
 
 Optimizing unit <div_14u_11u> ...
-WARNING:Xst:1293 - FF/Latch <display_1/M_board_q_17> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_11> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_8> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display_1/M_board_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_17> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_11> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_8> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display/M_board_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <beta_game/board/M_regs_q_15> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <beta_game/board/M_regs_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
@@ -770,6 +747,7 @@ WARNING:Xst:2677 - Node <beta_game/alu/mul/Mmult_n0010> of sequential type is un
 FlipFlop M_game_state_q_FSM_FFd2 has been replicated 2 time(s)
 FlipFlop M_game_state_q_FSM_FFd3 has been replicated 1 time(s)
 FlipFlop beta_game/level/M_regs_q_3 has been replicated 1 time(s)
+FlipFlop beta_game/level/M_regs_q_4 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -781,8 +759,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 100
- Flip-Flops                                            : 100
+# Registers                                            : 113
+ Flip-Flops                                            : 113
 
 =========================================================================
 
@@ -806,8 +784,8 @@ Clock Information:
 -----------------------------------+------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)        | Load  |
 -----------------------------------+------------------------------+-------+
-seg/ctr/M_ctr_q_2                  | NONE(M_game_state_q_FSM_FFd4)| 15    |
-clk                                | BUFGP                        | 87    |
+seg/ctr/M_ctr_q_2                  | NONE(M_game_state_q_FSM_FFd5)| 15    |
+clk                                | BUFGP                        | 100   |
 -----------------------------------+------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
@@ -821,7 +799,7 @@ Speed Grade: -2
 
    Minimum period: 6.876ns (Maximum Frequency: 145.444MHz)
    Minimum input arrival time before clock: 9.622ns
-   Maximum output required time after clock: 20.383ns
+   Maximum output required time after clock: 20.353ns
    Maximum combinational path delay: 4.921ns
 
 =========================================================================
