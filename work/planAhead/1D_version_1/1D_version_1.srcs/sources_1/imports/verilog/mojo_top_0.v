@@ -23,7 +23,8 @@ module mojo_top_0 (
     input [0:0] button4,
     input [0:0] button5,
     input [0:0] button6,
-    input [0:0] button_reset,
+    input [0:0] level_reset,
+    input [0:0] game_reset,
     output reg led_strip,
     output reg led_strip_1
   );
@@ -104,35 +105,11 @@ module mojo_top_0 (
     .rst(rst),
     .value(M_slowclk_value)
   );
-  wire [1-1:0] M_beta_game_allon;
-  wire [16-1:0] M_beta_game_boardout;
-  wire [16-1:0] M_beta_game_levelout;
-  reg [7-1:0] M_beta_game_button_press;
-  reg [1-1:0] M_beta_game_board_sel;
-  reg [1-1:0] M_beta_game_board_en;
-  reg [1-1:0] M_beta_game_level_en;
-  reg [1-1:0] M_beta_game_asel;
-  reg [2-1:0] M_beta_game_bsel;
-  reg [6-1:0] M_beta_game_alufn;
-  beta_11 beta_game (
-    .clk(clk),
-    .rst(rst),
-    .button_press(M_beta_game_button_press),
-    .board_sel(M_beta_game_board_sel),
-    .board_en(M_beta_game_board_en),
-    .level_en(M_beta_game_level_en),
-    .asel(M_beta_game_asel),
-    .bsel(M_beta_game_bsel),
-    .alufn(M_beta_game_alufn),
-    .allon(M_beta_game_allon),
-    .boardout(M_beta_game_boardout),
-    .levelout(M_beta_game_levelout)
-  );
   wire [1-1:0] M_display_out;
   reg [18-1:0] M_display_data;
   reg [6-1:0] M_display_mask;
   reg [12-1:0] M_display_init;
-  display_12 display (
+  display_11 display (
     .clk(clk),
     .rst(rst),
     .data(M_display_data),
@@ -144,7 +121,7 @@ module mojo_top_0 (
   reg [18-1:0] M_display_1_data;
   reg [6-1:0] M_display_1_mask;
   reg [12-1:0] M_display_1_init;
-  display_12 display_1 (
+  display_11 display_1 (
     .clk(clk),
     .rst(rst),
     .data(M_display_1_data),
@@ -153,6 +130,32 @@ module mojo_top_0 (
     .out(M_display_1_out)
   );
   reg [27:0] M_blink_d, M_blink_q = 1'h0;
+  
+  wire [1-1:0] M_beta_game_allon;
+  wire [16-1:0] M_beta_game_boardout;
+  wire [16-1:0] M_beta_game_levelout;
+  reg [7-1:0] M_beta_game_button_press;
+  reg [1-1:0] M_beta_game_board_sel;
+  reg [1-1:0] M_beta_game_board_en;
+  reg [1-1:0] M_beta_game_level_en;
+  reg [1-1:0] M_beta_game_asel;
+  reg [2-1:0] M_beta_game_bsel;
+  reg [6-1:0] M_beta_game_alufn;
+  beta_13 beta_game (
+    .game_rst(game_reset),
+    .level_rst(level_reset),
+    .clk(clk),
+    .button_press(M_beta_game_button_press),
+    .board_sel(M_beta_game_board_sel),
+    .board_en(M_beta_game_board_en),
+    .level_en(M_beta_game_level_en),
+    .asel(M_beta_game_asel),
+    .bsel(M_beta_game_bsel),
+    .alufn(M_beta_game_alufn),
+    .allon(M_beta_game_allon),
+    .boardout(M_beta_game_boardout),
+    .levelout(M_beta_game_levelout)
+  );
   
   wire [1-1:0] M_edge_detector0_out;
   reg [1-1:0] M_edge_detector0_in;
@@ -458,20 +461,20 @@ module mojo_top_0 (
     endcase
   end
   
-  always @(posedge M_slowclk_value) begin
-    if (rst == 1'b1) begin
-      M_game_state_q <= 1'h0;
-    end else begin
-      M_game_state_q <= M_game_state_d;
-    end
-  end
-  
-  
   always @(posedge clk) begin
     if (rst == 1'b1) begin
       M_blink_q <= 1'h0;
     end else begin
       M_blink_q <= M_blink_d;
+    end
+  end
+  
+  
+  always @(posedge M_slowclk_value) begin
+    if (rst == 1'b1) begin
+      M_game_state_q <= 1'h0;
+    end else begin
+      M_game_state_q <= M_game_state_d;
     end
   end
   

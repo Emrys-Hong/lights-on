@@ -4,9 +4,10 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module beta_11 (
+module beta_13 (
     input clk,
-    input rst,
+    input [0:0] game_rst,
+    input [0:0] level_rst,
     input [6:0] button_press,
     input [0:0] board_sel,
     input [0:0] board_en,
@@ -57,7 +58,7 @@ module beta_11 (
   reg [16-1:0] M_board_data;
   register_34 board (
     .clk(clk),
-    .rst(rst),
+    .rst(level_rst),
     .en(M_board_en),
     .data(M_board_data),
     .out(M_board_out)
@@ -67,7 +68,7 @@ module beta_11 (
   reg [16-1:0] M_level_data;
   register_34 level (
     .clk(clk),
-    .rst(rst),
+    .rst(game_rst),
     .en(M_level_en),
     .data(M_level_data),
     .out(M_level_out)

@@ -22,12 +22,18 @@ module levels_mux_31 (
         out = 16'h0ae1;
       end
       2'h2: begin
-        out = 16'h0ceb;
+        out = 16'h008f;
       end
       2'h3: begin
-        out = 16'h0c8a;
+        out = 16'h072d;
       end
       3'h4: begin
+        out = 16'h0c3a;
+      end
+      3'h5: begin
+        out = 16'h0c8a;
+      end
+      3'h6: begin
         out = 16'h0458;
       end
     endcase

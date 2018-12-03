@@ -9,7 +9,7 @@
      ROW = 1
      COL = 6
 */
-module display_12 (
+module display_11 (
     input clk,
     input rst,
     input [17:0] data,
@@ -22,37 +22,37 @@ module display_12 (
   localparam COL = 3'h6;
   
   
-  localparam LED_OFF = 1'h0;
+  localparam LED_0 = 1'h0;
   
-  localparam LED_0 = 2'h2;
+  localparam LED_1 = 1'h1;
   
-  localparam LED_1 = 2'h3;
+  localparam LED_2 = 2'h2;
   
-  localparam LED_OFF_SELECTED = 3'h4;
+  localparam LED_3 = 2'h3;
   
-  localparam LED_0_SELECTED = 3'h6;
+  localparam LED_4 = 3'h4;
   
-  localparam LED_1_SELECTED = 3'h7;
+  localparam LED_5 = 3'h5;
   
-  localparam NO_TOGGLE = 1'h1;
+  localparam LED_6 = 3'h6;
+  
+  localparam LED_7 = 3'h7;
   
   localparam COLOR_BLACK = 24'h000000;
   
-  localparam COLOR_RED = 24'hff00ff;
+  localparam COLOR_1 = 24'haa42f4;
   
-  localparam COLOR_GREEN = 24'h9933ff;
+  localparam COLOR_2 = 24'h6542f4;
   
-  localparam COLOR_SELECTED_BLACK = 24'h33ccff;
+  localparam COLOR_3 = 24'h425ff4;
   
-  localparam COLOR_SELECTED_RED = 24'h33ff99;
+  localparam COLOR_4 = 24'h429ef4;
   
-  localparam COLOR_SELECTED_GREEN = 24'h00ff33;
+  localparam COLOR_5 = 24'h42f4f4;
   
-  localparam COLOR_BLUE = 24'h0000ff;
+  localparam COLOR_6 = 24'h42f492;
   
-  localparam COLOR_INIT_RED = 24'h00ff00;
-  
-  localparam COLOR_INIT_GREEN = 24'hff0000;
+  localparam COLOR_7 = 24'h42f442;
   
   reg [17:0] M_board_d, M_board_q = 1'h0;
   
@@ -86,34 +86,37 @@ module display_12 (
           1'h0: begin
             grb = 24'h000000;
           end
+          1'h1: begin
+            grb = 24'haa42f4;
+          end
           2'h2: begin
-            grb = 24'hff00ff;
+            grb = 24'h6542f4;
           end
           2'h3: begin
-            grb = 24'h9933ff;
+            grb = 24'h425ff4;
           end
           3'h4: begin
-            grb = 24'h33ccff;
+            grb = 24'h429ef4;
+          end
+          3'h5: begin
+            grb = 24'h42f4f4;
           end
           3'h6: begin
-            grb = 24'h33ff99;
+            grb = 24'h42f492;
           end
           3'h7: begin
-            grb = 24'h00ff33;
-          end
-          1'h1: begin
-            grb = 24'h0000ff;
+            grb = 24'h42f442;
           end
           default: begin
             grb = 24'h000000;
           end
         endcase
         if (init[(r)*12+(c)*2+1-:2] != 2'h0) begin
-          if (led_state == 2'h2) begin
-            grb = 24'h00ff00;
+          if (led_state == 1'h0) begin
+            grb = 24'h42f492;
           end else begin
-            if (led_state == 2'h3) begin
-              grb = 24'hff0000;
+            if (led_state == 1'h1) begin
+              grb = 24'h42f442;
             end
           end
         end

@@ -17,8 +17,22 @@
 
 
 
+NET "level_reset" IOSTANDARD = LVTTL;
+INST "level_reset_0_IBUF" LOC = P22;
+NET "game_reset" IOSTANDARD = LVTTL;
+INST "game_reset_0_IBUF" LOC = P17;
+
+
+
+
+
+
+
+
+
 NET "led_strip" LOC = P40;
 NET "led_strip" IOSTANDARD = LVTTL;
+// with black markÿ
 NET "led_strip_1" LOC = P34;
 NET "led_strip_1" IOSTANDARD = LVTTL;
 
@@ -110,11 +124,9 @@ NET "io_led[16]" LOC = P15;
 NET "io_led[16]" IOSTANDARD = LVTTL;
 NET "io_led[17]" LOC = P16;
 NET "io_led[17]" IOSTANDARD = LVTTL;
-NET "io_led[18]" LOC = P17;
 NET "io_led[18]" IOSTANDARD = LVTTL;
 NET "io_led[19]" LOC = P21;
 NET "io_led[19]" IOSTANDARD = LVTTL;
-NET "io_led[20]" LOC = P22;
 NET "io_led[20]" IOSTANDARD = LVTTL;
 NET "io_led[21]" LOC = P23;
 NET "io_led[21]" IOSTANDARD = LVTTL;

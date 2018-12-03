@@ -8,26 +8,34 @@ module display #(ROW=1, COL=6)(
   ) {
   
   // enum for different led_states
-  const LED_OFF = 0;          // 000
-  const LED_0 = 2;            // 010
-  const LED_1 = 3;            // 011
-  const LED_OFF_SELECTED = 4; // 100
-  const LED_0_SELECTED = 6;   // 110
-  const LED_1_SELECTED = 7;   // 111
-  const NO_TOGGLE = 1;        // stealing spare numbers
+//  const LED_OFF = 0;          // 000
+//  const LED_0 = 2;            // 010
+//  const LED_1 = 3;            // 011
+//  const LED_OFF_SELECTED = 4; // 100
+//  const LED_0_SELECTED = 6;   // 110
+//  const LED_1_SELECTED = 5;   // 101
+//  const NO_TOGGLE = 1;        // stealing spare numbers
+  
+  // TESTING CREATION OF led_state
+  const LED_0 = 0;    //000
+  const LED_1 = 1;    //001
+  const LED_2 = 2;    //010
+  const LED_3 = 3;    //011
+  const LED_4 = 4;    //100
+  const LED_5 = 5;    //101
+  const LED_6 = 6;    //110
+  const LED_7 = 7;    //111
   
   // preset colours (in GRB)
   const COLOR_BLACK = 24h0;
-  const COLOR_RED = c{8hff, 8h00, 8hff};
-  const COLOR_GREEN = c{8h99, 8h33, 8hff};
-  const COLOR_SELECTED_BLACK = c{8h33, 8hcc, 8hff};
-  const COLOR_SELECTED_RED = c{8h33, 8hff, 8h99};
-  const COLOR_SELECTED_GREEN = c{8h00, 8hff, 8h33};
-  
-  
-  const COLOR_BLUE = c{8h00, 8h00, 8hff};
-  const COLOR_INIT_RED = c{8h00, 8hff, 8h00};
-  const COLOR_INIT_GREEN = c{8hff, 8h00, 8h00};
+  //const COLOR_0 = c{8he5, 8h42, 8hf4};  // sky blue
+  const COLOR_1 = c{8haa, 8h42, 8hf4};  // blue
+  const COLOR_2 = c{8h65, 8h42, 8hf4};  // dark blue
+  const COLOR_3 = c{8h42, 8h5f, 8hf4};  // lighter purple
+  const COLOR_4 = c{8h42, 8h9e, 8hf4};  // darker purple
+  const COLOR_5 = c{8h42, 8hf4, 8hf4};  // pink
+  const COLOR_6 = c{8h42, 8hf4, 8h92};  // rose
+  const COLOR_7 = c{8h42, 8hf4, 8h42};  // red (last stage!)
   
   dff board[ROW][COL][3](.clk(clk), .rst(rst)); // stores the current board state like a register
   dff counter[14](.clk(clk), .rst(rst)); // 1 complete cycle of counter corresponds to 1 row
@@ -47,19 +55,28 @@ module display #(ROW=1, COL=6)(
         c = counter.q/(64*24); // counter.q/(64*24) == column number - obtains led_state for given (row, col)
         led_state = board.q[r][c];
         case (led_state) {
-          LED_OFF: grb = COLOR_BLACK;
-          LED_0: grb = COLOR_RED;
-          LED_1: grb = COLOR_GREEN;
-          LED_OFF_SELECTED: grb = COLOR_SELECTED_BLACK;
-          LED_0_SELECTED: grb = COLOR_SELECTED_RED;
-          LED_1_SELECTED: grb = COLOR_SELECTED_GREEN;
-          NO_TOGGLE: grb = COLOR_BLUE;
+          //LED_OFF: grb = COLOR_BLACK;
+          //LED_0: grb = COLOR_0;
+          //LED_1: grb = COLOR_1;
+          //LED_OFF_SELECTED: grb = COLOR_2;
+          //LED_0_SELECTED: grb = COLOR_3;
+          //LED_1_SELECTED: grb = COLOR_4;
+          //NO_TOGGLE: grb = COLOR_5;
+          
+          LED_0: grb = COLOR_BLACK;
+          LED_1: grb = COLOR_1;
+          LED_2: grb = COLOR_2;
+          LED_3: grb = COLOR_3;
+          LED_4: grb = COLOR_4;
+          LED_5: grb = COLOR_5;
+          LED_6: grb = COLOR_6;
+          LED_7: grb = COLOR_7;
           default: grb = COLOR_BLACK;
         }
         // this section deals with whether a cell is part of the original initial board
         if (init[r][c]!=2b0) { // if part of original board: show different red/green instead
-          if (led_state == LED_0) grb = COLOR_INIT_RED;
-          else if (led_state == LED_1) grb = COLOR_INIT_GREEN;
+          if (led_state == LED_0) grb = COLOR_6;
+          else if (led_state == LED_1) grb = COLOR_7;
         }
         
         foo = counter.q - ((counter.q/(64*24))*(64*24)); // gets the current block of 1536 - 1536 clocks corresponds to (64clocks/bit * 8bits/colour * 3colours)

@@ -5,7 +5,19 @@ NET "button4"  LOC = P33 | IOSTANDARD = LVTTL;
 NET "button5"  LOC = P30 | IOSTANDARD = LVTTL;
 NET "button6"  LOC = P27 | IOSTANDARD = LVTTL;
 NET "button0"  LOC = P24 | IOSTANDARD = LVTTL;
-NET "button_reset"    LOC = P22 | IOSTANDARD = LVTTL;
+
+
+
+
+
+
+
+
+
+NET "level_reset" IOSTANDARD = LVTTL;
+INST "level_reset_0_IBUF" LOC = P22;
+NET "game_reset" IOSTANDARD = LVTTL;
+INST "game_reset_0_IBUF" LOC = P17;
 
 
 
@@ -17,5 +29,6 @@ NET "button_reset"    LOC = P22 | IOSTANDARD = LVTTL;
 
 NET "led_strip" LOC = P40;
 NET "led_strip" IOSTANDARD = LVTTL;
+// with black markÿ
 NET "led_strip_1" LOC = P34;
 NET "led_strip_1" IOSTANDARD = LVTTL;
