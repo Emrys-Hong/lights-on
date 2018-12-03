@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module mul_40 (
+module cmp_39 (
     input [7:0] io_dip,
     input [15:0] a,
     input [15:0] b,
@@ -13,16 +13,22 @@ module mul_40 (
   
   
   
+  reg [15:0] holder;
+  
   always @* begin
-    out = 1'h0;
+    holder = 1'h0;
     
-    case (io_dip[0+1-:2])
+    case (io_dip[1+1-:2])
+      1'h1: begin
+        holder = {15'h0000, (a == b)};
+      end
       2'h2: begin
-        out = a * b;
+        holder = {15'h0000, (a < b)};
       end
       2'h3: begin
-        out = a / b;
+        holder = {15'h0000, (a <= b)};
       end
     endcase
+    out = holder[0+15-:16];
   end
 endmodule

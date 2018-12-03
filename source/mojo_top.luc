@@ -17,7 +17,6 @@ module mojo_top (
     output io_seg [8],      // 7-segment LEDs on IO Shield
     output io_sel [4],      // Digit select on IO Shield
     input io_button [5],    // 5 buttons on IO Shield
-    input io_dip [3][8],   // DIP switches on IO Shield
     
     
     
@@ -79,7 +78,7 @@ module mojo_top (
       dff blink[28];
     }
   }
-  beta beta_game(.game_rst(game_reset), .level_rst(level_reset), .clk(clk));
+  beta beta_game(.game_rst(game_reset), .rst(rst), .clk(clk));
   .clk(slowclk.value) {
     edge_detector edge_detector0(#RISE(1), #FALL(0));
     edge_detector edge_detector1(#RISE(1), #FALL(0));
@@ -88,6 +87,8 @@ module mojo_top (
     edge_detector edge_detector4(#RISE(1), #FALL(0));
     edge_detector edge_detector5(#RISE(1), #FALL(0));
     edge_detector edge_detector6(#RISE(1), #FALL(0));
+    edge_detector edge_detector_game_reset(#RISE(1), #FALL(0));
+    edge_detector edge_detector_level_reset(#RISE(1), #FALL(0));
     .rst(rst) {
       fsm game_state = {BEGIN, XOR, CMPEQC, ADDC, BLINK};
     }
@@ -116,7 +117,7 @@ module mojo_top (
     io_led[2:0] = 3x{{8h00}};   // connect the DIP switches to the LEDs    driver
     seg.values[3:1] = {4h0, 4h0, 4h0}; seg.values[0] = beta_game.levelout[6:3];
     blink.d = blink.q + 1;
-    
+
     
     
     
@@ -130,6 +131,8 @@ module mojo_top (
     
     
     // BUTTON CONNECTION
+    edge_detector_game_reset.in = game_reset;
+    edge_detector_level_reset.in = level_reset;
     conditioner0.in = button0;
     edge_detector0.in = conditioner0.out;
     conditioner1.in = button1;
@@ -369,6 +372,19 @@ module mojo_top (
         beta_game.asel = 0;
         beta_game.bsel = 0;
         beta_game.button_press = c{edge_detector6.out, edge_detector5.out, edge_detector4.out, edge_detector3.out, edge_detector2.out, edge_detector1.out, edge_detector0.out};
+        
+        
+        
+        
+        
+        
+        
+        if (edge_detector_level_reset.out == 1) {
+          game_state.d = game_state.BEGIN;
+        }
+        if (edge_detector_game_reset.out == 1) {
+          game_state.d = game_state.BEGIN;
+        }
         if ( edge_detector0.out|edge_detector1.out|edge_detector2.out|edge_detector3.out|edge_detector4.out|edge_detector5.out|edge_detector6.out){
           game_state.d = game_state.CMPEQC;
         }

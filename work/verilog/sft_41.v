@@ -4,8 +4,8 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module bol_38 (
-    input [5:0] io_dip,
+module sft_41 (
+    input [7:0] io_dip,
     input [15:0] a,
     input [15:0] b,
     output reg [15:0] out
@@ -16,18 +16,15 @@ module bol_38 (
   always @* begin
     out = 1'h0;
     
-    case (io_dip[0+3-:4])
-      4'h8: begin
-        out = a & b;
+    case (io_dip[0+1-:2])
+      1'h0: begin
+        out = a << b[0+3-:4];
       end
-      4'he: begin
-        out = a | b;
+      1'h1: begin
+        out = a >> b[0+3-:4];
       end
-      3'h6: begin
-        out = a ^ b;
-      end
-      4'ha: begin
-        out = a;
+      2'h3: begin
+        out = $signed(a) >>> b[0+3-:4];
       end
     endcase
   end

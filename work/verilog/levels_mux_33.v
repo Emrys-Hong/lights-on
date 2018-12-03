@@ -4,42 +4,40 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module seven_seg_29 (
-    input [2:0] char,
-    output reg [6:0] segs
+module levels_mux_33 (
+    input [2:0] levels_sel,
+    output reg [15:0] out
   );
   
   
   
   always @* begin
+    out = 16'h0000;
     
-    case (char)
+    case (levels_sel)
       1'h0: begin
-        segs = 7'h3f;
+        out = 16'h003f;
       end
       1'h1: begin
-        segs = 7'h06;
+        out = 16'h0ae1;
       end
       2'h2: begin
-        segs = 7'h5b;
+        out = 16'h008f;
       end
       2'h3: begin
-        segs = 7'h4f;
+        out = 16'h0ceb;
       end
       3'h4: begin
-        segs = 7'h66;
+        out = 16'h072d;
       end
       3'h5: begin
-        segs = 7'h6d;
+        out = 16'h0c3a;
       end
       3'h6: begin
-        segs = 7'h7d;
+        out = 16'h0c8a;
       end
       3'h7: begin
-        segs = 7'h07;
-      end
-      default: begin
-        segs = 7'h00;
+        out = 16'h0458;
       end
     endcase
   end

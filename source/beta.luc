@@ -1,8 +1,7 @@
 module beta (
     input clk,  // clock
     input game_rst[1],
-    input level_rst[1],
-    
+    input rst,
     
     
     
@@ -41,10 +40,8 @@ module beta (
   .clk(clk) {
     // The reset conditioner is used to synchronize the reset signal to the FPGA
     // clock. This ensures the entire FPGA comes out of reset at the same time.
-    .rst(level_rst) {
+    .rst(rst) {
       register board(#WIDTH(16));
-    }
-    .rst(game_rst) {
       register level(#WIDTH(16));
     }
   }
@@ -74,6 +71,15 @@ module beta (
     levelout = level.out;
     
     
+    
+    
+    
+    
+    
+    if (game_rst == 1) {
+      level.data = 0;
+      level.en = 1;
+    }
     
     
     

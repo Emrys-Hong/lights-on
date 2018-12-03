@@ -4,37 +4,42 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module buttons_mux_33 (
-    input [6:0] buttons_sel,
-    output reg [15:0] out
+module seven_seg_31 (
+    input [2:0] char,
+    output reg [6:0] segs
   );
   
   
   
   always @* begin
-    out = 16'h0000;
     
-    case (buttons_sel)
+    case (char)
+      1'h0: begin
+        segs = 7'h3f;
+      end
       1'h1: begin
-        out = 16'h0fc0;
+        segs = 7'h06;
       end
       2'h2: begin
-        out = 16'h0803;
+        segs = 7'h5b;
+      end
+      2'h3: begin
+        segs = 7'h4f;
       end
       3'h4: begin
-        out = 16'h0406;
+        segs = 7'h66;
       end
-      4'h8: begin
-        out = 16'h020c;
+      3'h5: begin
+        segs = 7'h6d;
       end
-      5'h10: begin
-        out = 16'h0118;
+      3'h6: begin
+        segs = 7'h7d;
       end
-      6'h20: begin
-        out = 16'h00b0;
+      3'h7: begin
+        segs = 7'h07;
       end
-      7'h40: begin
-        out = 16'h0061;
+      default: begin
+        segs = 7'h00;
       end
     endcase
   end

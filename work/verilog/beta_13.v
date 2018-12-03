@@ -7,7 +7,7 @@
 module beta_13 (
     input clk,
     input [0:0] game_rst,
-    input [0:0] level_rst,
+    input rst,
     input [6:0] button_press,
     input [0:0] board_sel,
     input [0:0] board_en,
@@ -24,7 +24,7 @@ module beta_13 (
   
   wire [16-1:0] M_levels_mux_out;
   reg [3-1:0] M_levels_mux_levels_sel;
-  levels_mux_31 levels_mux (
+  levels_mux_33 levels_mux (
     .levels_sel(M_levels_mux_levels_sel),
     .out(M_levels_mux_out)
   );
@@ -36,7 +36,7 @@ module beta_13 (
   reg [6-1:0] M_alu_io_dip;
   reg [16-1:0] M_alu_a;
   reg [16-1:0] M_alu_b;
-  alu_32 alu (
+  alu_34 alu (
     .io_dip(M_alu_io_dip),
     .a(M_alu_a),
     .b(M_alu_b),
@@ -48,7 +48,7 @@ module beta_13 (
   
   wire [16-1:0] M_buttons_mux_out;
   reg [7-1:0] M_buttons_mux_buttons_sel;
-  buttons_mux_33 buttons_mux (
+  buttons_mux_35 buttons_mux (
     .buttons_sel(M_buttons_mux_buttons_sel),
     .out(M_buttons_mux_out)
   );
@@ -56,9 +56,9 @@ module beta_13 (
   wire [16-1:0] M_board_out;
   reg [1-1:0] M_board_en;
   reg [16-1:0] M_board_data;
-  register_34 board (
+  register_36 board (
     .clk(clk),
-    .rst(level_rst),
+    .rst(rst),
     .en(M_board_en),
     .data(M_board_data),
     .out(M_board_out)
@@ -66,9 +66,9 @@ module beta_13 (
   wire [16-1:0] M_level_out;
   reg [1-1:0] M_level_en;
   reg [16-1:0] M_level_data;
-  register_34 level (
+  register_36 level (
     .clk(clk),
-    .rst(game_rst),
+    .rst(rst),
     .en(M_level_en),
     .data(M_level_data),
     .out(M_level_out)
@@ -84,6 +84,10 @@ module beta_13 (
     boardout = M_board_out;
     allon = M_alu_out[0+0-:1];
     levelout = M_level_out;
+    if (game_rst == 1'h1) begin
+      M_level_data = 1'h0;
+      M_level_en = 1'h1;
+    end
     if (asel == 1'h0) begin
       M_alu_a = M_board_out;
     end else begin
