@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Mon Dec 03 20:54:51 2018
+// Written by: Map P.20131013 on Mon Dec 03 21:15:23 2018
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -57,47 +57,41 @@ COMP "led[7]" LOCATE = SITE "P123" LEVEL 1;
 COMP "io_dip(10)" LOCATE = SITE "P105" LEVEL 1;
 COMP "io_dip(11)" LOCATE = SITE "P104" LEVEL 1;
 COMP "io_dip(12)" LOCATE = SITE "P102" LEVEL 1;
-COMP "io_dip(20)" LOCATE = SITE "P67" LEVEL 1;
 COMP "io_dip(13)" LOCATE = SITE "P101" LEVEL 1;
-COMP "io_dip(21)" LOCATE = SITE "P66" LEVEL 1;
 COMP "io_dip(14)" LOCATE = SITE "P100" LEVEL 1;
-COMP "io_dip(22)" LOCATE = SITE "P58" LEVEL 1;
 COMP "io_dip(15)" LOCATE = SITE "P99" LEVEL 1;
 COMP "io_dip(23)" LOCATE = SITE "P57" LEVEL 1;
-COMP "io_dip(16)" LOCATE = SITE "P79" LEVEL 1;
-COMP "io_dip(17)" LOCATE = SITE "P78" LEVEL 1;
-COMP "io_dip(18)" LOCATE = SITE "P75" LEVEL 1;
-COMP "io_dip(19)" LOCATE = SITE "P74" LEVEL 1;
+COMP "io_dip[20]" LOCATE = SITE "P67" LEVEL 1;
+COMP "io_dip[21]" LOCATE = SITE "P66" LEVEL 1;
+COMP "io_dip[22]" LOCATE = SITE "P58" LEVEL 1;
+COMP "io_dip[16]" LOCATE = SITE "P79" LEVEL 1;
+COMP "io_dip[17]" LOCATE = SITE "P78" LEVEL 1;
+COMP "io_dip[18]" LOCATE = SITE "P75" LEVEL 1;
+COMP "io_dip[19]" LOCATE = SITE "P74" LEVEL 1;
 COMP "io_led[10]" LOCATE = SITE "P82" LEVEL 1;
 COMP "io_led[11]" LOCATE = SITE "P83" LEVEL 1;
 COMP "io_led[12]" LOCATE = SITE "P80" LEVEL 1;
 COMP "io_led[21]" LOCATE = SITE "P23" LEVEL 1;
 COMP "io_led[13]" LOCATE = SITE "P81" LEVEL 1;
+COMP "io_led[22]" LOCATE = SITE "P24" LEVEL 1;
 COMP "io_led[14]" LOCATE = SITE "P11" LEVEL 1;
 COMP "io_led[23]" LOCATE = SITE "P26" LEVEL 1;
 COMP "io_led[15]" LOCATE = SITE "P14" LEVEL 1;
 COMP "io_led[16]" LOCATE = SITE "P15" LEVEL 1;
 COMP "io_led[17]" LOCATE = SITE "P16" LEVEL 1;
 COMP "io_led[19]" LOCATE = SITE "P21" LEVEL 1;
-COMP "button0[0]" LOCATE = SITE "P24" LEVEL 1;
-COMP "button1[0]" LOCATE = SITE "P51" LEVEL 1;
-COMP "button2[0]" LOCATE = SITE "P41" LEVEL 1;
-COMP "button3[0]" LOCATE = SITE "P35" LEVEL 1;
-COMP "button4[0]" LOCATE = SITE "P33" LEVEL 1;
-COMP "button5[0]" LOCATE = SITE "P30" LEVEL 1;
-COMP "button6[0]" LOCATE = SITE "P27" LEVEL 1;
 COMP "level_reset[0]" LOCATE = SITE "P22" LEVEL 1;
 PIN display_1/Maddsub_n0047_pins<92> = BEL "display_1/Maddsub_n0047" PINNAME
         CLK;
 PIN display/Maddsub_n0047_pins<92> = BEL "display/Maddsub_n0047" PINNAME CLK;
 TIMEGRP clk = BEL "M_blink_q_0" BEL "M_blink_q_1" BEL "M_blink_q_2" BEL
-        "M_blink_q_3" BEL "M_blink_q_4" BEL "M_blink_q_5" BEL "M_blink_q_6"
+        "M_blink_q_5" BEL "M_blink_q_3" BEL "M_blink_q_4" BEL "M_blink_q_6"
         BEL "M_blink_q_7" BEL "M_blink_q_8" BEL "M_blink_q_9" BEL
         "M_blink_q_10" BEL "M_blink_q_11" BEL "M_blink_q_12" BEL
         "M_blink_q_13" BEL "M_blink_q_14" BEL "M_blink_q_15" BEL
         "M_blink_q_16" BEL "M_blink_q_17" BEL "M_blink_q_18" BEL
-        "M_blink_q_19" BEL "M_blink_q_20" BEL "M_blink_q_21" BEL
-        "M_blink_q_22" BEL "M_blink_q_23" BEL "M_blink_q_24" BEL
+        "M_blink_q_19" BEL "M_blink_q_22" BEL "M_blink_q_20" BEL
+        "M_blink_q_21" BEL "M_blink_q_23" BEL "M_blink_q_24" BEL
         "M_blink_q_25" BEL "M_blink_q_26" BEL "M_blink_q_27" BEL
         "beta_game/level/M_regs_q_15" BEL "beta_game/level/M_regs_q_14" BEL
         "beta_game/level/M_regs_q_13" BEL "beta_game/level/M_regs_q_12" BEL
@@ -107,119 +101,42 @@ TIMEGRP clk = BEL "M_blink_q_0" BEL "M_blink_q_1" BEL "M_blink_q_2" BEL
         "beta_game/level/M_regs_q_5" BEL "beta_game/level/M_regs_q_4" BEL
         "beta_game/level/M_regs_q_3" BEL "beta_game/level/M_regs_q_2" BEL
         "beta_game/level/M_regs_q_1" BEL "beta_game/level/M_regs_q_0" BEL
-        "beta_game/board/M_regs_q_11" BEL "beta_game/board/M_regs_q_10" BEL
-        "beta_game/board/M_regs_q_9" BEL "beta_game/board/M_regs_q_8" BEL
-        "beta_game/board/M_regs_q_7" BEL "beta_game/board/M_regs_q_6" BEL
-        "beta_game/board/M_regs_q_5" BEL "beta_game/board/M_regs_q_4" BEL
-        "beta_game/board/M_regs_q_3" BEL "beta_game/board/M_regs_q_2" BEL
-        "beta_game/board/M_regs_q_1" BEL "beta_game/board/M_regs_q_0" BEL
-        "clk_BUFGP/BUFG" BEL "reset_cond/M_stage_q_3" BEL
-        "reset_cond/M_stage_q_2" BEL "reset_cond/M_stage_q_1" BEL
-        "reset_cond/M_stage_q_0" PIN "display_1/Maddsub_n0047_pins<92>" BEL
-        "display_1/M_board_q_17" BEL "display_1/M_board_q_16" BEL
-        "display_1/M_board_q_15" BEL "display_1/M_board_q_14" BEL
-        "display_1/M_board_q_13" BEL "display_1/M_board_q_12" BEL
-        "display_1/M_board_q_11" BEL "display_1/M_board_q_10" BEL
-        "display_1/M_board_q_9" BEL "display_1/M_board_q_8" BEL
-        "display_1/M_board_q_7" BEL "display_1/M_board_q_6" BEL
-        "display_1/M_board_q_5" BEL "display_1/M_board_q_4" BEL
-        "display_1/M_board_q_3" BEL "display_1/M_board_q_2" BEL
-        "display_1/M_board_q_1" BEL "display_1/M_board_q_0" BEL
-        "conditioner0/M_ctr_q_0" BEL "conditioner0/M_ctr_q_1" BEL
-        "conditioner0/M_ctr_q_2" BEL "conditioner0/M_ctr_q_3" BEL
-        "conditioner0/M_ctr_q_4" BEL "conditioner0/M_ctr_q_5" BEL
-        "conditioner0/M_ctr_q_6" BEL "conditioner0/M_ctr_q_7" BEL
-        "conditioner0/M_ctr_q_8" BEL "conditioner0/M_ctr_q_9" BEL
-        "conditioner0/M_ctr_q_10" BEL "conditioner0/M_ctr_q_11" BEL
-        "conditioner0/M_ctr_q_12" BEL "conditioner0/M_ctr_q_13" BEL
-        "conditioner0/M_ctr_q_14" BEL "conditioner0/M_ctr_q_15" BEL
-        "conditioner0/M_ctr_q_16" BEL "conditioner0/M_ctr_q_17" BEL
-        "conditioner0/M_ctr_q_18" BEL "conditioner0/M_ctr_q_19" BEL
-        "conditioner0/sync/M_pipe_q_1" BEL
-        "conditioner0/sync/Mshreg_M_pipe_q_1" BEL "conditioner1/M_ctr_q_0" BEL
-        "conditioner1/M_ctr_q_1" BEL "conditioner1/M_ctr_q_2" BEL
-        "conditioner1/M_ctr_q_3" BEL "conditioner1/M_ctr_q_4" BEL
-        "conditioner1/M_ctr_q_5" BEL "conditioner1/M_ctr_q_6" BEL
-        "conditioner1/M_ctr_q_7" BEL "conditioner1/M_ctr_q_8" BEL
-        "conditioner1/M_ctr_q_9" BEL "conditioner1/M_ctr_q_10" BEL
-        "conditioner1/M_ctr_q_11" BEL "conditioner1/M_ctr_q_12" BEL
-        "conditioner1/M_ctr_q_13" BEL "conditioner1/M_ctr_q_14" BEL
-        "conditioner1/M_ctr_q_15" BEL "conditioner1/M_ctr_q_16" BEL
-        "conditioner1/M_ctr_q_17" BEL "conditioner1/M_ctr_q_18" BEL
-        "conditioner1/M_ctr_q_19" BEL "conditioner1/sync/M_pipe_q_1" BEL
-        "conditioner1/sync/Mshreg_M_pipe_q_1" BEL "conditioner2/M_ctr_q_0" BEL
-        "conditioner2/M_ctr_q_1" BEL "conditioner2/M_ctr_q_2" BEL
-        "conditioner2/M_ctr_q_3" BEL "conditioner2/M_ctr_q_4" BEL
-        "conditioner2/M_ctr_q_5" BEL "conditioner2/M_ctr_q_6" BEL
-        "conditioner2/M_ctr_q_7" BEL "conditioner2/M_ctr_q_8" BEL
-        "conditioner2/M_ctr_q_9" BEL "conditioner2/M_ctr_q_10" BEL
-        "conditioner2/M_ctr_q_11" BEL "conditioner2/M_ctr_q_12" BEL
-        "conditioner2/M_ctr_q_13" BEL "conditioner2/M_ctr_q_14" BEL
-        "conditioner2/M_ctr_q_15" BEL "conditioner2/M_ctr_q_16" BEL
-        "conditioner2/M_ctr_q_17" BEL "conditioner2/M_ctr_q_18" BEL
-        "conditioner2/M_ctr_q_19" BEL "conditioner2/sync/M_pipe_q_1" BEL
-        "conditioner2/sync/Mshreg_M_pipe_q_1" BEL "conditioner3/M_ctr_q_0" BEL
-        "conditioner3/M_ctr_q_1" BEL "conditioner3/M_ctr_q_2" BEL
-        "conditioner3/M_ctr_q_3" BEL "conditioner3/M_ctr_q_4" BEL
-        "conditioner3/M_ctr_q_5" BEL "conditioner3/M_ctr_q_6" BEL
-        "conditioner3/M_ctr_q_7" BEL "conditioner3/M_ctr_q_8" BEL
-        "conditioner3/M_ctr_q_9" BEL "conditioner3/M_ctr_q_10" BEL
-        "conditioner3/M_ctr_q_11" BEL "conditioner3/M_ctr_q_12" BEL
-        "conditioner3/M_ctr_q_13" BEL "conditioner3/M_ctr_q_14" BEL
-        "conditioner3/M_ctr_q_15" BEL "conditioner3/M_ctr_q_16" BEL
-        "conditioner3/M_ctr_q_17" BEL "conditioner3/M_ctr_q_18" BEL
-        "conditioner3/M_ctr_q_19" BEL "conditioner3/sync/M_pipe_q_1" BEL
-        "conditioner3/sync/Mshreg_M_pipe_q_1" BEL "conditioner4/M_ctr_q_0" BEL
-        "conditioner4/M_ctr_q_1" BEL "conditioner4/M_ctr_q_2" BEL
-        "conditioner4/M_ctr_q_3" BEL "conditioner4/M_ctr_q_4" BEL
-        "conditioner4/M_ctr_q_5" BEL "conditioner4/M_ctr_q_6" BEL
-        "conditioner4/M_ctr_q_7" BEL "conditioner4/M_ctr_q_8" BEL
-        "conditioner4/M_ctr_q_9" BEL "conditioner4/M_ctr_q_10" BEL
-        "conditioner4/M_ctr_q_11" BEL "conditioner4/M_ctr_q_12" BEL
-        "conditioner4/M_ctr_q_13" BEL "conditioner4/M_ctr_q_14" BEL
-        "conditioner4/M_ctr_q_15" BEL "conditioner4/M_ctr_q_16" BEL
-        "conditioner4/M_ctr_q_17" BEL "conditioner4/M_ctr_q_18" BEL
-        "conditioner4/M_ctr_q_19" BEL "conditioner4/sync/M_pipe_q_1" BEL
-        "conditioner4/sync/Mshreg_M_pipe_q_1" BEL "conditioner5/M_ctr_q_0" BEL
-        "conditioner5/M_ctr_q_1" BEL "conditioner5/M_ctr_q_2" BEL
-        "conditioner5/M_ctr_q_3" BEL "conditioner5/M_ctr_q_4" BEL
-        "conditioner5/M_ctr_q_5" BEL "conditioner5/M_ctr_q_6" BEL
-        "conditioner5/M_ctr_q_7" BEL "conditioner5/M_ctr_q_8" BEL
-        "conditioner5/M_ctr_q_9" BEL "conditioner5/M_ctr_q_10" BEL
-        "conditioner5/M_ctr_q_11" BEL "conditioner5/M_ctr_q_12" BEL
-        "conditioner5/M_ctr_q_13" BEL "conditioner5/M_ctr_q_14" BEL
-        "conditioner5/M_ctr_q_15" BEL "conditioner5/M_ctr_q_16" BEL
-        "conditioner5/M_ctr_q_17" BEL "conditioner5/M_ctr_q_18" BEL
-        "conditioner5/M_ctr_q_19" BEL "conditioner5/sync/M_pipe_q_1" BEL
-        "conditioner5/sync/Mshreg_M_pipe_q_1" BEL "conditioner6/M_ctr_q_0" BEL
-        "conditioner6/M_ctr_q_1" BEL "conditioner6/M_ctr_q_2" BEL
-        "conditioner6/M_ctr_q_3" BEL "conditioner6/M_ctr_q_4" BEL
-        "conditioner6/M_ctr_q_5" BEL "conditioner6/M_ctr_q_6" BEL
-        "conditioner6/M_ctr_q_7" BEL "conditioner6/M_ctr_q_8" BEL
-        "conditioner6/M_ctr_q_9" BEL "conditioner6/M_ctr_q_10" BEL
-        "conditioner6/M_ctr_q_11" BEL "conditioner6/M_ctr_q_12" BEL
-        "conditioner6/M_ctr_q_13" BEL "conditioner6/M_ctr_q_14" BEL
-        "conditioner6/M_ctr_q_15" BEL "conditioner6/M_ctr_q_16" BEL
-        "conditioner6/M_ctr_q_17" BEL "conditioner6/M_ctr_q_18" BEL
-        "conditioner6/M_ctr_q_19" BEL "conditioner6/sync/M_pipe_q_1" BEL
-        "conditioner6/sync/Mshreg_M_pipe_q_1" PIN
-        "display/Maddsub_n0047_pins<92>" BEL "display/M_board_q_17" BEL
-        "display/M_board_q_16" BEL "display/M_board_q_15" BEL
-        "display/M_board_q_14" BEL "display/M_board_q_13" BEL
-        "display/M_board_q_12" BEL "display/M_board_q_11" BEL
-        "display/M_board_q_10" BEL "display/M_board_q_9" BEL
-        "display/M_board_q_8" BEL "display/M_board_q_7" BEL
-        "display/M_board_q_6" BEL "display/M_board_q_5" BEL
-        "display/M_board_q_4" BEL "display/M_board_q_3" BEL
-        "display/M_board_q_2" BEL "display/M_board_q_1" BEL
-        "display/M_board_q_0" BEL "seg/ctr/M_ctr_q_0" BEL "seg/ctr/M_ctr_q_1"
-        BEL "seg/ctr/M_ctr_q_2" BEL "seg/ctr/M_ctr_q_3" BEL
-        "seg/ctr/M_ctr_q_4" BEL "seg/ctr/M_ctr_q_5" BEL "seg/ctr/M_ctr_q_6"
-        BEL "seg/ctr/M_ctr_q_7" BEL "seg/ctr/M_ctr_q_8" BEL
-        "seg/ctr/M_ctr_q_9" BEL "seg/ctr/M_ctr_q_10" BEL "seg/ctr/M_ctr_q_11"
-        BEL "seg/ctr/M_ctr_q_12" BEL "seg/ctr/M_ctr_q_13" BEL
-        "seg/ctr/M_ctr_q_14" BEL "seg/ctr/M_ctr_q_15" BEL "seg/ctr/M_ctr_q_16"
-        BEL "seg/ctr/M_ctr_q_17";
+        "beta_game/level/M_regs_q_3_1" BEL "beta_game/board/M_regs_q_11" BEL
+        "beta_game/board/M_regs_q_10" BEL "beta_game/board/M_regs_q_9" BEL
+        "beta_game/board/M_regs_q_8" BEL "beta_game/board/M_regs_q_7" BEL
+        "beta_game/board/M_regs_q_6" BEL "beta_game/board/M_regs_q_5" BEL
+        "beta_game/board/M_regs_q_4" BEL "beta_game/board/M_regs_q_3" BEL
+        "beta_game/board/M_regs_q_2" BEL "beta_game/board/M_regs_q_1" BEL
+        "beta_game/board/M_regs_q_0" BEL "clk_BUFGP/BUFG" BEL
+        "reset_cond/M_stage_q_3" BEL "reset_cond/M_stage_q_2" BEL
+        "reset_cond/M_stage_q_1" BEL "reset_cond/M_stage_q_0" PIN
+        "display_1/Maddsub_n0047_pins<92>" BEL "display_1/M_board_q_17" BEL
+        "display_1/M_board_q_16" BEL "display_1/M_board_q_15" BEL
+        "display_1/M_board_q_14" BEL "display_1/M_board_q_13" BEL
+        "display_1/M_board_q_12" BEL "display_1/M_board_q_11" BEL
+        "display_1/M_board_q_10" BEL "display_1/M_board_q_9" BEL
+        "display_1/M_board_q_8" BEL "display_1/M_board_q_7" BEL
+        "display_1/M_board_q_6" BEL "display_1/M_board_q_5" BEL
+        "display_1/M_board_q_4" BEL "display_1/M_board_q_3" BEL
+        "display_1/M_board_q_2" BEL "display_1/M_board_q_1" BEL
+        "display_1/M_board_q_0" PIN "display/Maddsub_n0047_pins<92>" BEL
+        "display/M_board_q_17" BEL "display/M_board_q_16" BEL
+        "display/M_board_q_15" BEL "display/M_board_q_14" BEL
+        "display/M_board_q_13" BEL "display/M_board_q_12" BEL
+        "display/M_board_q_11" BEL "display/M_board_q_10" BEL
+        "display/M_board_q_9" BEL "display/M_board_q_8" BEL
+        "display/M_board_q_7" BEL "display/M_board_q_6" BEL
+        "display/M_board_q_5" BEL "display/M_board_q_4" BEL
+        "display/M_board_q_3" BEL "display/M_board_q_2" BEL
+        "display/M_board_q_1" BEL "display/M_board_q_0" BEL
+        "seg/ctr/M_ctr_q_0" BEL "seg/ctr/M_ctr_q_1" BEL "seg/ctr/M_ctr_q_2"
+        BEL "seg/ctr/M_ctr_q_3" BEL "seg/ctr/M_ctr_q_4" BEL
+        "seg/ctr/M_ctr_q_5" BEL "seg/ctr/M_ctr_q_6" BEL "seg/ctr/M_ctr_q_7"
+        BEL "seg/ctr/M_ctr_q_8" BEL "seg/ctr/M_ctr_q_9" BEL
+        "seg/ctr/M_ctr_q_10" BEL "seg/ctr/M_ctr_q_11" BEL "seg/ctr/M_ctr_q_12"
+        BEL "seg/ctr/M_ctr_q_13" BEL "seg/ctr/M_ctr_q_14" BEL
+        "seg/ctr/M_ctr_q_15" BEL "seg/ctr/M_ctr_q_16" BEL
+        "seg/ctr/M_ctr_q_17";
 TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
 SCHEMATIC END;
 

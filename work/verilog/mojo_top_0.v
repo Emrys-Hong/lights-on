@@ -244,6 +244,20 @@ module mojo_top_0 (
     M_edge_detector5_in = M_conditioner5_out;
     M_conditioner6_in = button6;
     M_edge_detector6_in = M_conditioner6_out;
+    M_edge_detector0_in = io_dip[16+0+0-:1];
+    M_edge_detector1_in = io_dip[16+1+0-:1];
+    M_edge_detector2_in = io_dip[16+2+0-:1];
+    M_edge_detector3_in = io_dip[16+3+0-:1];
+    M_edge_detector4_in = io_dip[16+4+0-:1];
+    M_edge_detector5_in = io_dip[16+5+0-:1];
+    M_edge_detector6_in = io_dip[16+6+0-:1];
+    M_edge_detector0_in = io_dip[16+0+0-:1];
+    M_edge_detector1_in = io_dip[16+1+0-:1];
+    M_edge_detector2_in = io_dip[16+2+0-:1];
+    M_edge_detector3_in = io_dip[16+3+0-:1];
+    M_edge_detector4_in = io_dip[16+4+0-:1];
+    M_edge_detector5_in = io_dip[16+5+0-:1];
+    M_edge_detector6_in = io_dip[16+6+0-:1];
     io_led[0+0+0-:1] = M_beta_game_boardout[0+0-:1];
     io_led[0+1+0-:1] = M_beta_game_boardout[1+0-:1];
     io_led[0+2+0-:1] = M_beta_game_boardout[2+0-:1];
@@ -285,62 +299,110 @@ module mojo_top_0 (
     if (M_beta_game_boardout[0+0-:1] == 1'h0) begin
       M_display_data[0+0+2-:3] = M_beta_game_boardout[0+0-:1];
     end else begin
-      M_display_data[0+0+2-:3] = M_beta_game_boardout[0+0-:1] + M_beta_game_levelout[3+2-:3];
+      if (M_beta_game_boardout[3+2-:3] == 1'h1) begin
+        M_display_data[0+0+2-:3] = M_beta_game_boardout[0+0-:1] + M_beta_game_levelout[3+2-:3];
+      end else begin
+        M_display_data[0+0+2-:3] = M_beta_game_boardout[0+0-:1] + M_beta_game_levelout[3+2-:3] - 1'h1;
+      end
     end
     if (M_beta_game_boardout[1+0-:1] == 1'h0) begin
       M_display_data[0+3+2-:3] = M_beta_game_boardout[1+0-:1];
     end else begin
-      M_display_data[0+3+2-:3] = M_beta_game_boardout[1+0-:1] + M_beta_game_levelout[3+2-:3];
+      if (M_beta_game_boardout[3+2-:3] == 1'h1) begin
+        M_display_data[0+3+2-:3] = M_beta_game_boardout[1+0-:1] + M_beta_game_levelout[3+2-:3];
+      end else begin
+        M_display_data[0+3+2-:3] = M_beta_game_boardout[1+0-:1] + M_beta_game_levelout[3+2-:3] - 1'h1;
+      end
     end
     if (M_beta_game_boardout[2+0-:1] == 1'h0) begin
       M_display_data[0+6+2-:3] = M_beta_game_boardout[2+0-:1];
     end else begin
-      M_display_data[0+6+2-:3] = M_beta_game_boardout[2+0-:1] + M_beta_game_levelout[3+2-:3];
+      if (M_beta_game_boardout[3+2-:3] == 1'h1) begin
+        M_display_data[0+6+2-:3] = M_beta_game_boardout[2+0-:1] + M_beta_game_levelout[3+2-:3];
+      end else begin
+        M_display_data[0+6+2-:3] = M_beta_game_boardout[2+0-:1] + M_beta_game_levelout[3+2-:3] - 1'h1;
+      end
     end
     if (M_beta_game_boardout[3+0-:1] == 1'h0) begin
       M_display_data[0+9+2-:3] = M_beta_game_boardout[3+0-:1];
     end else begin
-      M_display_data[0+9+2-:3] = M_beta_game_boardout[3+0-:1] + M_beta_game_levelout[3+2-:3];
+      if (M_beta_game_boardout[3+2-:3] == 1'h1) begin
+        M_display_data[0+9+2-:3] = M_beta_game_boardout[3+0-:1] + M_beta_game_levelout[3+2-:3];
+      end else begin
+        M_display_data[0+9+2-:3] = M_beta_game_boardout[3+0-:1] + M_beta_game_levelout[3+2-:3] - 1'h1;
+      end
     end
     if (M_beta_game_boardout[4+0-:1] == 1'h0) begin
       M_display_data[0+12+2-:3] = M_beta_game_boardout[4+0-:1];
     end else begin
-      M_display_data[0+12+2-:3] = M_beta_game_boardout[4+0-:1] + M_beta_game_levelout[3+2-:3];
+      if (M_beta_game_boardout[3+2-:3] == 1'h1) begin
+        M_display_data[0+12+2-:3] = M_beta_game_boardout[4+0-:1] + M_beta_game_levelout[3+2-:3];
+      end else begin
+        M_display_data[0+12+2-:3] = M_beta_game_boardout[4+0-:1] + M_beta_game_levelout[3+2-:3] - 1'h1;
+      end
     end
     if (M_beta_game_boardout[5+0-:1] == 1'h0) begin
       M_display_data[0+15+2-:3] = M_beta_game_boardout[5+0-:1];
     end else begin
-      M_display_data[0+15+2-:3] = M_beta_game_boardout[5+0-:1] + M_beta_game_levelout[3+2-:3];
+      if (M_beta_game_boardout[3+2-:3] == 1'h1) begin
+        M_display_data[0+15+2-:3] = M_beta_game_boardout[5+0-:1] + M_beta_game_levelout[3+2-:3];
+      end else begin
+        M_display_data[0+15+2-:3] = M_beta_game_boardout[5+0-:1] + M_beta_game_levelout[3+2-:3] - 1'h1;
+      end
     end
     if (M_beta_game_boardout[6+0-:1] == 1'h0) begin
       M_display_1_data[0+0+2-:3] = M_beta_game_boardout[6+0-:1];
     end else begin
-      M_display_1_data[0+0+2-:3] = M_beta_game_boardout[6+0-:1] + M_beta_game_levelout[3+2-:3];
+      if (M_beta_game_boardout[3+2-:3] == 1'h1) begin
+        M_display_1_data[0+0+2-:3] = M_beta_game_boardout[6+0-:1] + M_beta_game_levelout[3+2-:3];
+      end else begin
+        M_display_1_data[0+0+2-:3] = M_beta_game_boardout[6+0-:1] + M_beta_game_levelout[3+2-:3] - 1'h1;
+      end
     end
     if (M_beta_game_boardout[7+0-:1] == 1'h0) begin
       M_display_1_data[0+3+2-:3] = M_beta_game_boardout[7+0-:1];
     end else begin
-      M_display_1_data[0+3+2-:3] = M_beta_game_boardout[7+0-:1] + M_beta_game_levelout[3+2-:3];
+      if (M_beta_game_boardout[3+2-:3] == 1'h1) begin
+        M_display_1_data[0+3+2-:3] = M_beta_game_boardout[7+0-:1] + M_beta_game_levelout[3+2-:3];
+      end else begin
+        M_display_1_data[0+3+2-:3] = M_beta_game_boardout[7+0-:1] + M_beta_game_levelout[3+2-:3] - 1'h1;
+      end
     end
     if (M_beta_game_boardout[8+0-:1] == 1'h0) begin
       M_display_1_data[0+6+2-:3] = M_beta_game_boardout[8+0-:1];
     end else begin
-      M_display_1_data[0+6+2-:3] = M_beta_game_boardout[8+0-:1] + M_beta_game_levelout[3+2-:3];
+      if (M_beta_game_boardout[3+2-:3] == 1'h1) begin
+        M_display_1_data[0+6+2-:3] = M_beta_game_boardout[8+0-:1] + M_beta_game_levelout[3+2-:3];
+      end else begin
+        M_display_1_data[0+6+2-:3] = M_beta_game_boardout[8+0-:1] + M_beta_game_levelout[3+2-:3] - 1'h1;
+      end
     end
     if (M_beta_game_boardout[9+0-:1] == 1'h0) begin
       M_display_1_data[0+9+2-:3] = M_beta_game_boardout[9+0-:1];
     end else begin
-      M_display_1_data[0+9+2-:3] = M_beta_game_boardout[9+0-:1] + M_beta_game_levelout[3+2-:3];
+      if (M_beta_game_boardout[3+2-:3] == 1'h1) begin
+        M_display_1_data[0+9+2-:3] = M_beta_game_boardout[9+0-:1] + M_beta_game_levelout[3+2-:3];
+      end else begin
+        M_display_1_data[0+9+2-:3] = M_beta_game_boardout[9+0-:1] + M_beta_game_levelout[3+2-:3] - 1'h1;
+      end
     end
     if (M_beta_game_boardout[10+0-:1] == 1'h0) begin
       M_display_1_data[0+12+2-:3] = M_beta_game_boardout[10+0-:1];
     end else begin
-      M_display_1_data[0+12+2-:3] = M_beta_game_boardout[10+0-:1] + M_beta_game_levelout[3+2-:3];
+      if (M_beta_game_boardout[3+2-:3] == 1'h1) begin
+        M_display_1_data[0+12+2-:3] = M_beta_game_boardout[10+0-:1] + M_beta_game_levelout[3+2-:3];
+      end else begin
+        M_display_1_data[0+12+2-:3] = M_beta_game_boardout[10+0-:1] + M_beta_game_levelout[3+2-:3] - 1'h1;
+      end
     end
     if (M_beta_game_boardout[11+0-:1] == 1'h0) begin
       M_display_1_data[0+15+2-:3] = M_beta_game_boardout[11+0-:1];
     end else begin
-      M_display_1_data[0+15+2-:3] = M_beta_game_boardout[11+0-:1] + M_beta_game_levelout[3+2-:3];
+      if (M_beta_game_boardout[3+2-:3] == 1'h1) begin
+        M_display_1_data[0+15+2-:3] = M_beta_game_boardout[11+0-:1] + M_beta_game_levelout[3+2-:3];
+      end else begin
+        M_display_1_data[0+15+2-:3] = M_beta_game_boardout[11+0-:1] + M_beta_game_levelout[3+2-:3] - 1'h1;
+      end
     end
     M_beta_game_board_en = 1'h0;
     M_beta_game_board_sel = 1'h0;
@@ -454,20 +516,20 @@ module mojo_top_0 (
     endcase
   end
   
-  always @(posedge clk) begin
-    if (rst == 1'b1) begin
-      M_blink_q <= 1'h0;
-    end else begin
-      M_blink_q <= M_blink_d;
-    end
-  end
-  
-  
   always @(posedge M_slowclk_value) begin
     if (rst == 1'b1) begin
       M_game_state_q <= 1'h0;
     end else begin
       M_game_state_q <= M_game_state_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_blink_q <= 1'h0;
+    end else begin
+      M_blink_q <= M_blink_d;
     end
   end
   

@@ -8,20 +8,6 @@
 # Constraints from file : 'custom.ucf'
 ####################################################################################
 
-NET "button1" IOSTANDARD = LVTTL;
-INST "button1_0_IBUF" LOC = P51;
-NET "button2" IOSTANDARD = LVTTL;
-INST "button2_0_IBUF" LOC = P41;
-NET "button3" IOSTANDARD = LVTTL;
-INST "button3_0_IBUF" LOC = P35;
-NET "button4" IOSTANDARD = LVTTL;
-INST "button4_0_IBUF" LOC = P33;
-NET "button5" IOSTANDARD = LVTTL;
-INST "button5_0_IBUF" LOC = P30;
-NET "button6" IOSTANDARD = LVTTL;
-INST "button6_0_IBUF" LOC = P27;
-NET "button0" IOSTANDARD = LVTTL;
-INST "button0_0_IBUF" LOC = P24;
 
 
 
@@ -144,6 +130,7 @@ NET "io_led[19]" IOSTANDARD = LVTTL;
 NET "io_led[20]" IOSTANDARD = LVTTL;
 NET "io_led[21]" LOC = P23;
 NET "io_led[21]" IOSTANDARD = LVTTL;
+NET "io_led[22]" LOC = P24;
 NET "io_led[22]" IOSTANDARD = LVTTL;
 NET "io_led[23]" LOC = P26;
 NET "io_led[23]" IOSTANDARD = LVTTL;
