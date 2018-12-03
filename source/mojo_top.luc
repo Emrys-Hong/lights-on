@@ -130,20 +130,27 @@ module mojo_top (
     
     
     // BUTTON CONNECTION
-    conditioner0.in = io_dip[2][0];
+    conditioner0.in = button0;
     edge_detector0.in = conditioner0.out;
-    conditioner1.in = io_dip[2][1];
+    conditioner1.in = button1;
     edge_detector1.in = conditioner1.out;
-    conditioner2.in = io_dip[2][2];
+    conditioner2.in = button2;
     edge_detector2.in = conditioner2.out;
-    conditioner3.in = io_dip[2][3];
+    conditioner3.in = button3;
     edge_detector3.in = conditioner3.out;
-    conditioner4.in = io_dip[2][4];
+    conditioner4.in = button4;
     edge_detector4.in = conditioner4.out;
-    conditioner5.in = io_dip[2][5];
+    conditioner5.in = button5;
     edge_detector5.in = conditioner5.out;
-    conditioner6.in = io_dip[2][6];
+    conditioner6.in = button6;
     edge_detector6.in = conditioner6.out;
+    edge_detector0.in = io_dip[2][0];
+    edge_detector1.in = io_dip[2][1];
+    edge_detector2.in = io_dip[2][2];
+    edge_detector3.in = io_dip[2][3];
+    edge_detector4.in = io_dip[2][4];
+    edge_detector5.in = io_dip[2][5];
+    edge_detector6.in = io_dip[2][6];
     edge_detector0.in = io_dip[2][0];
     edge_detector1.in = io_dip[2][1];
     edge_detector2.in = io_dip[2][2];
@@ -187,7 +194,11 @@ module mojo_top (
     if (beta_game.boardout[0] == 0) {
       display.data[0][0] = beta_game.boardout[0];
     } else {
-      display.data[0][0] = beta_game.boardout[0]+beta_game.levelout[5:3];
+      if (beta_game.levelout[5:3] == 1) {
+        display.data[0][0] = beta_game.boardout[0]+beta_game.levelout[5:3];
+      } else {
+        display.data[0][0] = beta_game.boardout[0]+beta_game.levelout[5:3]-1;
+      }
     }
     if (beta_game.boardout[1] == 0) {
       display.data[0][1] = beta_game.boardout[1];
@@ -247,7 +258,7 @@ module mojo_top (
     
     
     
-  
+    
     
     
     
