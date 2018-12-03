@@ -152,58 +152,53 @@ module mojo_top_0 (
     .init(M_display_1_init),
     .out(M_display_1_out)
   );
-  wire [4-1:0] M_blink_value;
-  counter_14 blink (
-    .clk(clk),
-    .rst(rst),
-    .value(M_blink_value)
-  );
+  reg [27:0] M_blink_d, M_blink_q = 1'h0;
   
   wire [1-1:0] M_edge_detector0_out;
   reg [1-1:0] M_edge_detector0_in;
-  edge_detector_15 edge_detector0 (
+  edge_detector_14 edge_detector0 (
     .clk(M_slowclk_value),
     .in(M_edge_detector0_in),
     .out(M_edge_detector0_out)
   );
   wire [1-1:0] M_edge_detector1_out;
   reg [1-1:0] M_edge_detector1_in;
-  edge_detector_15 edge_detector1 (
+  edge_detector_14 edge_detector1 (
     .clk(M_slowclk_value),
     .in(M_edge_detector1_in),
     .out(M_edge_detector1_out)
   );
   wire [1-1:0] M_edge_detector2_out;
   reg [1-1:0] M_edge_detector2_in;
-  edge_detector_15 edge_detector2 (
+  edge_detector_14 edge_detector2 (
     .clk(M_slowclk_value),
     .in(M_edge_detector2_in),
     .out(M_edge_detector2_out)
   );
   wire [1-1:0] M_edge_detector3_out;
   reg [1-1:0] M_edge_detector3_in;
-  edge_detector_15 edge_detector3 (
+  edge_detector_14 edge_detector3 (
     .clk(M_slowclk_value),
     .in(M_edge_detector3_in),
     .out(M_edge_detector3_out)
   );
   wire [1-1:0] M_edge_detector4_out;
   reg [1-1:0] M_edge_detector4_in;
-  edge_detector_15 edge_detector4 (
+  edge_detector_14 edge_detector4 (
     .clk(M_slowclk_value),
     .in(M_edge_detector4_in),
     .out(M_edge_detector4_out)
   );
   wire [1-1:0] M_edge_detector5_out;
   reg [1-1:0] M_edge_detector5_in;
-  edge_detector_15 edge_detector5 (
+  edge_detector_14 edge_detector5 (
     .clk(M_slowclk_value),
     .in(M_edge_detector5_in),
     .out(M_edge_detector5_out)
   );
   wire [1-1:0] M_edge_detector6_out;
   reg [1-1:0] M_edge_detector6_in;
-  edge_detector_15 edge_detector6 (
+  edge_detector_14 edge_detector6 (
     .clk(M_slowclk_value),
     .in(M_edge_detector6_in),
     .out(M_edge_detector6_out)
@@ -218,6 +213,7 @@ module mojo_top_0 (
   
   always @* begin
     M_game_state_d = M_game_state_q;
+    M_blink_d = M_blink_q;
     
     M_reset_cond_in = ~rst_n;
     rst = M_reset_cond_out;
@@ -230,6 +226,7 @@ module mojo_top_0 (
     io_led[0+23-:24] = 24'h000000;
     M_seg_values[4+11-:12] = 12'h000;
     M_seg_values[0+3-:4] = M_beta_game_levelout[3+3-:4];
+    M_blink_d = M_blink_q + 1'h1;
     M_conditioner0_in = io_dip[16+0+0-:1];
     M_edge_detector0_in = M_conditioner0_out;
     M_conditioner1_in = io_dip[16+1+0-:1];
@@ -356,7 +353,6 @@ module mojo_top_0 (
     M_beta_game_bsel = 1'h0;
     M_beta_game_alufn = 1'h0;
     M_beta_game_button_press = {M_edge_detector6_out, M_edge_detector5_out, M_edge_detector4_out, M_edge_detector3_out, M_edge_detector2_out, M_edge_detector1_out, M_edge_detector0_out};
-    io_led[16+7-:8] = M_beta_game_levelout;
     
     case (M_game_state_q)
       BEGIN_game_state: begin
@@ -398,6 +394,7 @@ module mojo_top_0 (
         M_beta_game_alufn = 6'h00;
         M_beta_game_bsel = 2'h2;
         M_beta_game_asel = 1'h1;
+        M_blink_d = 1'h0;
         M_game_state_d = BLINK_game_state;
       end
       BLINK_game_state: begin
@@ -427,7 +424,7 @@ module mojo_top_0 (
         M_display_1_mask[0+5+0-:1] = 1'h0;
         led_strip = M_display_out;
         led_strip_1 = M_display_1_out;
-        if (M_blink_value[0+0-:1] == 1'h1) begin
+        if (M_blink_q[24+0-:1] == 1'h1) begin
           M_display_data[0+0+2-:3] = 1'h1;
           M_display_data[0+3+2-:3] = 1'h1;
           M_display_data[0+6+2-:3] = 1'h1;
@@ -454,7 +451,7 @@ module mojo_top_0 (
           M_display_1_data[0+12+2-:3] = 1'h0;
           M_display_1_data[0+15+2-:3] = 1'h0;
         end
-        if (M_blink_value == 4'hf) begin
+        if (M_blink_q[27+0-:1] == 1'h1) begin
           M_game_state_d = BEGIN_game_state;
         end
       end
@@ -466,6 +463,15 @@ module mojo_top_0 (
       M_game_state_q <= 1'h0;
     end else begin
       M_game_state_q <= M_game_state_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_blink_q <= 1'h0;
+    end else begin
+      M_blink_q <= M_blink_d;
     end
   end
   

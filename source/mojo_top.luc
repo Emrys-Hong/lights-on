@@ -76,7 +76,7 @@ module mojo_top (
       beta beta_game;
       display display;
       display display_1;
-      counter blink(#SIZE(4),#DIV(24));
+      dff blink[28];
     }
   }
   .clk(slowclk.value) {
@@ -114,6 +114,7 @@ module mojo_top (
     io_sel = ~seg.sel; // connect digit select to the
     io_led[2:0] = 3x{{8h00}};   // connect the DIP switches to the LEDs    driver
     seg.values[3:1] = {4h0, 4h0, 4h0}; seg.values[0] = beta_game.levelout[6:3];
+    blink.d = blink.q + 1;
     
     
     
@@ -127,8 +128,7 @@ module mojo_top (
     
     
     
-    
-    
+    // BUTTON CONNECTION
     conditioner0.in = io_dip[2][0];
     edge_detector0.in = conditioner0.out;
     conditioner1.in = io_dip[2][1];
@@ -297,7 +297,7 @@ module mojo_top (
     
     
     
-    io_led[2] = beta_game.levelout;
+    
     
     
     
@@ -343,6 +343,7 @@ module mojo_top (
         beta_game.alufn = b000000;
         beta_game.bsel = 2;
         beta_game.asel = 1;
+        blink.d = 0;
         game_state.d = game_state.BLINK;
       
       
@@ -355,7 +356,7 @@ module mojo_top (
         display_1.mask[0][0] = 0;display_1.mask[0][1] = 0;display_1.mask[0][2] = 0;display_1.mask[0][3] = 0;display_1.mask[0][4] = 0;display_1.mask[0][5] = 0;
         led_strip = display.out; led_strip_1 = display_1.out;
         
-        if (blink.value[0] == 1) {
+        if (blink.q[24] == 1) {
           display.data[0][0] = 1;
           display.data[0][1] = 1;
           display.data[0][2] = 1;
@@ -383,7 +384,7 @@ module mojo_top (
           display_1.data[0][5] = 0;
         }
         
-        if (blink.value == 15) {
+        if (blink.q[27] == 1) {
           game_state.d = game_state.BEGIN;
         }
       
