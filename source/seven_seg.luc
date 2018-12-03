@@ -1,5 +1,5 @@
 module seven_seg (
-    input char[4],
+    input char[3],
     output segs[7]
   ) {
 
@@ -13,8 +13,8 @@ module seven_seg (
       5: segs = 7b1101101;
       6: segs = 7b1111101;
       7: segs = 7b0000111;
-      8: segs = 7b1111111;
-      9: segs = 7b1100111;
+      //8: segs = 7b1111111;
+      //9: segs = 7b1100111;
       default: segs = 7b0000000;
     }
   }

@@ -5,7 +5,7 @@
 */
 
 module seven_seg_29 (
-    input [3:0] char,
+    input [2:0] char,
     output reg [6:0] segs
   );
   
@@ -37,12 +37,6 @@ module seven_seg_29 (
       end
       3'h7: begin
         segs = 7'h07;
-      end
-      4'h8: begin
-        segs = 7'h7f;
-      end
-      4'h9: begin
-        segs = 7'h67;
       end
       default: begin
         segs = 7'h00;

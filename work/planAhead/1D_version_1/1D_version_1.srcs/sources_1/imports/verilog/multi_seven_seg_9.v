@@ -31,7 +31,7 @@ module multi_seven_seg_9 (
   );
   
   wire [7-1:0] M_seg_dec_segs;
-  reg [4-1:0] M_seg_dec_char;
+  reg [3-1:0] M_seg_dec_char;
   seven_seg_29 seg_dec (
     .char(M_seg_dec_char),
     .segs(M_seg_dec_segs)

@@ -137,18 +137,18 @@ module display_11 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_counter_q <= 1'h0;
+      M_board_q <= 1'h0;
     end else begin
-      M_counter_q <= M_counter_d;
+      M_board_q <= M_board_d;
     end
   end
   
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_board_q <= 1'h0;
+      M_counter_q <= 1'h0;
     end else begin
-      M_board_q <= M_board_d;
+      M_counter_q <= M_counter_d;
     end
   end
   
