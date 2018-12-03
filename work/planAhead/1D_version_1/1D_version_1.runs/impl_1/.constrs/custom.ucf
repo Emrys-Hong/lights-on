@@ -5,6 +5,7 @@ NET "button4"  LOC = P33 | IOSTANDARD = LVTTL;
 NET "button5"  LOC = P30 | IOSTANDARD = LVTTL;
 NET "button6"  LOC = P27 | IOSTANDARD = LVTTL;
 NET "button0"  LOC = P24 | IOSTANDARD = LVTTL;
+NET "button_reset"    LOC = P22 | IOSTANDARD = LVTTL;
 
 
 
@@ -14,16 +15,7 @@ NET "button0"  LOC = P24 | IOSTANDARD = LVTTL;
 
 
 
-NET "level_reset"    LOC = P22 | IOSTANDARD = LVTTL;
-NET "game_reset"    LOC = P17 | IOSTANDARD = LVTTL;
-
-
-
-
-
-
-
-
-
-NET "led_strip"    LOC=P40 | IOSTANDARD = LVTTL;
-NET "led_strip_1"    LOC=P34 | IOSTANDARD = LVTTL;
+NET "led_strip" LOC = P40;
+NET "led_strip" IOSTANDARD = LVTTL;
+NET "led_strip_1" LOC = P34;
+NET "led_strip_1" IOSTANDARD = LVTTL;

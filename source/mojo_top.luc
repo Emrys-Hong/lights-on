@@ -32,7 +32,8 @@ module mojo_top (
     input button4[1],
     input button5[1],
     input button6[1],
-    input button_reset[1],
+    input level_reset[1],
+    input game_reset[1],
     
     
     
@@ -73,12 +74,12 @@ module mojo_top (
     .rst(rst) {
       multi_seven_seg seg;
       counter slowclk(#SIZE(1),#DIV(2));
-      beta beta_game;
       display display;
       display display_1;
       dff blink[28];
     }
   }
+  beta beta_game(.game_rst(game_reset), .level_rst(level_reset), .clk(clk));
   .clk(slowclk.value) {
     edge_detector edge_detector0(#RISE(1), #FALL(0));
     edge_detector edge_detector1(#RISE(1), #FALL(0));
