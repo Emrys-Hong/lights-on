@@ -1,0 +1,202 @@
+module control_logic ( // this is the fsm
+    input clk,  // clock
+    input rst,  // reset_conditioner
+    
+    output display[6],
+    output display_1[6],
+    output segs[4],
+    
+    
+    
+    input button0[1],
+    input button1[1],
+    input button2[1],
+    input button3[1],
+    input button4[1],
+    input button5[1],
+    input button6[1],
+    input level_reset[1],
+    input game_reset[1]
+  ) {
+  
+  
+  
+  
+  
+  
+  
+  
+  .clk(clk) {
+    button_conditioner conditioner0;
+    button_conditioner conditioner1;
+    button_conditioner conditioner2;
+    button_conditioner conditioner3;
+    button_conditioner conditioner4;
+    button_conditioner conditioner5;
+    button_conditioner conditioner6;
+    .rst(rst) {
+      counter slowclk(#SIZE(1),#DIV(2));
+      dff blink[28];
+    }
+  }
+  
+  beta beta_game(.game_rst(game_reset), .rst(rst), .clk(clk));
+  .clk(slowclk.value) {
+    edge_detector edge_detector0(#RISE(1), #FALL(0));
+    edge_detector edge_detector1(#RISE(1), #FALL(0));
+    edge_detector edge_detector2(#RISE(1), #FALL(0));
+    edge_detector edge_detector3(#RISE(1), #FALL(0));
+    edge_detector edge_detector4(#RISE(1), #FALL(0));
+    edge_detector edge_detector5(#RISE(1), #FALL(0));
+    edge_detector edge_detector6(#RISE(1), #FALL(0));
+    edge_detector edge_detector_game_reset(#RISE(1), #FALL(0));
+    edge_detector edge_detector_level_reset(#RISE(1), #FALL(0));
+    .rst(rst) {
+      fsm game_state = {BEGIN, XOR, CMPEQC, ADDC, BLINK};
+    }
+  }
+  
+  
+  
+  always {
+    // button connnection
+    // BUTTON CONNECTION
+    edge_detector_game_reset.in = game_reset;
+    edge_detector_level_reset.in = level_reset;
+    conditioner0.in = button0;
+    edge_detector0.in = conditioner0.out;
+    conditioner1.in = button1;
+    edge_detector1.in = conditioner1.out;
+    conditioner2.in = button2;
+    edge_detector2.in = conditioner2.out;
+    conditioner3.in = button3;
+    edge_detector3.in = conditioner3.out;
+    conditioner4.in = button4;
+    edge_detector4.in = conditioner4.out;
+    conditioner5.in = button5;
+    edge_detector5.in = conditioner5.out;
+    conditioner6.in = button6;
+    edge_detector6.in = conditioner6.out;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // blink counter
+    blink.d = blink.q + 1;
+    segs = beta_game.levelout[6:3];
+    
+    
+    
+    
+    
+    
+    
+    // connecting beta
+    beta_game.board_en = 0;
+    beta_game.board_sel = 0;
+    beta_game.level_en = 0;
+    beta_game.asel = 0;
+    beta_game.bsel = 0;
+    beta_game.alufn = 0;
+    beta_game.button_press = c{edge_detector6.out, edge_detector5.out, edge_detector4.out, edge_detector3.out, edge_detector2.out, edge_detector1.out, edge_detector0.out};
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    case(game_state.q) {
+      game_state.BEGIN:
+        beta_game.board_sel = 1;
+        beta_game.board_en = 1;
+        beta_game.level_en = 0;
+        game_state.d = game_state.XOR;
+      
+      
+      game_state.XOR:
+        beta_game.board_sel = 0;
+        beta_game.board_en = 1;
+        beta_game.level_en = 0;
+        beta_game.alufn = b010110;
+        beta_game.asel = 0;
+        beta_game.bsel = 0;
+        beta_game.button_press = c{edge_detector6.out, edge_detector5.out, edge_detector4.out, edge_detector3.out, edge_detector2.out, edge_detector1.out, edge_detector0.out};
+        if (edge_detector_level_reset.out == 1) {
+          game_state.d = game_state.BEGIN;
+        }
+        if (edge_detector_game_reset.out == 1) {
+          game_state.d = game_state.BEGIN;
+        }
+        if ( edge_detector0.out|edge_detector1.out|edge_detector2.out|edge_detector3.out|edge_detector4.out|edge_detector5.out|edge_detector6.out){
+          game_state.d = game_state.CMPEQC;
+        }
+      
+      game_state.CMPEQC:
+        beta_game.board_en = 0;
+        beta_game.level_en = 0;
+        beta_game.alufn = b110011;
+        beta_game.asel = 0;
+        beta_game.bsel = 1;
+        if (beta_game.allon == 1) {
+          game_state.d = game_state.ADDC;
+        }
+        else if (beta_game.allon == 0) {
+          game_state.d = game_state.XOR;
+        }
+      
+      
+      game_state.ADDC:
+        beta_game.board_sel = 1;
+        beta_game.board_en = 0;
+        beta_game.level_en = 1;
+        beta_game.alufn = b000000;
+        beta_game.bsel = 2;
+        beta_game.asel = 1;
+        blink.d = 0;
+        game_state.d = game_state.BLINK;
+      
+      
+      
+      
+      game_state.BLINK:
+        if (blink.q[24] == 1) {
+          display[5:0] = b111111;
+          display_1[5:0] = b111111;
+        } else {
+          display[5:0] = b0;
+          display_1[5:0] = b0;
+        }
+        if (blink.q[27] == 1) {
+          game_state.d = game_state.BEGIN;
+        }
+      
+    }
+  }
+}
