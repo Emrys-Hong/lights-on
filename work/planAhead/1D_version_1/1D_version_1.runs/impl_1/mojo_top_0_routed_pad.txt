@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Mon Dec  3 23:59:56 2018
+Thu Dec  6 19:33:37 2018
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -36,12 +36,12 @@ Pinout by Pin Number:
 |P14       |io_led[15]    |IOB      |IO_L44N_GCLK20_3          |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |       |LOCATED   |NO         |NONE            |
 |P15       |io_led[16]    |IOB      |IO_L44P_GCLK21_3          |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |       |LOCATED   |NO         |NONE            |
 |P16       |io_led[17]    |IOB      |IO_L43N_GCLK22_IRDY2_3    |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |       |LOCATED   |NO         |NONE            |
-|P17       |game_reset[0] |IOB      |IO_L43P_GCLK23_3          |INPUT    |LVTTL      |3             |          |         |           |NONE     |       |LOCATED   |YES        |NONE            |
+|P17       |game_reset[0] |IOB      |IO_L43P_GCLK23_3          |INPUT    |LVTTL      |3             |          |         |           |NONE     |       |LOCATED   |NO         |NONE            |
 |P18       |              |         |VCCO_3                    |         |           |3             |          |         |           |         |3.30   |          |           |                |
 |P19       |              |         |VCCINT                    |         |           |              |          |         |           |         |1.2    |          |           |                |
 |P20       |              |         |VCCAUX                    |         |           |              |          |         |           |         |3.3    |          |           |                |
 |P21       |io_led[19]    |IOB      |IO_L42N_GCLK24_3          |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |       |LOCATED   |NO         |NONE            |
-|P22       |level_reset[0]|IOB      |IO_L42P_GCLK25_TRDY2_3    |INPUT    |LVTTL      |3             |          |         |           |NONE     |       |LOCATED   |YES        |NONE            |
+|P22       |level_reset[0]|IOB      |IO_L42P_GCLK25_TRDY2_3    |INPUT    |LVTTL      |3             |          |         |           |NONE     |       |LOCATED   |NO         |NONE            |
 |P23       |io_led[21]    |IOB      |IO_L41N_GCLK26_3          |OUTPUT   |LVTTL      |3             |12        |SLOW     |           |         |       |LOCATED   |NO         |NONE            |
 |P24       |button0[0]    |IOB      |IO_L41P_GCLK27_3          |INPUT    |LVTTL      |3             |          |         |           |NONE     |       |LOCATED   |NO         |NONE            |
 |P25       |              |         |GND                       |         |           |              |          |         |           |         |       |          |           |                |
