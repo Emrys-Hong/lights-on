@@ -24,7 +24,7 @@ module beta_13 (
   
   wire [16-1:0] M_levels_mux_out;
   reg [3-1:0] M_levels_mux_levels_sel;
-  levels_mux_33 levels_mux (
+  levels_mux_31 levels_mux (
     .levels_sel(M_levels_mux_levels_sel),
     .out(M_levels_mux_out)
   );
@@ -36,7 +36,7 @@ module beta_13 (
   reg [6-1:0] M_alu_io_dip;
   reg [16-1:0] M_alu_a;
   reg [16-1:0] M_alu_b;
-  alu_34 alu (
+  alu_32 alu (
     .io_dip(M_alu_io_dip),
     .a(M_alu_a),
     .b(M_alu_b),
@@ -48,7 +48,7 @@ module beta_13 (
   
   wire [16-1:0] M_buttons_mux_out;
   reg [7-1:0] M_buttons_mux_buttons_sel;
-  buttons_mux_35 buttons_mux (
+  buttons_mux_33 buttons_mux (
     .buttons_sel(M_buttons_mux_buttons_sel),
     .out(M_buttons_mux_out)
   );
@@ -56,7 +56,7 @@ module beta_13 (
   wire [16-1:0] M_board_out;
   reg [1-1:0] M_board_en;
   reg [16-1:0] M_board_data;
-  register_36 board (
+  register_34 board (
     .clk(clk),
     .rst(rst),
     .en(M_board_en),
@@ -66,7 +66,7 @@ module beta_13 (
   wire [16-1:0] M_level_out;
   reg [1-1:0] M_level_en;
   reg [16-1:0] M_level_data;
-  register_36 level (
+  register_34 level (
     .clk(clk),
     .rst(rst),
     .en(M_level_en),

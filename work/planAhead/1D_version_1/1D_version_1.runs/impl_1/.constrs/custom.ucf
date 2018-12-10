@@ -21,8 +21,7 @@ INST "button0_0_IBUF" LOC = P24;
 
 
 
-NET "level_reset" IOSTANDARD = LVTTL;
-INST "level_reset_0_IBUF" LOC = P22;
+NET "level_reset"    LOC = P22 | IOSTANDARD = LVTTL;
 NET "game_reset" IOSTANDARD = LVTTL;
 INST "game_reset_0_IBUF" LOC = P17;
 

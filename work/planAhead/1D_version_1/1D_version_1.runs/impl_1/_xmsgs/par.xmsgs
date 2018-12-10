@@ -5,5 +5,8 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="error" file="Par" num="73" delta="new" >Cannot find Input file &quot;<arg fmt="%s" index="1">mojo_top_0.ncd</arg>&quot;.  Please verify that your paths and permissions are properly set for this file. 
+</msg>
+
 </messages>
 

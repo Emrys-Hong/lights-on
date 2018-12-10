@@ -31,8 +31,6 @@ INST "button0_0_IBUF" LOC = P24;
 
 
 
-NET "level_reset" IOSTANDARD = LVTTL;
-INST "level_reset_0_IBUF" LOC = P22;
 NET "game_reset" IOSTANDARD = LVTTL;
 INST "game_reset_0_IBUF" LOC = P17;
 
@@ -141,6 +139,7 @@ NET "io_led[17]" IOSTANDARD = LVTTL;
 NET "io_led[18]" IOSTANDARD = LVTTL;
 NET "io_led[19]" LOC = P21;
 NET "io_led[19]" IOSTANDARD = LVTTL;
+NET "io_led[20]" LOC = P22;
 NET "io_led[20]" IOSTANDARD = LVTTL;
 NET "io_led[21]" LOC = P23;
 NET "io_led[21]" IOSTANDARD = LVTTL;

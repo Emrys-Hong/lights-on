@@ -70,12 +70,16 @@ module mojo_top (
     button_conditioner conditioner4;
     button_conditioner conditioner5;
     button_conditioner conditioner6;
+    //button_conditioner conditioner_game_reset;
+    //button_conditioner conditioner_level_reset;
     .rst(rst) {
       multi_seven_seg seg;
       counter slowclk(#SIZE(1),#DIV(2));
       display display;
       display display_1;
       dff blink[28];
+      dff game_reset_dff[26];
+      dff level_reset_dff[26];
     }
   }
   beta beta_game(.game_rst(game_reset), .rst(rst), .clk(clk));
@@ -87,8 +91,8 @@ module mojo_top (
     edge_detector edge_detector4(#RISE(1), #FALL(0));
     edge_detector edge_detector5(#RISE(1), #FALL(0));
     edge_detector edge_detector6(#RISE(1), #FALL(0));
-    edge_detector edge_detector_game_reset(#RISE(1), #FALL(0));
-    edge_detector edge_detector_level_reset(#RISE(1), #FALL(0));
+    //edge_detector edge_detector_game_reset(#RISE(1), #FALL(0));
+    //edge_detector edge_detector_level_reset(#RISE(1), #FALL(0));
     .rst(rst) {
       fsm game_state = {BEGIN, XOR, CMPEQC, ADDC, BLINK};
     }
@@ -117,7 +121,19 @@ module mojo_top (
     io_led[2:0] = 3x{{8h00}};   // connect the DIP switches to the LEDs    driver
     seg.values[3:1] = {4h0, 4h0, 4h0}; seg.values[0] = beta_game.levelout[6:3];
     blink.d = blink.q + 1;
-
+    if (game_reset == 1) {
+      game_reset_dff.d = game_reset_dff.q + 1;
+    } else {
+      game_reset_dff.d = 0;
+    } 
+    if (level_reset == 1) {
+      level_reset_dff.d = level_reset_dff.q + 1;
+    } else {
+      level_reset_dff.d = 0;
+    }
+    
+    
+      
     
     
     
@@ -131,8 +147,10 @@ module mojo_top (
     
     
     // BUTTON CONNECTION
-    edge_detector_game_reset.in = game_reset;
-    edge_detector_level_reset.in = level_reset;
+    //conditioner_game_reset.in = game_reset;
+    //edge_detector_game_reset.in = conditioner_game_reset.out;
+    //conditioner_level_reset.in = level_reset;
+    //edge_detector_level_reset.in = conditioner_level_reset.out;
     conditioner0.in = button0;
     edge_detector0.in = conditioner0.out;
     conditioner1.in = button1;
@@ -379,10 +397,12 @@ module mojo_top (
         
         
         
-        if (edge_detector_level_reset.out == 1) {
+        //if (edge_detector_level_reset.out == 1) {
+        if (level_reset_dff.q[25] == 1){
           game_state.d = game_state.BEGIN;
         }
-        if (edge_detector_game_reset.out == 1) {
+        //if (edge_detector_game_reset.out == 1) {
+        if (game_reset_dff.q[25] == 1) {
           game_state.d = game_state.BEGIN;
         }
         if ( edge_detector0.out|edge_detector1.out|edge_detector2.out|edge_detector3.out|edge_detector4.out|edge_detector5.out|edge_detector6.out){
