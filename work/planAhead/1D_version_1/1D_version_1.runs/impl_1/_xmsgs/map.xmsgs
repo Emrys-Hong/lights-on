@@ -11,22 +11,22 @@
 <msg type="info" file="MapLib" num="562" delta="new" >No environment variables are currently set.
 </msg>
 
-<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">spi_channel[0]</arg> connected to top level port <arg fmt="%s" index="2">spi_channel(0)</arg> has been removed.
-</msg>
-
-<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">spi_channel[1]</arg> connected to top level port <arg fmt="%s" index="2">spi_channel(1)</arg> has been removed.
-</msg>
-
-<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">avr_rx</arg> connected to top level port <arg fmt="%s" index="2">avr_rx</arg> has been removed.
+<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">spi_channel[3]</arg> connected to top level port <arg fmt="%s" index="2">spi_channel(3)</arg> has been removed.
 </msg>
 
 <msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">spi_channel[2]</arg> connected to top level port <arg fmt="%s" index="2">spi_channel(2)</arg> has been removed.
 </msg>
 
+<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">spi_channel[1]</arg> connected to top level port <arg fmt="%s" index="2">spi_channel(1)</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">spi_channel[0]</arg> connected to top level port <arg fmt="%s" index="2">spi_channel(0)</arg> has been removed.
+</msg>
+
 <msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">spi_miso</arg> connected to top level port <arg fmt="%s" index="2">spi_miso</arg> has been removed.
 </msg>
 
-<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">spi_channel[3]</arg> connected to top level port <arg fmt="%s" index="2">spi_channel(3)</arg> has been removed.
+<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">avr_rx</arg> connected to top level port <arg fmt="%s" index="2">avr_rx</arg> has been removed.
 </msg>
 
 <msg type="info" file="LIT" num="244" delta="new" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.
@@ -44,19 +44,7 @@
 <msg type="info" file="Place" num="834" delta="new" >Only a subset of IOs are locked. Out of <arg fmt="%d" index="1">62</arg> IOs, <arg fmt="%d" index="2">59</arg> are locked and <arg fmt="%d" index="3">3</arg> are not locked. <arg fmt="%s" index="4">If you would like to print the names of these IOs, please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1.</arg> 
 </msg>
 
-<msg type="error" file="Place" num="866" delta="new" >Not enough valid sites to place the following IOBs:
-IO Standard: <arg fmt="%s" index="1">Name = LVCMOS25, VREF = NR, VCCO = 2.50, TERM = NONE, DIR = INPUT, DRIVE_STR = NR
-</arg><arg fmt="%s" index="2">	level_reset[0]
-
-</arg>This may be due to either an insufficient number of sites available on the device, too many prohibited sites,
-or incompatible I/O Standards locked or range constrained to I/O Banks with valid sites.
-    This situation could possibly be resolved by one (or all) of the following actions:
-a) Grouping IOBs of similar standards into a minimum amount of I/O Banks by using LOC or range constraints.
-b) Maximizing available I/O Banks resources for special IOBs by choosing lower capacity I/O Banks if possible.
-c) If applicable, decreasing the number of user prohibited sites or using a larger device.
-</msg>
-
-<msg type="error" file="Pack" num="1654" delta="new" >The timing-driven placement phase encountered an error.
+<msg type="info" file="Pack" num="1650" delta="new" >Map created a placed design.
 </msg>
 
 </messages>

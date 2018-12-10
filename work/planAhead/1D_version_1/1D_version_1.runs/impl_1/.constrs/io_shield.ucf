@@ -40,7 +40,7 @@ NET "io_led<18>" LOC = P17 | IOSTANDARD = LVTTL;
 NET "io_led[18]" IOSTANDARD = LVTTL;
 NET "io_led[19]" LOC = P21;
 NET "io_led[19]" IOSTANDARD = LVTTL;
-NET "io_led[20]" LOC = P22;
+NET "io_led<20>" LOC = P22 | IOSTANDARD = LVTTL;
 NET "io_led[20]" IOSTANDARD = LVTTL;
 NET "io_led[21]" LOC = P23;
 NET "io_led[21]" IOSTANDARD = LVTTL;

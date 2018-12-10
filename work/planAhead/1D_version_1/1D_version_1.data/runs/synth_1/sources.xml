@@ -2,118 +2,118 @@
 <DARoots Version="1" Minor="26">
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/sft_39.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/sft_45.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/sft_39.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/sft_45.v"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/mul_40.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/mul_46.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/mul_40.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/mul_46.v"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/cmp_37.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/cmp_43.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/cmp_37.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/cmp_43.v"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/bol_38.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/bol_44.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/bol_38.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/bol_44.v"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/add_36.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/add_42.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/add_36.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/add_42.v"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/seven_seg_29.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/seven_seg_35.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/seven_seg_29.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/seven_seg_35.v"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/register_34.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/register_40.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/register_34.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/register_40.v"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/pipeline_21.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/pipeline_25.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/pipeline_21.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/pipeline_25.v"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/levels_mux_31.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/levels_mux_37.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/levels_mux_31.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/levels_mux_37.v"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/decoder_30.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/decoder_36.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/decoder_30.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/decoder_36.v"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/counter_28.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/counter_34.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/counter_28.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/counter_34.v"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/buttons_mux_33.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/buttons_mux_39.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/buttons_mux_33.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/buttons_mux_39.v"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/alu_32.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/alu_38.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/alu_32.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/alu_38.v"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
@@ -122,43 +122,43 @@
     <File Path="$PSRCDIR/sources_1/imports/verilog/reset_conditioner_1.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/reset_conditioner_1.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/multi_seven_seg_9.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/multi_seven_seg_11.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/multi_seven_seg_9.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/multi_seven_seg_11.v"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/edge_detector_14.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/edge_detector_16.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/edge_detector_14.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/edge_detector_16.v"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/display_11.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/display_13.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/display_11.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/display_13.v"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/counter_10.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/counter_12.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/counter_10.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/counter_12.v"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
@@ -167,16 +167,16 @@
     <File Path="$PSRCDIR/sources_1/imports/verilog/button_conditioner_2.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/button_conditioner_2.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/beta_13.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/beta_15.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/beta_13.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/beta_15.v"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
@@ -185,7 +185,7 @@
     <File Path="$PSRCDIR/sources_1/imports/verilog/mojo_top_0.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/mojo_top_0.v"/>
-        <Attr Name="ImportTime" Val="1544463958"/>
+        <Attr Name="ImportTime" Val="1544464453"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>

@@ -88,10 +88,24 @@ module mojo_top_0 (
     .in(M_conditioner6_in),
     .out(M_conditioner6_out)
   );
+  wire [1-1:0] M_conditioner_game_reset_out;
+  reg [1-1:0] M_conditioner_game_reset_in;
+  button_conditioner_2 conditioner_game_reset (
+    .clk(clk),
+    .in(M_conditioner_game_reset_in),
+    .out(M_conditioner_game_reset_out)
+  );
+  wire [1-1:0] M_conditioner_level_reset_out;
+  reg [1-1:0] M_conditioner_level_reset_in;
+  button_conditioner_2 conditioner_level_reset (
+    .clk(clk),
+    .in(M_conditioner_level_reset_in),
+    .out(M_conditioner_level_reset_out)
+  );
   wire [7-1:0] M_seg_seg;
   wire [4-1:0] M_seg_sel;
   reg [16-1:0] M_seg_values;
-  multi_seven_seg_9 seg (
+  multi_seven_seg_11 seg (
     .clk(clk),
     .rst(rst),
     .values(M_seg_values),
@@ -99,7 +113,7 @@ module mojo_top_0 (
     .sel(M_seg_sel)
   );
   wire [1-1:0] M_slowclk_value;
-  counter_10 slowclk (
+  counter_12 slowclk (
     .clk(clk),
     .rst(rst),
     .value(M_slowclk_value)
@@ -108,7 +122,7 @@ module mojo_top_0 (
   reg [18-1:0] M_display_data;
   reg [6-1:0] M_display_mask;
   reg [12-1:0] M_display_init;
-  display_11 display (
+  display_13 display (
     .clk(clk),
     .rst(rst),
     .data(M_display_data),
@@ -120,7 +134,7 @@ module mojo_top_0 (
   reg [18-1:0] M_display_1_data;
   reg [6-1:0] M_display_1_mask;
   reg [12-1:0] M_display_1_init;
-  display_11 display_1 (
+  display_13 display_1 (
     .clk(clk),
     .rst(rst),
     .data(M_display_1_data),
@@ -135,6 +149,7 @@ module mojo_top_0 (
   wire [1-1:0] M_beta_game_allon;
   wire [16-1:0] M_beta_game_boardout;
   wire [16-1:0] M_beta_game_levelout;
+  reg [1-1:0] M_beta_game_game_rst;
   reg [7-1:0] M_beta_game_button_press;
   reg [1-1:0] M_beta_game_board_sel;
   reg [1-1:0] M_beta_game_board_en;
@@ -142,10 +157,10 @@ module mojo_top_0 (
   reg [1-1:0] M_beta_game_asel;
   reg [2-1:0] M_beta_game_bsel;
   reg [6-1:0] M_beta_game_alufn;
-  beta_13 beta_game (
-    .game_rst(game_reset),
+  beta_15 beta_game (
     .rst(rst),
     .clk(clk),
+    .game_rst(M_beta_game_game_rst),
     .button_press(M_beta_game_button_press),
     .board_sel(M_beta_game_board_sel),
     .board_en(M_beta_game_board_en),
@@ -160,52 +175,66 @@ module mojo_top_0 (
   
   wire [1-1:0] M_edge_detector0_out;
   reg [1-1:0] M_edge_detector0_in;
-  edge_detector_14 edge_detector0 (
+  edge_detector_16 edge_detector0 (
     .clk(M_slowclk_value),
     .in(M_edge_detector0_in),
     .out(M_edge_detector0_out)
   );
   wire [1-1:0] M_edge_detector1_out;
   reg [1-1:0] M_edge_detector1_in;
-  edge_detector_14 edge_detector1 (
+  edge_detector_16 edge_detector1 (
     .clk(M_slowclk_value),
     .in(M_edge_detector1_in),
     .out(M_edge_detector1_out)
   );
   wire [1-1:0] M_edge_detector2_out;
   reg [1-1:0] M_edge_detector2_in;
-  edge_detector_14 edge_detector2 (
+  edge_detector_16 edge_detector2 (
     .clk(M_slowclk_value),
     .in(M_edge_detector2_in),
     .out(M_edge_detector2_out)
   );
   wire [1-1:0] M_edge_detector3_out;
   reg [1-1:0] M_edge_detector3_in;
-  edge_detector_14 edge_detector3 (
+  edge_detector_16 edge_detector3 (
     .clk(M_slowclk_value),
     .in(M_edge_detector3_in),
     .out(M_edge_detector3_out)
   );
   wire [1-1:0] M_edge_detector4_out;
   reg [1-1:0] M_edge_detector4_in;
-  edge_detector_14 edge_detector4 (
+  edge_detector_16 edge_detector4 (
     .clk(M_slowclk_value),
     .in(M_edge_detector4_in),
     .out(M_edge_detector4_out)
   );
   wire [1-1:0] M_edge_detector5_out;
   reg [1-1:0] M_edge_detector5_in;
-  edge_detector_14 edge_detector5 (
+  edge_detector_16 edge_detector5 (
     .clk(M_slowclk_value),
     .in(M_edge_detector5_in),
     .out(M_edge_detector5_out)
   );
   wire [1-1:0] M_edge_detector6_out;
   reg [1-1:0] M_edge_detector6_in;
-  edge_detector_14 edge_detector6 (
+  edge_detector_16 edge_detector6 (
     .clk(M_slowclk_value),
     .in(M_edge_detector6_in),
     .out(M_edge_detector6_out)
+  );
+  wire [1-1:0] M_edge_detector_game_reset_out;
+  reg [1-1:0] M_edge_detector_game_reset_in;
+  edge_detector_16 edge_detector_game_reset (
+    .clk(M_slowclk_value),
+    .in(M_edge_detector_game_reset_in),
+    .out(M_edge_detector_game_reset_out)
+  );
+  wire [1-1:0] M_edge_detector_level_reset_out;
+  reg [1-1:0] M_edge_detector_level_reset_in;
+  edge_detector_16 edge_detector_level_reset (
+    .clk(M_slowclk_value),
+    .in(M_edge_detector_level_reset_in),
+    .out(M_edge_detector_level_reset_out)
   );
   localparam BEGIN_game_state = 3'd0;
   localparam XOR_game_state = 3'd1;
@@ -243,6 +272,11 @@ module mojo_top_0 (
     end else begin
       M_level_reset_dff_d = 1'h0;
     end
+    M_beta_game_game_rst = M_edge_detector_game_reset_out;
+    M_conditioner_game_reset_in = game_reset;
+    M_edge_detector_game_reset_in = M_conditioner_game_reset_out;
+    M_conditioner_level_reset_in = level_reset;
+    M_edge_detector_level_reset_in = M_conditioner_level_reset_out;
     M_conditioner0_in = button0;
     M_edge_detector0_in = M_conditioner0_out;
     M_conditioner1_in = button1;
@@ -426,10 +460,10 @@ module mojo_top_0 (
         M_beta_game_asel = 1'h0;
         M_beta_game_bsel = 1'h0;
         M_beta_game_button_press = {M_edge_detector6_out, M_edge_detector5_out, M_edge_detector4_out, M_edge_detector3_out, M_edge_detector2_out, M_edge_detector1_out, M_edge_detector0_out};
-        if (M_level_reset_dff_q[25+0-:1] == 1'h1) begin
+        if (M_edge_detector_level_reset_out == 1'h1) begin
           M_game_state_d = BEGIN_game_state;
         end
-        if (M_game_reset_dff_q[25+0-:1] == 1'h1) begin
+        if (M_edge_detector_game_reset_out == 1'h1) begin
           M_game_state_d = BEGIN_game_state;
         end
         if (M_edge_detector0_out | M_edge_detector1_out | M_edge_detector2_out | M_edge_detector3_out | M_edge_detector4_out | M_edge_detector5_out | M_edge_detector6_out) begin
@@ -521,15 +555,6 @@ module mojo_top_0 (
     endcase
   end
   
-  always @(posedge M_slowclk_value) begin
-    if (rst == 1'b1) begin
-      M_game_state_q <= 1'h0;
-    end else begin
-      M_game_state_q <= M_game_state_d;
-    end
-  end
-  
-  
   always @(posedge clk) begin
     if (rst == 1'b1) begin
       M_blink_q <= 1'h0;
@@ -539,6 +564,15 @@ module mojo_top_0 (
       M_blink_q <= M_blink_d;
       M_game_reset_dff_q <= M_game_reset_dff_d;
       M_level_reset_dff_q <= M_level_reset_dff_d;
+    end
+  end
+  
+  
+  always @(posedge M_slowclk_value) begin
+    if (rst == 1'b1) begin
+      M_game_state_q <= 1'h0;
+    end else begin
+      M_game_state_q <= M_game_state_d;
     end
   end
   
